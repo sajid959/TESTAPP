@@ -36,6 +36,20 @@ app.use((req, res, next) => {
   next();
 });
 
+// Initialize database with seeds
+async function initializeApp() {
+  try {
+    log("🌱 Seeding database...");
+    const { createDefaultAdmin, seedCategories, seedProblems } = await import("./seeds");
+    await createDefaultAdmin();
+    await seedCategories(); 
+    await seedProblems();
+    log("✅ Database seeding completed");
+  } catch (error) {
+    console.error("❌ Database seeding failed:", error);
+  }
+}
+
 (async () => {
   const server = await registerRoutes(app);
 
@@ -56,6 +70,9 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
+  // Initialize database with seeds
+  await initializeApp();
+
   // ALWAYS serve the app on the port specified in the environment variable PORT
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
@@ -66,6 +83,7 @@ app.use((req, res, next) => {
     host: "0.0.0.0",
     reusePort: true,
   }, () => {
-    log(`serving on port ${port}`);
+    log(`🚀 serving on port ${port}`);
+    log(`📧 Default admin: admin@dsagrind.com / admin123`);
   });
 })();

@@ -19,7 +19,7 @@ export default function Problems() {
     queryKey: ['/api/categories'],
   });
 
-  const { data: problems = [], isLoading } = useQuery<Problem[]>({
+  const { data: problemsData, isLoading } = useQuery<{ problems: Problem[]; total: number }>({
     queryKey: ['/api/problems', filters],
     queryFn: () => {
       const searchParams = new URLSearchParams();
@@ -35,6 +35,8 @@ export default function Problems() {
       }).then(res => res.json());
     },
   });
+
+  const problems = problemsData?.problems || [];
 
   const handleFiltersChange = (newFilters: typeof filters) => {
     setFilters(newFilters);
@@ -127,7 +129,7 @@ export default function Problems() {
         <ProblemTable problems={problems} isLoading={isLoading} />
 
         {/* Premium Upgrade CTA */}
-        {!user?.isPremium && problems.some(p => p.isPremium) && (
+        {user?.subscriptionStatus !== 'premium' && problems.some(p => p.isPremium) && (
           <div className="mt-8 bg-gradient-to-r from-brand-500 to-brand-600 rounded-xl p-6 text-white">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div>

@@ -9,6 +9,7 @@ import * as XLSX from "xlsx";
 import { storage } from "./storage";
 import { insertUserSchema, insertProblemSchema, insertCategorySchema, insertSubmissionSchema } from "../shared/schema";
 import type { User } from "../shared/schema";
+import { emailService, generateVerificationToken, generatePasswordResetToken, verifyToken } from "./services/email";
 
 // Environment variables validation
 const JWT_SECRET = process.env.JWT_SECRET || "dev_secret_key_change_in_production";
@@ -19,7 +20,7 @@ const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
 let stripe: Stripe | null = null;
 if (STRIPE_SECRET_KEY) {
   stripe = new Stripe(STRIPE_SECRET_KEY, {
-    apiVersion: "2023-10-16",
+    apiVersion: "2025-07-30.basil",
   });
 }
 
@@ -248,15 +249,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ message: "Username already taken" });
       }
 
-      // Hash password
-      const passwordHash = await bcryptjs.hash(userData.password, 12);
+      // Extract password and hash it
+      const { password, ...userDataWithoutPassword } = userData;
+      const passwordHash = await bcryptjs.hash(password, 12);
+      
+      // Generate email verification token  
+      const verificationToken = generateVerificationToken(userDataWithoutPassword.email);
       
       // Create user
       const user = await storage.createUser({
-        ...userData,
+        ...userDataWithoutPassword,
         passwordHash,
-        emailVerificationToken: jwt.sign({ email: userData.email }, JWT_SECRET)
+        emailVerificationToken: verificationToken
       });
+
+      // Send verification email
+      await emailService.sendVerificationEmail(user.email, verificationToken);
 
       // Generate JWT
       const token = jwt.sign({ userId: user.id }, JWT_SECRET, { expiresIn: '7d' });
@@ -300,6 +308,100 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   app.get("/api/auth/me", authenticateToken, async (req: any, res) => {
     res.json({ user: { ...req.user, passwordHash: undefined } });
+  });
+
+  // Email verification
+  app.post("/api/auth/verify-email", async (req, res) => {
+    try {
+      const { token } = req.body;
+      
+      const decoded = verifyToken(token);
+      if (!decoded || decoded.type !== 'email_verification') {
+        return res.status(400).json({ message: "Invalid or expired verification token" });
+      }
+
+      const user = await storage.verifyUserEmail(token);
+      if (!user) {
+        return res.status(400).json({ message: "Invalid verification token" });
+      }
+
+      // Send welcome email
+      await emailService.sendWelcomeEmail(user.email, user.firstName || user.username);
+
+      res.json({ message: "Email verified successfully", user: { ...user, passwordHash: undefined } });
+    } catch (error: any) {
+      res.status(400).json({ message: error.message });
+    }
+  });
+
+  // Resend verification email
+  app.post("/api/auth/resend-verification", async (req, res) => {
+    try {
+      const { email } = req.body;
+      
+      const user = await storage.getUserByEmail(email);
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+
+      if (user.isEmailVerified) {
+        return res.status(400).json({ message: "Email already verified" });
+      }
+
+      const verificationToken = generateVerificationToken(user.email);
+      await storage.updateUser(user.id, { emailVerificationToken: verificationToken });
+      await emailService.sendVerificationEmail(user.email, verificationToken);
+
+      res.json({ message: "Verification email sent successfully" });
+    } catch (error: any) {
+      res.status(400).json({ message: error.message });
+    }
+  });
+
+  // Request password reset
+  app.post("/api/auth/forgot-password", async (req, res) => {
+    try {
+      const { email } = req.body;
+      
+      const user = await storage.getUserByEmail(email);
+      if (!user) {
+        // Return success even if user doesn't exist for security
+        return res.json({ message: "If the email exists, a reset link will be sent" });
+      }
+
+      const resetToken = generatePasswordResetToken(email);
+      const expires = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
+      
+      await storage.setResetPasswordToken(email, resetToken, expires);
+      await emailService.sendPasswordResetEmail(email, resetToken);
+
+      res.json({ message: "If the email exists, a reset link will be sent" });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+  // Reset password
+  app.post("/api/auth/reset-password", async (req, res) => {
+    try {
+      const { token, password } = req.body;
+
+      const decoded = verifyToken(token);
+      if (!decoded || decoded.type !== 'password_reset') {
+        return res.status(400).json({ message: "Invalid or expired reset token" });
+      }
+
+      const passwordHash = await bcryptjs.hash(password, 12);
+      const user = await storage.resetPassword(token, passwordHash);
+      
+      if (!user) {
+        return res.status(400).json({ message: "Invalid or expired reset token" });
+      }
+
+      res.json({ message: "Password reset successfully" });
+    } catch (error: any) {
+      res.status(400).json({ message: error.message });
+    }
   });
 
   // ============ Category Routes ============
@@ -517,7 +619,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const results = [];
       const errors = [];
 
-      for (const [index, row] of data.entries()) {
+      for (let index = 0; index < data.length; index++) {
+        const row = data[index];
         try {
           let problemData = row as any;
 
@@ -554,8 +657,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json({
         success: results.length,
         errors: errors.length,
-        results,
-        errors
+        importedProblems: results,
+        importErrors: errors
       });
     } catch (error: any) {
       res.status(500).json({ message: error.message });

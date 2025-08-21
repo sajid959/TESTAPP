@@ -23,6 +23,7 @@ export const users = pgTable("users", {
   stripeSubscriptionId: varchar("stripe_subscription_id", { length: 255 }),
   subscriptionStatus: varchar("subscription_status", { length: 50 }).default("free"), // free, premium, cancelled
   subscriptionEnds: timestamp("subscription_ends"),
+  isPremium: boolean("is_premium").notNull().default(false),
   totalSolved: integer("total_solved").notNull().default(0),
   rank: integer("rank").default(0),
   createdAt: timestamp("created_at").notNull().defaultNow(),
@@ -142,6 +143,15 @@ export const insertUserSchema = createInsertSchema(users).omit({
   id: true,
   createdAt: true,
   updatedAt: true,
+}).extend({
+  password: z.string().min(6, "Password must be at least 6 characters")
+});
+
+// For direct database creation without password validation
+export const createUserSchema = createInsertSchema(users).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
 });
 
 export const insertCategorySchema = createInsertSchema(categories).omit({
@@ -192,6 +202,7 @@ export const insertSettingSchema = createInsertSchema(settings).omit({
 // Types
 export type User = typeof users.$inferSelect;
 export type InsertUser = z.infer<typeof insertUserSchema>;
+export type CreateUser = z.infer<typeof createUserSchema>;
 
 export type Category = typeof categories.$inferSelect;
 export type InsertCategory = z.infer<typeof insertCategorySchema>;

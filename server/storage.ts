@@ -2,7 +2,7 @@ import { drizzle } from "drizzle-orm/neon-http";
 import { neon } from "@neondatabase/serverless";
 import { eq, desc, asc, and, or, count, sql, ilike } from "drizzle-orm";
 import type {
-  User, InsertUser, Category, InsertCategory, Problem, InsertProblem,
+  User, InsertUser, CreateUser, Category, InsertCategory, Problem, InsertProblem,
   Submission, InsertSubmission, UserProgress, InsertUserProgress,
   Contest, InsertContest, AiChat, InsertAiChat, Setting, InsertSetting
 } from "../shared/schema";
@@ -21,8 +21,8 @@ const sql_client = neon(connectionString);
 const db = drizzle(sql_client);
 
 export interface IStorage {
-  // User management
-  createUser(user: InsertUser): Promise<User>;
+  // User management  
+  createUser(user: CreateUser): Promise<User>;
   getUserById(id: string): Promise<User | undefined>;
   getUserByEmail(email: string): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
@@ -90,7 +90,7 @@ export interface IStorage {
 
 class PostgresStorage implements IStorage {
   // User methods
-  async createUser(user: InsertUser): Promise<User> {
+  async createUser(user: CreateUser): Promise<User> {
     const [newUser] = await db.insert(users).values(user).returning();
     return newUser;
   }

@@ -72,7 +72,7 @@ function AdminContent() {
             <div className="flex items-center space-x-2">
               <Badge variant="default" className="bg-brand-600">
                 <i className="fas fa-user-shield mr-1"></i>
-                {user?.username}
+{user?.firstName || user?.email?.split('@')[0] || 'Admin'}
               </Badge>
               <Badge variant="outline">Admin</Badge>
             </div>
