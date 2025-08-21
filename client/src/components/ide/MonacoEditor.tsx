@@ -22,6 +22,7 @@ const languages = [
   { id: 'cpp', name: 'C++', extension: 'cpp' },
   { id: 'c', name: 'C', extension: 'c' },
   { id: 'csharp', name: 'C#', extension: 'cs' },
+  { id: 'php', name: 'PHP', extension: 'php' },
   { id: 'go', name: 'Go', extension: 'go' },
   { id: 'rust', name: 'Rust', extension: 'rs' },
 ];
@@ -86,7 +87,112 @@ public:
         
         return {};
     }
-};`
+};`,
+  php: `<?php
+class Solution {
+    /**
+     * @param Integer[] $nums
+     * @param Integer $target
+     * @return Integer[]
+     */
+    function twoSum($nums, $target) {
+        // TODO: Implement your solution
+        $hashmap = array();
+        
+        for ($i = 0; $i < count($nums); $i++) {
+            $complement = $target - $nums[$i];
+            if (array_key_exists($complement, $hashmap)) {
+                return array($hashmap[$complement], $i);
+            }
+            $hashmap[$nums[$i]] = $i;
+        }
+        
+        return array();
+    }
+}
+?>`,
+  c: `#include <stdio.h>
+#include <stdlib.h>
+
+int* twoSum(int* nums, int numsSize, int target, int* returnSize){
+    // TODO: Implement your solution
+    *returnSize = 2;
+    int* result = (int*)malloc(2 * sizeof(int));
+    
+    for (int i = 0; i < numsSize - 1; i++) {
+        for (int j = i + 1; j < numsSize; j++) {
+            if (nums[i] + nums[j] == target) {
+                result[0] = i;
+                result[1] = j;
+                return result;
+            }
+        }
+    }
+    
+    *returnSize = 0;
+    return result;
+}`,
+  csharp: `public class Solution {
+    public int[] TwoSum(int[] nums, int target) {
+        // TODO: Implement your solution
+        Dictionary<int, int> hashmap = new Dictionary<int, int>();
+        
+        for (int i = 0; i < nums.Length; i++) {
+            int complement = target - nums[i];
+            if (hashmap.ContainsKey(complement)) {
+                return new int[] { hashmap[complement], i };
+            }
+            hashmap[nums[i]] = i;
+        }
+        
+        return new int[0];
+    }
+}`,
+  go: `func twoSum(nums []int, target int) []int {
+    // TODO: Implement your solution
+    hashmap := make(map[int]int)
+    
+    for i, num := range nums {
+        complement := target - num
+        if index, exists := hashmap[complement]; exists {
+            return []int{index, i}
+        }
+        hashmap[num] = i
+    }
+    
+    return []int{}
+}`,
+  rust: `impl Solution {
+    pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
+        // TODO: Implement your solution
+        use std::collections::HashMap;
+        let mut hashmap = HashMap::new();
+        
+        for (i, &num) in nums.iter().enumerate() {
+            let complement = target - num;
+            if let Some(&index) = hashmap.get(&complement) {
+                return vec![index as i32, i as i32];
+            }
+            hashmap.insert(num, i);
+        }
+        
+        vec![]
+    }
+}`,
+  typescript: `function twoSum(nums: number[], target: number): number[] {
+    // TODO: Implement your solution
+    const hashmap: {[key: number]: number} = {};
+    
+    for (let i = 0; i < nums.length; i++) {
+        const complement = target - nums[i];
+        if (complement in hashmap) {
+            return [hashmap[complement], i];
+        }
+        hashmap[nums[i]] = i;
+    }
+    
+    return [];
+}`
 };
 
 export function MonacoEditor({
@@ -187,7 +293,10 @@ export function MonacoEditor({
     if (monacoInstance.current) {
       const monaco = (window as any).monaco;
       const model = monacoInstance.current.getModel();
-      monaco.editor.setModelLanguage(model, language === 'cpp' ? 'cpp' : language === 'csharp' ? 'csharp' : language);
+      const monacoLanguage = language === 'cpp' ? 'cpp' : 
+                          language === 'csharp' ? 'csharp' : 
+                          language === 'php' ? 'php' : language;
+      monaco.editor.setModelLanguage(model, monacoLanguage);
     }
   }, [language]);
 
