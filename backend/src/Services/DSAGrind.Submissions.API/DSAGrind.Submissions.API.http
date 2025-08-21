@@ -1,0 +1,6 @@
+@DSAGrind.Submissions.API_HostAddress = http://localhost:5278
+
+GET {{DSAGrind.Submissions.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
