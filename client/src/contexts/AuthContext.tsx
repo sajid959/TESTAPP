@@ -1,23 +1,11 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { apiRequest } from "@/lib/queryClient";
-
-interface User {
-  id: string;
-  username: string;
-  email: string;
-  firstName?: string;
-  lastName?: string;
-  avatar?: string;
-  role: string;
-  totalSolved: number;
-  rank: number;
-  subscriptionStatus: string;
-}
+import { User, LoginRequest, RegisterRequest, AuthResponse } from "@/types/api";
 
 interface AuthContextType {
   user: User | null;
   login: (email: string, password: string) => Promise<void>;
-  register: (userData: any) => Promise<void>;
+  register: (userData: RegisterRequest) => Promise<void>;
   logout: () => void;
   loading: boolean;
   isAuthenticated: boolean;
@@ -63,31 +51,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       password,
     });
 
-    if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.message || "Login failed");
-    }
-
-    const data = await response.json();
+    const data: AuthResponse = await response.json();
     localStorage.setItem("token", data.token);
+    localStorage.setItem("refreshToken", data.refreshToken);
     setUser(data.user);
   };
 
-  const register = async (userData: any) => {
+  const register = async (userData: RegisterRequest) => {
     const response = await apiRequest("POST", "/api/auth/register", userData);
 
-    if (!response.ok) {
-      const error = await response.json();
-      throw new Error(error.message || "Registration failed");
-    }
-
-    const data = await response.json();
+    const data: AuthResponse = await response.json();
     localStorage.setItem("token", data.token);
+    localStorage.setItem("refreshToken", data.refreshToken);
     setUser(data.user);
   };
 
   const logout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("refreshToken");
     setUser(null);
   };
 
