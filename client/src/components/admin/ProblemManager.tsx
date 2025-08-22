@@ -350,9 +350,9 @@ export function ProblemManager() {
                 </div>
               ))}
             </div>
-          ) : problems.length > 0 ? (
+          ) : (problems as any[])?.length > 0 ? (
             <div className="space-y-4">
-              {problems.slice(0, 10).map((problem: any) => (
+              {(problems as any[])?.slice(0, 10).map((problem: any) => (
                 <div key={problem.id} className="flex items-center justify-between p-4 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800">
                   <div className="flex-1">
                     <div className="flex items-center space-x-3 mb-2">

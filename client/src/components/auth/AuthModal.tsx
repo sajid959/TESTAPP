@@ -95,10 +95,10 @@ export function AuthModal({ open, onOpenChange }: AuthModalProps) {
     try {
       setLoading(true);
       await register({
-        username: values.username,
         email: values.email,
         password: values.password,
-      });
+        username: values.username,
+      } as any);
       onOpenChange(false);
       toast({
         title: "Welcome to DSAGrind!",

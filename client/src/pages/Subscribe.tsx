@@ -124,7 +124,7 @@ function SubscribeContent() {
   const currentPlan = plans[selectedPlan];
 
   useEffect(() => {
-    if (user && !user.isPremium) {
+    if (user && !(user as any).isPremium) {
       createSubscription();
     }
   }, [user, selectedPlan]);
@@ -156,7 +156,7 @@ function SubscribeContent() {
   };
 
   // If user is already premium
-  if (user?.isPremium) {
+  if ((user as any)?.isPremium) {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-20">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -246,15 +246,15 @@ function SubscribeContent() {
                   <span className="text-slate-600 dark:text-slate-400">
                     {currentPlan.period}
                   </span>
-                  {currentPlan.originalPrice && (
+                  {(currentPlan as any).originalPrice && (
                     <span className="text-sm text-slate-500 line-through">
-                      {currentPlan.originalPrice}
+                      {(currentPlan as any).originalPrice}
                     </span>
                   )}
                 </div>
-                {currentPlan.savings && (
+                {(currentPlan as any).savings && (
                   <p className="text-sm text-success-600 font-medium">
-                    {currentPlan.savings}
+                    {(currentPlan as any).savings}
                   </p>
                 )}
               </CardHeader>

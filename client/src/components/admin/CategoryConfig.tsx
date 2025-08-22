@@ -19,7 +19,7 @@ export function CategoryConfig() {
     name: '',
     slug: '',
     description: '',
-    freeProblemLimit: 10,
+    freeQuestionLimit: 10,
   });
 
   const { data: categories = [], isLoading } = useQuery<Category[]>({
@@ -64,7 +64,7 @@ export function CategoryConfig() {
         name: '',
         slug: '',
         description: '',
-        freeProblemLimit: 10,
+        freeQuestionLimit: 10,
       });
     },
     onError: (error: any) => {
@@ -79,7 +79,7 @@ export function CategoryConfig() {
   const handleFreeLimitChange = (categoryId: string, newLimit: number) => {
     updateCategoryMutation.mutate({
       id: categoryId,
-      updates: { freeProblemLimit: newLimit },
+      updates: { freeQuestionLimit: newLimit },
     });
   };
 
@@ -203,8 +203,8 @@ export function CategoryConfig() {
                   id="freeProblemLimit"
                   type="number"
                   min="0"
-                  value={newCategory.freeProblemLimit}
-                  onChange={(e) => setNewCategory(prev => ({ ...prev, freeProblemLimit: parseInt(e.target.value) || 0 }))}
+                  value={newCategory.freeQuestionLimit}
+                  onChange={(e) => setNewCategory(prev => ({ ...prev, freeQuestionLimit: parseInt(e.target.value) || 0 }))}
                   data-testid="input-category-free-limit"
                 />
                 <p className="text-xs text-slate-500 mt-1">
@@ -250,7 +250,7 @@ export function CategoryConfig() {
                       {category.name}
                     </h4>
                     <Badge variant="outline">
-                      {category.totalProblems} total problems
+                      {category.totalQuestions} total problems
                     </Badge>
                   </div>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
@@ -261,14 +261,14 @@ export function CategoryConfig() {
                   <div className="flex items-center space-x-3">
                     <div className="flex-1">
                       <div className="flex items-center justify-between text-xs text-slate-600 dark:text-slate-400 mb-1">
-                        <span>Free: {category.freeProblemLimit}</span>
-                        <span>Premium: {Math.max(0, category.totalProblems - category.freeProblemLimit)}</span>
+                        <span>Free: {category.freeQuestionLimit}</span>
+                        <span>Premium: {Math.max(0, category.totalQuestions - category.freeQuestionLimit)}</span>
                       </div>
                       <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
                         <div
                           className="bg-success-600 h-2 rounded-full transition-all"
                           style={{
-                            width: `${category.totalProblems > 0 ? (category.freeProblemLimit / category.totalProblems) * 100 : 0}%`
+                            width: `${category.totalQuestions > 0 ? (category.freeQuestionLimit / category.totalQuestions) * 100 : 0}%`
                           }}
                         ></div>
                       </div>
@@ -286,24 +286,24 @@ export function CategoryConfig() {
                       id={`limit-${category.id}`}
                       type="number"
                       min="0"
-                      max={category.totalProblems}
-                      value={editingCategory?.id === category.id ? editingCategory.freeProblemLimit : category.freeProblemLimit}
+                      max={category.totalQuestions}
+                      value={editingCategory?.id === category.id ? editingCategory.freeQuestionLimit : category.freeQuestionLimit}
                       onChange={(e) => {
                         const newLimit = parseInt(e.target.value) || 0;
                         if (editingCategory?.id === category.id) {
-                          setEditingCategory({ ...editingCategory, freeProblemLimit: newLimit });
+                          setEditingCategory({ ...editingCategory, freeQuestionLimit: newLimit });
                         } else {
-                          setEditingCategory({ ...category, freeProblemLimit: newLimit });
+                          setEditingCategory({ ...category, freeQuestionLimit: newLimit });
                         }
                       }}
                       onBlur={() => {
-                        if (editingCategory?.id === category.id && editingCategory.freeProblemLimit !== category.freeProblemLimit) {
-                          handleFreeLimitChange(category.id, editingCategory.freeProblemLimit);
+                        if (editingCategory?.id === category.id && editingCategory.freeQuestionLimit !== category.freeQuestionLimit) {
+                          handleFreeLimitChange(category.id, editingCategory.freeQuestionLimit);
                         }
                       }}
                       onKeyDown={(e) => {
                         if (e.key === 'Enter' && editingCategory?.id === category.id) {
-                          handleFreeLimitChange(category.id, editingCategory.freeProblemLimit);
+                          handleFreeLimitChange(category.id, editingCategory.freeQuestionLimit);
                         }
                       }}
                       className="w-20"
@@ -316,7 +316,7 @@ export function CategoryConfig() {
                     size="sm"
                     onClick={() => {
                       if (editingCategory?.id === category.id) {
-                        handleFreeLimitChange(category.id, editingCategory.freeProblemLimit);
+                        handleFreeLimitChange(category.id, editingCategory.freeQuestionLimit);
                       }
                     }}
                     disabled={updateCategoryMutation.isPending}

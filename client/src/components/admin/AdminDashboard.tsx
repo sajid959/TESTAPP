@@ -33,25 +33,25 @@ export function AdminDashboard() {
   const statCards = [
     {
       title: 'Total Users',
-      value: stats?.totalUsers?.toLocaleString() || '0',
+      value: (stats as any)?.totalUsers?.toLocaleString() || '0',
       icon: 'fas fa-users',
       color: 'bg-blue-100 dark:bg-blue-900/20 text-blue-600',
     },
     {
       title: 'Problems',
-      value: stats?.totalProblems?.toLocaleString() || '0',
+      value: (stats as any)?.totalProblems?.toLocaleString() || '0',
       icon: 'fas fa-code',
       color: 'bg-success-100 dark:bg-success-900/20 text-success-600',
     },
     {
       title: 'Premium Users',
-      value: stats?.premiumUsers?.toLocaleString() || '0',
+      value: (stats as any)?.premiumUsers?.toLocaleString() || '0',
       icon: 'fas fa-crown',
       color: 'bg-purple-100 dark:bg-purple-900/20 text-purple-600',
     },
     {
       title: 'Revenue',
-      value: `$${stats?.revenue?.toLocaleString() || '0'}`,
+      value: `$${(stats as any)?.revenue?.toLocaleString() || '0'}`,
       icon: 'fas fa-dollar-sign',
       color: 'bg-warning-100 dark:bg-warning-900/20 text-warning-600',
     },

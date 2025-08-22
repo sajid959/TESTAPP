@@ -90,7 +90,7 @@ export async function seedProblems() {
 
     // Check if problems already exist
     const existingProblems = await storage.getProblems();
-    if (existingProblems.length > 0) {
+    if (existingProblems.problems.length > 0) {
       console.log("Problems already exist");
       return existingProblems;
     }

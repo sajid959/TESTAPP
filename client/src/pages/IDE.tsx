@@ -85,7 +85,7 @@ export default function IDE() {
       await new Promise(resolve => setTimeout(resolve, 2000));
       
       // Mock test results
-      const results = problem?.testCases?.slice(0, 3).map((testCase: any, index: number) => ({
+      const results = (problem?.testCases as any[])?.slice(0, 3)?.map((testCase: any, index: number) => ({
         id: `test-${index}`,
         input: testCase.input,
         output: testCase.output,
@@ -100,7 +100,7 @@ export default function IDE() {
       return results;
     },
     onSuccess: (results) => {
-      const passedCount = results.filter(r => r.passed).length;
+      const passedCount = results.filter((r: any) => r.passed).length;
       toast({
         title: `Test Results: ${passedCount}/${results.length} Passed`,
         description: passedCount === results.length ? 'All tests passed!' : 'Some tests failed.',
@@ -237,7 +237,7 @@ export default function IDE() {
   }
 
   // Check if user can access this problem
-  const canAccess = !problem.isPremium || user?.isPremium;
+  const canAccess = !problem.isPremium || (user as any)?.isPremium;
   if (!canAccess) {
     return (
       <div className="min-h-screen flex items-center justify-center">

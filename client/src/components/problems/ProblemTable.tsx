@@ -46,7 +46,7 @@ export function ProblemTable({ problems, isLoading = false }: ProblemTableProps)
   };
 
   const canAccessProblem = (problem: Problem) => {
-    return !problem.isPremium || user?.isPremium;
+    return !problem.isPremium || (user as any)?.isPremium;
   };
 
   if (isLoading) {

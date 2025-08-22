@@ -73,7 +73,7 @@ export default function Home() {
                   Start Practicing
                 </Button>
               </Link>
-              {!user?.isPremium && (
+              {!(user as any)?.isPremium && (
                 <Link href="/subscribe">
                   <Button variant="outline" size="lg" className="text-lg px-8 py-4 rounded-xl border-2 border-brand-600 text-brand-600 hover:bg-brand-50 dark:hover:bg-brand-950" data-testid="button-view-premium">
                     <i className="fas fa-crown mr-2"></i>
