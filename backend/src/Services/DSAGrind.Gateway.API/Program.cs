@@ -1,6 +1,4 @@
 using Serilog;
-using Microsoft.AspNetCore.RateLimiting;
-using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,19 +11,7 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
-// Add rate limiting
-builder.Services.AddRateLimiter(options =>
-{
-    options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(httpContext =>
-        RateLimitPartition.GetFixedWindowLimiter(
-            partitionKey: httpContext.User.Identity?.Name ?? httpContext.Request.Headers.Host.ToString(),
-            factory: partition => new FixedWindowRateLimiterOptions
-            {
-                AutoReplenishment = true,
-                PermitLimit = 100,
-                Window = TimeSpan.FromMinutes(1)
-            }));
-});
+// Rate limiting can be added later if needed
 
 // Add reverse proxy
 builder.Services.AddReverseProxy()
@@ -44,7 +30,7 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-app.UseRateLimiter();
+// Rate limiter disabled for now
 app.UseCors("AllowFrontend");
 app.MapReverseProxy();
 

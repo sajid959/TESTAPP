@@ -1,4 +1,5 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
+import { buildApiUrl } from "./config";
 
 async function throwIfResNotOk(res: Response) {
   if (!res.ok) {
@@ -23,7 +24,10 @@ export async function apiRequest(
     headers["Authorization"] = `Bearer ${token}`;
   }
 
-  const res = await fetch(url, {
+  // Build full API URL using the Gateway
+  const fullUrl = url.startsWith('http') ? url : buildApiUrl(url);
+
+  const res = await fetch(fullUrl, {
     method,
     headers,
     body: data ? JSON.stringify(data) : undefined,
@@ -47,7 +51,11 @@ export const getQueryFn: <T>(options: {
       headers["Authorization"] = `Bearer ${token}`;
     }
 
-    const res = await fetch(queryKey.join("/") as string, {
+    // Build full API URL using the Gateway
+    const url = queryKey.join("/") as string;
+    const fullUrl = url.startsWith('http') ? url : buildApiUrl(url);
+    
+    const res = await fetch(fullUrl, {
       headers,
       credentials: "include",
     });

@@ -1,10 +1,11 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import { API_CONFIG, buildApiUrl } from "@/lib/config";
 import { Submission, CodeExecutionRequest, CodeExecutionResult } from "@/types/api";
 
 export function useSubmissions(userId?: string, problemId?: string, page = 1, pageSize = 20) {
   return useQuery({
-    queryKey: ["/api/submissions", { userId, problemId, page, pageSize }],
+    queryKey: [API_CONFIG.ENDPOINTS.SUBMISSIONS.LIST, { userId, problemId, page, pageSize }],
     queryFn: async () => {
       const params = new URLSearchParams({
         page: page.toString(),
@@ -13,7 +14,7 @@ export function useSubmissions(userId?: string, problemId?: string, page = 1, pa
         ...(problemId && { problemId })
       });
       
-      const response = await fetch(`/api/submissions?${params}`);
+      const response = await fetch(buildApiUrl(`${API_CONFIG.ENDPOINTS.SUBMISSIONS.LIST}?${params}`));
       return response.json();
     }
   });
@@ -38,11 +39,11 @@ export function useSubmitCode() {
   
   return useMutation({
     mutationFn: async (request: CodeExecutionRequest): Promise<CodeExecutionResult> => {
-      const response = await apiRequest("POST", "/api/submissions/execute", request);
+      const response = await apiRequest("POST", API_CONFIG.ENDPOINTS.SUBMISSIONS.EXECUTE, request);
       return response.json();
     },
     onSuccess: (_, { problemId }) => {
-      queryClient.invalidateQueries({ queryKey: ["/api/submissions"] });
+      queryClient.invalidateQueries({ queryKey: [API_CONFIG.ENDPOINTS.SUBMISSIONS.LIST] });
       queryClient.invalidateQueries({ queryKey: ["/api/submissions", "user"] });
       queryClient.invalidateQueries({ queryKey: ["/api/problems", problemId] });
     }

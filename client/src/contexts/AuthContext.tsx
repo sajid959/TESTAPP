@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { apiRequest } from "@/lib/queryClient";
+import { API_CONFIG } from "@/lib/config";
 import { User, LoginRequest, RegisterRequest, AuthResponse } from "@/types/api";
 
 interface AuthContextType {
@@ -30,7 +31,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         return;
       }
 
-      const response = await apiRequest("GET", "/api/auth/me");
+      const response = await apiRequest("GET", API_CONFIG.ENDPOINTS.AUTH.ME);
       const data = await response.json();
       
       if (data.user) {
@@ -46,7 +47,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const login = async (email: string, password: string) => {
-    const response = await apiRequest("POST", "/api/auth/login", {
+    const response = await apiRequest("POST", API_CONFIG.ENDPOINTS.AUTH.LOGIN, {
       email,
       password,
     });
@@ -58,7 +59,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const register = async (userData: RegisterRequest) => {
-    const response = await apiRequest("POST", "/api/auth/register", userData);
+    const response = await apiRequest("POST", API_CONFIG.ENDPOINTS.AUTH.REGISTER, userData);
 
     const data: AuthResponse = await response.json();
     localStorage.setItem("token", data.token);
