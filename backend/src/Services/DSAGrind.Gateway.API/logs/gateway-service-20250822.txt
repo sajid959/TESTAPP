@@ -150,3 +150,10 @@ System.IO.IOException: Failed to bind to address http://0.0.0.0:5000: address al
 2025-08-22 21:41:16.024 +00:00 [INF] Application started. Press Ctrl+C to shut down.
 2025-08-22 21:41:16.025 +00:00 [INF] Hosting environment: Development
 2025-08-22 21:41:16.025 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-22 21:59:43.494 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-22 21:59:43.650 +00:00 [INF] Loading proxy data from config.
+2025-08-22 21:59:43.743 +00:00 [INF] Starting DSAGrind Gateway API on port 8000
+2025-08-22 21:59:43.940 +00:00 [INF] Now listening on: http://0.0.0.0:8000
+2025-08-22 21:59:43.943 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-22 21:59:43.944 +00:00 [INF] Hosting environment: Development
+2025-08-22 21:59:43.945 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
