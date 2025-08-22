@@ -5,3 +5,161 @@
 2025-08-22 23:29:44.591 +00:00 [INF] Application started. Press Ctrl+C to shut down.
 2025-08-22 23:29:44.599 +00:00 [INF] Hosting environment: Development
 2025-08-22 23:29:44.601 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-22 23:32:19.642 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/health - null null
+2025-08-22 23:32:19.675 +00:00 [INF] Executing endpoint 'HTTP: GET /health'
+2025-08-22 23:32:19.696 +00:00 [INF] Executed endpoint 'HTTP: GET /health'
+2025-08-22 23:32:19.700 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/health - 200 null application/json; charset=utf-8 60.6ms
+2025-08-22 23:32:48.787 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/health - null null
+2025-08-22 23:32:48.795 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/health - 404 0 null 8.2078ms
+2025-08-22 23:32:48.804 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/api/health, Response status code: 404
+2025-08-22 23:33:25.913 +00:00 [INF] Application is shutting down...
+2025-08-22 23:33:35.445 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-22 23:33:35.562 +00:00 [INF] Loading proxy data from config.
+2025-08-22 23:33:35.624 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-22 23:33:35.750 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-22 23:33:35.753 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-22 23:33:35.754 +00:00 [INF] Hosting environment: Development
+2025-08-22 23:33:35.754 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-22 23:34:01.646 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/health - null null
+2025-08-22 23:34:01.677 +00:00 [INF] Executing endpoint 'HTTP: GET /health'
+2025-08-22 23:34:01.685 +00:00 [INF] Executed endpoint 'HTTP: GET /health'
+2025-08-22 23:34:01.687 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/health - 200 null application/json; charset=utf-8 42.0559ms
+2025-08-22 23:34:08.570 +00:00 [INF] Application is shutting down...
+2025-08-22 23:34:15.610 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-22 23:34:15.690 +00:00 [INF] Loading proxy data from config.
+2025-08-22 23:34:15.738 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-22 23:34:15.862 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-22 23:34:15.864 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-22 23:34:15.865 +00:00 [INF] Hosting environment: Development
+2025-08-22 23:34:15.865 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-22 23:34:16.172 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/test/health - null null
+2025-08-22 23:34:16.205 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/test/health - 404 0 null 33.6286ms
+2025-08-22 23:34:16.213 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/api/test/health, Response status code: 404
+2025-08-22 23:34:16.540 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/test/categories - null null
+2025-08-22 23:34:16.543 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/test/categories - 404 0 null 2.4139ms
+2025-08-22 23:34:16.543 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/api/test/categories, Response status code: 404
+2025-08-22 23:34:16.800 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/test/problems - null null
+2025-08-22 23:34:16.801 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/test/problems - 404 0 null 0.8687ms
+2025-08-22 23:34:16.801 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/api/test/problems, Response status code: 404
+2025-08-22 23:34:28.088 +00:00 [INF] Application is shutting down...
+2025-08-22 23:34:36.139 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-22 23:34:36.216 +00:00 [INF] Loading proxy data from config.
+2025-08-22 23:34:36.260 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-22 23:34:36.376 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-22 23:34:36.378 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-22 23:34:36.378 +00:00 [INF] Hosting environment: Development
+2025-08-22 23:34:36.378 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-22 23:34:42.235 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/test/health - null null
+2025-08-22 23:34:42.268 +00:00 [INF] Executing endpoint 'DSAGrind.Gateway.API.Controllers.TestController.Health (DSAGrind.Gateway.API)'
+2025-08-22 23:34:42.275 +00:00 [INF] Route matched with {action = "Health", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Health() on controller DSAGrind.Gateway.API.Controllers.TestController (DSAGrind.Gateway.API).
+2025-08-22 23:34:42.280 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`4[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-22 23:34:42.293 +00:00 [INF] Executed action DSAGrind.Gateway.API.Controllers.TestController.Health (DSAGrind.Gateway.API) in 14.7914ms
+2025-08-22 23:34:42.296 +00:00 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.TestController.Health (DSAGrind.Gateway.API)'
+2025-08-22 23:34:42.297 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/test/health - 200 null application/json; charset=utf-8 63.5832ms
+2025-08-22 23:34:43.055 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/test/categories - null null
+2025-08-22 23:34:43.059 +00:00 [INF] Executing endpoint 'DSAGrind.Gateway.API.Controllers.TestController.GetCategories (DSAGrind.Gateway.API)'
+2025-08-22 23:34:43.061 +00:00 [INF] Route matched with {action = "GetCategories", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCategories() on controller DSAGrind.Gateway.API.Controllers.TestController (DSAGrind.Gateway.API).
+2025-08-22 23:34:43.062 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]'.
+2025-08-22 23:34:43.076 +00:00 [INF] Executed action DSAGrind.Gateway.API.Controllers.TestController.GetCategories (DSAGrind.Gateway.API) in 13.9543ms
+2025-08-22 23:34:43.076 +00:00 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.TestController.GetCategories (DSAGrind.Gateway.API)'
+2025-08-22 23:34:43.076 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/test/categories - 200 null application/json; charset=utf-8 21.4789ms
+2025-08-22 23:34:43.798 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/test/problems - null null
+2025-08-22 23:34:43.800 +00:00 [INF] Executing endpoint 'DSAGrind.Gateway.API.Controllers.TestController.GetProblems (DSAGrind.Gateway.API)'
+2025-08-22 23:34:43.801 +00:00 [INF] Route matched with {action = "GetProblems", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProblems() on controller DSAGrind.Gateway.API.Controllers.TestController (DSAGrind.Gateway.API).
+2025-08-22 23:34:43.802 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`7[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]'.
+2025-08-22 23:34:43.807 +00:00 [INF] Executed action DSAGrind.Gateway.API.Controllers.TestController.GetProblems (DSAGrind.Gateway.API) in 6.0397ms
+2025-08-22 23:34:43.808 +00:00 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.TestController.GetProblems (DSAGrind.Gateway.API)'
+2025-08-22 23:34:43.808 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/test/problems - 200 null application/json; charset=utf-8 9.8305ms
+2025-08-22 23:34:45.159 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/test/auth/login - application/json 50
+2025-08-22 23:34:45.160 +00:00 [INF] Executing endpoint 'DSAGrind.Gateway.API.Controllers.TestController.Login (DSAGrind.Gateway.API)'
+2025-08-22 23:34:45.166 +00:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.Object) on controller DSAGrind.Gateway.API.Controllers.TestController (DSAGrind.Gateway.API).
+2025-08-22 23:34:45.181 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType6`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DSAGrind.Gateway.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-22 23:34:45.183 +00:00 [INF] Executed action DSAGrind.Gateway.API.Controllers.TestController.Login (DSAGrind.Gateway.API) in 17.2248ms
+2025-08-22 23:34:45.184 +00:00 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.TestController.Login (DSAGrind.Gateway.API)'
+2025-08-22 23:34:45.184 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/test/auth/login - 200 null application/json; charset=utf-8 24.6479ms
+2025-08-22 23:34:53.904 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/test/health - null null
+2025-08-22 23:34:53.905 +00:00 [INF] Executing endpoint 'DSAGrind.Gateway.API.Controllers.TestController.Health (DSAGrind.Gateway.API)'
+2025-08-22 23:34:53.905 +00:00 [INF] Route matched with {action = "Health", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Health() on controller DSAGrind.Gateway.API.Controllers.TestController (DSAGrind.Gateway.API).
+2025-08-22 23:34:53.906 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`4[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-22 23:34:53.906 +00:00 [INF] Executed action DSAGrind.Gateway.API.Controllers.TestController.Health (DSAGrind.Gateway.API) in 0.4199ms
+2025-08-22 23:34:53.906 +00:00 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.TestController.Health (DSAGrind.Gateway.API)'
+2025-08-22 23:34:53.906 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/test/health - 200 null application/json; charset=utf-8 2.2344ms
+2025-08-22 23:34:54.763 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/test/categories - null null
+2025-08-22 23:34:54.764 +00:00 [INF] Executing endpoint 'DSAGrind.Gateway.API.Controllers.TestController.GetCategories (DSAGrind.Gateway.API)'
+2025-08-22 23:34:54.765 +00:00 [INF] Route matched with {action = "GetCategories", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCategories() on controller DSAGrind.Gateway.API.Controllers.TestController (DSAGrind.Gateway.API).
+2025-08-22 23:34:54.765 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]'.
+2025-08-22 23:34:54.766 +00:00 [INF] Executed action DSAGrind.Gateway.API.Controllers.TestController.GetCategories (DSAGrind.Gateway.API) in 0.7118ms
+2025-08-22 23:34:54.766 +00:00 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.TestController.GetCategories (DSAGrind.Gateway.API)'
+2025-08-22 23:34:54.766 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/test/categories - 200 null application/json; charset=utf-8 3.6433ms
+2025-08-22 23:34:55.255 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/test/problems - null null
+2025-08-22 23:34:55.257 +00:00 [INF] Executing endpoint 'DSAGrind.Gateway.API.Controllers.TestController.GetProblems (DSAGrind.Gateway.API)'
+2025-08-22 23:34:55.258 +00:00 [INF] Route matched with {action = "GetProblems", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProblems() on controller DSAGrind.Gateway.API.Controllers.TestController (DSAGrind.Gateway.API).
+2025-08-22 23:34:55.259 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`7[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]'.
+2025-08-22 23:34:55.261 +00:00 [INF] Executed action DSAGrind.Gateway.API.Controllers.TestController.GetProblems (DSAGrind.Gateway.API) in 1.5135ms
+2025-08-22 23:34:55.261 +00:00 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.TestController.GetProblems (DSAGrind.Gateway.API)'
+2025-08-22 23:34:55.262 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/test/problems - 200 null application/json; charset=utf-8 9.5999ms
+2025-08-22 23:35:06.369 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/test/auth/login - application/json 53
+2025-08-22 23:35:06.370 +00:00 [INF] Executing endpoint 'DSAGrind.Gateway.API.Controllers.TestController.Login (DSAGrind.Gateway.API)'
+2025-08-22 23:35:06.371 +00:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.Object) on controller DSAGrind.Gateway.API.Controllers.TestController (DSAGrind.Gateway.API).
+2025-08-22 23:35:06.372 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType6`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DSAGrind.Gateway.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-22 23:35:06.372 +00:00 [INF] Executed action DSAGrind.Gateway.API.Controllers.TestController.Login (DSAGrind.Gateway.API) in 1.1391ms
+2025-08-22 23:35:06.372 +00:00 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.TestController.Login (DSAGrind.Gateway.API)'
+2025-08-22 23:35:06.373 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/test/auth/login - 200 null application/json; charset=utf-8 3.229ms
+2025-08-22 23:35:18.634 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/test/health - null null
+2025-08-22 23:35:18.636 +00:00 [INF] CORS policy execution successful.
+2025-08-22 23:35:18.637 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/test/health - 204 null null 2.6227ms
+2025-08-22 23:35:34.873 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/test/categories - null null
+2025-08-22 23:35:34.874 +00:00 [INF] CORS policy execution successful.
+2025-08-22 23:35:34.874 +00:00 [INF] Executing endpoint 'DSAGrind.Gateway.API.Controllers.TestController.GetCategories (DSAGrind.Gateway.API)'
+2025-08-22 23:35:34.875 +00:00 [INF] Route matched with {action = "GetCategories", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCategories() on controller DSAGrind.Gateway.API.Controllers.TestController (DSAGrind.Gateway.API).
+2025-08-22 23:35:34.875 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]'.
+2025-08-22 23:35:34.876 +00:00 [INF] Executed action DSAGrind.Gateway.API.Controllers.TestController.GetCategories (DSAGrind.Gateway.API) in 1.0825ms
+2025-08-22 23:35:34.876 +00:00 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.TestController.GetCategories (DSAGrind.Gateway.API)'
+2025-08-22 23:35:34.876 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/test/categories - 200 null application/json; charset=utf-8 3.1893ms
+2025-08-22 23:35:49.896 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/test/health - null null
+2025-08-22 23:35:49.897 +00:00 [INF] Executing endpoint 'DSAGrind.Gateway.API.Controllers.TestController.Health (DSAGrind.Gateway.API)'
+2025-08-22 23:35:49.897 +00:00 [INF] Route matched with {action = "Health", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Health() on controller DSAGrind.Gateway.API.Controllers.TestController (DSAGrind.Gateway.API).
+2025-08-22 23:35:49.897 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`4[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-22 23:35:49.897 +00:00 [INF] Executed action DSAGrind.Gateway.API.Controllers.TestController.Health (DSAGrind.Gateway.API) in 0.3514ms
+2025-08-22 23:35:49.898 +00:00 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.TestController.Health (DSAGrind.Gateway.API)'
+2025-08-22 23:35:49.898 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/test/health - 200 null application/json; charset=utf-8 1.5109ms
+2025-08-22 23:35:49.904 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/test/categories - null null
+2025-08-22 23:35:49.904 +00:00 [INF] Executing endpoint 'DSAGrind.Gateway.API.Controllers.TestController.GetCategories (DSAGrind.Gateway.API)'
+2025-08-22 23:35:49.905 +00:00 [INF] Route matched with {action = "GetCategories", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetCategories() on controller DSAGrind.Gateway.API.Controllers.TestController (DSAGrind.Gateway.API).
+2025-08-22 23:35:49.905 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`5[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]'.
+2025-08-22 23:35:49.905 +00:00 [INF] Executed action DSAGrind.Gateway.API.Controllers.TestController.GetCategories (DSAGrind.Gateway.API) in 0.297ms
+2025-08-22 23:35:49.905 +00:00 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.TestController.GetCategories (DSAGrind.Gateway.API)'
+2025-08-22 23:35:49.905 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/test/categories - 200 null application/json; charset=utf-8 1.3033ms
+2025-08-22 23:35:49.907 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/test/problems - null null
+2025-08-22 23:35:49.908 +00:00 [INF] Executing endpoint 'DSAGrind.Gateway.API.Controllers.TestController.GetProblems (DSAGrind.Gateway.API)'
+2025-08-22 23:35:49.908 +00:00 [INF] Route matched with {action = "GetProblems", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetProblems() on controller DSAGrind.Gateway.API.Controllers.TestController (DSAGrind.Gateway.API).
+2025-08-22 23:35:49.908 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`7[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]'.
+2025-08-22 23:35:49.908 +00:00 [INF] Executed action DSAGrind.Gateway.API.Controllers.TestController.GetProblems (DSAGrind.Gateway.API) in 0.2548ms
+2025-08-22 23:35:49.908 +00:00 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.TestController.GetProblems (DSAGrind.Gateway.API)'
+2025-08-22 23:35:49.909 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/test/problems - 200 null application/json; charset=utf-8 1.0611ms
+2025-08-22 23:35:49.914 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/test/auth/login - application/json 53
+2025-08-22 23:35:49.914 +00:00 [INF] Executing endpoint 'DSAGrind.Gateway.API.Controllers.TestController.Login (DSAGrind.Gateway.API)'
+2025-08-22 23:35:49.914 +00:00 [INF] Route matched with {action = "Login", controller = "Test"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.Object) on controller DSAGrind.Gateway.API.Controllers.TestController (DSAGrind.Gateway.API).
+2025-08-22 23:35:49.915 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType6`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DSAGrind.Gateway.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-22 23:35:49.915 +00:00 [INF] Executed action DSAGrind.Gateway.API.Controllers.TestController.Login (DSAGrind.Gateway.API) in 0.5625ms
+2025-08-22 23:35:49.915 +00:00 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.TestController.Login (DSAGrind.Gateway.API)'
+2025-08-22 23:35:49.915 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/test/auth/login - 200 null application/json; charset=utf-8 1.4422ms
+2025-08-22 23:35:49.920 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/test/health - null null
+2025-08-22 23:35:49.920 +00:00 [INF] CORS policy execution successful.
+2025-08-22 23:35:49.920 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/test/health - 204 null null 0.7056ms
+2025-08-22 23:35:50.381 +00:00 [INF] Application is shutting down...
+2025-08-22 23:35:54.162 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-22 23:35:54.237 +00:00 [INF] Loading proxy data from config.
+2025-08-22 23:35:54.281 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-22 23:35:54.398 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-22 23:35:54.400 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-22 23:35:54.400 +00:00 [INF] Hosting environment: Development
+2025-08-22 23:35:54.401 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-22 23:36:07.515 +00:00 [INF] Application is shutting down...
+2025-08-22 23:36:11.307 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-22 23:36:11.413 +00:00 [INF] Loading proxy data from config.
+2025-08-22 23:36:11.457 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-22 23:36:11.575 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-22 23:36:11.578 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-22 23:36:11.579 +00:00 [INF] Hosting environment: Development
+2025-08-22 23:36:11.580 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API

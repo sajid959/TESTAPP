@@ -11,7 +11,8 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
-// Rate limiting can be added later if needed
+// Add controllers
+builder.Services.AddControllers();
 
 // Add reverse proxy
 builder.Services.AddReverseProxy()
@@ -21,7 +22,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:5000", "https://localhost:5000")
+        policy.WithOrigins("http://localhost:3000", "http://0.0.0.0:3000", "https://localhost:3000")
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
@@ -32,6 +33,11 @@ var app = builder.Build();
 
 // Rate limiter disabled for now
 app.UseCors("AllowFrontend");
+
+// Map controllers first
+app.MapControllers();
+
+// Map reverse proxy
 app.MapReverseProxy();
 
 app.MapGet("/health", () => new { status = "healthy", service = "DSAGrind.Gateway.API", timestamp = DateTime.UtcNow });

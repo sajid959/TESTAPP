@@ -51,10 +51,11 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
@@ -66,20 +67,22 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-muted;
+  background-color: hsl(var(--muted));
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-muted-foreground/30 rounded-md;
+  background-color: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-muted-foreground/50;
+  background-color: hsl(var(--muted-foreground) / 0.5);
 }
 
 /* Monaco Editor Theme Support */
 .monaco-editor {
-  @apply rounded-lg border border-border;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(var(--border));
 }
 
 /* Custom animations */
@@ -119,18 +122,34 @@
 
 /* Code highlighting */
 .code-highlight {
-  @apply bg-muted/50 px-2 py-1 rounded text-sm font-mono;
+  background-color: hsl(var(--muted) / 0.5);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', 'Courier New', monospace;
 }
 
 /* Problem difficulty colors */
 .difficulty-easy {
-  @apply text-green-600 dark:text-green-400;
+  color: #16a34a;
+}
+
+.dark .difficulty-easy {
+  color: #4ade80;
 }
 
 .difficulty-medium {
-  @apply text-yellow-600 dark:text-yellow-400;
+  color: #d97706;
+}
+
+.dark .difficulty-medium {
+  color: #fbbf24;
 }
 
 .difficulty-hard {
-  @apply text-red-600 dark:text-red-400;
+  color: #dc2626;
+}
+
+.dark .difficulty-hard {
+  color: #f87171;
 }
