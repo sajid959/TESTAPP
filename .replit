@@ -1,5 +1,5 @@
-modules = ["dotnet-7.0", "nodejs-20", "bash", "web"]
-run = "npm run dev"
+modules = ["dotnet-7.0", "nodejs-20", "bash", "web", "dotnet-8"]
+run = "dotnet run"
 hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
 
 [nix]
@@ -8,8 +8,7 @@ packages = ["dotnet-sdk_8"]
 
 [deployment]
 deploymentTarget = "autoscale"
-run = ["npm", "run", "start"]
-build = ["npm", "run", "build"]
+run = ["sh", "-c", "dotnet run"]
 
 [[ports]]
 localPort = 5000
@@ -32,16 +31,20 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Start application"
+args = "Gateway API"
 
 [[workflows.workflow]]
-name = "Start application"
+name = "Gateway API"
 author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm run dev"
+args = "cd backend/src/Services/DSAGrind.Gateway.API && dotnet run --urls=\"http://0.0.0.0:5000\""
 waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
 
 [agent]
 integrations = ["javascript_log_in_with_replit==1.0.0", "javascript_database==1.0.0", "javascript_openai==1.0.0", "perplexity_v0==1.0.0", "javascript_stripe==1.0.0", "javascript_websocket==1.0.0"]
+expertMode = true

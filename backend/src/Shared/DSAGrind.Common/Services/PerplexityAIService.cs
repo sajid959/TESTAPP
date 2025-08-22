@@ -104,10 +104,10 @@ public class PerplexityAIService : IAIProviderService
 
     public async Task<string> EstimateDifficultyAsync(string problemDescription, CancellationToken cancellationToken = default)
     {
-        var prompt = $"""
+        var prompt = $$$"""
             You are an expert programming problem curator. Analyze this problem and estimate its difficulty.
             
-            Problem Description: {problemDescription}
+            Problem Description: {{{problemDescription}}}
             
             Provide your analysis in JSON format:
             {{
