@@ -251,3 +251,21 @@ System.IO.IOException: Failed to bind to address http://0.0.0.0:5000: address al
 2025-08-22 22:53:14.010 +00:00 [INF] Executing endpoint 'HTTP: GET /'
 2025-08-22 22:53:14.011 +00:00 [INF] Executed endpoint 'HTTP: GET /'
 2025-08-22 22:53:14.012 +00:00 [INF] Request finished HTTP/1.1 GET http://e01e7c12-bb18-4dc4-ab90-09b021b1f22d-00-w0sfs75kc691.janeway.replit.dev/ - 200 null text/plain; charset=utf-8 71.488ms
+2025-08-22 23:11:59.080 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-22 23:11:59.238 +00:00 [INF] Loading proxy data from config.
+2025-08-22 23:11:59.364 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-22 23:11:59.386 +00:00 [INF] Creating key {bad63735-a998-46d5-8c56-ae4761534761} with creation date 2025-08-22 23:11:59Z, activation date 2025-08-22 23:11:59Z, and expiration date 2025-11-20 23:11:59Z.
+2025-08-22 23:11:59.413 +00:00 [WRN] No XML encryptor configured. Key {bad63735-a998-46d5-8c56-ae4761534761} may be persisted to storage in unencrypted form.
+2025-08-22 23:11:59.419 +00:00 [INF] Writing data to file '/home/runner/.aspnet/DataProtection-Keys/key-bad63735-a998-46d5-8c56-ae4761534761.xml'.
+2025-08-22 23:11:59.613 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-22 23:11:59.615 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-22 23:11:59.615 +00:00 [INF] Hosting environment: Development
+2025-08-22 23:11:59.616 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-22 23:12:01.493 +00:00 [INF] Request starting HTTP/1.1 GET http://445cb160-898b-46b0-b31e-a092ef1d9310-00-2o455sbn6lik.riker.replit.dev/ - null null
+2025-08-22 23:12:01.518 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-22 23:12:01.526 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-22 23:12:01.529 +00:00 [INF] Request finished HTTP/1.1 GET http://445cb160-898b-46b0-b31e-a092ef1d9310-00-2o455sbn6lik.riker.replit.dev/ - 200 null text/plain; charset=utf-8 36.8427ms
+2025-08-22 23:12:06.693 +00:00 [INF] Request starting HTTP/1.1 GET http://445cb160-898b-46b0-b31e-a092ef1d9310-00-2o455sbn6lik.riker.replit.dev/ - null null
+2025-08-22 23:12:06.695 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-22 23:12:06.696 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-22 23:12:06.697 +00:00 [INF] Request finished HTTP/1.1 GET http://445cb160-898b-46b0-b31e-a092ef1d9310-00-2o455sbn6lik.riker.replit.dev/ - 200 null text/plain; charset=utf-8 3.3244ms
