@@ -5,14 +5,24 @@ DSAGrind is a comprehensive competitive programming platform with microservices 
 
 ## Architecture
 - **Frontend**: React + Vite + Tailwind CSS + Shadcn UI
-- **Backend**: Node.js Express API with microservices pattern
+- **Backend**: .NET 8 Microservices (8 APIs + Gateway)
 - **Database**: MongoDB Atlas (free tier)
-- **Queue**: Redis with BullMQ for async tasks
-- **Search**: Vector search with embeddings
+- **Queue**: Redis + Kafka for async tasks
+- **Search**: Vector search with Qdrant + embeddings
 - **Authentication**: JWT + OAuth (Google, GitHub)
 - **Email**: Email verification system
 - **IDE**: Multi-language code execution environment
 - **Admin**: Full-featured admin dashboard
+
+### Microservices
+- **Gateway API** (Port 5000) - Main entry point and reverse proxy
+- **Auth API** (Port 8080) - Authentication & user management
+- **Problems API** (Port 5001) - Problem management & categories
+- **Submissions API** (Port 5002) - Code submissions & execution
+- **AI API** (Port 5003) - AI-powered hints & assistance
+- **Search API** (Port 5004) - Vector search & problem discovery
+- **Admin API** (Port 5005) - Admin dashboard & management
+- **Payments API** (Port 5006) - Stripe payments & subscriptions
 
 ## Key Features
 1. **Authentication & Authorization**
