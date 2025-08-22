@@ -145,7 +145,7 @@ builder.Services.AddSingleton<IRedisService, RedisService>();
 
 // Add health checks
 builder.Services.AddHealthChecks()
-    .AddMongoDb(jwtSettings.Issuer, name: "mongodb", tags: new[] { "db", "mongodb" })
+    .AddMongoDb(mongoConnectionString, name: "mongodb", tags: new[] { "db", "mongodb" })
     .AddRedis(builder.Configuration.GetConnectionString("Redis") ?? "localhost:6379", name: "redis", tags: new[] { "cache", "redis" });
 
 var app = builder.Build();

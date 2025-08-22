@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.Json;
 using Microsoft.Extensions.Options;
 using DSAGrind.Common.Configuration;
@@ -26,140 +28,65 @@ public class OAuthService : IOAuthService
 
     public async Task<string> GenerateAuthorizationUrlAsync(string provider, string state, CancellationToken cancellationToken = default)
     {
-        var settings = GetProviderSettings(provider);
-        if (settings == null)
-        {
-            throw new NotSupportedException($"OAuth provider '{provider}' is not supported.");
-        }
-
-        // Store state in Redis for security validation
+        // Store state in Redis for validation (expires in 10 minutes)
         await _redisService.SetAsync($"oauth_state:{state}", provider, TimeSpan.FromMinutes(10), cancellationToken);
 
-        var scopes = string.Join(" ", GetProviderScopes(provider));
-        var parameters = new Dictionary<string, string>
+        return provider.ToLower() switch
         {
-            ["client_id"] = settings.ClientId,
-            ["redirect_uri"] = settings.RedirectUri,
-            ["scope"] = scopes,
-            ["response_type"] = "code",
-            ["state"] = state
+            "google" => GenerateGoogleAuthUrl(state),
+            "github" => GenerateGitHubAuthUrl(state),
+            _ => throw new ArgumentException($"Unsupported OAuth provider: {provider}")
         };
-
-        var queryString = string.Join("&", parameters.Select(kvp => $"{kvp.Key}={Uri.EscapeDataString(kvp.Value)}"));
-        return $"{settings.AuthorizationEndpoint}?{queryString}";
     }
 
     public async Task<OAuthUser?> ExchangeCodeForUserAsync(string provider, string code, string state, CancellationToken cancellationToken = default)
     {
         // Validate state
         var storedProvider = await _redisService.GetAsync<string>($"oauth_state:{state}", cancellationToken);
-        if (storedProvider != provider)
+        if (string.IsNullOrEmpty(storedProvider))
         {
-            _logger.LogWarning("OAuth state validation failed for provider {Provider}", provider);
+            _logger.LogWarning("Invalid OAuth state: {State}", state);
             return null;
         }
 
-        // Clean up state
+        // Clean up state after validation
         await _redisService.DeleteAsync($"oauth_state:{state}", cancellationToken);
 
-        var settings = GetProviderSettings(provider);
-        if (settings == null)
+        return provider.ToLower() switch
         {
-            return null;
-        }
-
-        try
-        {
-            // Exchange code for access token
-            var tokenResponse = await ExchangeCodeForTokenAsync(settings, code, cancellationToken);
-            if (tokenResponse == null)
-            {
-                return null;
-            }
-
-            // Get user information
-            return provider.ToLower() switch
-            {
-                "google" => await GetGoogleUserAsync(tokenResponse.AccessToken, cancellationToken),
-                "github" => await GetGitHubUserAsync(tokenResponse.AccessToken, cancellationToken),
-                _ => null
-            };
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error during OAuth exchange for provider {Provider}", provider);
-            return null;
-        }
-    }
-
-    private async Task<OAuthTokenResponse?> ExchangeCodeForTokenAsync(dynamic settings, string code, CancellationToken cancellationToken)
-    {
-        var parameters = new Dictionary<string, string>
-        {
-            ["client_id"] = settings.ClientId,
-            ["client_secret"] = settings.ClientSecret,
-            ["code"] = code,
-            ["grant_type"] = "authorization_code",
-            ["redirect_uri"] = settings.RedirectUri
+            "google" => await ExchangeGoogleCodeAsync(code, cancellationToken),
+            "github" => await ExchangeGitHubCodeAsync(code, cancellationToken),
+            _ => null
         };
-
-        var content = new FormUrlEncodedContent(parameters);
-        var response = await _httpClient.PostAsync(settings.TokenEndpoint, content, cancellationToken);
-
-        if (!response.IsSuccessStatusCode)
-        {
-            _logger.LogError("OAuth token exchange failed with status {StatusCode}: {Content}", 
-                response.StatusCode, await response.Content.ReadAsStringAsync(cancellationToken));
-            return null;
-        }
-
-        var responseContent = await response.Content.ReadAsStringAsync(cancellationToken);
-        
-        try
-        {
-            var tokenData = JsonSerializer.Deserialize<JsonElement>(responseContent);
-            
-            return new OAuthTokenResponse
-            {
-                AccessToken = tokenData.GetProperty("access_token").GetString() ?? string.Empty,
-                RefreshToken = tokenData.TryGetProperty("refresh_token", out var refreshToken) ? refreshToken.GetString() : null,
-                TokenType = tokenData.TryGetProperty("token_type", out var tokenType) ? tokenType.GetString() ?? "Bearer" : "Bearer",
-                ExpiresIn = tokenData.TryGetProperty("expires_in", out var expiresIn) ? expiresIn.GetInt32() : 3600,
-                Scope = tokenData.TryGetProperty("scope", out var scope) ? scope.GetString() : null
-            };
-        }
-        catch (JsonException ex)
-        {
-            _logger.LogError(ex, "Failed to parse OAuth token response: {Content}", responseContent);
-            return null;
-        }
     }
 
     public async Task<OAuthUser?> GetGoogleUserAsync(string accessToken, CancellationToken cancellationToken = default)
     {
         try
         {
-            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
+            _httpClient.DefaultRequestHeaders.Authorization = 
+                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
+
+            var userResponse = await _httpClient.GetAsync("https://www.googleapis.com/oauth2/v2/userinfo", cancellationToken);
             
-            var response = await _httpClient.GetAsync(_oauthSettings.Google.UserInfoEndpoint, cancellationToken);
-            if (!response.IsSuccessStatusCode)
+            if (!userResponse.IsSuccessStatusCode)
             {
-                _logger.LogError("Google user info request failed with status {StatusCode}", response.StatusCode);
+                _logger.LogError("Failed to get Google user info: {StatusCode}", userResponse.StatusCode);
                 return null;
             }
 
-            var content = await response.Content.ReadAsStringAsync(cancellationToken);
-            var userData = JsonSerializer.Deserialize<JsonElement>(content);
+            var userJson = await userResponse.Content.ReadAsStringAsync(cancellationToken);
+            using var userDoc = JsonDocument.Parse(userJson);
+            var root = userDoc.RootElement;
 
             return new OAuthUser
             {
-                Id = userData.GetProperty("id").GetString() ?? string.Empty,
-                Email = userData.GetProperty("email").GetString() ?? string.Empty,
-                FirstName = userData.TryGetProperty("given_name", out var firstName) ? firstName.GetString() : null,
-                LastName = userData.TryGetProperty("family_name", out var lastName) ? lastName.GetString() : null,
-                Avatar = userData.TryGetProperty("picture", out var picture) ? picture.GetString() : null,
-                Username = userData.TryGetProperty("email", out var email) ? email.GetString()?.Split('@')[0] : null,
-                RawData = JsonSerializer.Deserialize<Dictionary<string, object>>(content) ?? new()
+                Id = root.GetProperty("id").GetString() ?? string.Empty,
+                Email = root.GetProperty("email").GetString() ?? string.Empty,
+                FirstName = root.TryGetProperty("given_name", out var givenName) ? givenName.GetString() : null,
+                LastName = root.TryGetProperty("family_name", out var familyName) ? familyName.GetString() : null,
+                Avatar = root.TryGetProperty("picture", out var picture) ? picture.GetString() : null,
+                RawData = JsonSerializer.Deserialize<Dictionary<string, object>>(userJson) ?? new()
             };
         }
         catch (Exception ex)
@@ -177,51 +104,39 @@ public class OAuthService : IOAuthService
     {
         try
         {
-            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
+            _httpClient.DefaultRequestHeaders.Authorization = 
+                new System.Net.Http.Headers.AuthenticationHeaderValue("token", accessToken);
+            _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("DSAGrind/1.0");
+
+            var userResponse = await _httpClient.GetAsync("https://api.github.com/user", cancellationToken);
             
-            // Get user info
-            var userResponse = await _httpClient.GetAsync(_oauthSettings.GitHub.UserInfoEndpoint, cancellationToken);
             if (!userResponse.IsSuccessStatusCode)
             {
-                _logger.LogError("GitHub user info request failed with status {StatusCode}", userResponse.StatusCode);
+                _logger.LogError("Failed to get GitHub user info: {StatusCode}", userResponse.StatusCode);
                 return null;
             }
 
-            var userContent = await userResponse.Content.ReadAsStringAsync(cancellationToken);
-            var userData = JsonSerializer.Deserialize<JsonElement>(userContent);
+            var userJson = await userResponse.Content.ReadAsStringAsync(cancellationToken);
+            using var userDoc = JsonDocument.Parse(userJson);
+            var root = userDoc.RootElement;
 
-            // Get user emails
-            var emailResponse = await _httpClient.GetAsync(_oauthSettings.GitHub.UserEmailEndpoint, cancellationToken);
-            string? primaryEmail = null;
+            // Get primary email (GitHub might not provide email in user endpoint)
+            var email = root.TryGetProperty("email", out var emailProp) && !emailProp.ValueKind.Equals(JsonValueKind.Null) 
+                ? emailProp.GetString() 
+                : await GetGitHubPrimaryEmailAsync(accessToken, cancellationToken);
 
-            if (emailResponse.IsSuccessStatusCode)
-            {
-                var emailContent = await emailResponse.Content.ReadAsStringAsync(cancellationToken);
-                var emails = JsonSerializer.Deserialize<JsonElement[]>(emailContent);
-                
-                primaryEmail = emails?.FirstOrDefault(e => 
-                    e.TryGetProperty("primary", out var isPrimary) && isPrimary.GetBoolean())
-                    .GetProperty("email").GetString();
-                
-                // Fallback to first verified email
-                primaryEmail ??= emails?.FirstOrDefault(e => 
-                    e.TryGetProperty("verified", out var isVerified) && isVerified.GetBoolean())
-                    .GetProperty("email").GetString();
-            }
-
-            // Parse name
-            var fullName = userData.TryGetProperty("name", out var name) ? name.GetString() : string.Empty;
-            var nameParts = fullName?.Split(' ', StringSplitOptions.RemoveEmptyEntries) ?? Array.Empty<string>();
+            var fullName = root.TryGetProperty("name", out var nameProp) ? nameProp.GetString() : null;
+            var nameParts = fullName?.Split(' ', 2);
 
             return new OAuthUser
             {
-                Id = userData.GetProperty("id").GetInt64().ToString(),
-                Email = primaryEmail ?? string.Empty,
-                Username = userData.TryGetProperty("login", out var login) ? login.GetString() : null,
-                FirstName = nameParts.Length > 0 ? nameParts[0] : null,
-                LastName = nameParts.Length > 1 ? string.Join(" ", nameParts.Skip(1)) : null,
-                Avatar = userData.TryGetProperty("avatar_url", out var avatar) ? avatar.GetString() : null,
-                RawData = JsonSerializer.Deserialize<Dictionary<string, object>>(userContent) ?? new()
+                Id = root.GetProperty("id").GetInt32().ToString(),
+                Email = email ?? string.Empty,
+                Username = root.TryGetProperty("login", out var login) ? login.GetString() : null,
+                FirstName = nameParts?.Length > 0 ? nameParts[0] : null,
+                LastName = nameParts?.Length > 1 ? nameParts[1] : null,
+                Avatar = root.TryGetProperty("avatar_url", out var avatar) ? avatar.GetString() : null,
+                RawData = JsonSerializer.Deserialize<Dictionary<string, object>>(userJson) ?? new()
             };
         }
         catch (Exception ex)
@@ -232,26 +147,176 @@ public class OAuthService : IOAuthService
         finally
         {
             _httpClient.DefaultRequestHeaders.Authorization = null;
+            _httpClient.DefaultRequestHeaders.UserAgent.Clear();
         }
     }
 
-    private dynamic? GetProviderSettings(string provider)
+    private string GenerateGoogleAuthUrl(string state)
     {
-        return provider.ToLower() switch
-        {
-            "google" => _oauthSettings.Google,
-            "github" => _oauthSettings.GitHub,
-            _ => null
-        };
+        var googleSettings = _oauthSettings.Google;
+        var queryParams = new StringBuilder();
+        queryParams.Append($"response_type=code");
+        queryParams.Append($"&client_id={googleSettings.ClientId}");
+        queryParams.Append($"&redirect_uri={Uri.EscapeDataString(googleSettings.RedirectUri)}");
+        queryParams.Append($"&scope={Uri.EscapeDataString(googleSettings.Scope)}");
+        queryParams.Append($"&state={state}");
+        queryParams.Append("&access_type=offline");
+        queryParams.Append("&include_granted_scopes=true");
+
+        return $"https://accounts.google.com/o/oauth2/v2/auth?{queryParams}";
     }
 
-    private List<string> GetProviderScopes(string provider)
+    private string GenerateGitHubAuthUrl(string state)
     {
-        return provider.ToLower() switch
+        var githubSettings = _oauthSettings.GitHub;
+        var queryParams = new StringBuilder();
+        queryParams.Append($"response_type=code");
+        queryParams.Append($"&client_id={githubSettings.ClientId}");
+        queryParams.Append($"&redirect_uri={Uri.EscapeDataString(githubSettings.RedirectUri)}");
+        queryParams.Append($"&scope={Uri.EscapeDataString(githubSettings.Scope)}");
+        queryParams.Append($"&state={state}");
+
+        return $"https://github.com/login/oauth/authorize?{queryParams}";
+    }
+
+    private async Task<OAuthUser?> ExchangeGoogleCodeAsync(string code, CancellationToken cancellationToken)
+    {
+        try
         {
-            "google" => _oauthSettings.Google.Scopes,
-            "github" => _oauthSettings.GitHub.Scopes,
-            _ => new List<string>()
-        };
+            var googleSettings = _oauthSettings.Google;
+
+            // Exchange code for access token
+            var tokenRequest = new Dictionary<string, string>
+            {
+                { "code", code },
+                { "client_id", googleSettings.ClientId },
+                { "client_secret", googleSettings.ClientSecret },
+                { "redirect_uri", googleSettings.RedirectUri },
+                { "grant_type", "authorization_code" }
+            };
+
+            var tokenResponse = await _httpClient.PostAsync("https://oauth2.googleapis.com/token", 
+                new FormUrlEncodedContent(tokenRequest), cancellationToken);
+
+            if (!tokenResponse.IsSuccessStatusCode)
+            {
+                _logger.LogError("Failed to exchange Google code for token: {StatusCode}", tokenResponse.StatusCode);
+                return null;
+            }
+
+            var tokenJson = await tokenResponse.Content.ReadAsStringAsync(cancellationToken);
+            using var tokenDoc = JsonDocument.Parse(tokenJson);
+            var accessToken = tokenDoc.RootElement.GetProperty("access_token").GetString();
+
+            if (string.IsNullOrEmpty(accessToken))
+            {
+                _logger.LogError("No access token received from Google");
+                return null;
+            }
+
+            return await GetGoogleUserAsync(accessToken, cancellationToken);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error exchanging Google OAuth code");
+            return null;
+        }
+    }
+
+    private async Task<OAuthUser?> ExchangeGitHubCodeAsync(string code, CancellationToken cancellationToken)
+    {
+        try
+        {
+            var githubSettings = _oauthSettings.GitHub;
+
+            // Exchange code for access token
+            var tokenRequest = new Dictionary<string, string>
+            {
+                { "code", code },
+                { "client_id", githubSettings.ClientId },
+                { "client_secret", githubSettings.ClientSecret },
+                { "redirect_uri", githubSettings.RedirectUri }
+            };
+
+            _httpClient.DefaultRequestHeaders.Accept.Clear();
+            _httpClient.DefaultRequestHeaders.Accept.Add(
+                new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+            var tokenResponse = await _httpClient.PostAsync("https://github.com/login/oauth/access_token", 
+                new FormUrlEncodedContent(tokenRequest), cancellationToken);
+
+            if (!tokenResponse.IsSuccessStatusCode)
+            {
+                _logger.LogError("Failed to exchange GitHub code for token: {StatusCode}", tokenResponse.StatusCode);
+                return null;
+            }
+
+            var tokenJson = await tokenResponse.Content.ReadAsStringAsync(cancellationToken);
+            using var tokenDoc = JsonDocument.Parse(tokenJson);
+            var accessToken = tokenDoc.RootElement.GetProperty("access_token").GetString();
+
+            if (string.IsNullOrEmpty(accessToken))
+            {
+                _logger.LogError("No access token received from GitHub");
+                return null;
+            }
+
+            _httpClient.DefaultRequestHeaders.Accept.Clear();
+            return await GetGitHubUserAsync(accessToken, cancellationToken);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error exchanging GitHub OAuth code");
+            return null;
+        }
+    }
+
+    private async Task<string?> GetGitHubPrimaryEmailAsync(string accessToken, CancellationToken cancellationToken)
+    {
+        try
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = 
+                new System.Net.Http.Headers.AuthenticationHeaderValue("token", accessToken);
+            _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("DSAGrind/1.0");
+
+            var emailResponse = await _httpClient.GetAsync("https://api.github.com/user/emails", cancellationToken);
+            
+            if (!emailResponse.IsSuccessStatusCode)
+            {
+                return null;
+            }
+
+            var emailJson = await emailResponse.Content.ReadAsStringAsync(cancellationToken);
+            using var emailDoc = JsonDocument.Parse(emailJson);
+            
+            foreach (var emailElement in emailDoc.RootElement.EnumerateArray())
+            {
+                if (emailElement.TryGetProperty("primary", out var isPrimary) && isPrimary.GetBoolean())
+                {
+                    return emailElement.GetProperty("email").GetString();
+                }
+            }
+
+            // If no primary email found, return the first verified email
+            foreach (var emailElement in emailDoc.RootElement.EnumerateArray())
+            {
+                if (emailElement.TryGetProperty("verified", out var isVerified) && isVerified.GetBoolean())
+                {
+                    return emailElement.GetProperty("email").GetString();
+                }
+            }
+
+            return null;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error getting GitHub primary email");
+            return null;
+        }
+        finally
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = null;
+            _httpClient.DefaultRequestHeaders.UserAgent.Clear();
+        }
     }
 }

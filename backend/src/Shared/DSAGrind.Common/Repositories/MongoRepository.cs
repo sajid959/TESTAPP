@@ -11,24 +11,26 @@ public class MongoRepository<T> : IMongoRepository<T> where T : class
     protected readonly IMongoCollection<T> _collection;
     protected readonly IMongoDatabase _database;
 
-    public MongoRepository(IMongoDatabase database, string collectionName)
+    public MongoRepository(IOptions<MongoDbSettings> settings, string collectionName)
     {
-        _database = database;
-        _collection = database.GetCollection<T>(collectionName);
+        var mongoSettings = settings.Value;
+        var client = new MongoClient(mongoSettings.ConnectionString);
+        _database = client.GetDatabase(mongoSettings.DatabaseName);
+        _collection = _database.GetCollection<T>(collectionName);
     }
 
     public virtual async Task<T?> GetByIdAsync(string id, CancellationToken cancellationToken = default)
     {
         if (!ObjectId.TryParse(id, out var objectId))
             return null;
-
+        
         return await GetByIdAsync(objectId, cancellationToken);
     }
 
     public virtual async Task<T?> GetByIdAsync(ObjectId id, CancellationToken cancellationToken = default)
     {
-        var filter = Builders<T>.Filter.Eq("_id", id);
-        return await _collection.Find(filter).FirstOrDefaultAsync(cancellationToken);
+        return await _collection.Find(Builders<T>.Filter.Eq("_id", id))
+            .FirstOrDefaultAsync(cancellationToken);
     }
 
     public virtual async Task<T?> GetAsync(Expression<Func<T, bool>> filter, CancellationToken cancellationToken = default)
@@ -54,41 +56,40 @@ public class MongoRepository<T> : IMongoRepository<T> where T : class
 
     public virtual async Task<IEnumerable<T>> CreateManyAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default)
     {
-        var entitiesList = entities.ToList();
-        if (entitiesList.Count == 0)
-            return entitiesList;
-
-        await _collection.InsertManyAsync(entitiesList, cancellationToken: cancellationToken);
-        return entitiesList;
+        await _collection.InsertManyAsync(entities, cancellationToken: cancellationToken);
+        return entities;
     }
 
     public virtual async Task<T?> UpdateAsync(string id, T entity, CancellationToken cancellationToken = default)
     {
         if (!ObjectId.TryParse(id, out var objectId))
             return null;
-
+            
         return await UpdateAsync(objectId, entity, cancellationToken);
     }
 
     public virtual async Task<T?> UpdateAsync(ObjectId id, T entity, CancellationToken cancellationToken = default)
     {
-        var filter = Builders<T>.Filter.Eq("_id", id);
-        var result = await _collection.ReplaceOneAsync(filter, entity, cancellationToken: cancellationToken);
-        return result.MatchedCount > 0 ? entity : null;
+        return await _collection.FindOneAndReplaceAsync(
+            Builders<T>.Filter.Eq("_id", id),
+            entity,
+            new FindOneAndReplaceOptions<T> { ReturnDocument = ReturnDocument.After },
+            cancellationToken);
     }
 
     public virtual async Task<bool> DeleteAsync(string id, CancellationToken cancellationToken = default)
     {
         if (!ObjectId.TryParse(id, out var objectId))
             return false;
-
+            
         return await DeleteAsync(objectId, cancellationToken);
     }
 
     public virtual async Task<bool> DeleteAsync(ObjectId id, CancellationToken cancellationToken = default)
     {
-        var filter = Builders<T>.Filter.Eq("_id", id);
-        var result = await _collection.DeleteOneAsync(filter, cancellationToken);
+        var result = await _collection.DeleteOneAsync(
+            Builders<T>.Filter.Eq("_id", id),
+            cancellationToken);
         return result.DeletedCount > 0;
     }
 
@@ -102,14 +103,14 @@ public class MongoRepository<T> : IMongoRepository<T> where T : class
     {
         if (!ObjectId.TryParse(id, out var objectId))
             return false;
-
+            
         return await ExistsAsync(objectId, cancellationToken);
     }
 
     public virtual async Task<bool> ExistsAsync(ObjectId id, CancellationToken cancellationToken = default)
     {
-        var filter = Builders<T>.Filter.Eq("_id", id);
-        return await _collection.Find(filter).AnyAsync(cancellationToken);
+        return await _collection.Find(Builders<T>.Filter.Eq("_id", id))
+            .AnyAsync(cancellationToken);
     }
 
     public virtual async Task<bool> ExistsAsync(Expression<Func<T, bool>> filter, CancellationToken cancellationToken = default)
@@ -143,11 +144,11 @@ public class MongoRepository<T> : IMongoRepository<T> where T : class
         
         if (sortBy != null)
         {
-            query = sortDescending 
+            query = sortDescending
                 ? query.SortByDescending(sortBy)
                 : query.SortBy(sortBy);
         }
-
+        
         var items = await query
             .Skip((page - 1) * pageSize)
             .Limit(pageSize)
@@ -169,16 +170,14 @@ public class MongoRepository<T> : IMongoRepository<T> where T : class
         CancellationToken cancellationToken = default)
     {
         var searchFilter = Builders<T>.Filter.Text(searchTerm);
-        var combinedFilter = filter != null 
-            ? Builders<T>.Filter.And(searchFilter, filter)
+        var combinedFilter = filter != null
+            ? Builders<T>.Filter.And(searchFilter, Builders<T>.Filter.Where(filter))
             : searchFilter;
 
         var query = _collection.Find(combinedFilter);
         
         if (limit.HasValue)
-        {
             query = query.Limit(limit.Value);
-        }
 
         return await query.ToListAsync(cancellationToken);
     }
@@ -187,7 +186,8 @@ public class MongoRepository<T> : IMongoRepository<T> where T : class
         IEnumerable<BsonDocument> pipeline,
         CancellationToken cancellationToken = default)
     {
-        return await _collection.Aggregate<TResult>(pipeline).ToListAsync(cancellationToken);
+        var pipelineDefinition = PipelineDefinition<T, TResult>.Create(pipeline);
+        return await _collection.Aggregate(pipelineDefinition).ToListAsync(cancellationToken);
     }
 
     public virtual async Task<bool> UpdateOneAsync(
@@ -220,30 +220,31 @@ public class MongoRepository<T> : IMongoRepository<T> where T : class
         IEnumerable<(T entity, BulkOperationType operation)> operations,
         CancellationToken cancellationToken = default)
     {
-        var writeModels = new List<WriteModel<T>>();
-
-        foreach (var (entity, operation) in operations)
+        var writeModels = operations.Select<(T entity, BulkOperationType operation), WriteModel<T>>(op => op.operation switch
         {
-            WriteModel<T> writeModel = operation switch
-            {
-                BulkOperationType.Insert => new InsertOneModel<T>(entity),
-                BulkOperationType.Update => new ReplaceOneModel<T>(Builders<T>.Filter.Eq("_id", GetEntityId(entity)), entity),
-                BulkOperationType.Delete => new DeleteOneModel<T>(Builders<T>.Filter.Eq("_id", GetEntityId(entity))),
-                BulkOperationType.Upsert => new ReplaceOneModel<T>(Builders<T>.Filter.Eq("_id", GetEntityId(entity)), entity) { IsUpsert = true },
-                _ => throw new ArgumentException($"Unsupported bulk operation type: {operation}")
-            };
+            BulkOperationType.Insert => new InsertOneModel<T>(op.entity),
+            BulkOperationType.Update => new ReplaceOneModel<T>(
+                Builders<T>.Filter.Eq("_id", GetEntityId(op.entity)),
+                op.entity
+            ),
+            BulkOperationType.Delete => new DeleteOneModel<T>(
+                Builders<T>.Filter.Eq("_id", GetEntityId(op.entity))
+            ),
+            BulkOperationType.Upsert => new ReplaceOneModel<T>(
+                Builders<T>.Filter.Eq("_id", GetEntityId(op.entity)),
+                op.entity
+            ) { IsUpsert = true },
+            _ => throw new ArgumentException($"Unsupported operation: {op.operation}")
+        }).ToList();
 
-            writeModels.Add(writeModel);
-        }
-
-        if (writeModels.Count == 0)
-            return true;
+        if (!writeModels.Any())
+            return false;
 
         var result = await _collection.BulkWriteAsync(writeModels, cancellationToken: cancellationToken);
         return result.IsAcknowledged;
     }
 
-    protected virtual object GetEntityId(T entity)
+    private static object GetEntityId(T entity)
     {
         var idProperty = typeof(T).GetProperty("Id");
         return idProperty?.GetValue(entity) ?? throw new InvalidOperationException("Entity must have an Id property");

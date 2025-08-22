@@ -1,0 +1,12 @@
+/home/runner/workspace/backend/src/Shared/DSAGrind.Events/bin/Debug/net8.0/DSAGrind.Events.deps.json
+/home/runner/workspace/backend/src/Shared/DSAGrind.Events/bin/Debug/net8.0/DSAGrind.Events.dll
+/home/runner/workspace/backend/src/Shared/DSAGrind.Events/bin/Debug/net8.0/DSAGrind.Events.pdb
+/home/runner/workspace/backend/src/Shared/DSAGrind.Events/obj/Debug/net8.0/DSAGrind.Events.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/workspace/backend/src/Shared/DSAGrind.Events/obj/Debug/net8.0/DSAGrind.Events.AssemblyInfoInputs.cache
+/home/runner/workspace/backend/src/Shared/DSAGrind.Events/obj/Debug/net8.0/DSAGrind.Events.AssemblyInfo.cs
+/home/runner/workspace/backend/src/Shared/DSAGrind.Events/obj/Debug/net8.0/DSAGrind.Events.csproj.CoreCompileInputs.cache
+/home/runner/workspace/backend/src/Shared/DSAGrind.Events/obj/Debug/net8.0/DSAGrind.Events.sourcelink.json
+/home/runner/workspace/backend/src/Shared/DSAGrind.Events/obj/Debug/net8.0/DSAGrind.Events.dll
+/home/runner/workspace/backend/src/Shared/DSAGrind.Events/obj/Debug/net8.0/refint/DSAGrind.Events.dll
+/home/runner/workspace/backend/src/Shared/DSAGrind.Events/obj/Debug/net8.0/DSAGrind.Events.pdb
+/home/runner/workspace/backend/src/Shared/DSAGrind.Events/obj/Debug/net8.0/ref/DSAGrind.Events.dll

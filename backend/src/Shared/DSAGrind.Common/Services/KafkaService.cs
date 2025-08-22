@@ -28,7 +28,7 @@ public class KafkaService : IKafkaService, IDisposable
             SaslPassword = _kafkaSettings.Password,
             EnableIdempotence = _kafkaSettings.EnableIdempotence,
             Acks = (Acks)_kafkaSettings.Acks,
-            Retries = _kafkaSettings.Retries,
+            MessageSendMaxRetries = _kafkaSettings.Retries,
             MaxInFlight = _kafkaSettings.MaxInFlightRequestsPerConnection,
             MessageMaxBytes = _kafkaSettings.MessageMaxBytes,
             RequestTimeoutMs = _kafkaSettings.RequestTimeoutMs,
