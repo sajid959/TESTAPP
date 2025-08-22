@@ -34,11 +34,9 @@ function App() {
                 <Route path="/problems" component={Problems} />
                 <Route path="/problems/:categorySlug" component={Problems} />
                 <Route path="/problem/:slug">
-                  {(params) => (
-                    <ProtectedRoute>
-                      <IDE problemSlug={params.slug} />
-                    </ProtectedRoute>
-                  )}
+                  <ProtectedRoute>
+                    <IDE />
+                  </ProtectedRoute>
                 </Route>
                 <Route path="/admin">
                   <ProtectedRoute requireAdmin>

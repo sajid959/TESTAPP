@@ -689,7 +689,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           const subscription = await stripe!.subscriptions.retrieve(user.stripeSubscriptionId);
           res.json({
             subscriptionId: subscription.id,
-            clientSecret: subscription.latest_invoice?.payment_intent?.client_secret,
+            clientSecret: (subscription.latest_invoice as any)?.payment_intent?.client_secret,
           });
           return;
         }
@@ -721,7 +721,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     
         res.json({
           subscriptionId: subscription.id,
-          clientSecret: subscription.latest_invoice?.payment_intent?.client_secret,
+          clientSecret: (subscription.latest_invoice as any)?.payment_intent?.client_secret,
         });
       } catch (error: any) {
         res.status(400).json({ error: { message: error.message } });

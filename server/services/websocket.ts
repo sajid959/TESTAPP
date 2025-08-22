@@ -16,7 +16,7 @@ export class WebSocketService {
     this.wss = new WebSocketServer({ 
       server, 
       path: '/ws',
-      verifyClient: async (info) => {
+      verifyClient: async (info: any) => {
         // Optional: Verify JWT token from query params or headers
         return true;
       }
