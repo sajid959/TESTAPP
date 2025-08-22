@@ -17,6 +17,8 @@ public static class ServiceCollectionExtensions
         services.Configure<KafkaSettings>(configuration.GetSection(KafkaSettings.SectionName));
         services.Configure<RedisSettings>(configuration.GetSection(RedisSettings.SectionName));
         services.Configure<EmailSettings>(configuration.GetSection(EmailSettings.SectionName));
+        services.Configure<AISettings>(configuration.GetSection(AISettings.SectionName));
+        services.Configure<QdrantSettings>(configuration.GetSection(QdrantSettings.SectionName));
 
         // Add MongoDB
         services.AddSingleton<IMongoClient>(sp =>
@@ -41,8 +43,10 @@ public static class ServiceCollectionExtensions
         // Add common services
         services.AddSingleton<IJwtService, JwtService>();
         services.AddSingleton<IKafkaService, KafkaService>();
+        services.AddSingleton<IEventPublisher, EventPublisher>();
         services.AddSingleton<IRedisService, RedisService>();
         services.AddScoped<IEmailService, EmailService>();
+        services.AddScoped<IAIProviderService, PerplexityAIService>();
 
         // Add HttpClient
         services.AddHttpClient();
