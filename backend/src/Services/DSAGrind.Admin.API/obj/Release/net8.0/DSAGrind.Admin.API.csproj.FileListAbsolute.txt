@@ -1,0 +1,8 @@
+/home/runner/workspace/backend/src/Services/DSAGrind.Admin.API/obj/Release/net8.0/DSAGrind.Admin.API.csproj.AssemblyReference.cache
+/home/runner/workspace/backend/src/Services/DSAGrind.Admin.API/obj/Release/net8.0/DSAGrind.Admin.API.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/workspace/backend/src/Services/DSAGrind.Admin.API/obj/Release/net8.0/DSAGrind.Admin.API.AssemblyInfoInputs.cache
+/home/runner/workspace/backend/src/Services/DSAGrind.Admin.API/obj/Release/net8.0/DSAGrind.Admin.API.AssemblyInfo.cs
+/home/runner/workspace/backend/src/Services/DSAGrind.Admin.API/obj/Release/net8.0/DSAGrind.Admin.API.csproj.CoreCompileInputs.cache
+/home/runner/workspace/backend/src/Services/DSAGrind.Admin.API/obj/Release/net8.0/DSAGrind.Admin.API.MvcApplicationPartsAssemblyInfo.cs
+/home/runner/workspace/backend/src/Services/DSAGrind.Admin.API/obj/Release/net8.0/DSAGrind.Admin.API.MvcApplicationPartsAssemblyInfo.cache
+/home/runner/workspace/backend/src/Services/DSAGrind.Admin.API/obj/Release/net8.0/DSAGrind.Admin.API.sourcelink.json

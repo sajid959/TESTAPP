@@ -1,0 +1,8 @@
+/home/runner/workspace/backend/src/Services/DSAGrind.Auth.API/obj/Release/net8.0/DSAGrind.Auth.API.csproj.AssemblyReference.cache
+/home/runner/workspace/backend/src/Services/DSAGrind.Auth.API/obj/Release/net8.0/DSAGrind.Auth.API.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/workspace/backend/src/Services/DSAGrind.Auth.API/obj/Release/net8.0/DSAGrind.Auth.API.AssemblyInfoInputs.cache
+/home/runner/workspace/backend/src/Services/DSAGrind.Auth.API/obj/Release/net8.0/DSAGrind.Auth.API.AssemblyInfo.cs
+/home/runner/workspace/backend/src/Services/DSAGrind.Auth.API/obj/Release/net8.0/DSAGrind.Auth.API.csproj.CoreCompileInputs.cache
+/home/runner/workspace/backend/src/Services/DSAGrind.Auth.API/obj/Release/net8.0/DSAGrind.Auth.API.MvcApplicationPartsAssemblyInfo.cs
+/home/runner/workspace/backend/src/Services/DSAGrind.Auth.API/obj/Release/net8.0/DSAGrind.Auth.API.MvcApplicationPartsAssemblyInfo.cache
+/home/runner/workspace/backend/src/Services/DSAGrind.Auth.API/obj/Release/net8.0/DSAGrind.Auth.API.sourcelink.json

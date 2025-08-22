@@ -1,0 +1,13 @@
+/home/runner/workspace/backend/src/Shared/DSAGrind.Models/bin/Release/net8.0/DSAGrind.Models.deps.json
+/home/runner/workspace/backend/src/Shared/DSAGrind.Models/bin/Release/net8.0/DSAGrind.Models.dll
+/home/runner/workspace/backend/src/Shared/DSAGrind.Models/bin/Release/net8.0/DSAGrind.Models.pdb
+/home/runner/workspace/backend/src/Shared/DSAGrind.Models/obj/Release/net8.0/DSAGrind.Models.csproj.AssemblyReference.cache
+/home/runner/workspace/backend/src/Shared/DSAGrind.Models/obj/Release/net8.0/DSAGrind.Models.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/workspace/backend/src/Shared/DSAGrind.Models/obj/Release/net8.0/DSAGrind.Models.AssemblyInfoInputs.cache
+/home/runner/workspace/backend/src/Shared/DSAGrind.Models/obj/Release/net8.0/DSAGrind.Models.AssemblyInfo.cs
+/home/runner/workspace/backend/src/Shared/DSAGrind.Models/obj/Release/net8.0/DSAGrind.Models.csproj.CoreCompileInputs.cache
+/home/runner/workspace/backend/src/Shared/DSAGrind.Models/obj/Release/net8.0/DSAGrind.Models.sourcelink.json
+/home/runner/workspace/backend/src/Shared/DSAGrind.Models/obj/Release/net8.0/DSAGrind.Models.dll
+/home/runner/workspace/backend/src/Shared/DSAGrind.Models/obj/Release/net8.0/refint/DSAGrind.Models.dll
+/home/runner/workspace/backend/src/Shared/DSAGrind.Models/obj/Release/net8.0/DSAGrind.Models.pdb
+/home/runner/workspace/backend/src/Shared/DSAGrind.Models/obj/Release/net8.0/ref/DSAGrind.Models.dll

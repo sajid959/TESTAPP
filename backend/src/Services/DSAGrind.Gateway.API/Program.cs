@@ -39,8 +39,8 @@ app.MapGet("/", () => "DSAGrind API Gateway - Routing traffic to microservices")
 
 try
 {
-    Log.Information("Starting DSAGrind Gateway API on port 5000");
-    app.Run("http://0.0.0.0:5000");
+    Log.Information("Starting DSAGrind Gateway API on port 8000");
+    app.Run("http://0.0.0.0:8000");
 }
 catch (Exception ex)
 {

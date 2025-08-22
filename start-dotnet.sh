@@ -11,8 +11,8 @@ echo "📦 Building .NET microservices..."
 dotnet build --configuration Release
 
 # Start the Gateway API (main entry point)
-echo "🌐 Starting Gateway API on port 5000..."
-export ASPNETCORE_URLS="http://0.0.0.0:5000"
+echo "🌐 Starting Gateway API on port 8000..."
+export ASPNETCORE_URLS="http://0.0.0.0:8000"
 export ASPNETCORE_ENVIRONMENT="Development"
 
 # Run the Gateway API
