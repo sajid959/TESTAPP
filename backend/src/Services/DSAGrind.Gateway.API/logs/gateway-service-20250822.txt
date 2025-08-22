@@ -195,3 +195,59 @@ System.IO.IOException: Failed to bind to address http://0.0.0.0:5000: address al
 2025-08-22 22:37:34.733 +00:00 [INF] Executing endpoint 'HTTP: GET /'
 2025-08-22 22:37:34.734 +00:00 [INF] Executed endpoint 'HTTP: GET /'
 2025-08-22 22:37:34.734 +00:00 [INF] Request finished HTTP/1.1 GET http://e01e7c12-bb18-4dc4-ab90-09b021b1f22d-00-w0sfs75kc691.janeway.replit.dev/ - 200 null text/plain; charset=utf-8 1.8584ms
+2025-08-22 22:42:52.206 +00:00 [INF] Application is shutting down...
+2025-08-22 22:43:08.494 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-22 22:43:08.718 +00:00 [INF] Loading proxy data from config.
+2025-08-22 22:43:08.819 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-22 22:43:09.100 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-22 22:43:09.102 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-22 22:43:09.103 +00:00 [INF] Hosting environment: Development
+2025-08-22 22:43:09.103 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-22 22:43:11.267 +00:00 [INF] Request starting HTTP/1.1 GET http://e01e7c12-bb18-4dc4-ab90-09b021b1f22d-00-w0sfs75kc691.janeway.replit.dev/ - null null
+2025-08-22 22:43:11.325 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-22 22:43:11.326 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-22 22:43:11.327 +00:00 [INF] Request finished HTTP/1.1 GET http://e01e7c12-bb18-4dc4-ab90-09b021b1f22d-00-w0sfs75kc691.janeway.replit.dev/ - 200 null text/plain; charset=utf-8 64.3645ms
+2025-08-22 22:48:01.130 +00:00 [INF] Application is shutting down...
+2025-08-22 22:48:10.957 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-22 22:48:11.229 +00:00 [INF] Loading proxy data from config.
+2025-08-22 22:48:11.361 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-22 22:48:11.710 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-22 22:48:11.721 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-22 22:48:11.730 +00:00 [INF] Hosting environment: Development
+2025-08-22 22:48:11.730 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-22 22:48:13.923 +00:00 [INF] Request starting HTTP/1.1 GET http://e01e7c12-bb18-4dc4-ab90-09b021b1f22d-00-w0sfs75kc691.janeway.replit.dev/ - null null
+2025-08-22 22:48:14.008 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-22 22:48:14.018 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-22 22:48:14.024 +00:00 [INF] Request finished HTTP/1.1 GET http://e01e7c12-bb18-4dc4-ab90-09b021b1f22d-00-w0sfs75kc691.janeway.replit.dev/ - 200 null text/plain; charset=utf-8 104.131ms
+2025-08-22 22:50:38.762 +00:00 [INF] Application is shutting down...
+2025-08-22 22:51:32.370 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-22 22:51:32.537 +00:00 [INF] Loading proxy data from config.
+2025-08-22 22:51:32.683 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-22 22:51:32.981 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-22 22:51:32.983 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-22 22:51:32.984 +00:00 [INF] Hosting environment: Development
+2025-08-22 22:51:32.984 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-22 22:51:34.363 +00:00 [INF] Request starting HTTP/1.1 GET http://e01e7c12-bb18-4dc4-ab90-09b021b1f22d-00-w0sfs75kc691.janeway.replit.dev/ - null null
+2025-08-22 22:51:34.441 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-22 22:51:34.448 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-22 22:51:34.454 +00:00 [INF] Request finished HTTP/1.1 GET http://e01e7c12-bb18-4dc4-ab90-09b021b1f22d-00-w0sfs75kc691.janeway.replit.dev/ - 200 null text/plain; charset=utf-8 92.5061ms
+2025-08-22 22:52:34.311 +00:00 [INF] Request starting HTTP/1.1 GET http://e01e7c12-bb18-4dc4-ab90-09b021b1f22d-00-w0sfs75kc691.janeway.replit.dev/ - null null
+2025-08-22 22:52:34.314 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-22 22:52:34.318 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-22 22:52:34.318 +00:00 [INF] Request finished HTTP/1.1 GET http://e01e7c12-bb18-4dc4-ab90-09b021b1f22d-00-w0sfs75kc691.janeway.replit.dev/ - 200 null text/plain; charset=utf-8 7.1821ms
+2025-08-22 22:52:47.177 +00:00 [INF] Request starting HTTP/1.1 GET http://e01e7c12-bb18-4dc4-ab90-09b021b1f22d-00-w0sfs75kc691.janeway.replit.dev/ - null null
+2025-08-22 22:52:47.182 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-22 22:52:47.182 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-22 22:52:47.183 +00:00 [INF] Request finished HTTP/1.1 GET http://e01e7c12-bb18-4dc4-ab90-09b021b1f22d-00-w0sfs75kc691.janeway.replit.dev/ - 200 null text/plain; charset=utf-8 5.511ms
+2025-08-22 22:53:03.486 +00:00 [INF] Application is shutting down...
+2025-08-22 22:53:11.336 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-22 22:53:11.499 +00:00 [INF] Loading proxy data from config.
+2025-08-22 22:53:11.611 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-22 22:53:11.903 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-22 22:53:11.906 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-22 22:53:11.906 +00:00 [INF] Hosting environment: Development
+2025-08-22 22:53:11.907 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-22 22:53:13.957 +00:00 [INF] Request starting HTTP/1.1 GET http://e01e7c12-bb18-4dc4-ab90-09b021b1f22d-00-w0sfs75kc691.janeway.replit.dev/ - null null
+2025-08-22 22:53:14.010 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-22 22:53:14.011 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-22 22:53:14.012 +00:00 [INF] Request finished HTTP/1.1 GET http://e01e7c12-bb18-4dc4-ab90-09b021b1f22d-00-w0sfs75kc691.janeway.replit.dev/ - 200 null text/plain; charset=utf-8 71.488ms
