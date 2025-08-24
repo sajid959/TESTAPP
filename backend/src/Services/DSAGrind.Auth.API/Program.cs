@@ -137,7 +137,8 @@ builder.Services.AddAutoMapper(typeof(Program));
 
 // Add custom services
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IAuthService, AuthService>();
+// Use mock services for Replit demo environment
+builder.Services.AddScoped<IAuthService, MockAuthService>();
 builder.Services.AddScoped<IOAuthService, OAuthService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddSingleton<IJwtService, JwtService>();
@@ -145,6 +146,7 @@ builder.Services.AddSingleton<IKafkaService, KafkaService>();
 builder.Services.AddSingleton<IRedisService, RedisService>();
 
 // Add health checks
+var mongoConnectionString = builder.Configuration.GetConnectionString("MongoDB") ?? "mongodb://localhost:27017";
 builder.Services.AddHealthChecks()
     .AddMongoDb(mongoConnectionString, name: "mongodb", tags: new[] { "db", "mongodb" })
     .AddRedis(builder.Configuration.GetConnectionString("Redis") ?? "localhost:6379", name: "redis", tags: new[] { "cache", "redis" });

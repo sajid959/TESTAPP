@@ -51,7 +51,7 @@ public class PaymentService : IPaymentService
                 Currency = request.Currency,
                 Status = "pending",
                 Description = request.Description,
-                StripePaymentId = paymentIntent.Id,
+                ProviderPaymentId = paymentIntent.Id,
                 CreatedAt = DateTime.UtcNow
             };
 
@@ -145,12 +145,13 @@ public class PaymentService : IPaymentService
             var refund = await refundService.CreateAsync(refundOptions, cancellationToken: cancellationToken);
 
             // Update payment record
-            payment.RefundDetails = new RefundDetails
+            payment.RefundInfo = new RefundInfo
             {
                 RefundId = refund.Id,
                 Amount = (decimal)refund.Amount / 100,
                 Reason = reason,
-                RefundedAt = DateTime.UtcNow
+                ProcessedAt = DateTime.UtcNow,
+                Status = "succeeded"
             };
             payment.Status = "refunded";
             payment.UpdatedAt = DateTime.UtcNow;
@@ -164,7 +165,7 @@ public class PaymentService : IPaymentService
             {
                 Id = refund.Id,
                 PaymentId = paymentId,
-                Amount = payment.RefundDetails.Amount,
+                Amount = payment.RefundInfo.Amount,
                 Reason = reason,
                 Status = "succeeded",
                 CreatedAt = DateTime.UtcNow
@@ -181,7 +182,7 @@ public class PaymentService : IPaymentService
     {
         if (string.IsNullOrEmpty(stripePaymentId)) return;
 
-        var payment = await _paymentRepository.GetAsync(p => p.StripePaymentId == stripePaymentId, cancellationToken);
+        var payment = await _paymentRepository.GetAsync(p => p.ProviderPaymentId == stripePaymentId, cancellationToken);
         if (payment != null)
         {
             payment.Status = "succeeded";
@@ -196,7 +197,7 @@ public class PaymentService : IPaymentService
     {
         if (string.IsNullOrEmpty(stripePaymentId)) return;
 
-        var payment = await _paymentRepository.GetAsync(p => p.StripePaymentId == stripePaymentId, cancellationToken);
+        var payment = await _paymentRepository.GetAsync(p => p.ProviderPaymentId == stripePaymentId, cancellationToken);
         if (payment != null)
         {
             payment.Status = "failed";
@@ -252,12 +253,11 @@ public class SubscriptionService : ISubscriptionService
             {
                 Id = Guid.NewGuid().ToString(),
                 UserId = userId,
-                PlanId = request.PlanId,
+                Plan = request.PlanId,
                 Status = stripeSubscription.Status,
-                CurrentPeriodStart = stripeSubscription.CurrentPeriodStart,
-                CurrentPeriodEnd = stripeSubscription.CurrentPeriodEnd,
-                CancelAtPeriodEnd = stripeSubscription.CancelAtPeriodEnd,
-                StripeSubscriptionId = stripeSubscription.Id,
+                StartDate = stripeSubscription.CurrentPeriodStart,
+                EndDate = stripeSubscription.CurrentPeriodEnd,
+                ProviderSubscriptionId = stripeSubscription.Id,
                 CreatedAt = DateTime.UtcNow
             };
 
@@ -289,7 +289,7 @@ public class SubscriptionService : ISubscriptionService
             if (subscription == null || subscription.UserId != userId) return false;
 
             // Cancel Stripe subscription
-            await _stripeSubscriptionService.CancelAsync(subscription.StripeSubscriptionId, cancellationToken: cancellationToken);
+            await _stripeSubscriptionService.CancelAsync(subscription.ProviderSubscriptionId, cancellationToken: cancellationToken);
 
             // Update subscription record
             subscription.Status = "canceled";
@@ -323,17 +323,17 @@ public class SubscriptionService : ISubscriptionService
                 {
                     new() { Price = request.PlanId }
                 };
-                subscription.PlanId = request.PlanId;
+                subscription.Plan = request.PlanId;
             }
 
             if (request.CancelAtPeriodEnd.HasValue)
             {
                 options.CancelAtPeriodEnd = request.CancelAtPeriodEnd.Value;
-                subscription.CancelAtPeriodEnd = request.CancelAtPeriodEnd.Value;
+                subscription.CancelledAt = request.CancelAtPeriodEnd.Value ? DateTime.UtcNow : null;
             }
 
             // Update Stripe subscription
-            await _stripeSubscriptionService.UpdateAsync(subscription.StripeSubscriptionId, options, cancellationToken: cancellationToken);
+            await _stripeSubscriptionService.UpdateAsync(subscription.ProviderSubscriptionId, options, cancellationToken: cancellationToken);
 
             // Update subscription record
             subscription.UpdatedAt = DateTime.UtcNow;

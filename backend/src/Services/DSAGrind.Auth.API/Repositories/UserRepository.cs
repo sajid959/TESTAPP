@@ -1,12 +1,14 @@
 using MongoDB.Driver;
+using Microsoft.Extensions.Options;
 using DSAGrind.Common.Repositories;
+using DSAGrind.Common.Configuration;
 using DSAGrind.Models.Entities;
 
 namespace DSAGrind.Auth.API.Repositories;
 
 public class UserRepository : MongoRepository<User>, IUserRepository
 {
-    public UserRepository(IMongoDatabase database) : base(database, "users")
+    public UserRepository(IOptions<MongoDbSettings> settings) : base(settings, "users")
     {
         // Create indexes for better performance
         CreateIndexesAsync().GetAwaiter().GetResult();
