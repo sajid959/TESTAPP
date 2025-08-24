@@ -419,3 +419,21 @@
 2025-08-24 22:40:12.195 +00:00 [INF] Executing endpoint 'HTTP: GET /'
 2025-08-24 22:40:12.204 +00:00 [INF] Executed endpoint 'HTTP: GET /'
 2025-08-24 22:40:12.207 +00:00 [INF] Request finished HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - 200 null text/plain; charset=utf-8 74.9149ms
+2025-08-24 23:44:33.095 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-24 23:44:33.326 +00:00 [INF] Loading proxy data from config.
+2025-08-24 23:44:33.406 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-24 23:44:33.447 +00:00 [INF] Creating key {76df7e2e-f5da-4b07-9c25-06708d41ee42} with creation date 2025-08-24 23:44:33Z, activation date 2025-08-24 23:44:33Z, and expiration date 2025-11-22 23:44:33Z.
+2025-08-24 23:44:33.469 +00:00 [WRN] No XML encryptor configured. Key {76df7e2e-f5da-4b07-9c25-06708d41ee42} may be persisted to storage in unencrypted form.
+2025-08-24 23:44:33.476 +00:00 [INF] Writing data to file '/home/runner/.aspnet/DataProtection-Keys/key-76df7e2e-f5da-4b07-9c25-06708d41ee42.xml'.
+2025-08-24 23:44:33.661 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-24 23:44:33.663 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 23:44:33.663 +00:00 [INF] Hosting environment: Development
+2025-08-24 23:44:33.664 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-24 23:44:35.222 +00:00 [INF] Request starting HTTP/1.1 GET http://e8a57e57-ff70-41ff-a822-cedc62a9044e-00-2npubrs5kfgef.spock.replit.dev/ - null null
+2025-08-24 23:44:35.285 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-24 23:44:35.293 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-24 23:44:35.295 +00:00 [INF] Request finished HTTP/1.1 GET http://e8a57e57-ff70-41ff-a822-cedc62a9044e-00-2npubrs5kfgef.spock.replit.dev/ - 200 null text/plain; charset=utf-8 75.1348ms
+2025-08-24 23:44:38.734 +00:00 [INF] Request starting HTTP/1.1 GET http://e8a57e57-ff70-41ff-a822-cedc62a9044e-00-2npubrs5kfgef.spock.replit.dev/ - null null
+2025-08-24 23:44:38.737 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-24 23:44:38.738 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-24 23:44:38.738 +00:00 [INF] Request finished HTTP/1.1 GET http://e8a57e57-ff70-41ff-a822-cedc62a9044e-00-2npubrs5kfgef.spock.replit.dev/ - 200 null text/plain; charset=utf-8 3.9565ms
