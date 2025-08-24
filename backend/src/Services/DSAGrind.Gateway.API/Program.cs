@@ -27,12 +27,11 @@ builder.Services.AddReverseProxy()
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowFrontend", policy =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins("http://localhost:3000", "http://0.0.0.0:3000", "https://localhost:3000")
+        policy.AllowAnyOrigin()
               .AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowCredentials();
+              .AllowAnyMethod();
     });
 });
 
@@ -50,7 +49,7 @@ if (app.Environment.IsDevelopment())
 }
 
 // Rate limiter disabled for now
-app.UseCors("AllowFrontend");
+app.UseCors("AllowAll");
 
 // Map controllers first
 app.MapControllers();

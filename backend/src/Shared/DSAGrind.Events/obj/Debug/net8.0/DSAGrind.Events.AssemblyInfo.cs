@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DSAGrind.Events")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8e9fb457595021fed8ec452f58c6e6def2e8122")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74e33bddabcc4060d5cfd76f889cbc0285b5b57e")]
 [assembly: System.Reflection.AssemblyProductAttribute("DSAGrind.Events")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DSAGrind.Events")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
