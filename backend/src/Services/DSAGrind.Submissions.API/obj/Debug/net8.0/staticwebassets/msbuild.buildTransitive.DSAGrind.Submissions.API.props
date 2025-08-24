@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/DSAGrind.Submissions.API.props" />
+</Project>

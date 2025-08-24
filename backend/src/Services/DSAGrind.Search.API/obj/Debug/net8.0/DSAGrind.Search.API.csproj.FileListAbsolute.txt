@@ -1,0 +1,8 @@
+/home/runner/workspace/backend/src/Services/DSAGrind.Search.API/obj/Debug/net8.0/DSAGrind.Search.API.csproj.AssemblyReference.cache
+/home/runner/workspace/backend/src/Services/DSAGrind.Search.API/obj/Debug/net8.0/DSAGrind.Search.API.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/workspace/backend/src/Services/DSAGrind.Search.API/obj/Debug/net8.0/DSAGrind.Search.API.AssemblyInfoInputs.cache
+/home/runner/workspace/backend/src/Services/DSAGrind.Search.API/obj/Debug/net8.0/DSAGrind.Search.API.AssemblyInfo.cs
+/home/runner/workspace/backend/src/Services/DSAGrind.Search.API/obj/Debug/net8.0/DSAGrind.Search.API.csproj.CoreCompileInputs.cache
+/home/runner/workspace/backend/src/Services/DSAGrind.Search.API/obj/Debug/net8.0/DSAGrind.Search.API.MvcApplicationPartsAssemblyInfo.cs
+/home/runner/workspace/backend/src/Services/DSAGrind.Search.API/obj/Debug/net8.0/DSAGrind.Search.API.MvcApplicationPartsAssemblyInfo.cache
+/home/runner/workspace/backend/src/Services/DSAGrind.Search.API/obj/Debug/net8.0/DSAGrind.Search.API.sourcelink.json

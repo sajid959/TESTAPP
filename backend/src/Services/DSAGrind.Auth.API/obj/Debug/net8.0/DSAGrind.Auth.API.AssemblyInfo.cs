@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DSAGrind.Auth.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9752d6ae614711b3a2ca82e5e3972ef25fe5700")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c1db86fa8793871aacb6f59e96ffaaefb0dbfce")]
 [assembly: System.Reflection.AssemblyProductAttribute("DSAGrind.Auth.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DSAGrind.Auth.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

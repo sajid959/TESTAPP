@@ -12,11 +12,16 @@ namespace DSAGrind.Payments.API.Controllers;
 public class PaymentsController : ControllerBase
 {
     private readonly IPaymentService _paymentService;
+    private readonly ISubscriptionService _subscriptionService;
     private readonly ILogger<PaymentsController> _logger;
 
-    public PaymentsController(IPaymentService paymentService, ILogger<PaymentsController> logger)
+    public PaymentsController(
+        IPaymentService paymentService, 
+        ISubscriptionService subscriptionService,
+        ILogger<PaymentsController> logger)
     {
         _paymentService = paymentService;
+        _subscriptionService = subscriptionService;
         _logger = logger;
     }
 
@@ -31,7 +36,15 @@ public class PaymentsController : ControllerBase
                 return Unauthorized();
             }
 
-            var paymentIntent = await _paymentService.CreatePaymentIntentAsync(request, userId);
+            var createRequest = new CreatePaymentRequestDto
+            {
+                Amount = request.Amount,
+                Currency = request.Currency,
+                Description = request.Description,
+                Metadata = request.Metadata
+            };
+
+            var paymentIntent = await _paymentService.CreatePaymentIntentAsync(createRequest, userId);
             return Ok(paymentIntent);
         }
         catch (Exception ex)
@@ -52,7 +65,24 @@ public class PaymentsController : ControllerBase
                 return Unauthorized();
             }
 
-            var result = await _paymentService.ConfirmPaymentAsync(request, userId);
+            // Get the payment to verify it exists and belongs to the user
+            var payment = await _paymentService.GetPaymentAsync(request.PaymentIntentId, userId);
+            if (payment == null)
+            {
+                return NotFound(new { message = "Payment not found" });
+            }
+
+            // Create a payment result based on the payment status
+            var result = new PaymentResultDto
+            {
+                PaymentId = payment.Id,
+                Status = payment.Status,
+                Amount = payment.Amount,
+                Currency = payment.Currency,
+                Success = payment.Status == "succeeded",
+                ProcessedAt = DateTime.UtcNow
+            };
+
             return Ok(result);
         }
         catch (Exception ex)
@@ -73,7 +103,7 @@ public class PaymentsController : ControllerBase
                 return Unauthorized();
             }
 
-            var payments = await _paymentService.GetPaymentHistoryAsync(userId, page, pageSize);
+            var payments = await _paymentService.GetUserPaymentsAsync(userId, page, pageSize);
             return Ok(payments);
         }
         catch (Exception ex)
@@ -120,7 +150,7 @@ public class PaymentsController : ControllerBase
                 return Unauthorized();
             }
 
-            var subscription = await _paymentService.CreateSubscriptionAsync(request, userId);
+            var subscription = await _subscriptionService.CreateSubscriptionAsync(request, userId);
             return Ok(subscription);
         }
         catch (Exception ex)
@@ -141,7 +171,7 @@ public class PaymentsController : ControllerBase
                 return Unauthorized();
             }
 
-            var success = await _paymentService.CancelSubscriptionAsync(subscriptionId, userId);
+            var success = await _subscriptionService.CancelSubscriptionAsync(subscriptionId, userId);
             if (!success)
             {
                 return BadRequest(new { message = "Failed to cancel subscription" });
@@ -167,7 +197,7 @@ public class PaymentsController : ControllerBase
                 return Unauthorized();
             }
 
-            var subscription = await _paymentService.GetCurrentSubscriptionAsync(userId);
+            var subscription = await _subscriptionService.GetUserSubscriptionAsync(userId);
             if (subscription == null)
             {
                 return NotFound();
@@ -184,11 +214,20 @@ public class PaymentsController : ControllerBase
 
     [HttpPost("webhook")]
     [AllowAnonymous]
-    public async Task<IActionResult> HandleWebhook([FromBody] object webhookEvent)
+    public async Task<IActionResult> HandleWebhook()
     {
         try
         {
-            await _paymentService.HandleWebhookAsync(Request.Headers, webhookEvent);
+            var json = await new StreamReader(HttpContext.Request.Body).ReadToEndAsync();
+            var signature = Request.Headers["Stripe-Signature"].FirstOrDefault() ?? "";
+            
+            var success = await _paymentService.ProcessWebhookAsync(json, signature);
+            
+            if (!success)
+            {
+                return BadRequest();
+            }
+            
             return Ok();
         }
         catch (Exception ex)
@@ -204,7 +243,7 @@ public class PaymentsController : ControllerBase
     {
         try
         {
-            var plans = await _paymentService.GetSubscriptionPlansAsync();
+            var plans = await _subscriptionService.GetSubscriptionPlansAsync();
             return Ok(plans);
         }
         catch (Exception ex)

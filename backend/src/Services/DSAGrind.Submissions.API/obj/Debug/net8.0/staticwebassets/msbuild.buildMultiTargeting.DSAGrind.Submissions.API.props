@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/DSAGrind.Submissions.API.props" />
+</Project>
