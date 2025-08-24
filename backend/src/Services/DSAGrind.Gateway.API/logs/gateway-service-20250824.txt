@@ -199,3 +199,21 @@
 2025-08-24 20:24:34.095 +00:00 [INF] Executed action DSAGrind.Gateway.API.Controllers.ProblemsController.GetProblems (DSAGrind.Gateway.API) in 122.1945ms
 2025-08-24 20:24:34.096 +00:00 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.ProblemsController.GetProblems (DSAGrind.Gateway.API)'
 2025-08-24 20:24:34.102 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/problems - 200 null application/json; charset=utf-8 157.2764ms
+2025-08-24 20:57:29.293 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-24 20:57:29.469 +00:00 [INF] Loading proxy data from config.
+2025-08-24 20:57:29.545 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-24 20:57:29.572 +00:00 [INF] Creating key {27365c23-29d4-487c-a6b2-df873566de89} with creation date 2025-08-24 20:57:29Z, activation date 2025-08-24 20:57:29Z, and expiration date 2025-11-22 20:57:29Z.
+2025-08-24 20:57:29.599 +00:00 [WRN] No XML encryptor configured. Key {27365c23-29d4-487c-a6b2-df873566de89} may be persisted to storage in unencrypted form.
+2025-08-24 20:57:29.604 +00:00 [INF] Writing data to file '/home/runner/.aspnet/DataProtection-Keys/key-27365c23-29d4-487c-a6b2-df873566de89.xml'.
+2025-08-24 20:57:29.810 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-24 20:57:29.813 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:57:29.813 +00:00 [INF] Hosting environment: Development
+2025-08-24 20:57:29.814 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-24 20:57:31.301 +00:00 [INF] Request starting HTTP/1.1 GET http://0bbe9871-2339-4d47-979b-9634c28466e9-00-2hm7gs6b5d4gd.kirk.replit.dev/ - null null
+2025-08-24 20:57:31.386 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-24 20:57:31.388 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-24 20:57:31.391 +00:00 [INF] Request finished HTTP/1.1 GET http://0bbe9871-2339-4d47-979b-9634c28466e9-00-2hm7gs6b5d4gd.kirk.replit.dev/ - 200 null text/plain; charset=utf-8 91.0852ms
+2025-08-24 20:57:34.282 +00:00 [INF] Request starting HTTP/1.1 GET http://0bbe9871-2339-4d47-979b-9634c28466e9-00-2hm7gs6b5d4gd.kirk.replit.dev/ - null null
+2025-08-24 20:57:34.285 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-24 20:57:34.301 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-24 20:57:34.314 +00:00 [INF] Request finished HTTP/1.1 GET http://0bbe9871-2339-4d47-979b-9634c28466e9-00-2hm7gs6b5d4gd.kirk.replit.dev/ - 200 null text/plain; charset=utf-8 31.066ms
