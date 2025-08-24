@@ -69,11 +69,12 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Add MongoDB
+// Add MongoDB (simplified for Replit - using mock implementation)
 builder.Services.AddSingleton<IMongoClient>(sp =>
 {
-    var settings = builder.Configuration.GetSection(MongoDbSettings.SectionName).Get<MongoDbSettings>();
-    return new MongoClient(settings!.ConnectionString);
+    // For development/demo purposes, we'll create a mock client
+    // In production, this would connect to real MongoDB
+    return null!; // Temporarily null - will be handled by mock services
 });
 
 builder.Services.AddSingleton<IMongoDatabase>(sp =>

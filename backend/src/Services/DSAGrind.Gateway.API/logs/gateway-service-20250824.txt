@@ -94,3 +94,66 @@
 2025-08-24 20:04:25.998 +00:00 [INF] Request finished HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 5.7454ms
 2025-08-24 20:04:27.731 +00:00 [INF] Request starting HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/v1/swagger.json - null null
 2025-08-24 20:04:27.737 +00:00 [INF] Request finished HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 5.7814ms
+2025-08-24 20:10:25.510 +00:00 [INF] Application is shutting down...
+2025-08-24 20:10:43.130 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-24 20:10:43.268 +00:00 [INF] Loading proxy data from config.
+2025-08-24 20:10:43.352 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-24 20:10:43.573 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-24 20:10:43.582 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:10:43.586 +00:00 [INF] Hosting environment: Development
+2025-08-24 20:10:43.590 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-24 20:10:47.097 +00:00 [INF] Request starting HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/index.html - null null
+2025-08-24 20:10:47.296 +00:00 [INF] Request finished HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/index.html - 200 null text/html;charset=utf-8 206.9145ms
+2025-08-24 20:10:48.936 +00:00 [INF] Request starting HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/v1/swagger.json - null null
+2025-08-24 20:10:49.089 +00:00 [INF] Request finished HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 152.3904ms
+2025-08-24 20:14:53.895 +00:00 [INF] Application is shutting down...
+2025-08-24 20:15:01.463 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-24 20:15:01.623 +00:00 [INF] Loading proxy data from config.
+2025-08-24 20:15:01.710 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-24 20:15:01.930 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-24 20:15:01.932 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:15:01.942 +00:00 [INF] Hosting environment: Development
+2025-08-24 20:15:01.944 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-24 20:15:05.164 +00:00 [INF] Request starting HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/index.html - null null
+2025-08-24 20:15:05.303 +00:00 [INF] Request finished HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/index.html - 200 null text/html;charset=utf-8 140.852ms
+2025-08-24 20:15:06.846 +00:00 [INF] Request starting HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/v1/swagger.json - null null
+2025-08-24 20:15:06.959 +00:00 [INF] Request finished HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 112.6418ms
+2025-08-24 20:16:58.313 +00:00 [INF] Application is shutting down...
+2025-08-24 20:17:05.835 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-24 20:17:05.910 +00:00 [INF] Loading proxy data from config.
+2025-08-24 20:17:05.951 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-24 20:17:06.058 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-24 20:17:06.059 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:17:06.060 +00:00 [INF] Hosting environment: Development
+2025-08-24 20:17:06.060 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-24 20:17:06.695 +00:00 [INF] Request starting HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/index.html - null null
+2025-08-24 20:17:06.793 +00:00 [INF] Request finished HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/index.html - 200 null text/html;charset=utf-8 98.2809ms
+2025-08-24 20:17:08.364 +00:00 [INF] Request starting HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/v1/swagger.json - null null
+2025-08-24 20:17:08.464 +00:00 [INF] Request finished HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 100.0043ms
+2025-08-24 20:17:21.339 +00:00 [INF] Application is shutting down...
+2025-08-24 20:17:25.136 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-24 20:17:25.215 +00:00 [INF] Loading proxy data from config.
+2025-08-24 20:17:25.261 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-24 20:17:25.377 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-24 20:17:25.380 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 20:17:25.380 +00:00 [INF] Hosting environment: Development
+2025-08-24 20:17:25.381 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-24 20:17:27.391 +00:00 [INF] Request starting HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/index.html - null null
+2025-08-24 20:17:27.499 +00:00 [INF] Request finished HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/index.html - 200 null text/html;charset=utf-8 109.222ms
+2025-08-24 20:17:29.339 +00:00 [INF] Request starting HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/v1/swagger.json - null null
+2025-08-24 20:17:29.439 +00:00 [INF] Request finished HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 99.665ms
+2025-08-24 20:17:42.317 +00:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger - null null
+2025-08-24 20:17:42.319 +00:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/swagger - 301 0 null 1.9607ms
+2025-08-24 20:17:42.321 +00:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger/index.html - null null
+2025-08-24 20:17:42.323 +00:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/swagger/index.html - 200 null text/html;charset=utf-8 1.9839ms
+2025-08-24 20:17:42.330 +00:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui.css - null null
+2025-08-24 20:17:42.332 +00:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui-bundle.js - null null
+2025-08-24 20:17:42.332 +00:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui-standalone-preset.js - null null
+2025-08-24 20:17:42.351 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-08-24 20:17:42.351 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-08-24 20:17:42.351 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-08-24 20:17:42.353 +00:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui-standalone-preset.js - 200 312163 text/javascript 20.814ms
+2025-08-24 20:17:42.354 +00:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 22.6798ms
+2025-08-24 20:17:42.355 +00:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui.css - 200 144929 text/css 24.8467ms
+2025-08-24 20:17:42.668 +00:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger/v1/swagger.json - null null
+2025-08-24 20:17:42.678 +00:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.9287ms
