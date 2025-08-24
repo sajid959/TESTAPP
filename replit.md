@@ -1,76 +1,82 @@
 # DSAGrind - Competitive Programming Platform
 
-## Project Overview
-DSAGrind is a comprehensive competitive programming platform with microservices architecture, featuring AI-powered features, multi-language IDE, admin management, OAuth authentication, and complete problem management system.
+## Overview
 
-## Architecture
-- **Frontend**: React + Vite + Tailwind CSS + Shadcn UI
-- **Backend**: .NET 8 Microservices (8 APIs + Gateway)
-- **Database**: MongoDB Atlas (free tier)
-- **Queue**: Redis + Kafka for async tasks
-- **Search**: Vector search with Qdrant + embeddings
-- **Authentication**: JWT + OAuth (Google, GitHub)
-- **Email**: Email verification system
-- **IDE**: Multi-language code execution environment
-- **Admin**: Full-featured admin dashboard
-
-### Microservices
-- **Gateway API** (Port 5000) - Main entry point and reverse proxy
-- **Auth API** (Port 8080) - Authentication & user management
-- **Problems API** (Port 5001) - Problem management & categories
-- **Submissions API** (Port 5002) - Code submissions & execution
-- **AI API** (Port 5003) - AI-powered hints & assistance
-- **Search API** (Port 5004) - Vector search & problem discovery
-- **Admin API** (Port 5005) - Admin dashboard & management
-- **Payments API** (Port 5006) - Stripe payments & subscriptions
-
-## Key Features
-1. **Authentication & Authorization**
-   - JWT + Refresh tokens
-   - OAuth integration (Google, GitHub)
-   - Email verification
-   - Role-based access control (User, Admin)
-
-2. **Problem Management**
-   - Category-based organization
-   - Bulk Excel/CSV import
-   - Admin UI for problem creation
-   - Difficulty levels and tags
-   - Test cases (visible/hidden)
-
-3. **Multi-Language IDE**
-   - Monaco editor integration
-   - Support for multiple programming languages
-   - Real-time code execution
-   - Test case validation
-   - Submission tracking
-
-4. **Admin Dashboard**
-   - User management
-   - Problem approval/management
-   - Category management
-   - Excel upload for bulk problems
-   - Analytics and insights
-
-5. **Modern UI/UX**
-   - Responsive design
-   - Dark/light mode
-   - Unique and modern interface
-   - Professional styling
+DSAGrind is a comprehensive competitive programming platform designed to help developers practice coding problems with AI-powered assistance. The platform features a microservices architecture built with .NET 8 backend and React TypeScript frontend, providing multi-language IDE support, real-time code execution, AI-powered hints, admin management capabilities, OAuth authentication, and premium subscription features.
 
 ## User Preferences
-- Use free tiers for all services (MongoDB Atlas, Confluent Kafka, etc.)
-- Implement OAuth with Google and GitHub
-- Email verification required
-- Excel/CSV bulk upload for problems
-- Multi-language IDE similar to LeetCode
-- Reference AlgoMonster site features
-- Separate key storage and environment variables
-- Modern and unique UI design
 
-## Recent Changes
-- ✓ Initial project setup
-- → Setting up authentication system
-- → Building problem management
-- → Creating admin dashboard
-- → Implementing IDE
+Preferred communication style: Simple, everyday language.
+
+## System Architecture
+
+### Frontend Architecture
+- **Framework**: React 18 with TypeScript for type safety
+- **Build System**: Vite for fast development and optimized production builds
+- **Routing**: Wouter for lightweight client-side routing
+- **State Management**: TanStack Query for server state management with Context API for global application state
+- **UI Framework**: Tailwind CSS with Shadcn UI component library for consistent design system
+- **Code Editor**: Monaco Editor (VS Code engine) for multi-language code editing
+- **Authentication**: JWT-based authentication with refresh token rotation
+- **Forms**: React Hook Form with Zod validation for type-safe form handling
+
+### Backend Architecture
+- **Microservices Design**: 8 independent services communicating through an API Gateway
+- **API Gateway**: YARP reverse proxy handling routing, rate limiting, and load balancing
+- **Authentication Service**: JWT + OAuth (Google, GitHub) with refresh token management
+- **Problems Service**: CRUD operations for coding problems and categories
+- **Submissions Service**: Code execution engine with Docker sandboxing
+- **AI Service**: OpenAI integration for hints, explanations, and problem analysis
+- **Search Service**: Vector search using Qdrant for semantic problem discovery
+- **Admin Service**: Content management and user administration
+- **Payments Service**: Stripe integration for subscription management
+
+### Data Layer
+- **Primary Database**: MongoDB Atlas for document storage with flexible schema
+- **Caching**: Redis for session management, query caching, and real-time data
+- **Message Queue**: Apache Kafka for event-driven communication between services
+- **Vector Database**: Qdrant for semantic search and problem recommendations
+
+### Authentication & Authorization
+- **JWT Tokens**: Access tokens (15-60 min) with refresh tokens (7-30 days)
+- **OAuth Integration**: Google and GitHub OAuth with PKCE flow
+- **Role-based Access**: User, Premium, Admin roles with granular permissions
+- **Session Management**: Distributed sessions with Redis backing
+
+### Code Execution Engine
+- **Sandboxing**: Docker containers for secure code execution
+- **Multi-language Support**: Python, JavaScript, Java, C++, C#, Go, Rust, PHP
+- **Test Case Validation**: Hidden and visible test cases with performance metrics
+- **Real-time Results**: WebSocket-based live execution feedback
+
+## External Dependencies
+
+### Third-Party Services
+- **MongoDB Atlas**: Cloud NoSQL database for primary data storage
+- **Redis Cloud**: In-memory caching and session store
+- **Stripe**: Payment processing for premium subscriptions
+- **OpenAI API**: AI-powered hints, explanations, and code analysis
+- **Qdrant**: Vector database for semantic search capabilities
+- **SendGrid**: Email service for user verification and notifications
+
+### Development & Infrastructure
+- **Docker**: Containerization for consistent deployment environments
+- **Apache Kafka**: Message broker for microservices communication
+- **YARP**: .NET reverse proxy for API Gateway functionality
+- **Monaco Editor**: Web-based code editor with syntax highlighting
+- **Font Awesome**: Icon library for UI components
+
+### Authentication Providers
+- **Google OAuth 2.0**: Social login integration
+- **GitHub OAuth**: Developer-focused authentication
+- **JWT**: Self-contained token-based authentication
+
+### Monitoring & Logging
+- **Serilog**: Structured logging across all .NET services
+- **Application Insights**: Performance monitoring and telemetry (production)
+
+### Frontend Dependencies
+- **Radix UI**: Headless UI components for accessibility
+- **Framer Motion**: Animation library for smooth interactions
+- **React Hook Form**: Form state management with validation
+- **Recharts**: Data visualization for analytics dashboards

@@ -3,26 +3,28 @@ using DSAGrind.Models.Entities;
 using DSAGrind.Models.DTOs;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using Microsoft.Extensions.Options;
+using DSAGrind.Common.Configuration;
 
 namespace DSAGrind.Problems.API.Repositories;
 
 public class ProblemRepository : MongoRepository<Problem>, IProblemRepository
 {
-    public ProblemRepository(IMongoDatabase database) : base(database, "problems")
+    public ProblemRepository(IOptions<MongoDbSettings> settings) : base(settings, "problems")
     {
     }
 
     public async Task<Problem?> GetBySlugAsync(string slug, CancellationToken cancellationToken = default)
     {
-        return await Collection.Find(p => p.Slug == slug).FirstOrDefaultAsync(cancellationToken);
+        return await _collection.Find(p => p.Slug == slug).FirstOrDefaultAsync(cancellationToken);
     }
 
     public async Task<PaginatedResult<Problem>> GetByCategoryAsync(string categoryId, int page, int pageSize, CancellationToken cancellationToken = default)
     {
         var filter = Builders<Problem>.Filter.Eq(p => p.CategoryId, categoryId);
-        var totalCount = await Collection.CountDocumentsAsync(filter, cancellationToken: cancellationToken);
+        var totalCount = await _collection.CountDocumentsAsync(filter, cancellationToken: cancellationToken);
         
-        var problems = await Collection
+        var problems = await _collection
             .Find(filter)
             .Sort(Builders<Problem>.Sort.Ascending(p => p.OrderIndex))
             .Skip((page - 1) * pageSize)
@@ -32,10 +34,9 @@ public class ProblemRepository : MongoRepository<Problem>, IProblemRepository
         return new PaginatedResult<Problem>
         {
             Items = problems,
-            TotalCount = (int)totalCount,
+            TotalCount = totalCount,
             Page = page,
-            PageSize = pageSize,
-            TotalPages = (int)Math.Ceiling((double)totalCount / pageSize)
+            PageSize = pageSize
         };
     }
 
@@ -45,11 +46,11 @@ public class ProblemRepository : MongoRepository<Problem>, IProblemRepository
         var filters = new List<FilterDefinition<Problem>>();
 
         // Text search
-        if (!string.IsNullOrEmpty(request.Query))
+        if (!string.IsNullOrEmpty(request.Search))
         {
             filters.Add(filterBuilder.Or(
-                filterBuilder.Regex(p => p.Title, new BsonRegularExpression(request.Query, "i")),
-                filterBuilder.Regex(p => p.Description, new BsonRegularExpression(request.Query, "i"))
+                filterBuilder.Regex(p => p.Title, new BsonRegularExpression(request.Search, "i")),
+                filterBuilder.Regex(p => p.Description, new BsonRegularExpression(request.Search, "i"))
             ));
         }
 
@@ -82,7 +83,7 @@ public class ProblemRepository : MongoRepository<Problem>, IProblemRepository
 
         var combinedFilter = filters.Count > 0 ? filterBuilder.And(filters) : FilterDefinition<Problem>.Empty;
         
-        var totalCount = await Collection.CountDocumentsAsync(combinedFilter, cancellationToken: cancellationToken);
+        var totalCount = await _collection.CountDocumentsAsync(combinedFilter, cancellationToken: cancellationToken);
 
         // Build sort
         var sortBuilder = Builders<Problem>.Sort;
@@ -105,10 +106,9 @@ public class ProblemRepository : MongoRepository<Problem>, IProblemRepository
         return new PaginatedResult<Problem>
         {
             Items = problems,
-            TotalCount = (int)totalCount,
+            TotalCount = totalCount,
             Page = request.Page,
             PageSize = request.PageSize,
-            TotalPages = (int)Math.Ceiling((double)totalCount / request.PageSize)
         };
     }
 
@@ -145,7 +145,7 @@ public class ProblemRepository : MongoRepository<Problem>, IProblemRepository
         var filter = Builders<Problem>.Filter.Eq(p => p.Id, problemId);
         var update = Builders<Problem>.Update.Set(p => p.Statistics, statistics);
         
-        var result = await Collection.UpdateOneAsync(filter, update, cancellationToken: cancellationToken);
+        var result = await _collection.UpdateOneAsync(filter, update, cancellationToken: cancellationToken);
         return result.ModifiedCount > 0;
     }
 
@@ -154,7 +154,7 @@ public class ProblemRepository : MongoRepository<Problem>, IProblemRepository
         var filter = Builders<Problem>.Filter.Eq(p => p.Id, problemId);
         var update = Builders<Problem>.Update.Inc("Statistics.Views", 1);
         
-        var result = await Collection.UpdateOneAsync(filter, update, cancellationToken: cancellationToken);
+        var result = await _collection.UpdateOneAsync(filter, update, cancellationToken: cancellationToken);
         return result.ModifiedCount > 0;
     }
 
@@ -163,7 +163,7 @@ public class ProblemRepository : MongoRepository<Problem>, IProblemRepository
         var filter = Builders<Problem>.Filter.Eq(p => p.Id, problemId);
         var update = Builders<Problem>.Update.Set(p => p.Difficulty, difficulty);
         
-        var result = await Collection.UpdateOneAsync(filter, update, cancellationToken: cancellationToken);
+        var result = await _collection.UpdateOneAsync(filter, update, cancellationToken: cancellationToken);
         return result.ModifiedCount > 0;
     }
 

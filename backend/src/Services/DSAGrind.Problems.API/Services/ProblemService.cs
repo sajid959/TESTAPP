@@ -57,7 +57,7 @@ public class ProblemService : IProblemService
         return new ProblemSearchResponseDto
         {
             Problems = _mapper.Map<List<ProblemDto>>(result.Items),
-            TotalCount = result.TotalCount,
+            TotalCount = (int)result.TotalCount,
             Page = result.Page,
             PageSize = result.PageSize,
             TotalPages = result.TotalPages,
@@ -89,11 +89,11 @@ public class ProblemService : IProblemService
             Difficulty = request.Difficulty,
             CategoryId = request.CategoryId,
             Tags = request.Tags ?? new List<string>(),
-            TestCases = request.TestCases ?? new List<TestCase>(),
+            TestCases = _mapper.Map<List<TestCase>>(request.TestCases) ?? new List<TestCase>(),
             Constraints = request.Constraints ?? new List<string>(),
-            Examples = request.Examples ?? new List<ProblemExample>(),
+            Examples = _mapper.Map<List<ProblemExample>>(request.Examples) ?? new List<ProblemExample>(),
             Hints = request.Hints ?? new List<string>(),
-            SolutionTemplate = request.SolutionTemplate ?? new Dictionary<string, string>(),
+            SolutionTemplate = request.SolutionTemplate,
             IsPaid = request.IsPaid,
             Status = "pending", // Needs approval
             CreatedBy = userId,
@@ -132,13 +132,13 @@ public class ProblemService : IProblemService
             problem.Tags = request.Tags;
 
         if (request.TestCases != null)
-            problem.TestCases = request.TestCases;
+            problem.TestCases = _mapper.Map<List<TestCase>>(request.TestCases);
 
         if (request.Constraints != null)
             problem.Constraints = request.Constraints;
 
         if (request.Examples != null)
-            problem.Examples = request.Examples;
+            problem.Examples = _mapper.Map<List<ProblemExample>>(request.Examples);
 
         if (request.Hints != null)
             problem.Hints = request.Hints;
@@ -149,7 +149,7 @@ public class ProblemService : IProblemService
         problem.UpdatedAt = DateTime.UtcNow;
         problem.UpdatedBy = userId;
 
-        await _problemRepository.UpdateAsync(problem, cancellationToken);
+        await _problemRepository.UpdateAsync(problem.Id, problem, cancellationToken);
 
         // Publish event
         await _eventPublisher.PublishAsync("problem.updated", new { ProblemId = problem.Id, UserId = userId }, cancellationToken);
@@ -178,7 +178,7 @@ public class ProblemService : IProblemService
         problem.UpdatedAt = DateTime.UtcNow;
         problem.UpdatedBy = adminUserId;
 
-        await _problemRepository.UpdateAsync(problem, cancellationToken);
+        await _problemRepository.UpdateAsync(problem.Id, problem, cancellationToken);
 
         // Publish event
         await _eventPublisher.PublishAsync("problem.approved", new { ProblemId = id, AdminUserId = adminUserId }, cancellationToken);
@@ -200,7 +200,7 @@ public class ProblemService : IProblemService
                 Description = item.Description,
                 Difficulty = item.Difficulty,
                 CategoryId = item.CategoryId,
-                Tags = item.Tags ?? new List<string>(),
+                Tags = ParseStringToList(item.Tags) ?? new List<string>(),
                 IsPaid = item.IsPaid,
                 Status = "pending",
                 CreatedBy = userId,
@@ -258,5 +258,15 @@ public class ProblemService : IProblemService
             .Replace("?", "")
             .Replace("(", "")
             .Replace(")", "");
+    }
+
+    private static List<string>? ParseStringToList(string? value)
+    {
+        if (string.IsNullOrEmpty(value))
+            return null;
+        
+        return value.Split(',', StringSplitOptions.RemoveEmptyEntries)
+                   .Select(x => x.Trim())
+                   .ToList();
     }
 }

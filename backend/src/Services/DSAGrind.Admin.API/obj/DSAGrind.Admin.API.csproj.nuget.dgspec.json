@@ -77,6 +77,14 @@
               "target": "Package",
               "version": "[8.0.1, )"
             },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Serilog.AspNetCore": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -206,11 +214,11 @@
             },
             "MongoDB.Bson": {
               "target": "Package",
-              "version": "[2.23.1, )"
+              "version": "[3.0.0, )"
             },
             "MongoDB.Driver": {
               "target": "Package",
-              "version": "[2.23.1, )"
+              "version": "[3.0.0, )"
             },
             "StackExchange.Redis": {
               "target": "Package",

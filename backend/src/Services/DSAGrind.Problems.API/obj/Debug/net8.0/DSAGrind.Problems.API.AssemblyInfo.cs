@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DSAGrind.Problems.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+068c6b9973930e36c32440ce43f95a5b5cda0b60")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9752d6ae614711b3a2ca82e5e3972ef25fe5700")]
 [assembly: System.Reflection.AssemblyProductAttribute("DSAGrind.Problems.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DSAGrind.Problems.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

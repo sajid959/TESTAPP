@@ -212,9 +212,13 @@
               "target": "Package",
               "version": "[7.3.1, )"
             },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "MongoDB.Driver": {
               "target": "Package",
-              "version": "[2.23.1, )"
+              "version": "[3.0.0, )"
             },
             "StackExchange.Redis": {
               "target": "Package",
@@ -226,7 +230,7 @@
             },
             "System.Text.Json": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.5, )"
             }
           },
           "imports": [

@@ -46,6 +46,15 @@ public class Problem
     [BsonElement("isApproved")]
     public bool IsApproved { get; set; } = false;
 
+    [BsonElement("status")]
+    public string Status { get; set; } = "draft"; // draft, published, archived
+
+    [BsonElement("orderIndex")]
+    public int OrderIndex { get; set; } = 0;
+
+    [BsonElement("solutionTemplate")]
+    public string? SolutionTemplate { get; set; }
+
     [BsonElement("aiEstimatedDifficulty")]
     public string? AiEstimatedDifficulty { get; set; }
 
@@ -64,6 +73,10 @@ public class Problem
     [BsonElement("createdBy")]
     [BsonRepresentation(BsonType.ObjectId)]
     public string? CreatedBy { get; set; }
+
+    [BsonElement("updatedBy")]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string? UpdatedBy { get; set; }
 
     [BsonElement("approvedBy")]
     [BsonRepresentation(BsonType.ObjectId)]

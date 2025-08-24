@@ -105,7 +105,7 @@ public class CategoryService : ICategoryService
 
         category.UpdatedAt = DateTime.UtcNow;
 
-        await _categoryRepository.UpdateAsync(category, cancellationToken);
+        await _categoryRepository.UpdateAsync(category.Id, category, cancellationToken);
 
         // Publish event
         await _eventPublisher.PublishAsync("category.updated", new { CategoryId = category.Id, UserId = userId }, cancellationToken);
@@ -134,7 +134,7 @@ public class CategoryService : ICategoryService
             {
                 category.OrderIndex = order.OrderIndex;
                 category.UpdatedAt = DateTime.UtcNow;
-                await _categoryRepository.UpdateAsync(category, cancellationToken);
+                await _categoryRepository.UpdateAsync(category.Id, category, cancellationToken);
             }
         }
 

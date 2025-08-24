@@ -52,6 +52,7 @@ public class CreateProblemRequestDto
     public bool IsPaid { get; set; } = false;
     public List<string> Hints { get; set; } = new();
     public ProblemSolutionDto? Solution { get; set; }
+    public string? SolutionTemplate { get; set; }
 }
 
 public class UpdateProblemRequestDto

@@ -279,3 +279,71 @@
 2025-08-24 21:46:53.618 +00:00 [INF] Executing endpoint 'HTTP: GET /'
 2025-08-24 21:46:53.626 +00:00 [INF] Executed endpoint 'HTTP: GET /'
 2025-08-24 21:46:53.627 +00:00 [INF] Request finished HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - 200 null text/plain; charset=utf-8 104.1879ms
+2025-08-24 21:47:20.842 +00:00 [INF] Request starting HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - null null
+2025-08-24 21:47:20.844 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-24 21:47:20.846 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-24 21:47:20.847 +00:00 [INF] Request finished HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - 200 null text/plain; charset=utf-8 4.3291ms
+2025-08-24 21:51:09.492 +00:00 [INF] Application is shutting down...
+2025-08-24 21:51:30.681 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-24 21:51:31.002 +00:00 [INF] Loading proxy data from config.
+2025-08-24 21:51:31.288 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-24 21:51:31.604 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-24 21:51:31.606 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 21:51:31.606 +00:00 [INF] Hosting environment: Development
+2025-08-24 21:51:31.606 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-24 21:51:31.826 +00:00 [INF] Request starting HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - null null
+2025-08-24 21:51:31.916 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-24 21:51:31.976 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-24 21:51:31.978 +00:00 [INF] Request finished HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - 200 null text/plain; charset=utf-8 153.5729ms
+2025-08-24 21:51:32.116 +00:00 [INF] Request starting HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - null null
+2025-08-24 21:51:32.118 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-24 21:51:32.119 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-24 21:51:32.119 +00:00 [INF] Request finished HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - 200 null text/plain; charset=utf-8 3.4695ms
+2025-08-24 21:53:15.676 +00:00 [INF] Application is shutting down...
+2025-08-24 21:53:41.589 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-24 21:53:41.790 +00:00 [INF] Loading proxy data from config.
+2025-08-24 21:53:41.888 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-24 21:53:42.374 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-24 21:53:42.377 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 21:53:42.377 +00:00 [INF] Hosting environment: Development
+2025-08-24 21:53:42.377 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-24 21:53:42.685 +00:00 [INF] Request starting HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - null null
+2025-08-24 21:53:42.893 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-24 21:53:42.897 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-24 21:53:42.898 +00:00 [INF] Request finished HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - 200 null text/plain; charset=utf-8 214.833ms
+2025-08-24 21:53:42.975 +00:00 [INF] Request starting HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - null null
+2025-08-24 21:53:42.977 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-24 21:53:42.977 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-24 21:53:42.978 +00:00 [INF] Request finished HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - 200 null text/plain; charset=utf-8 2.5376ms
+2025-08-24 21:55:42.146 +00:00 [INF] Application is shutting down...
+2025-08-24 21:56:08.098 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-24 21:56:08.377 +00:00 [INF] Loading proxy data from config.
+2025-08-24 21:56:08.496 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-24 21:56:08.884 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-24 21:56:08.886 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 21:56:08.886 +00:00 [INF] Hosting environment: Development
+2025-08-24 21:56:08.887 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-24 21:56:09.085 +00:00 [INF] Request starting HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - null null
+2025-08-24 21:56:09.187 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-24 21:56:09.192 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-24 21:56:09.193 +00:00 [INF] Request finished HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - 200 null text/plain; charset=utf-8 108.9511ms
+2025-08-24 21:56:09.375 +00:00 [INF] Request starting HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - null null
+2025-08-24 21:56:09.378 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-24 21:56:09.378 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-24 21:56:09.379 +00:00 [INF] Request finished HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - 200 null text/plain; charset=utf-8 3.7289ms
+2025-08-24 21:57:31.138 +00:00 [INF] Application is shutting down...
+2025-08-24 21:57:40.481 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-24 21:57:40.887 +00:00 [INF] Loading proxy data from config.
+2025-08-24 21:57:41.092 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-24 21:57:41.601 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-24 21:57:41.603 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 21:57:41.604 +00:00 [INF] Hosting environment: Development
+2025-08-24 21:57:41.604 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-24 21:57:41.880 +00:00 [INF] Request starting HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - null null
+2025-08-24 21:57:42.080 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-24 21:57:42.087 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-24 21:57:42.089 +00:00 [INF] Request finished HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - 200 null text/plain; charset=utf-8 209.6582ms
+2025-08-24 21:57:42.273 +00:00 [INF] Request starting HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - null null
+2025-08-24 21:57:42.275 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-24 21:57:42.276 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-24 21:57:42.276 +00:00 [INF] Request finished HTTP/1.1 GET http://b197de86-7e2d-446f-8c41-1516e55b78cc-00-mr4pn877z034.sisko.replit.dev/ - 200 null text/plain; charset=utf-8 68.4246ms

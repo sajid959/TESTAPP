@@ -95,7 +95,7 @@ public class AIService : IAIService
                 7. Optimization tips
                 
                 Return your analysis in this JSON format:
-                {{
+                {
                     "timeComplexity": "O(...)",
                     "spaceComplexity": "O(...)", 
                     "codeQualityScore": 85,
@@ -103,7 +103,7 @@ public class AIService : IAIService
                     "issues": ["issue1", "issue2"],
                     "bestPractices": ["practice1", "practice2"],
                     "optimizationTips": ["tip1", "tip2"]
-                }}
+                }
                 """;
 
             var result = await _kernel.InvokePromptAsync(prompt, cancellationToken: cancellationToken);
@@ -178,13 +178,13 @@ public class AIService : IAIService
                 Problem Description: {problemDescription}
                 
                 Provide your analysis in this JSON format:
-                {{
+                {
                     "estimatedDifficulty": "Easy|Medium|Hard",
                     "confidence": 0.85,
                     "reasoningFactors": ["factor1", "factor2"],
                     "estimatedTimeMinutes": 30,
                     "requiredConcepts": ["concept1", "concept2"]
-                }}
+                }
                 
                 Consider:
                 - Algorithmic complexity required
