@@ -199,7 +199,7 @@ public class ProblemService : IProblemService
                 Slug = GenerateSlug(item.Title),
                 Description = item.Description,
                 Difficulty = item.Difficulty,
-                CategoryId = item.CategoryId,
+                CategoryId = request.CategoryId,
                 Tags = ParseStringToList(item.Tags) ?? new List<string>(),
                 IsPaid = item.IsPaid,
                 Status = "pending",

@@ -74,6 +74,12 @@ public class User
 
     [BsonElement("updatedAt")]
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+
+    [BsonElement("isActive")]
+    public bool IsActive { get; set; } = true;
+
+    [BsonElement("lastLoginAt")]
+    public DateTime? LastLoginAt { get; set; }
 }
 
 public class RefreshToken

@@ -160,17 +160,11 @@ public class CodeExecutionService : ICodeExecutionService
             // Start container
             await _dockerClient.Containers.StartContainerAsync(createResponse.ID, new ContainerStartParameters(), cancellationToken);
 
-            // Send input if provided
+            // Send input if provided (simplified for now)
             if (!string.IsNullOrEmpty(input))
             {
-                var inputBytes = Encoding.UTF8.GetBytes(input);
-                using var inputStream = new MemoryStream(inputBytes);
-                await _dockerClient.Containers.AttachContainerAsync(createResponse.ID, false, 
-                    new ContainerAttachParameters
-                    {
-                        Stream = true,
-                        Stdin = true
-                    }, inputStream, cancellationToken);
+                _logger.LogInformation("Input provided: {Input}", input);
+                // TODO: Implement proper input handling with correct Docker API
             }
 
             // Wait for container to finish

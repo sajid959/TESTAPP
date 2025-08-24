@@ -1,7 +1,9 @@
 using DSAGrind.Common.Repositories;
 using DSAGrind.Common.Services;
 using DSAGrind.Models.Entities;
+using DSAGrind.Models.DTOs;
 using AutoMapper;
+using MongoDB.Bson;
 
 namespace DSAGrind.Submissions.API.Services;
 
@@ -39,9 +41,7 @@ public class SubmissionService : ISubmissionService
     {
         var submissions = await _submissionRepository.GetManyAsync(
             s => s.UserId == userId && (problemId == null || s.ProblemId == problemId),
-            page: page,
-            pageSize: pageSize,
-            cancellationToken: cancellationToken);
+            cancellationToken);
 
         return _mapper.Map<List<SubmissionDto>>(submissions);
     }
@@ -75,7 +75,7 @@ public class SubmissionService : ISubmissionService
         submission.ErrorMessage = executionResult.ErrorMessage;
         submission.ExecutionDetails = _mapper.Map<ExecutionDetails>(executionResult.ExecutionDetails);
 
-        await _submissionRepository.UpdateAsync(submission, cancellationToken);
+        await _submissionRepository.UpdateAsync(submission.Id, submission, cancellationToken);
 
         // Publish event
         await _eventPublisher.PublishAsync("submission.created", new { SubmissionId = submission.Id, UserId = userId, Status = submission.Status }, cancellationToken);
@@ -102,8 +102,7 @@ public class SubmissionService : ISubmissionService
     {
         var submissions = await _submissionRepository.GetManyAsync(
             s => s.ProblemId == problemId && s.Status == "accepted",
-            limit,
-            cancellationToken: cancellationToken);
+            cancellationToken);
 
         // Sort by runtime ascending
         var sortedSubmissions = submissions.OrderBy(s => s.Runtime).Take(limit).ToList();

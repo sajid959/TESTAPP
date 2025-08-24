@@ -96,7 +96,7 @@ public class ProblemRepository : MongoRepository<Problem>, IProblemRepository
             _ => sortBuilder.Ascending(p => p.OrderIndex)
         };
 
-        var problems = await Collection
+        var problems = await _collection
             .Find(combinedFilter)
             .Sort(sort)
             .Skip((request.Page - 1) * request.PageSize)
@@ -127,7 +127,7 @@ public class ProblemRepository : MongoRepository<Problem>, IProblemRepository
 
         var combinedFilter = filterBuilder.And(filters);
 
-        return await Collection
+        return await _collection
             .Aggregate()
             .Match(combinedFilter)
             .Sample(count)
@@ -178,7 +178,7 @@ public class ProblemRepository : MongoRepository<Problem>, IProblemRepository
             Builders<Problem>.Filter.AnyIn(p => p.Tags, problem.Tags)
         );
 
-        return await Collection
+        return await _collection
             .Find(filter)
             .Limit(count)
             .ToListAsync(cancellationToken);

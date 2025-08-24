@@ -1,6 +1,9 @@
 using DSAGrind.Common.Repositories;
 using DSAGrind.Models.Entities;
+using DSAGrind.Models.DTOs;
 using DSAGrind.Common.Services;
+using AutoMapper;
+using MongoDB.Bson;
 
 namespace DSAGrind.Admin.API.Services;
 
@@ -115,6 +118,99 @@ public class AdminService : IAdminService
         return await Task.FromResult(logs.Skip((page - 1) * pageSize).Take(pageSize).ToList());
     }
 
+    public async Task<AdminDashboardDto> GetDashboardDataAsync(CancellationToken cancellationToken = default)
+    {
+        return await GetDashboardAsync(cancellationToken);
+    }
+
+    public async Task<object> GetAnalyticsAsync(CancellationToken cancellationToken = default)
+    {
+        // Mock analytics data
+        return await Task.FromResult(new
+        {
+            TotalRevenue = 125000.50m,
+            MonthlyGrowth = 12.5,
+            UserRetentionRate = 85.3,
+            ProblemCompletionRate = 73.2
+        });
+    }
+
+    public async Task<bool> CreateBackupAsync(CancellationToken cancellationToken = default)
+    {
+        // Mock backup creation
+        _logger.LogInformation("Creating system backup...");
+        await Task.Delay(1000, cancellationToken); // Simulate backup time
+        return true;
+    }
+
+    // Delegate to UserManagementService methods
+    public async Task<List<UserDto>> GetUsersAsync(int page = 1, int pageSize = 50, string? search = null, CancellationToken cancellationToken = default)
+    {
+        var userService = new UserManagementService(_userRepository, _eventPublisher, _logger);
+        return await userService.GetUsersAsync(page, pageSize, search, cancellationToken);
+    }
+
+    public async Task<UserDto?> GetUserAsync(string userId, CancellationToken cancellationToken = default)
+    {
+        var userService = new UserManagementService(_userRepository, _eventPublisher, _logger);
+        return await userService.GetUserAsync(userId, cancellationToken);
+    }
+
+    public async Task<bool> BanUserAsync(string userId, string reason, string adminUserId, CancellationToken cancellationToken = default)
+    {
+        var userService = new UserManagementService(_userRepository, _eventPublisher, _logger);
+        return await userService.BanUserAsync(userId, reason, adminUserId, cancellationToken);
+    }
+
+    public async Task<bool> UnbanUserAsync(string userId, string adminUserId, CancellationToken cancellationToken = default)
+    {
+        var userService = new UserManagementService(_userRepository, _eventPublisher, _logger);
+        return await userService.UnbanUserAsync(userId, adminUserId, cancellationToken);
+    }
+
+    public async Task<bool> UpdateUserRoleAsync(string userId, string role, string adminUserId, CancellationToken cancellationToken = default)
+    {
+        var userService = new UserManagementService(_userRepository, _eventPublisher, _logger);
+        return await userService.UpdateUserRoleAsync(userId, role, adminUserId, cancellationToken);
+    }
+
+    public async Task<bool> DeleteUserAsync(string userId, string adminUserId, CancellationToken cancellationToken = default)
+    {
+        var userService = new UserManagementService(_userRepository, _eventPublisher, _logger);
+        return await userService.DeleteUserAsync(userId, adminUserId, cancellationToken);
+    }
+
+    // Delegate to ContentModerationService methods
+    public async Task<List<ProblemDto>> GetPendingProblemsAsync(CancellationToken cancellationToken = default)
+    {
+        var contentService = new ContentModerationService(_problemRepository, _submissionRepository, _eventPublisher, _logger);
+        return await contentService.GetPendingProblemsAsync(cancellationToken);
+    }
+
+    public async Task<List<SubmissionDto>> GetFlaggedSubmissionsAsync(CancellationToken cancellationToken = default)
+    {
+        var contentService = new ContentModerationService(_problemRepository, _submissionRepository, _eventPublisher, _logger);
+        return await contentService.GetFlaggedSubmissionsAsync(cancellationToken);
+    }
+
+    public async Task<bool> ApproveProblemAsync(string problemId, string adminUserId, CancellationToken cancellationToken = default)
+    {
+        var contentService = new ContentModerationService(_problemRepository, _submissionRepository, _eventPublisher, _logger);
+        return await contentService.ApproveProblemAsync(problemId, adminUserId, cancellationToken);
+    }
+
+    public async Task<bool> RejectProblemAsync(string problemId, string reason, string adminUserId, CancellationToken cancellationToken = default)
+    {
+        var contentService = new ContentModerationService(_problemRepository, _submissionRepository, _eventPublisher, _logger);
+        return await contentService.RejectProblemAsync(problemId, reason, adminUserId, cancellationToken);
+    }
+
+    public async Task<bool> RemoveSubmissionAsync(string submissionId, string reason, string adminUserId, CancellationToken cancellationToken = default)
+    {
+        var contentService = new ContentModerationService(_problemRepository, _submissionRepository, _eventPublisher, _logger);
+        return await contentService.RemoveSubmissionAsync(submissionId, reason, adminUserId, cancellationToken);
+    }
+
     private List<DashboardChartDto> GenerateSubmissionsChart()
     {
         return new List<DashboardChartDto>
@@ -163,9 +259,7 @@ public class UserManagementService : IUserManagementService
     {
         var users = await _userRepository.GetManyAsync(
             u => string.IsNullOrEmpty(search) || u.Email.Contains(search) || u.FirstName.Contains(search) || u.LastName.Contains(search),
-            page: page,
-            pageSize: pageSize,
-            cancellationToken: cancellationToken);
+            cancellationToken);
 
         return users.Select(u => new UserDto
         {
@@ -208,7 +302,7 @@ public class UserManagementService : IUserManagementService
         user.IsActive = false;
         user.UpdatedAt = DateTime.UtcNow;
         
-        await _userRepository.UpdateAsync(user, cancellationToken);
+        await _userRepository.UpdateAsync(user.Id, user, cancellationToken);
         await _eventPublisher.PublishAsync("user.banned", new { UserId = userId, Reason = reason, AdminUserId = adminUserId }, cancellationToken);
 
         return true;
@@ -222,7 +316,7 @@ public class UserManagementService : IUserManagementService
         user.IsActive = true;
         user.UpdatedAt = DateTime.UtcNow;
         
-        await _userRepository.UpdateAsync(user, cancellationToken);
+        await _userRepository.UpdateAsync(user.Id, user, cancellationToken);
         await _eventPublisher.PublishAsync("user.unbanned", new { UserId = userId, AdminUserId = adminUserId }, cancellationToken);
 
         return true;
@@ -237,7 +331,7 @@ public class UserManagementService : IUserManagementService
         user.Role = role;
         user.UpdatedAt = DateTime.UtcNow;
         
-        await _userRepository.UpdateAsync(user, cancellationToken);
+        await _userRepository.UpdateAsync(user.Id, user, cancellationToken);
         await _eventPublisher.PublishAsync("user.role_updated", new { UserId = userId, OldRole = oldRole, NewRole = role, AdminUserId = adminUserId }, cancellationToken);
 
         return true;
@@ -276,7 +370,7 @@ public class ContentModerationService : IContentModerationService
 
     public async Task<List<ProblemDto>> GetPendingProblemsAsync(CancellationToken cancellationToken = default)
     {
-        var problems = await _problemRepository.GetManyAsync(p => p.Status == "pending", cancellationToken: cancellationToken);
+        var problems = await _problemRepository.GetManyAsync(p => p.Status == "pending", cancellationToken);
         
         return problems.Select(p => new ProblemDto
         {
@@ -293,7 +387,7 @@ public class ContentModerationService : IContentModerationService
     public async Task<List<SubmissionDto>> GetFlaggedSubmissionsAsync(CancellationToken cancellationToken = default)
     {
         // In real implementation, query submissions flagged by users or AI
-        var submissions = await _submissionRepository.GetManyAsync(s => s.Notes != null && s.Notes.Contains("flagged"), cancellationToken: cancellationToken);
+        var submissions = await _submissionRepository.GetManyAsync(s => s.Notes != null && s.Notes.Contains("flagged"), cancellationToken);
         
         return submissions.Select(s => new SubmissionDto
         {
@@ -317,7 +411,7 @@ public class ContentModerationService : IContentModerationService
         problem.UpdatedAt = DateTime.UtcNow;
         problem.UpdatedBy = adminUserId;
 
-        await _problemRepository.UpdateAsync(problem, cancellationToken);
+        await _problemRepository.UpdateAsync(problem.Id, problem, cancellationToken);
         await _eventPublisher.PublishAsync("problem.approved", new { ProblemId = problemId, AdminUserId = adminUserId }, cancellationToken);
 
         return true;
@@ -332,7 +426,7 @@ public class ContentModerationService : IContentModerationService
         problem.UpdatedAt = DateTime.UtcNow;
         problem.UpdatedBy = adminUserId;
 
-        await _problemRepository.UpdateAsync(problem, cancellationToken);
+        await _problemRepository.UpdateAsync(problem.Id, problem, cancellationToken);
         await _eventPublisher.PublishAsync("problem.rejected", new { ProblemId = problemId, Reason = reason, AdminUserId = adminUserId }, cancellationToken);
 
         return true;

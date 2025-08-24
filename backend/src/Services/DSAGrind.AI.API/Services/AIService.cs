@@ -95,7 +95,7 @@ public class AIService : IAIService
                 7. Optimization tips
                 
                 Return your analysis in this JSON format:
-                {
+                {{
                     "timeComplexity": "O(...)",
                     "spaceComplexity": "O(...)", 
                     "codeQualityScore": 85,
@@ -103,7 +103,7 @@ public class AIService : IAIService
                     "issues": ["issue1", "issue2"],
                     "bestPractices": ["practice1", "practice2"],
                     "optimizationTips": ["tip1", "tip2"]
-                }
+                }}
                 """;
 
             var result = await _kernel.InvokePromptAsync(prompt, cancellationToken: cancellationToken);
@@ -172,10 +172,10 @@ public class AIService : IAIService
     {
         try
         {
-            var prompt = $"""
+            var prompt = $$"""
                 You are an expert programming problem curator. Analyze this problem and estimate its difficulty.
                 
-                Problem Description: {problemDescription}
+                Problem Description: {{problemDescription}}
                 
                 Provide your analysis in this JSON format:
                 {

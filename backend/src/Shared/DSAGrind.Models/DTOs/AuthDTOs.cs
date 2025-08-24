@@ -58,6 +58,7 @@ public class UserDto
     public string? Avatar { get; set; }
     public string Role { get; set; } = string.Empty;
     public bool IsEmailVerified { get; set; }
+    public bool IsActive { get; set; } = true;
     public string SubscriptionPlan { get; set; } = string.Empty;
     public string SubscriptionStatus { get; set; } = string.Empty;
     public DateTime? SubscriptionExpires { get; set; }
@@ -65,6 +66,7 @@ public class UserDto
     public int Rank { get; set; }
     public UserProfileDto Profile { get; set; } = new();
     public DateTime CreatedAt { get; set; }
+    public DateTime? LastLoginAt { get; set; }
 }
 
 public class UserProfileDto
