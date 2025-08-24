@@ -69,18 +69,17 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Add MongoDB (simplified for Replit - using mock implementation)
+// Add MongoDB
 builder.Services.AddSingleton<IMongoClient>(sp =>
 {
-    // For development/demo purposes, we'll create a mock client
-    // In production, this would connect to real MongoDB
-    return null!; // Temporarily null - will be handled by mock services
+    var settings = sp.GetRequiredService<IConfiguration>().GetSection(MongoDbSettings.SectionName).Get<MongoDbSettings>();
+    return new MongoClient(settings!.ConnectionString);
 });
 
 builder.Services.AddSingleton<IMongoDatabase>(sp =>
 {
     var client = sp.GetRequiredService<IMongoClient>();
-    var settings = builder.Configuration.GetSection(MongoDbSettings.SectionName).Get<MongoDbSettings>();
+    var settings = sp.GetRequiredService<IConfiguration>().GetSection(MongoDbSettings.SectionName).Get<MongoDbSettings>();
     return client.GetDatabase(settings!.DatabaseName);
 });
 
@@ -137,8 +136,7 @@ builder.Services.AddAutoMapper(typeof(Program));
 
 // Add custom services
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-// Use mock services for Replit demo environment
-builder.Services.AddScoped<IAuthService, MockAuthService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IOAuthService, OAuthService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddSingleton<IJwtService, JwtService>();

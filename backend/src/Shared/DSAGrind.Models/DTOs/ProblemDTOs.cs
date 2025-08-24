@@ -5,25 +5,27 @@ namespace DSAGrind.Models.DTOs;
 public class ProblemDto
 {
     public string Id { get; set; } = string.Empty;
-    public string CategoryId { get; set; } = string.Empty;
-    public string CategoryName { get; set; } = string.Empty;
     public string Title { get; set; } = string.Empty;
     public string Slug { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public string Difficulty { get; set; } = string.Empty;
+    public string Status { get; set; } = string.Empty;
     public List<string> Tags { get; set; } = new();
-    public List<ProblemExampleDto> Examples { get; set; } = new();
-    public List<string> Constraints { get; set; } = new();
+    public List<string> Companies { get; set; } = new();
     public List<TestCaseDto> TestCases { get; set; } = new();
-    public bool IsPaid { get; set; }
-    public bool IsApproved { get; set; }
-    public string? AiEstimatedDifficulty { get; set; }
-    public List<string> Hints { get; set; } = new();
-    public ProblemSolutionDto? Solution { get; set; }
-    public ProblemStatisticsDto Statistics { get; set; } = new();
-    public ProblemMetadataDto Metadata { get; set; } = new();
+    public ProblemStatsDto Stats { get; set; } = new();
+    public string CreatedBy { get; set; } = string.Empty;
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
+}
+
+public class ProblemStatsDto
+{
+    public int TotalSubmissions { get; set; }
+    public int AcceptedSubmissions { get; set; }
+    public double AcceptanceRate { get; set; }
+    public int Likes { get; set; }
+    public int Dislikes { get; set; }
 }
 
 public class CreateProblemRequestDto

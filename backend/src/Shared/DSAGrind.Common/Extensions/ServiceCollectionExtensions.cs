@@ -52,9 +52,7 @@ public static class ServiceCollectionExtensions
         services.AddHttpClient();
 
         // Add health checks
-        services.AddHealthChecks()
-            .AddMongoDb(configuration.GetSection(MongoDbSettings.SectionName).Get<MongoDbSettings>()!.ConnectionString, 
-                       name: "mongodb", tags: new[] { "db", "mongodb" });
+        services.AddHealthChecks();
 
         return services;
     }

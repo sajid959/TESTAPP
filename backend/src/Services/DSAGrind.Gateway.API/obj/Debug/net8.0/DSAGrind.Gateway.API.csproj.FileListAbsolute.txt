@@ -6,8 +6,6 @@
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Gateway.API.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Gateway.API.pdb
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/HealthChecks.MongoDb.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/AWSSDK.Core.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/AWSSDK.SecurityToken.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Confluent.Kafka.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DnsClient.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
@@ -22,8 +20,6 @@
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Microsoft.OpenApi.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/MongoDB.Bson.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/MongoDB.Driver.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/MongoDB.Driver.Core.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/MongoDB.Libmongocrypt.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Pipelines.Sockets.Unofficial.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Serilog.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Serilog.AspNetCore.dll
@@ -69,9 +65,6 @@
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/vcruntime140.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/zlib1.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/zstd.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/linux/native/libmongocrypt.so
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/osx/native/libmongocrypt.dylib
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win/native/mongocrypt.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Common.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Events.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Models.dll

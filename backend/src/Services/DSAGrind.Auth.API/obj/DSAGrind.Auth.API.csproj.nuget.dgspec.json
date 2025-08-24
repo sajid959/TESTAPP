@@ -91,7 +91,7 @@
             },
             "MongoDB.Driver": {
               "target": "Package",
-              "version": "[3.4.3, )"
+              "version": "[2.23.1, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",
@@ -219,6 +219,10 @@
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
               "version": "[7.3.1, )"
+            },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.23.1, )"
             },
             "MongoDB.Driver": {
               "target": "Package",

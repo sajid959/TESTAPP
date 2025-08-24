@@ -139,3 +139,39 @@ public class OAuthCallbackDto
     public string? Error { get; set; }
     public string? ErrorDescription { get; set; }
 }
+
+public class UserSearchRequestDto
+{
+    public string? Search { get; set; }
+    public string? Role { get; set; }
+    public bool? IsActive { get; set; }
+    public int Page { get; set; } = 1;
+    public int PageSize { get; set; } = 20;
+}
+
+public class UserSearchResponseDto
+{
+    public List<UserDto> Users { get; set; } = new();
+    public int TotalCount { get; set; }
+    public int Page { get; set; }
+    public int PageSize { get; set; }
+    public int TotalPages { get; set; }
+}
+
+public class AdminAnalyticsDto
+{
+    public int TotalUsers { get; set; }
+    public int ActiveUsers { get; set; }
+    public int TotalProblems { get; set; }
+    public int TotalSubmissions { get; set; }
+    public decimal Revenue { get; set; }
+    public List<AnalyticsDataPointDto> UserGrowthData { get; set; } = new();
+    public List<AnalyticsDataPointDto> RevenueData { get; set; } = new();
+}
+
+public class AnalyticsDataPointDto
+{
+    public string Label { get; set; } = string.Empty;
+    public decimal Value { get; set; }
+    public DateTime Date { get; set; }
+}
