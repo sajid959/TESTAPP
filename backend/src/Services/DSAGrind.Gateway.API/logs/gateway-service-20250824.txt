@@ -1,0 +1,18 @@
+2025-08-24 19:54:03.532 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-24 19:54:03.683 +00:00 [INF] Loading proxy data from config.
+2025-08-24 19:54:03.755 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-24 19:54:03.774 +00:00 [INF] Creating key {d9ecdc24-c76e-4591-abab-4b4dd004d371} with creation date 2025-08-24 19:54:03Z, activation date 2025-08-24 19:54:03Z, and expiration date 2025-11-22 19:54:03Z.
+2025-08-24 19:54:03.794 +00:00 [WRN] No XML encryptor configured. Key {d9ecdc24-c76e-4591-abab-4b4dd004d371} may be persisted to storage in unencrypted form.
+2025-08-24 19:54:03.798 +00:00 [INF] Writing data to file '/home/runner/.aspnet/DataProtection-Keys/key-d9ecdc24-c76e-4591-abab-4b4dd004d371.xml'.
+2025-08-24 19:54:03.974 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-24 19:54:03.975 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-24 19:54:03.976 +00:00 [INF] Hosting environment: Development
+2025-08-24 19:54:03.976 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-24 19:54:05.407 +00:00 [INF] Request starting HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/ - null null
+2025-08-24 19:54:05.442 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-24 19:54:05.449 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-24 19:54:05.451 +00:00 [INF] Request finished HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/ - 200 null text/plain; charset=utf-8 45.6317ms
+2025-08-24 19:54:14.260 +00:00 [INF] Request starting HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/ - null null
+2025-08-24 19:54:14.261 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-24 19:54:14.262 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-24 19:54:14.262 +00:00 [INF] Request finished HTTP/1.1 GET http://e1161405-2932-4770-b823-0839bb84be78-00-2hlvy2omoynr.worf.replit.dev/ - 200 null text/plain; charset=utf-8 2.3124ms
