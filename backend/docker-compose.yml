@@ -18,6 +18,7 @@ services:
       - search-api
       - admin-api
       - payments-api
+      - mcp-api
 
   # Authentication API
   auth-api:
@@ -133,6 +134,22 @@ services:
       - MongoDB__DatabaseName=dsagrind
       - Stripe__SecretKey=${STRIPE_SECRET_KEY}
       - Kafka__BootstrapServers=kafka:9092
+    depends_on:
+      - mongodb
+      - kafka
+
+  # MCP API
+  mcp-api:
+    build:
+      context: .
+      dockerfile: src/Services/DSAGrind.MCP.API/Dockerfile
+    ports:
+      - "5007:5007"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Jwt__Key=${JWT_SECRET_KEY}
+      - Jwt__Issuer=DSAGrind
+      - Jwt__Audience=DSAGrind
     depends_on:
       - mongodb
       - kafka

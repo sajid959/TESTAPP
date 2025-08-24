@@ -80,7 +80,7 @@ public class KafkaService : IKafkaService, IDisposable
         }
     }
 
-    public async Task StartConsumerAsync<T>(string topic, string consumerGroup, Func<T, Dictionary<string, string>?, Task> messageHandler, CancellationToken cancellationToken = default)
+    public Task StartConsumerAsync<T>(string topic, string consumerGroup, Func<T, Dictionary<string, string>?, Task> messageHandler, CancellationToken cancellationToken = default)
     {
         var consumerConfig = new ConsumerConfig
         {
@@ -160,9 +160,10 @@ public class KafkaService : IKafkaService, IDisposable
         }, _consumerCancellationTokenSource.Token);
 
         _logger.LogInformation("Started Kafka consumer for topic {Topic} with consumer group {ConsumerGroup}", topic, consumerGroup);
+        return Task.CompletedTask;
     }
 
-    public async Task StopConsumerAsync(CancellationToken cancellationToken = default)
+    public Task StopConsumerAsync(CancellationToken cancellationToken = default)
     {
         if (_consumerCancellationTokenSource != null)
         {
@@ -179,7 +180,7 @@ public class KafkaService : IKafkaService, IDisposable
         }
 
         _logger.LogInformation("Stopped Kafka consumer");
-        await Task.CompletedTask;
+        return Task.CompletedTask;
     }
 
     public void Dispose()

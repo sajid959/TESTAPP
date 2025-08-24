@@ -14,6 +14,13 @@ builder.Host.UseSerilog();
 // Add controllers
 builder.Services.AddControllers();
 
+// Add API documentation  
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new() { Title = "DSAGrind Gateway API", Version = "v1" });
+});
+
 // Add reverse proxy
 builder.Services.AddReverseProxy()
     .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
@@ -30,6 +37,17 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+// Configure development-only services
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "DSAGrind Gateway API v1");
+        c.RoutePrefix = "swagger"; // Set Swagger UI at /swagger
+    });
+}
 
 // Rate limiter disabled for now
 app.UseCors("AllowFrontend");
