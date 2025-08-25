@@ -14,19 +14,25 @@ public class AdminService : IAdminService
     private readonly IMongoRepository<Submission> _submissionRepository;
     private readonly IEventPublisher _eventPublisher;
     private readonly ILogger<AdminService> _logger;
+    private readonly IUserManagementService _userManagementService;
+    private readonly IContentModerationService _contentModerationService;
 
     public AdminService(
         IMongoRepository<User> userRepository,
         IMongoRepository<Problem> problemRepository,
         IMongoRepository<Submission> submissionRepository,
         IEventPublisher eventPublisher,
-        ILogger<AdminService> logger)
+        ILogger<AdminService> logger,
+        IUserManagementService userManagementService,
+        IContentModerationService contentModerationService)
     {
         _userRepository = userRepository;
         _problemRepository = problemRepository;
         _submissionRepository = submissionRepository;
         _eventPublisher = eventPublisher;
         _logger = logger;
+        _userManagementService = userManagementService;
+        _contentModerationService = contentModerationService;
     }
 
     public async Task<AdminDashboardDto> GetDashboardAsync(CancellationToken cancellationToken = default)
@@ -146,69 +152,58 @@ public class AdminService : IAdminService
     // Delegate to UserManagementService methods
     public async Task<List<UserDto>> GetUsersAsync(int page = 1, int pageSize = 50, string? search = null, CancellationToken cancellationToken = default)
     {
-        var userService = new UserManagementService(_userRepository, _eventPublisher, _logger);
-        return await userService.GetUsersAsync(page, pageSize, search, cancellationToken);
+        return await _userManagementService.GetUsersAsync(page, pageSize, search, cancellationToken);
     }
 
     public async Task<UserDto?> GetUserAsync(string userId, CancellationToken cancellationToken = default)
     {
-        var userService = new UserManagementService(_userRepository, _eventPublisher, _logger);
-        return await userService.GetUserAsync(userId, cancellationToken);
+        return await _userManagementService.GetUserAsync(userId, cancellationToken);
     }
 
     public async Task<bool> BanUserAsync(string userId, string reason, string adminUserId, CancellationToken cancellationToken = default)
     {
-        var userService = new UserManagementService(_userRepository, _eventPublisher, _logger);
-        return await userService.BanUserAsync(userId, reason, adminUserId, cancellationToken);
+        return await _userManagementService.BanUserAsync(userId, reason, adminUserId, cancellationToken);
     }
 
     public async Task<bool> UnbanUserAsync(string userId, string adminUserId, CancellationToken cancellationToken = default)
     {
-        var userService = new UserManagementService(_userRepository, _eventPublisher, _logger);
-        return await userService.UnbanUserAsync(userId, adminUserId, cancellationToken);
+        return await _userManagementService.UnbanUserAsync(userId, adminUserId, cancellationToken);
     }
 
     public async Task<bool> UpdateUserRoleAsync(string userId, string role, string adminUserId, CancellationToken cancellationToken = default)
     {
-        var userService = new UserManagementService(_userRepository, _eventPublisher, _logger);
-        return await userService.UpdateUserRoleAsync(userId, role, adminUserId, cancellationToken);
+        return await _userManagementService.UpdateUserRoleAsync(userId, role, adminUserId, cancellationToken);
     }
 
     public async Task<bool> DeleteUserAsync(string userId, string adminUserId, CancellationToken cancellationToken = default)
     {
-        var userService = new UserManagementService(_userRepository, _eventPublisher, _logger);
-        return await userService.DeleteUserAsync(userId, adminUserId, cancellationToken);
+        return await _userManagementService.DeleteUserAsync(userId, adminUserId, cancellationToken);
     }
 
     // Delegate to ContentModerationService methods
     public async Task<List<ProblemDto>> GetPendingProblemsAsync(CancellationToken cancellationToken = default)
     {
-        var contentService = new ContentModerationService(_problemRepository, _submissionRepository, _eventPublisher, _logger);
-        return await contentService.GetPendingProblemsAsync(cancellationToken);
+        return await _contentModerationService.GetPendingProblemsAsync(cancellationToken);
     }
 
     public async Task<List<SubmissionDto>> GetFlaggedSubmissionsAsync(CancellationToken cancellationToken = default)
     {
-        var contentService = new ContentModerationService(_problemRepository, _submissionRepository, _eventPublisher, _logger);
-        return await contentService.GetFlaggedSubmissionsAsync(cancellationToken);
+        return await _contentModerationService.GetFlaggedSubmissionsAsync(cancellationToken);
     }
 
     public async Task<bool> ApproveProblemAsync(string problemId, string adminUserId, CancellationToken cancellationToken = default)
     {
-        var contentService = new ContentModerationService(_problemRepository, _submissionRepository, _eventPublisher, _logger);
-        return await contentService.ApproveProblemAsync(problemId, adminUserId, cancellationToken);
+        return await _contentModerationService.ApproveProblemAsync(problemId, adminUserId, cancellationToken);
     }
 
     public async Task<bool> RejectProblemAsync(string problemId, string reason, string adminUserId, CancellationToken cancellationToken = default)
     {
-        var contentService = new ContentModerationService(_problemRepository, _submissionRepository, _eventPublisher, _logger);
-        return await contentService.RejectProblemAsync(problemId, reason, adminUserId, cancellationToken);
+        return await _contentModerationService.RejectProblemAsync(problemId, reason, adminUserId, cancellationToken);
     }
 
     public async Task<bool> RemoveSubmissionAsync(string submissionId, string reason, string adminUserId, CancellationToken cancellationToken = default)
     {
-        var contentService = new ContentModerationService(_problemRepository, _submissionRepository, _eventPublisher, _logger);
-        return await contentService.RemoveSubmissionAsync(submissionId, reason, adminUserId, cancellationToken);
+        return await _contentModerationService.RemoveSubmissionAsync(submissionId, reason, adminUserId, cancellationToken);
     }
 
     private List<DashboardChartDto> GenerateSubmissionsChart()

@@ -1,0 +1,23 @@
+2025-08-25 00:00:01.820 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-25 00:00:01.908 +00:00 [INF] Loading proxy data from config.
+2025-08-25 00:00:01.975 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-25 00:00:02.197 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-25 00:00:02.198 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 00:00:02.199 +00:00 [INF] Hosting environment: Development
+2025-08-25 00:00:02.199 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-25 00:02:22.728 +00:00 [INF] Application is shutting down...
+2025-08-25 00:02:28.579 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-25 00:02:28.725 +00:00 [INF] Loading proxy data from config.
+2025-08-25 00:02:28.805 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-25 00:02:29.030 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-25 00:02:29.033 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 00:02:29.033 +00:00 [INF] Hosting environment: Development
+2025-08-25 00:02:29.034 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-25 00:03:17.174 +00:00 [INF] Application is shutting down...
+2025-08-25 00:03:22.921 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-25 00:03:23.087 +00:00 [INF] Loading proxy data from config.
+2025-08-25 00:03:23.164 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-25 00:03:23.453 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-25 00:03:23.460 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 00:03:23.461 +00:00 [INF] Hosting environment: Development
+2025-08-25 00:03:23.461 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API

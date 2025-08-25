@@ -9,7 +9,7 @@ namespace DSAGrind.Payments.API.Services;
 
 public class SubscriptionService : ISubscriptionService
 {
-    private readonly IMongoRepository<Payment> _paymentRepository;
+    private readonly IMongoRepository<DSAGrind.Models.Entities.Subscription> _subscriptionRepository;
     private readonly IEventPublisher _eventPublisher;
     private readonly IMapper _mapper;
     private readonly ILogger<SubscriptionService> _logger;
@@ -17,12 +17,12 @@ public class SubscriptionService : ISubscriptionService
     private readonly PriceService _stripePriceService;
 
     public SubscriptionService(
-        IMongoRepository<Payment> paymentRepository,
+        IMongoRepository<DSAGrind.Models.Entities.Subscription> subscriptionRepository,
         IEventPublisher eventPublisher,
         IMapper mapper,
         ILogger<SubscriptionService> logger)
     {
-        _paymentRepository = paymentRepository;
+        _subscriptionRepository = subscriptionRepository;
         _eventPublisher = eventPublisher;
         _mapper = mapper;
         _logger = logger;
