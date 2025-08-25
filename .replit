@@ -1,5 +1,5 @@
 modules = ["dotnet-7.0", "nodejs-20", "bash", "web"]
-run = "dotnet run"
+run = "node index.js"
 hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
 
 [nix]
