@@ -172,10 +172,10 @@ public class AIService : IAIService
     {
         try
         {
-            var prompt = $$"""
+            var prompt = $"""
                 You are an expert programming problem curator. Analyze this problem and estimate its difficulty.
                 
-                Problem Description: {{problemDescription}}
+                Problem Description: {problemDescription}
                 
                 Provide your analysis in this JSON format:
                 {

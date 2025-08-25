@@ -2,7 +2,9 @@ using DSAGrind.Common.Repositories;
 using DSAGrind.Models.Entities;
 using DSAGrind.Models.DTOs;
 using DSAGrind.Common.Services;
+using DSAGrind.Models.Settings;
 using AutoMapper;
+using Microsoft.Extensions.Options;
 using Stripe;
 
 namespace DSAGrind.Payments.API.Services;
@@ -13,51 +15,96 @@ public class SubscriptionService : ISubscriptionService
     private readonly IEventPublisher _eventPublisher;
     private readonly IMapper _mapper;
     private readonly ILogger<SubscriptionService> _logger;
-    private readonly Stripe.SubscriptionService _stripeSubscriptionService;
-    private readonly PriceService _stripePriceService;
+    private readonly PaymentSettings _paymentSettings;
+    private readonly Stripe.SubscriptionService? _stripeSubscriptionService;
+    private readonly PriceService? _stripePriceService;
 
     public SubscriptionService(
         IMongoRepository<DSAGrind.Models.Entities.Subscription> subscriptionRepository,
         IEventPublisher eventPublisher,
         IMapper mapper,
-        ILogger<SubscriptionService> logger)
+        ILogger<SubscriptionService> logger,
+        IOptions<PaymentSettings> paymentSettings)
     {
         _subscriptionRepository = subscriptionRepository;
         _eventPublisher = eventPublisher;
         _mapper = mapper;
         _logger = logger;
-        // Note: Stripe services will be null in development mode - using mock data instead
-        _stripeSubscriptionService = null!;
-        _stripePriceService = null!;
+        _paymentSettings = paymentSettings.Value;
+        
+        if (_paymentSettings.EnableStripeIntegration)
+        {
+            _stripeSubscriptionService = new Stripe.SubscriptionService();
+            _stripePriceService = new PriceService();
+        }
+        else
+        {
+            _stripeSubscriptionService = null;
+            _stripePriceService = null;
+        }
     }
 
     public async Task<SubscriptionDto> CreateSubscriptionAsync(CreateSubscriptionRequestDto request, string userId, CancellationToken cancellationToken = default)
     {
         try
         {
-            // Mock subscription creation for development environment
-            _logger.LogInformation("Creating mock subscription for user {UserId} with plan {PlanId}", userId, request.PlanId);
-            
-            await Task.Delay(100, cancellationToken); // Simulate API delay
-
-            // Create mock subscription record
-            var subscription = new SubscriptionDto
+            if (_paymentSettings.UseMockData || !_paymentSettings.EnableStripeIntegration)
             {
-                Id = Guid.NewGuid().ToString(),
-                UserId = userId,
-                PlanId = request.PlanId,
-                Status = "active",
-                CurrentPeriodStart = DateTime.UtcNow,
-                CurrentPeriodEnd = DateTime.UtcNow.AddMonths(1),
-                CancelAtPeriodEnd = false,
-                StripeSubscriptionId = "sub_mock_" + Guid.NewGuid().ToString()[..8],
-                CreatedAt = DateTime.UtcNow
-            };
+                // Mock subscription creation
+                _logger.LogInformation("Creating mock subscription for user {UserId} with plan {PlanId}", userId, request.PlanId);
+                
+                await Task.Delay(100, cancellationToken); // Simulate API delay
 
-            // Publish event
-            await _eventPublisher.PublishAsync("subscription.created", new { SubscriptionId = subscription.Id, UserId = userId }, cancellationToken);
+                var subscription = new SubscriptionDto
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    UserId = userId,
+                    PlanId = request.PlanId,
+                    Status = "active",
+                    CurrentPeriodStart = DateTime.UtcNow,
+                    CurrentPeriodEnd = DateTime.UtcNow.AddMonths(1),
+                    CancelAtPeriodEnd = false,
+                    StripeSubscriptionId = "sub_mock_" + Guid.NewGuid().ToString()[..8],
+                    CreatedAt = DateTime.UtcNow
+                };
 
-            return subscription;
+                await _eventPublisher.PublishAsync("subscription.created", new { SubscriptionId = subscription.Id, UserId = userId }, cancellationToken);
+                return subscription;
+            }
+            else
+            {
+                // Real Stripe integration
+                _logger.LogInformation("Creating real Stripe subscription for user {UserId} with plan {PlanId}", userId, request.PlanId);
+                
+                var options = new SubscriptionCreateOptions
+                {
+                    Customer = userId, // In production, this should be the Stripe customer ID
+                    Items = new List<SubscriptionItemOptions>
+                    {
+                        new() { Price = request.PlanId }
+                    },
+                    DefaultPaymentMethod = request.PaymentMethodId,
+                    Expand = new List<string> { "latest_invoice.payment_intent" }
+                };
+
+                var stripeSubscription = await _stripeSubscriptionService!.CreateAsync(options, cancellationToken: cancellationToken);
+
+                var subscription = new SubscriptionDto
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    UserId = userId,
+                    PlanId = request.PlanId,
+                    Status = stripeSubscription.Status,
+                    CurrentPeriodStart = DateTimeOffset.FromUnixTimeSeconds(stripeSubscription.CurrentPeriodStart).DateTime,
+                    CurrentPeriodEnd = DateTimeOffset.FromUnixTimeSeconds(stripeSubscription.CurrentPeriodEnd).DateTime,
+                    CancelAtPeriodEnd = stripeSubscription.CancelAtPeriodEnd,
+                    StripeSubscriptionId = stripeSubscription.Id,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                await _eventPublisher.PublishAsync("subscription.created", new { SubscriptionId = subscription.Id, UserId = userId }, cancellationToken);
+                return subscription;
+            }
         }
         catch (Exception ex)
         {
@@ -70,23 +117,32 @@ public class SubscriptionService : ISubscriptionService
     {
         try
         {
-            // Mock implementation - simulate database lookup
-            _logger.LogInformation("Getting mock subscription for user {UserId}", userId);
-            
-            await Task.Delay(50, cancellationToken); // Simulate database query delay
-            
-            return new SubscriptionDto
+            if (_paymentSettings.UseMockData || !_paymentSettings.EnableStripeIntegration)
             {
-                Id = Guid.NewGuid().ToString(),
-                UserId = userId,
-                PlanId = "price_premium_monthly",
-                Status = "active",
-                CurrentPeriodStart = DateTime.UtcNow.AddDays(-15),
-                CurrentPeriodEnd = DateTime.UtcNow.AddDays(15),
-                CancelAtPeriodEnd = false,
-                StripeSubscriptionId = "sub_mock_" + Guid.NewGuid().ToString()[..8],
-                CreatedAt = DateTime.UtcNow.AddDays(-15)
-            };
+                // Mock implementation
+                _logger.LogInformation("Getting mock subscription for user {UserId}", userId);
+                
+                await Task.Delay(50, cancellationToken);
+                
+                return new SubscriptionDto
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    UserId = userId,
+                    PlanId = "price_premium_monthly",
+                    Status = "active",
+                    CurrentPeriodStart = DateTime.UtcNow.AddDays(-15),
+                    CurrentPeriodEnd = DateTime.UtcNow.AddDays(15),
+                    CancelAtPeriodEnd = false,
+                    StripeSubscriptionId = "sub_mock_" + Guid.NewGuid().ToString()[..8],
+                    CreatedAt = DateTime.UtcNow.AddDays(-15)
+                };
+            }
+            else
+            {
+                // Real database query for production
+                var subscription = await _subscriptionRepository.GetAsync(s => s.UserId == userId, cancellationToken);
+                return subscription != null ? _mapper.Map<SubscriptionDto>(subscription) : null;
+            }
         }
         catch (Exception ex)
         {
@@ -99,14 +155,21 @@ public class SubscriptionService : ISubscriptionService
     {
         try
         {
-            // Mock subscription cancellation
-            _logger.LogInformation("Cancelling mock subscription {SubscriptionId} for user {UserId}", subscriptionId, userId);
-            
-            await Task.Delay(100, cancellationToken); // Simulate API delay
+            if (_paymentSettings.UseMockData || !_paymentSettings.EnableStripeIntegration)
+            {
+                // Mock subscription cancellation
+                _logger.LogInformation("Cancelling mock subscription {SubscriptionId} for user {UserId}", subscriptionId, userId);
+                await Task.Delay(100, cancellationToken);
+            }
+            else
+            {
+                // Real Stripe cancellation
+                _logger.LogInformation("Cancelling Stripe subscription {SubscriptionId} for user {UserId}", subscriptionId, userId);
+                var options = new SubscriptionUpdateOptions { CancelAtPeriodEnd = true };
+                await _stripeSubscriptionService!.UpdateAsync(subscriptionId, options, cancellationToken: cancellationToken);
+            }
 
-            // Publish event
             await _eventPublisher.PublishAsync("subscription.cancelled", new { SubscriptionId = subscriptionId, UserId = userId }, cancellationToken);
-
             return true;
         }
         catch (Exception ex)
@@ -120,29 +183,64 @@ public class SubscriptionService : ISubscriptionService
     {
         try
         {
-            // Mock subscription update
-            _logger.LogInformation("Updating mock subscription {SubscriptionId} for user {UserId}", subscriptionId, userId);
-            
-            await Task.Delay(100, cancellationToken); // Simulate API delay
-
-            // Return mock updated subscription
-            var subscription = new SubscriptionDto
+            if (_paymentSettings.UseMockData || !_paymentSettings.EnableStripeIntegration)
             {
-                Id = subscriptionId,
-                UserId = userId,
-                PlanId = request.PlanId ?? "price_premium_monthly",
-                Status = "active",
-                CurrentPeriodStart = DateTime.UtcNow.AddDays(-15),
-                CurrentPeriodEnd = DateTime.UtcNow.AddDays(15),
-                CancelAtPeriodEnd = request.CancelAtPeriodEnd ?? false,
-                StripeSubscriptionId = "sub_mock_" + Guid.NewGuid().ToString()[..8],
-                CreatedAt = DateTime.UtcNow.AddDays(-15)
-            };
+                // Mock subscription update
+                _logger.LogInformation("Updating mock subscription {SubscriptionId} for user {UserId}", subscriptionId, userId);
+                await Task.Delay(100, cancellationToken);
 
-            // Publish event
-            await _eventPublisher.PublishAsync("subscription.updated", new { SubscriptionId = subscriptionId, UserId = userId }, cancellationToken);
+                var subscription = new SubscriptionDto
+                {
+                    Id = subscriptionId,
+                    UserId = userId,
+                    PlanId = request.PlanId ?? "price_premium_monthly",
+                    Status = "active",
+                    CurrentPeriodStart = DateTime.UtcNow.AddDays(-15),
+                    CurrentPeriodEnd = DateTime.UtcNow.AddDays(15),
+                    CancelAtPeriodEnd = request.CancelAtPeriodEnd ?? false,
+                    StripeSubscriptionId = "sub_mock_" + Guid.NewGuid().ToString()[..8],
+                    CreatedAt = DateTime.UtcNow.AddDays(-15)
+                };
 
-            return subscription;
+                await _eventPublisher.PublishAsync("subscription.updated", new { SubscriptionId = subscriptionId, UserId = userId }, cancellationToken);
+                return subscription;
+            }
+            else
+            {
+                // Real Stripe update
+                _logger.LogInformation("Updating Stripe subscription {SubscriptionId} for user {UserId}", subscriptionId, userId);
+                
+                var options = new SubscriptionUpdateOptions();
+                if (!string.IsNullOrEmpty(request.PlanId))
+                {
+                    options.Items = new List<SubscriptionItemOptions>
+                    {
+                        new() { Price = request.PlanId }
+                    };
+                }
+                if (request.CancelAtPeriodEnd.HasValue)
+                {
+                    options.CancelAtPeriodEnd = request.CancelAtPeriodEnd.Value;
+                }
+
+                var stripeSubscription = await _stripeSubscriptionService!.UpdateAsync(subscriptionId, options, cancellationToken: cancellationToken);
+
+                var subscription = new SubscriptionDto
+                {
+                    Id = subscriptionId,
+                    UserId = userId,
+                    PlanId = request.PlanId ?? stripeSubscription.Items.Data.First().Price.Id,
+                    Status = stripeSubscription.Status,
+                    CurrentPeriodStart = DateTimeOffset.FromUnixTimeSeconds(stripeSubscription.CurrentPeriodStart).DateTime,
+                    CurrentPeriodEnd = DateTimeOffset.FromUnixTimeSeconds(stripeSubscription.CurrentPeriodEnd).DateTime,
+                    CancelAtPeriodEnd = stripeSubscription.CancelAtPeriodEnd,
+                    StripeSubscriptionId = stripeSubscription.Id,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                await _eventPublisher.PublishAsync("subscription.updated", new { SubscriptionId = subscriptionId, UserId = userId }, cancellationToken);
+                return subscription;
+            }
         }
         catch (Exception ex)
         {
@@ -155,12 +253,19 @@ public class SubscriptionService : ISubscriptionService
     {
         try
         {
-            // Mock implementation - return predefined plans
-            _logger.LogInformation("Getting mock subscription plans");
+            if (_paymentSettings.UseMockData || !_paymentSettings.EnableStripeIntegration)
+            {
+                // Mock implementation
+                _logger.LogInformation("Getting mock subscription plans");
+                await Task.Delay(50, cancellationToken);
+            }
+            else
+            {
+                // Real Stripe plans could be fetched here in production
+                _logger.LogInformation("Getting subscription plans from configuration");
+            }
             
-            await Task.Delay(50, cancellationToken); // Simulate API delay
-            
-            // Return mock subscription plans
+            // Return predefined plans (in production, these could come from Stripe or database)
             return new List<SubscriptionPlanDto>
             {
                 new()

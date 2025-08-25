@@ -1,5 +1,6 @@
 using DSAGrind.Common.Extensions;
 using DSAGrind.Payments.API.Services;
+using DSAGrind.Models.Settings;
 using Serilog;
 using System.Reflection;
 using Stripe;
@@ -21,11 +22,22 @@ builder.Services.AddCommonServices(builder.Configuration);
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
-// Configure Stripe
-StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
+// Configure settings
+builder.Services.Configure<PaymentSettings>(builder.Configuration.GetSection(PaymentSettings.SectionName));
+
+// Configure Stripe conditionally
+var paymentSettings = builder.Configuration.GetSection(PaymentSettings.SectionName).Get<PaymentSettings>();
+if (paymentSettings?.EnableStripeIntegration == true)
+{
+    var stripeSecretKey = builder.Configuration["Stripe:SecretKey"];
+    if (!string.IsNullOrEmpty(stripeSecretKey))
+    {
+        StripeConfiguration.ApiKey = stripeSecretKey;
+    }
+}
 
 builder.Services.AddScoped<IPaymentService, PaymentService>();
-builder.Services.AddScoped<ISubscriptionService, SubscriptionService>();
+builder.Services.AddScoped<DSAGrind.Payments.API.Services.ISubscriptionService, DSAGrind.Payments.API.Services.SubscriptionService>();
 
 builder.Services.AddCors(options =>
 {
