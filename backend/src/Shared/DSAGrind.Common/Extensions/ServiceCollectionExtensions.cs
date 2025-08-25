@@ -39,6 +39,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IMongoRepository<DSAGrind.Models.Entities.Problem>, MongoRepository<DSAGrind.Models.Entities.Problem>>();
         services.AddScoped<IMongoRepository<DSAGrind.Models.Entities.Submission>, MongoRepository<DSAGrind.Models.Entities.Submission>>();
         services.AddScoped<IMongoRepository<DSAGrind.Models.Entities.Category>, MongoRepository<DSAGrind.Models.Entities.Category>>();
+        services.AddScoped<IMongoRepository<DSAGrind.Models.Entities.Subscription>, MongoRepository<DSAGrind.Models.Entities.Subscription>>();
 
         // Add common services
         services.AddSingleton<IJwtService, JwtService>();

@@ -149,3 +149,19 @@
 2025-08-25 01:45:48.803 +00:00 [INF] Application started. Press Ctrl+C to shut down.
 2025-08-25 01:45:48.804 +00:00 [INF] Hosting environment: Development
 2025-08-25 01:45:48.805 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-25 01:53:28.281 +00:00 [INF] Application is shutting down...
+2025-08-25 01:53:49.344 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-25 01:53:49.464 +00:00 [INF] Loading proxy data from config.
+2025-08-25 01:53:49.540 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-25 01:53:49.768 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-25 01:53:49.770 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 01:53:49.771 +00:00 [INF] Hosting environment: Development
+2025-08-25 01:53:49.771 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-25 01:54:13.584 +00:00 [INF] Application is shutting down...
+2025-08-25 01:54:22.304 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-25 01:54:22.481 +00:00 [INF] Loading proxy data from config.
+2025-08-25 01:54:22.574 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-25 01:54:22.816 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-25 01:54:22.818 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 01:54:22.819 +00:00 [INF] Hosting environment: Development
+2025-08-25 01:54:22.819 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API

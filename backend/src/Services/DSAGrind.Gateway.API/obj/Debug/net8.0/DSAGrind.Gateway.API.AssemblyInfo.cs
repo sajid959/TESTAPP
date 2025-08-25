@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DSAGrind.Gateway.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c134b94a219ab82803528e44b4075cdf6c3d77c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b21ea2d1f5da3f902e16f68fe7dcb0e2ff6b02f")]
 [assembly: System.Reflection.AssemblyProductAttribute("DSAGrind.Gateway.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DSAGrind.Gateway.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
