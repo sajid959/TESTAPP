@@ -178,13 +178,13 @@ public class AIService : IAIService
                 Problem Description: {problemDescription}
                 
                 Provide your analysis in this JSON format:
-                {
+                {{
                     "estimatedDifficulty": "Easy|Medium|Hard",
                     "confidence": 0.85,
                     "reasoningFactors": ["factor1", "factor2"],
                     "estimatedTimeMinutes": 30,
                     "requiredConcepts": ["concept1", "concept2"]
-                }
+                }}
                 
                 Consider:
                 - Algorithmic complexity required

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DSAGrind.Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3faed91b256d7ef99180819f4a7c6e89ed83535c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9038e0524a3f122a8761348f2d2266d2dee40d01")]
 [assembly: System.Reflection.AssemblyProductAttribute("DSAGrind.Models")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DSAGrind.Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

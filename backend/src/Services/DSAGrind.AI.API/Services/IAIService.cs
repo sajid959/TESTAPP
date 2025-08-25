@@ -14,25 +14,6 @@ public interface IAIService
     Task<string> DebugCodeAsync(string code, string language, string errorMessage, CancellationToken cancellationToken = default);
 }
 
-public class CodeAnalysisDto
-{
-    public string TimeComplexity { get; set; } = string.Empty;
-    public string SpaceComplexity { get; set; } = string.Empty;
-    public List<string> Suggestions { get; set; } = new();
-    public List<string> Issues { get; set; } = new();
-    public int CodeQualityScore { get; set; }
-    public List<string> BestPractices { get; set; } = new();
-    public List<string> OptimizationTips { get; set; } = new();
-}
-
-public class DifficultyEstimateDto
-{
-    public string EstimatedDifficulty { get; set; } = string.Empty;
-    public double Confidence { get; set; }
-    public List<string> ReasoningFactors { get; set; } = new();
-    public int EstimatedTimeMinutes { get; set; }
-    public List<string> RequiredConcepts { get; set; } = new();
-}
 
 public class AIHintRequestDto
 {

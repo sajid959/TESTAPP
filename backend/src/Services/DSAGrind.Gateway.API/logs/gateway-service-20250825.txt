@@ -105,3 +105,39 @@
 2025-08-25 01:38:48.703 +00:00 [INF] Executing endpoint 'HTTP: GET /'
 2025-08-25 01:38:48.708 +00:00 [INF] Executed endpoint 'HTTP: GET /'
 2025-08-25 01:38:48.708 +00:00 [INF] Request finished HTTP/1.1 GET http://34e36067-cdbf-4aea-88ce-6947a126b53a-00-3763zixguh9fd.kirk.replit.dev/ - 200 null text/plain; charset=utf-8 7.0051ms
+2025-08-25 01:41:19.415 +00:00 [INF] Application is shutting down...
+2025-08-25 01:41:36.156 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-25 01:41:36.302 +00:00 [INF] Loading proxy data from config.
+2025-08-25 01:41:36.421 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-25 01:41:36.636 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-25 01:41:36.638 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 01:41:36.638 +00:00 [INF] Hosting environment: Development
+2025-08-25 01:41:36.638 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-25 01:41:39.561 +00:00 [INF] Request starting HTTP/1.1 GET http://34e36067-cdbf-4aea-88ce-6947a126b53a-00-3763zixguh9fd.kirk.replit.dev/ - null null
+2025-08-25 01:41:39.652 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-25 01:41:39.654 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-25 01:41:39.661 +00:00 [INF] Request finished HTTP/1.1 GET http://34e36067-cdbf-4aea-88ce-6947a126b53a-00-3763zixguh9fd.kirk.replit.dev/ - 200 null text/plain; charset=utf-8 102.3695ms
+2025-08-25 01:42:14.208 +00:00 [INF] Application is shutting down...
+2025-08-25 01:42:19.662 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-25 01:42:19.755 +00:00 [INF] Loading proxy data from config.
+2025-08-25 01:42:19.810 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-25 01:42:19.978 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-25 01:42:19.981 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 01:42:19.981 +00:00 [INF] Hosting environment: Development
+2025-08-25 01:42:19.982 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-25 01:42:21.269 +00:00 [INF] Request starting HTTP/1.1 GET http://34e36067-cdbf-4aea-88ce-6947a126b53a-00-3763zixguh9fd.kirk.replit.dev/ - null null
+2025-08-25 01:42:21.333 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-25 01:42:21.334 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-25 01:42:21.335 +00:00 [INF] Request finished HTTP/1.1 GET http://34e36067-cdbf-4aea-88ce-6947a126b53a-00-3763zixguh9fd.kirk.replit.dev/ - 200 null text/plain; charset=utf-8 68.3135ms
+2025-08-25 01:42:29.416 +00:00 [INF] Application is shutting down...
+2025-08-25 01:42:34.815 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-25 01:42:34.956 +00:00 [INF] Loading proxy data from config.
+2025-08-25 01:42:35.032 +00:00 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-25 01:42:35.245 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-25 01:42:35.247 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-25 01:42:35.247 +00:00 [INF] Hosting environment: Development
+2025-08-25 01:42:35.247 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-25 01:42:38.390 +00:00 [INF] Request starting HTTP/1.1 GET http://34e36067-cdbf-4aea-88ce-6947a126b53a-00-3763zixguh9fd.kirk.replit.dev/ - null null
+2025-08-25 01:42:38.452 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-25 01:42:38.454 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-25 01:42:38.456 +00:00 [INF] Request finished HTTP/1.1 GET http://34e36067-cdbf-4aea-88ce-6947a126b53a-00-3763zixguh9fd.kirk.replit.dev/ - 200 null text/plain; charset=utf-8 67.3321ms
