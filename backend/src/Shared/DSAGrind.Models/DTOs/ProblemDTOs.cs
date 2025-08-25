@@ -9,11 +9,15 @@ public class ProblemDto
     public string Slug { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
     public string Difficulty { get; set; } = string.Empty;
+    public string CategoryId { get; set; } = string.Empty;
     public string Status { get; set; } = string.Empty;
     public List<string> Tags { get; set; } = new();
     public List<string> Companies { get; set; } = new();
     public List<TestCaseDto> TestCases { get; set; } = new();
     public ProblemStatsDto Stats { get; set; } = new();
+    public ProblemStatisticsDto Statistics { get; set; } = new();
+    public bool IsPaid { get; set; }
+    public int OrderIndex { get; set; }
     public string CreatedBy { get; set; } = string.Empty;
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
@@ -112,6 +116,7 @@ public class ProblemStatisticsDto
     public int TotalSubmissions { get; set; }
     public int AcceptedSubmissions { get; set; }
     public double AcceptanceRate { get; set; }
+    public int Views { get; set; }
     public int Likes { get; set; }
     public int Dislikes { get; set; }
     public double AverageRating { get; set; }
