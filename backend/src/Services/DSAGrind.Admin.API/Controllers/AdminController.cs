@@ -35,11 +35,11 @@ public class AdminController : ControllerBase
     }
 
     [HttpGet("users")]
-    public async Task<ActionResult<UserSearchResponseDto>> GetUsers([FromQuery] UserSearchRequestDto request)
+    public async Task<ActionResult<List<UserDto>>> GetUsers([FromQuery] int page = 1, [FromQuery] int pageSize = 50, [FromQuery] string? search = null)
     {
         try
         {
-            var users = await _adminService.GetUsersAsync(request);
+            var users = await _adminService.GetUsersAsync(page, pageSize, search);
             return Ok(users);
         }
         catch (Exception ex)
@@ -69,11 +69,12 @@ public class AdminController : ControllerBase
     }
 
     [HttpPut("users/{userId}/ban")]
-    public async Task<IActionResult> BanUser(string userId, [FromBody] string reason)
+    public async Task<IActionResult> BanUser(string userId, [FromBody] BanUserRequestDto request)
     {
         try
         {
-            var success = await _adminService.BanUserAsync(userId, reason);
+            var adminUserId = User.FindFirst("sub")?.Value ?? User.FindFirst("id")?.Value ?? "system";
+            var success = await _adminService.BanUserAsync(userId, request.Reason, adminUserId);
             if (!success)
             {
                 return BadRequest(new { message = "Failed to ban user" });
@@ -92,7 +93,8 @@ public class AdminController : ControllerBase
     {
         try
         {
-            var success = await _adminService.UnbanUserAsync(userId);
+            var adminUserId = User.FindFirst("sub")?.Value ?? User.FindFirst("id")?.Value ?? "system";
+            var success = await _adminService.UnbanUserAsync(userId, adminUserId);
             if (!success)
             {
                 return BadRequest(new { message = "Failed to unban user" });
@@ -126,7 +128,8 @@ public class AdminController : ControllerBase
     {
         try
         {
-            var success = await _adminService.ApproveProblemAsync(problemId);
+            var adminUserId = User.FindFirst("sub")?.Value ?? User.FindFirst("id")?.Value ?? "system";
+            var success = await _adminService.ApproveProblemAsync(problemId, adminUserId);
             if (!success)
             {
                 return BadRequest(new { message = "Failed to approve problem" });
@@ -141,11 +144,12 @@ public class AdminController : ControllerBase
     }
 
     [HttpPut("problems/{problemId}/reject")]
-    public async Task<IActionResult> RejectProblem(string problemId, [FromBody] string reason)
+    public async Task<IActionResult> RejectProblem(string problemId, [FromBody] RejectProblemRequestDto request)
     {
         try
         {
-            var success = await _adminService.RejectProblemAsync(problemId, reason);
+            var adminUserId = User.FindFirst("sub")?.Value ?? User.FindFirst("id")?.Value ?? "system";
+            var success = await _adminService.RejectProblemAsync(problemId, request.Reason, adminUserId);
             if (!success)
             {
                 return BadRequest(new { message = "Failed to reject problem" });
@@ -160,11 +164,11 @@ public class AdminController : ControllerBase
     }
 
     [HttpGet("analytics")]
-    public async Task<ActionResult<AdminAnalyticsDto>> GetAnalytics([FromQuery] DateTime? from, [FromQuery] DateTime? to)
+    public async Task<ActionResult<object>> GetAnalytics()
     {
         try
         {
-            var analytics = await _adminService.GetAnalyticsAsync(from, to);
+            var analytics = await _adminService.GetAnalyticsAsync();
             return Ok(analytics);
         }
         catch (Exception ex)
@@ -179,7 +183,12 @@ public class AdminController : ControllerBase
     {
         try
         {
-            var backupId = await _adminService.CreateBackupAsync();
+            var success = await _adminService.CreateBackupAsync();
+            if (!success)
+            {
+                return BadRequest(new { message = "Failed to create backup" });
+            }
+            var backupId = Guid.NewGuid().ToString();
             return Ok(new { backupId, message = "Backup created successfully" });
         }
         catch (Exception ex)
