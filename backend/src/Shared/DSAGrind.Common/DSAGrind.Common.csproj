@@ -17,6 +17,7 @@
     <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="8.0.0" />
     <PackageReference Include="AspNetCore.HealthChecks.MongoDb" Version="7.0.0" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.3.1" />
+    <PackageReference Include="Qdrant.Client" Version="1.15.1" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.3.1" />
     <PackageReference Include="MongoDB.Bson" Version="3.0.0" />
     <PackageReference Include="MongoDB.Driver" Version="3.0.0" />

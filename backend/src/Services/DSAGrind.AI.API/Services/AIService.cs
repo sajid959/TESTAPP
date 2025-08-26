@@ -1,3 +1,4 @@
+using DSAGrind.Models.DTOs;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
 using System.ComponentModel;
@@ -79,32 +80,30 @@ public class AIService : IAIService
     {
         try
         {
-            var prompt = $"""
-                You are an expert code reviewer. Analyze this {language} code and provide detailed feedback.
-                
-                Code: {code}
-                {(problemId != null ? $"Problem ID: {problemId}" : "")}
-                
-                Analyze and provide:
-                1. Time complexity (Big O notation)
-                2. Space complexity (Big O notation)
-                3. Code quality score (1-100)
-                4. List of suggestions for improvement
-                5. List of issues or potential bugs
-                6. Best practices recommendations
-                7. Optimization tips
-                
-                Return your analysis in this JSON format:
-                {{
-                    "timeComplexity": "O(...)",
-                    "spaceComplexity": "O(...)", 
-                    "codeQualityScore": 85,
-                    "suggestions": ["suggestion1", "suggestion2"],
-                    "issues": ["issue1", "issue2"],
-                    "bestPractices": ["practice1", "practice2"],
-                    "optimizationTips": ["tip1", "tip2"]
-                }}
-                """;
+
+
+            var prompt = $$"""
+You are an expert programming problem curator. Analyze this problem and estimate its difficulty.
+
+Problem Description: {problemDescription}
+
+Provide your analysis in this JSON format:
+{
+    "estimatedDifficulty": "Easy|Medium|Hard",
+    "confidence": 0.85,
+    "reasoningFactors": ["factor1", "factor2"],
+    "estimatedTimeMinutes": 30,
+    "requiredConcepts": ["concept1", "concept2"]
+}
+
+Consider:
+- Algorithmic complexity required
+- Data structures needed
+- Problem-solving techniques
+- Implementation difficulty
+- Typical time to solve for different skill levels
+""";
+
 
             var result = await _kernel.InvokePromptAsync(prompt, cancellationToken: cancellationToken);
             
@@ -172,27 +171,27 @@ public class AIService : IAIService
     {
         try
         {
-            var prompt = $"""
-                You are an expert programming problem curator. Analyze this problem and estimate its difficulty.
-                
-                Problem Description: {problemDescription}
-                
-                Provide your analysis in this JSON format:
-                {{
-                    "estimatedDifficulty": "Easy|Medium|Hard",
-                    "confidence": 0.85,
-                    "reasoningFactors": ["factor1", "factor2"],
-                    "estimatedTimeMinutes": 30,
-                    "requiredConcepts": ["concept1", "concept2"]
-                }}
-                
-                Consider:
-                - Algorithmic complexity required
-                - Data structures needed
-                - Problem-solving techniques
-                - Implementation difficulty
-                - Typical time to solve for different skill levels
-                """;
+            var prompt = @"
+You are an expert programming problem curator. Analyze this problem and estimate its difficulty.
+
+Problem Description: {problemDescription}
+
+Provide your analysis in this JSON format:
+{
+    ""estimatedDifficulty"": ""Easy|Medium|Hard"",
+    ""confidence"": 0.85,
+    ""reasoningFactors"": [""factor1"", ""factor2""],
+    ""estimatedTimeMinutes"": 30,
+    ""requiredConcepts"": [""concept1"", ""concept2""]
+}
+
+Consider:
+- Algorithmic complexity required
+- Data structures needed
+- Problem-solving techniques
+- Implementation difficulty
+- Typical time to solve for different skill levels
+";
 
             var result = await _kernel.InvokePromptAsync(prompt, cancellationToken: cancellationToken);
             

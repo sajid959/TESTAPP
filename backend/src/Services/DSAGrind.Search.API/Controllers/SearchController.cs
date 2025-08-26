@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using DSAGrind.Search.API.Services;
+using DSAGrind.Models.DTOs;
 
 namespace DSAGrind.Search.API.Controllers;
 

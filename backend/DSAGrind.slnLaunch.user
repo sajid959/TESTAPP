@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "src\\Services\\DSAGrind.Gateway.API\\DSAGrind.Gateway.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "src\\Services\\DSAGrind.Auth.API\\DSAGrind.Auth.API.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

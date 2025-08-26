@@ -25,16 +25,25 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddReverseProxy()
     .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowAll", policy =>
+//    {
+//        policy.AllowAnyOrigin()
+//              .AllowAnyHeader()
+//              .AllowAnyMethod();
+//    });
+//});
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy =>
+    options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.AllowAnyOrigin()
+        policy.WithOrigins("http://localhost:3000") // Your frontend origin
               .AllowAnyHeader()
-              .AllowAnyMethod();
+              .AllowAnyMethod()
+              .AllowCredentials();
     });
 });
-
 var app = builder.Build();
 
 // Configure development-only services
@@ -49,7 +58,8 @@ if (app.Environment.IsDevelopment())
 }
 
 // Rate limiter disabled for now
-app.UseCors("AllowAll");
+//app.UseCors("AllowAll");
+app.UseCors("AllowFrontend");
 
 // Map controllers first
 app.MapControllers();
@@ -63,7 +73,7 @@ app.MapGet("/", () => "DSAGrind API Gateway - Routing traffic to microservices")
 try
 {
     Log.Information("Starting DSAGrind Gateway API on port 5000");
-    app.Run("http://0.0.0.0:5000");
+    app.Run("http://localhost:5000");
 }
 catch (Exception ex)
 {

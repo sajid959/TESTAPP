@@ -1,0 +1,255 @@
+2025-08-27 02:26:35.949 +05:30 [INF] User profile is available. Using 'C:\Users\lucky\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-27 02:26:36.013 +05:30 [INF] Loading proxy data from config.
+2025-08-27 02:26:36.063 +05:30 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-27 02:26:36.307 +05:30 [ERR] Hosting failed to start
+System.FormatException: Invalid url: 'http:localhost:5000'
+   at Microsoft.AspNetCore.Http.BindingAddress.Parse(String address)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.ParseAddress(String address, Boolean& https)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-08-27 02:26:36.360 +05:30 [FTL] Gateway API terminated unexpectedly
+System.FormatException: Invalid url: 'http:localhost:5000'
+   at Microsoft.AspNetCore.Http.BindingAddress.Parse(String address)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.ParseAddress(String address, Boolean& https)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\Program.cs:line 66
+2025-08-27 02:29:02.318 +05:30 [INF] User profile is available. Using 'C:\Users\lucky\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-27 02:29:02.378 +05:30 [INF] Loading proxy data from config.
+2025-08-27 02:29:02.423 +05:30 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-27 02:29:02.633 +05:30 [ERR] Hosting failed to start
+System.FormatException: Invalid url: 'http:localhost:5000'
+   at Microsoft.AspNetCore.Http.BindingAddress.Parse(String address)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.ParseAddress(String address, Boolean& https)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-08-27 02:29:02.697 +05:30 [FTL] Gateway API terminated unexpectedly
+System.FormatException: Invalid url: 'http:localhost:5000'
+   at Microsoft.AspNetCore.Http.BindingAddress.Parse(String address)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.ParseAddress(String address, Boolean& https)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\Program.cs:line 66
+2025-08-27 02:29:43.145 +05:30 [INF] User profile is available. Using 'C:\Users\lucky\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-27 02:29:43.198 +05:30 [INF] Loading proxy data from config.
+2025-08-27 02:29:43.240 +05:30 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-27 02:29:43.463 +05:30 [ERR] Hosting failed to start
+System.FormatException: Invalid url: 'http:localhost:5000'
+   at Microsoft.AspNetCore.Http.BindingAddress.Parse(String address)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.ParseAddress(String address, Boolean& https)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-08-27 02:29:43.510 +05:30 [FTL] Gateway API terminated unexpectedly
+System.FormatException: Invalid url: 'http:localhost:5000'
+   at Microsoft.AspNetCore.Http.BindingAddress.Parse(String address)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.ParseAddress(String address, Boolean& https)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\Program.cs:line 66
+2025-08-27 02:30:27.318 +05:30 [INF] User profile is available. Using 'C:\Users\lucky\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-27 02:30:27.371 +05:30 [INF] Loading proxy data from config.
+2025-08-27 02:30:27.414 +05:30 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-27 02:30:27.614 +05:30 [ERR] Hosting failed to start
+System.FormatException: Invalid url: 'http//localhost:5000'
+   at Microsoft.AspNetCore.Http.BindingAddress.Parse(String address)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.ParseAddress(String address, Boolean& https)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-08-27 02:30:27.665 +05:30 [FTL] Gateway API terminated unexpectedly
+System.FormatException: Invalid url: 'http//localhost:5000'
+   at Microsoft.AspNetCore.Http.BindingAddress.Parse(String address)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.ParseAddress(String address, Boolean& https)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\Program.cs:line 66
+2025-08-27 02:30:53.347 +05:30 [INF] User profile is available. Using 'C:\Users\lucky\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-27 02:30:53.404 +05:30 [INF] Loading proxy data from config.
+2025-08-27 02:30:53.447 +05:30 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-27 02:30:53.653 +05:30 [ERR] Hosting failed to start
+System.FormatException: Invalid url: 'http//localhost:5000'
+   at Microsoft.AspNetCore.Http.BindingAddress.Parse(String address)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.ParseAddress(String address, Boolean& https)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-08-27 02:30:53.706 +05:30 [FTL] Gateway API terminated unexpectedly
+System.FormatException: Invalid url: 'http//localhost:5000'
+   at Microsoft.AspNetCore.Http.BindingAddress.Parse(String address)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.ParseAddress(String address, Boolean& https)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at Program.<Main>$(String[] args) in C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\Program.cs:line 66
+2025-08-27 02:31:36.576 +05:30 [INF] User profile is available. Using 'C:\Users\lucky\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-27 02:31:36.633 +05:30 [INF] Loading proxy data from config.
+2025-08-27 02:31:36.675 +05:30 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-27 02:31:36.865 +05:30 [INF] Now listening on: http://localhost:5000
+2025-08-27 02:31:36.903 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-27 02:31:36.905 +05:30 [INF] Hosting environment: Development
+2025-08-27 02:31:36.906 +05:30 [INF] Content root path: C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API
+2025-08-27 02:31:56.181 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-08-27 02:31:56.359 +05:30 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-27 02:31:56.367 +05:30 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-27 02:31:56.371 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/plain; charset=utf-8 195.2749ms
+2025-08-27 02:31:57.031 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-08-27 02:31:57.039 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 404 0 null 8.0343ms
+2025-08-27 02:31:57.045 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/favicon.ico, Response status code: 404
+2025-08-27 02:32:56.412 +05:30 [INF] User profile is available. Using 'C:\Users\lucky\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-27 02:32:56.471 +05:30 [INF] Loading proxy data from config.
+2025-08-27 02:32:56.517 +05:30 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-27 02:32:56.655 +05:30 [INF] Now listening on: http://localhost:5000
+2025-08-27 02:32:56.686 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-27 02:32:56.688 +05:30 [INF] Hosting environment: Development
+2025-08-27 02:32:56.689 +05:30 [INF] Content root path: C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API
+2025-08-27 02:33:22.480 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - null null
+2025-08-27 02:33:22.743 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - 301 0 null 267.0468ms
+2025-08-27 02:33:22.750 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2025-08-27 02:33:22.811 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 60.7639ms
+2025-08-27 02:33:22.834 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - null null
+2025-08-27 02:33:22.848 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-27 02:33:22.848 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - null null
+2025-08-27 02:33:22.851 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - null null
+2025-08-27 02:33:22.862 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 13.0935ms
+2025-08-27 02:33:22.917 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-08-27 02:33:22.917 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-08-27 02:33:22.921 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-08-27 02:33:22.922 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - 200 312163 text/javascript 73.5331ms
+2025-08-27 02:33:22.922 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - 200 144929 text/css 88.3943ms
+2025-08-27 02:33:22.924 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 75.4112ms
+2025-08-27 02:33:23.050 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2025-08-27 02:33:23.089 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.6774ms
+2025-08-27 02:33:23.577 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - null null
+2025-08-27 02:33:23.594 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 16.9474ms
+2025-08-27 02:33:23.604 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - null null
+2025-08-27 02:33:23.608 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-08-27 02:33:23.610 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/favicon-32x32.png - 200 628 image/png 6.4361ms
+2025-08-27 02:33:48.620 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - null null
+2025-08-27 02:33:48.640 +05:30 [INF] CORS policy execution successful.
+2025-08-27 02:33:48.644 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - 204 null null 27.2822ms
+2025-08-27 02:33:50.024 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - null null
+2025-08-27 02:33:50.032 +05:30 [INF] CORS policy execution successful.
+2025-08-27 02:33:50.033 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - 204 null null 9.0306ms
+2025-08-27 02:34:29.296 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/register - null null
+2025-08-27 02:34:29.308 +05:30 [INF] CORS policy execution successful.
+2025-08-27 02:34:29.309 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/auth/register - 204 null null 13.6508ms
+2025-08-27 02:38:07.027 +05:30 [INF] User profile is available. Using 'C:\Users\lucky\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-27 02:38:07.088 +05:30 [INF] Loading proxy data from config.
+2025-08-27 02:38:07.136 +05:30 [INF] Starting DSAGrind Gateway API on port 5000
+2025-08-27 02:38:07.285 +05:30 [INF] Now listening on: http://localhost:5000
+2025-08-27 02:38:07.316 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-27 02:38:07.318 +05:30 [INF] Hosting environment: Development
+2025-08-27 02:38:07.320 +05:30 [INF] Content root path: C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API
+2025-08-27 02:38:20.730 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2025-08-27 02:38:20.944 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html;charset=utf-8 219.0694ms
+2025-08-27 02:38:20.968 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-27 02:38:20.974 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_framework/aspnetcore-browser-refresh.js - 200 16525 application/javascript; charset=utf-8 6.2572ms
+2025-08-27 02:38:21.158 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/_vs/browserLink - null null
+2025-08-27 02:38:21.195 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.0092ms
+2025-08-27 02:38:21.646 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - null null
+2025-08-27 02:38:21.661 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.3077ms
+2025-08-27 02:40:58.573 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - null null
+2025-08-27 02:40:58.629 +05:30 [INF] CORS policy execution successful.
+2025-08-27 02:40:58.633 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/auth/login - 204 null null 60.3719ms
+2025-08-27 02:40:58.635 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5000/api/auth/login - application/json 52
+2025-08-27 02:40:58.645 +05:30 [INF] CORS policy execution successful.
+2025-08-27 02:40:58.650 +05:30 [INF] Executing endpoint 'DSAGrind.Gateway.API.Controllers.AuthController.Login (DSAGrind.Gateway.API)'
+2025-08-27 02:40:58.675 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DSAGrind.Gateway.API.Controllers.LoginRequest) on controller DSAGrind.Gateway.API.Controllers.AuthController (DSAGrind.Gateway.API).
+2025-08-27 02:40:58.712 +05:30 [INF] Login attempt for email: admin@dsagrind.com
+2025-08-27 02:40:58.831 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`7[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-27 02:40:58.847 +05:30 [INF] Executed action DSAGrind.Gateway.API.Controllers.AuthController.Login (DSAGrind.Gateway.API) in 162.356ms
+2025-08-27 02:40:58.851 +05:30 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.AuthController.Login (DSAGrind.Gateway.API)'
+2025-08-27 02:40:58.856 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5000/api/auth/login - 200 null application/json; charset=utf-8 221.4241ms
+2025-08-27 02:41:18.799 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/problems? - null null
+2025-08-27 02:41:18.812 +05:30 [INF] Executing endpoint 'DSAGrind.Gateway.API.Controllers.ProblemsController.GetProblems (DSAGrind.Gateway.API)'
+2025-08-27 02:41:18.818 +05:30 [INF] Route matched with {action = "GetProblems", controller = "Problems"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProblems(System.String, System.String, System.String, Int32, Int32) on controller DSAGrind.Gateway.API.Controllers.ProblemsController (DSAGrind.Gateway.API).
+2025-08-27 02:41:18.825 +05:30 [INF] Get problems: search=null, difficulty=null, page=1
+2025-08-27 02:41:18.943 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType9`5[[System.Collections.Generic.List`1[[<>f__AnonymousType8`11[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DSAGrind.Gateway.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-27 02:41:18.957 +05:30 [INF] Executed action DSAGrind.Gateway.API.Controllers.ProblemsController.GetProblems (DSAGrind.Gateway.API) in 135.6363ms
+2025-08-27 02:41:18.961 +05:30 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.ProblemsController.GetProblems (DSAGrind.Gateway.API)'
+2025-08-27 02:41:18.964 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/problems? - 200 null application/json; charset=utf-8 166.7801ms
+2025-08-27 02:41:29.413 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5000/api/auth/me - null null
+2025-08-27 02:41:29.417 +05:30 [INF] CORS policy execution successful.
+2025-08-27 02:41:29.420 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5000/api/auth/me - 204 null null 7.0802ms
+2025-08-27 02:41:29.422 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/auth/me - null null
+2025-08-27 02:41:29.428 +05:30 [INF] CORS policy execution successful.
+2025-08-27 02:41:29.430 +05:30 [INF] Executing endpoint 'auth-route'
+2025-08-27 02:41:29.459 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-08-27 02:41:29.599 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-08-27 02:41:29.612 +05:30 [INF] Executed endpoint 'auth-route'
+2025-08-27 02:41:29.615 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/auth/me - 401 0 null 193.1512ms
+2025-08-27 02:41:33.056 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/problems? - null null
+2025-08-27 02:41:33.061 +05:30 [INF] Executing endpoint 'DSAGrind.Gateway.API.Controllers.ProblemsController.GetProblems (DSAGrind.Gateway.API)'
+2025-08-27 02:41:33.063 +05:30 [INF] Route matched with {action = "GetProblems", controller = "Problems"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProblems(System.String, System.String, System.String, Int32, Int32) on controller DSAGrind.Gateway.API.Controllers.ProblemsController (DSAGrind.Gateway.API).
+2025-08-27 02:41:33.067 +05:30 [INF] Get problems: search=null, difficulty=null, page=1
+2025-08-27 02:41:33.180 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType9`5[[System.Collections.Generic.List`1[[<>f__AnonymousType8`11[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String[], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DSAGrind.Gateway.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-27 02:41:33.184 +05:30 [INF] Executed action DSAGrind.Gateway.API.Controllers.ProblemsController.GetProblems (DSAGrind.Gateway.API) in 117.4444ms
+2025-08-27 02:41:33.187 +05:30 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.ProblemsController.GetProblems (DSAGrind.Gateway.API)'
+2025-08-27 02:41:33.189 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/problems? - 200 null application/json; charset=utf-8 133.0544ms

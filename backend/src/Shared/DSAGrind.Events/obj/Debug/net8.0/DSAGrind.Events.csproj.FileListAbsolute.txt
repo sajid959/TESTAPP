@@ -10,3 +10,15 @@
 /home/runner/workspace/backend/src/Shared/DSAGrind.Events/obj/Debug/net8.0/refint/DSAGrind.Events.dll
 /home/runner/workspace/backend/src/Shared/DSAGrind.Events/obj/Debug/net8.0/DSAGrind.Events.pdb
 /home/runner/workspace/backend/src/Shared/DSAGrind.Events/obj/Debug/net8.0/ref/DSAGrind.Events.dll
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Shared\DSAGrind.Events\bin\Debug\net8.0\DSAGrind.Events.deps.json
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Shared\DSAGrind.Events\bin\Debug\net8.0\DSAGrind.Events.dll
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Shared\DSAGrind.Events\bin\Debug\net8.0\DSAGrind.Events.pdb
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Shared\DSAGrind.Events\obj\Debug\net8.0\DSAGrind.Events.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Shared\DSAGrind.Events\obj\Debug\net8.0\DSAGrind.Events.AssemblyInfoInputs.cache
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Shared\DSAGrind.Events\obj\Debug\net8.0\DSAGrind.Events.AssemblyInfo.cs
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Shared\DSAGrind.Events\obj\Debug\net8.0\DSAGrind.Events.csproj.CoreCompileInputs.cache
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Shared\DSAGrind.Events\obj\Debug\net8.0\DSAGrind.Events.sourcelink.json
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Shared\DSAGrind.Events\obj\Debug\net8.0\DSAGrind.Events.dll
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Shared\DSAGrind.Events\obj\Debug\net8.0\refint\DSAGrind.Events.dll
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Shared\DSAGrind.Events\obj\Debug\net8.0\DSAGrind.Events.pdb
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Shared\DSAGrind.Events\obj\Debug\net8.0\ref\DSAGrind.Events.dll

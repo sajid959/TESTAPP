@@ -1,0 +1,2 @@
+2025-08-27 02:38:06.983 +05:30 [INF] Starting DSAGrind Auth API at 8080
+2025-08-27 02:38:08.230 +05:30 [WRN] Failed to determine the https port for redirect.

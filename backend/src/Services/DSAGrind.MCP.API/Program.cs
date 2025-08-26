@@ -82,7 +82,7 @@ app.MapGet("/health", () => new { status = "healthy", service = "DSAGrind.MCP.AP
 try
 {
     Log.Information("Starting DSAGrind MCP API on port 5007");
-    app.Run("http://0.0.0.0:5007");
+    app.Run("http://localhost:5007");
 }
 catch (Exception ex)
 {

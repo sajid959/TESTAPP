@@ -1,0 +1,2 @@
+[2025-08-27 00:36:27.495 +05:30 INF] Starting DSAGrind Auth API... {}
+[2025-08-27 00:37:17.494 +05:30 WRN] Failed to determine the https port for redirect. {"EventId":{"Id":3,"Name":"FailedToDeterminePort"},"SourceContext":"Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware","RequestId":"0HNF4QF363O9M:00000001","RequestPath":"/","ConnectionId":"0HNF4QF363O9M"}

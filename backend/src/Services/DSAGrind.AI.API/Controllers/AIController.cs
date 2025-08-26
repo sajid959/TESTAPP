@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using DSAGrind.AI.API.Services;
+using DSAGrind.Models.DTOs;
 
 namespace DSAGrind.AI.API.Controllers;
 
@@ -19,7 +20,7 @@ public class AIController : ControllerBase
     }
 
     [HttpPost("hint")]
-    public async Task<ActionResult<string>> GenerateHint([FromBody] AIHintRequestDto request)
+    public async Task<ActionResult<string>> GenerateHint([FromBody] Services.AIHintRequestDto request)
     {
         try
         {

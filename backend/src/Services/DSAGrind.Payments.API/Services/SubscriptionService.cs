@@ -95,8 +95,8 @@ public class SubscriptionService : ISubscriptionService
                     UserId = userId,
                     PlanId = request.PlanId,
                     Status = stripeSubscription.Status,
-                    CurrentPeriodStart = DateTimeOffset.FromUnixTimeSeconds(stripeSubscription.CurrentPeriodStart).DateTime,
-                    CurrentPeriodEnd = DateTimeOffset.FromUnixTimeSeconds(stripeSubscription.CurrentPeriodEnd).DateTime,
+                    CurrentPeriodStart = stripeSubscription.CurrentPeriodStart,
+                    CurrentPeriodEnd = stripeSubscription.CurrentPeriodEnd,
                     CancelAtPeriodEnd = stripeSubscription.CancelAtPeriodEnd,
                     StripeSubscriptionId = stripeSubscription.Id,
                     CreatedAt = DateTime.UtcNow
@@ -231,8 +231,8 @@ public class SubscriptionService : ISubscriptionService
                     UserId = userId,
                     PlanId = request.PlanId ?? stripeSubscription.Items.Data.First().Price.Id,
                     Status = stripeSubscription.Status,
-                    CurrentPeriodStart = DateTimeOffset.FromUnixTimeSeconds(stripeSubscription.CurrentPeriodStart).DateTime,
-                    CurrentPeriodEnd = DateTimeOffset.FromUnixTimeSeconds(stripeSubscription.CurrentPeriodEnd).DateTime,
+                    CurrentPeriodStart = stripeSubscription.CurrentPeriodStart,
+                    CurrentPeriodEnd = stripeSubscription.CurrentPeriodEnd,
                     CancelAtPeriodEnd = stripeSubscription.CancelAtPeriodEnd,
                     StripeSubscriptionId = stripeSubscription.Id,
                     CreatedAt = DateTime.UtcNow

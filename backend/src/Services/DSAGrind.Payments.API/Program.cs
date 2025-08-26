@@ -68,7 +68,7 @@ app.MapGet("/health", () => new { status = "healthy", service = "DSAGrind.Paymen
 try
 {
     Log.Information("Starting DSAGrind Payments API on port 5006");
-    app.Run("http://0.0.0.0:5006");
+    app.Run("https://localhost:5006");
 }
 catch (Exception ex)
 {

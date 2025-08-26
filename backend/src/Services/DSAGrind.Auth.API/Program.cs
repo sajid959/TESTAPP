@@ -1,12 +1,15 @@
-using System.Text;
+﻿using DSAGrind.Auth.API.Repositories;
+using DSAGrind.Auth.API.Services;
+using DSAGrind.Common.Configuration;
+using DSAGrind.Common.Extensions;
+using DSAGrind.Common.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 using Serilog;
-using DSAGrind.Auth.API.Repositories;
-using DSAGrind.Auth.API.Services;
-using DSAGrind.Common.Configuration;
-using DSAGrind.Common.Services;
+using HealthChecks.Redis;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,7 +29,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "DSAGrind Auth API", Version = "v1" });
-    
+
     // Add JWT authentication to Swagger
     c.AddSecurityDefinition("Bearer", new()
     {
@@ -36,7 +39,7 @@ builder.Services.AddSwaggerGen(c =>
         Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
         Scheme = "Bearer"
     });
-    
+
     c.AddSecurityRequirement(new()
     {
         {
@@ -49,13 +52,11 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// Configure settings
-builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection(JwtSettings.SectionName));
-builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection(MongoDbSettings.SectionName));
-builder.Services.Configure<KafkaSettings>(builder.Configuration.GetSection(KafkaSettings.SectionName));
-builder.Services.Configure<RedisSettings>(builder.Configuration.GetSection(RedisSettings.SectionName));
+// Add common services (includes MongoDB, settings, etc.)
+builder.Services.AddCommonServices(builder.Configuration);
+
+// Configure additional settings specific to Auth API
 builder.Services.Configure<OAuthSettings>(builder.Configuration.GetSection(OAuthSettings.SectionName));
-builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection(EmailSettings.SectionName));
 
 // Add CORS
 builder.Services.AddCors(options =>
@@ -67,20 +68,6 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader()
               .AllowCredentials();
     });
-});
-
-// Add MongoDB
-builder.Services.AddSingleton<IMongoClient>(sp =>
-{
-    var settings = sp.GetRequiredService<IConfiguration>().GetSection(MongoDbSettings.SectionName).Get<MongoDbSettings>();
-    return new MongoClient(settings!.ConnectionString);
-});
-
-builder.Services.AddSingleton<IMongoDatabase>(sp =>
-{
-    var client = sp.GetRequiredService<IMongoClient>();
-    var settings = sp.GetRequiredService<IConfiguration>().GetSection(MongoDbSettings.SectionName).Get<MongoDbSettings>();
-    return client.GetDatabase(settings!.DatabaseName);
 });
 
 // Add JWT Authentication
@@ -99,7 +86,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Secret)),
             ClockSkew = TimeSpan.FromMinutes(jwtSettings.ClockSkewMinutes)
         };
-        
+
         options.Events = new JwtBearerEvents
         {
             OnMessageReceived = context =>
@@ -107,12 +94,12 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 // Allow token from query string for SignalR connections
                 var accessToken = context.Request.Query["access_token"];
                 var path = context.HttpContext.Request.Path;
-                
+
                 if (!string.IsNullOrEmpty(accessToken) && path.StartsWithSegments("/hubs"))
                 {
                     context.Token = accessToken;
                 }
-                
+
                 return Task.CompletedTask;
             },
             OnAuthenticationFailed = context =>
@@ -134,20 +121,23 @@ builder.Services.AddHttpClient();
 // Add AutoMapper
 builder.Services.AddAutoMapper(typeof(Program));
 
-// Add custom services
+// Add Auth API specific services
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IOAuthService, OAuthService>();
-builder.Services.AddScoped<IEmailService, EmailService>();
-builder.Services.AddSingleton<IJwtService, JwtService>();
-builder.Services.AddSingleton<IKafkaService, KafkaService>();
-builder.Services.AddSingleton<IRedisService, RedisService>();
 
-// Add health checks
-var mongoConnectionString = builder.Configuration.GetConnectionString("MongoDB") ?? "mongodb://localhost:27017";
+// Add health checks (✅ Fixed MongoDB registration)
 builder.Services.AddHealthChecks()
-    .AddMongoDb(mongoConnectionString, name: "mongodb", tags: new[] { "db", "mongodb" })
-    .AddRedis(builder.Configuration.GetConnectionString("Redis") ?? "localhost:6379", name: "redis", tags: new[] { "cache", "redis" });
+    .AddMongoDb(
+        sp => sp.GetRequiredService<IMongoClient>(), // fixed: using DI-resolved client
+        name: "mongodb",
+        tags: new[] { "db", "mongodb" }
+    )
+    .AddRedis(
+        builder.Configuration.GetConnectionString("Redis") ?? "localhost:6379",
+        name: "redis",
+        tags: new[] { "cache", "redis" }
+    );
 
 var app = builder.Build();
 
@@ -158,7 +148,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "DSAGrind Auth API v1");
-        c.RoutePrefix = string.Empty; // Set Swagger UI at root
+        c.RoutePrefix = "swagger"; // Set Swagger UI at root
     });
 }
 
@@ -178,7 +168,7 @@ app.UseExceptionHandler(errorApp =>
     {
         context.Response.StatusCode = 500;
         context.Response.ContentType = "application/json";
-        
+
         var error = new { message = "An unexpected error occurred." };
         await context.Response.WriteAsync(System.Text.Json.JsonSerializer.Serialize(error));
     });
@@ -193,8 +183,8 @@ lifetime.ApplicationStopping.Register(() =>
 
 try
 {
-    Log.Information("Starting DSAGrind Auth API...");
-    await app.RunAsync();
+    Log.Information("Starting DSAGrind Auth API at 8080");
+    await app.RunAsync("http://localhost:8080");
 }
 catch (Exception ex)
 {

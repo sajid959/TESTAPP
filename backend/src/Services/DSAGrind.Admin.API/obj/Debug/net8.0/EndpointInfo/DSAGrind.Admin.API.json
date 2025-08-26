@@ -1,0 +1,907 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "DSAGrind.Admin.API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Admin/dashboard": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDashboardDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDashboardDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminDashboardDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/users": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 50
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "style": "form",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/users/{userId}": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/users/{userId}/ban": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BanUserRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BanUserRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BanUserRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Admin/users/{userId}/unban": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Admin/problems/pending": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProblemDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProblemDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ProblemDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Admin/problems/{problemId}/approve": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "problemId",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Admin/problems/{problemId}/reject": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "problemId",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RejectProblemRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RejectProblemRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RejectProblemRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Admin/analytics": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Admin/system/backup": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Admin/system/health": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SystemHealthDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SystemHealthDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SystemHealthDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "DSAGrind.Admin.API"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringStringDateTime<>f__AnonymousType2"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Health": {
+      "get": {
+        "tags": [
+          "Health"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AdminDashboardDto": {
+        "type": "object",
+        "properties": {
+          "totalUsers": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "activeUsers": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalProblems": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pendingProblems": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalSubmissions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "todaySubmissions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "revenue": {
+            "type": "number",
+            "format": "double"
+          },
+          "premiumUsers": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "submissionsChart": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DashboardChartDto"
+            },
+            "nullable": true
+          },
+          "usersChart": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DashboardChartDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BanUserRequestDto": {
+        "required": [
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "reason": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DashboardChartDto": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DatabaseHealthDto": {
+        "type": "object",
+        "properties": {
+          "isHealthy": {
+            "type": "boolean"
+          },
+          "responseTime": {
+            "type": "number",
+            "format": "double"
+          },
+          "connectionCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExternalServiceHealthDto": {
+        "type": "object",
+        "properties": {
+          "stripeHealthy": {
+            "type": "boolean"
+          },
+          "redisHealthy": {
+            "type": "boolean"
+          },
+          "kafkaHealthy": {
+            "type": "boolean"
+          },
+          "qdrantHealthy": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "NotificationSettingsDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "boolean"
+          },
+          "push": {
+            "type": "boolean"
+          },
+          "contests": {
+            "type": "boolean"
+          },
+          "submissions": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProblemDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "slug": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "difficulty": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoryId": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "companies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "testCases": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TestCaseDto"
+            },
+            "nullable": true
+          },
+          "stats": {
+            "$ref": "#/components/schemas/ProblemStatsDto"
+          },
+          "statistics": {
+            "$ref": "#/components/schemas/ProblemStatisticsDto"
+          },
+          "isPaid": {
+            "type": "boolean"
+          },
+          "orderIndex": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProblemStatisticsDto": {
+        "type": "object",
+        "properties": {
+          "totalSubmissions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "acceptedSubmissions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "acceptanceRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "views": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "likes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dislikes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "averageRating": {
+            "type": "number",
+            "format": "double"
+          },
+          "solvedByUsers": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProblemStatsDto": {
+        "type": "object",
+        "properties": {
+          "totalSubmissions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "acceptedSubmissions": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "acceptanceRate": {
+            "type": "number",
+            "format": "double"
+          },
+          "likes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dislikes": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RejectProblemRequestDto": {
+        "required": [
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "reason": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceHealthDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "isHealthy": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "responseTime": {
+            "type": "number",
+            "format": "double"
+          },
+          "lastCheck": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StringStringDateTime<>f__AnonymousType2": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "service": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SystemHealthDto": {
+        "type": "object",
+        "properties": {
+          "isHealthy": {
+            "type": "boolean"
+          },
+          "services": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceHealthDto"
+            },
+            "nullable": true
+          },
+          "database": {
+            "$ref": "#/components/schemas/DatabaseHealthDto"
+          },
+          "externalServices": {
+            "$ref": "#/components/schemas/ExternalServiceHealthDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TestCaseDto": {
+        "required": [
+          "expectedOutput",
+          "input"
+        ],
+        "type": "object",
+        "properties": {
+          "input": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "expectedOutput": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "isVisible": {
+            "type": "boolean"
+          },
+          "timeLimit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "memoryLimit": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "avatar": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "type": "string",
+            "nullable": true
+          },
+          "isEmailVerified": {
+            "type": "boolean"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "subscriptionPlan": {
+            "type": "string",
+            "nullable": true
+          },
+          "subscriptionStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "subscriptionExpires": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "totalSolved": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rank": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "profile": {
+            "$ref": "#/components/schemas/UserProfileDto"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastLoginAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserPreferencesDto": {
+        "type": "object",
+        "properties": {
+          "theme": {
+            "type": "string",
+            "nullable": true
+          },
+          "language": {
+            "type": "string",
+            "nullable": true
+          },
+          "notifications": {
+            "$ref": "#/components/schemas/NotificationSettingsDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserProfileDto": {
+        "type": "object",
+        "properties": {
+          "bio": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "website": {
+            "type": "string",
+            "nullable": true
+          },
+          "company": {
+            "type": "string",
+            "nullable": true
+          },
+          "skills": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "preferences": {
+            "$ref": "#/components/schemas/UserPreferencesDto"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

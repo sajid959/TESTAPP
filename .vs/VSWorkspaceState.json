@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\backend",
+    "\\backend\\src",
+    "\\backend\\src\\Services",
+    "\\backend\\src\\Services\\DSAGrind.AI.API",
+    "\\backend\\src\\Services\\DSAGrind.AI.API\\Services",
+    "\\backend\\src\\Services\\DSAGrind.Auth.API"
+  ],
+  "SelectedNode": "\\backend\\DSAGrind.sln",
+  "PreviewInSolutionExplorer": false
+}
