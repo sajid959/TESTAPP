@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useStripe, useElements, PaymentElement, Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import { Link } from 'wouter';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
 import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/hooks/useAuth';
 import { apiRequest } from '@/lib/queryClient';
@@ -124,7 +124,7 @@ function SubscribeContent() {
   const currentPlan = plans[selectedPlan];
 
   useEffect(() => {
-    if (user && !(user as any).isPremium) {
+    if (user && !(user as any).isPremium && user?.role !== 'admin') {
       createSubscription();
     }
   }, [user, selectedPlan]);
@@ -155,8 +155,8 @@ function SubscribeContent() {
     }
   };
 
-  // If user is already premium
-  if ((user as any)?.isPremium) {
+  // If user is already premium or admin
+  if ((user as any)?.isPremium || user?.role === 'admin') {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-20">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -169,10 +169,12 @@ function SubscribeContent() {
               <p className="text-slate-600 dark:text-slate-400 mb-8">
                 Enjoy all the premium features and continue your coding journey.
               </p>
-              <Button className="bg-brand-600 hover:bg-brand-700">
-                <i className="fas fa-code mr-2"></i>
-                Continue Practicing
-              </Button>
+              <Link href="/problems">
+                <Button className="bg-brand-600 hover:bg-brand-700">
+                  <i className="fas fa-code mr-2"></i>
+                  Continue Practicing
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>

@@ -19,6 +19,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCommonServices(builder.Configuration);
+
+// Add JWT Authentication
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
+    {
+        var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<DSAGrind.Common.Configuration.JwtSettings>();
+        options.Authority = builder.Configuration.GetValue<string>("Auth:Authority") ?? "http://localhost:8080";
+        options.Audience = jwtSettings?.Audience ?? "DSAGrind-Users";
+        options.RequireHttpsMetadata = false;
+    });
+
+builder.Services.AddAuthorization();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
@@ -39,11 +51,14 @@ if (paymentSettings?.EnableStripeIntegration == true)
 builder.Services.AddScoped<IPaymentService, PaymentService>();
 builder.Services.AddScoped<DSAGrind.Payments.API.Services.ISubscriptionService, DSAGrind.Payments.API.Services.SubscriptionService>();
 
+// Get allowed origins from environment
+var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>() ?? new[] { "http://localhost:5000" };
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:5000", "https://localhost:5000")
+        policy.WithOrigins(allowedOrigins)
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
@@ -67,8 +82,14 @@ app.MapGet("/health", () => new { status = "healthy", service = "DSAGrind.Paymen
 
 try
 {
-    Log.Information("Starting DSAGrind Payments API on port 5006");
-    app.Run("https://localhost:5006");
+    var port = builder.Configuration.GetValue<string>("Payments:Port") ?? "5006";
+    var host = builder.Configuration.GetValue<string>("Payments:Host") ?? "0.0.0.0";
+    var useHttps = builder.Configuration.GetValue<bool>("Payments:UseHttps", true);
+    var protocol = useHttps ? "https" : "http";
+    var url = $"{protocol}://{host}:{port}";
+    
+    Log.Information($"Starting DSAGrind Payments API on {url}");
+    app.Run(url);
 }
 catch (Exception ex)
 {

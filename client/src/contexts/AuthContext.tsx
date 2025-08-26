@@ -1,7 +1,7 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { createContext, useEffect, useState, ReactNode } from "react";
 import { apiRequest } from "@/lib/queryClient";
 import { API_CONFIG } from "@/lib/config";
-import { User, LoginRequest, RegisterRequest, AuthResponse } from "@/types/api";
+import { User, RegisterRequest, AuthResponse } from "@/types/api";
 
 interface AuthContextType {
   user: User | null;

@@ -23,6 +23,18 @@ builder.Services.AddSwaggerGen();
 // Add Common Services
 builder.Services.AddCommonServices(builder.Configuration);
 
+// Add JWT Authentication
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
+    {
+        var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<DSAGrind.Common.Configuration.JwtSettings>();
+        options.Authority = builder.Configuration.GetValue<string>("Auth:Authority") ?? "http://localhost:8080";
+        options.Audience = jwtSettings?.Audience ?? "DSAGrind-Users";
+        options.RequireHttpsMetadata = false;
+    });
+
+builder.Services.AddAuthorization();
+
 // Add Auto Mapper
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
@@ -34,11 +46,14 @@ builder.Services.AddScoped<ISearchService, SearchService>();
 builder.Services.AddScoped<IVectorSearchService, VectorSearchService>();
 
 // Add CORS
+// Get allowed origins from environment
+var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>() ?? new[] { "http://localhost:5000" };
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:5000", "https://localhost:5000")
+        policy.WithOrigins(allowedOrigins)
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
@@ -65,8 +80,12 @@ app.MapGet("/health", () => new { status = "healthy", service = "DSAGrind.Search
 
 try
 {
-    Log.Information("Starting DSAGrind Search API on port 5004");
-    app.Run("http://0.0.0.0:5004");
+    var port = builder.Configuration.GetValue<string>("Search:Port") ?? "5004";
+    var host = builder.Configuration.GetValue<string>("Search:Host") ?? "0.0.0.0";
+    var url = $"http://{host}:{port}";
+    
+    Log.Information($"Starting DSAGrind Search API on {url}");
+    app.Run(url);
 }
 catch (Exception ex)
 {

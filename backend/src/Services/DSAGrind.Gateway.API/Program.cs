@@ -34,11 +34,14 @@ builder.Services.AddReverseProxy()
 //              .AllowAnyMethod();
 //    });
 //});
+// Get allowed origins from environment
+var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>() ?? new[] { "http://localhost:5000" };
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:3000") // Your frontend origin
+        policy.WithOrigins(allowedOrigins)
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
@@ -72,8 +75,12 @@ app.MapGet("/", () => "DSAGrind API Gateway - Routing traffic to microservices")
 
 try
 {
-    Log.Information("Starting DSAGrind Gateway API on port 5000");
-    app.Run("http://localhost:5000");
+    var port = builder.Configuration.GetValue<string>("Gateway:Port") ?? "5000";
+    var host = builder.Configuration.GetValue<string>("Gateway:Host") ?? "0.0.0.0";
+    var url = $"http://{host}:{port}";
+    
+    Log.Information($"Starting DSAGrind Gateway API on {url}");
+    app.Run(url);
 }
 catch (Exception ex)
 {

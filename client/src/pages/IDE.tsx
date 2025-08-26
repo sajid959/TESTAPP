@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useRoute } from 'wouter';
+import { useRoute, useLocation } from 'wouter';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -17,6 +17,7 @@ import { Problem, Submission } from '@shared/schema';
 
 export default function IDE() {
   const [match, params] = useRoute('/problem/:id');
+  const [, setLocation] = useLocation();
   const problemId = params?.id;
   const { user } = useAuth();
   const { toast } = useToast();
@@ -237,7 +238,7 @@ export default function IDE() {
   }
 
   // Check if user can access this problem
-  const canAccess = !problem.isPremium || (user as any)?.isPremium;
+  const canAccess = !problem.isPremium || (user as any)?.isPremium || user?.role === 'admin';
   if (!canAccess) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -263,7 +264,7 @@ export default function IDE() {
       {/* Header */}
       <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 px-6 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <Button variant="ghost" onClick={() => window.history.back()} data-testid="button-back">
+          <Button variant="ghost" onClick={() => setLocation('/problems')} data-testid="button-back">
             <i className="fas fa-arrow-left text-lg"></i>
           </Button>
           <div className="flex items-center space-x-3">

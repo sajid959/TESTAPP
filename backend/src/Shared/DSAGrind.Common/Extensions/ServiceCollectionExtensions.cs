@@ -81,7 +81,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<QdrantClient>(sp =>
         {
             var config = sp.GetRequiredService<IOptions<QdrantSettings>>().Value;
-            return new QdrantClient(config.Url, config.GrpcPort,false ,config.ApiKey);
+            return new QdrantClient(config.Url, config.GrpcPort, false, config.ApiKey);
         });
 
         // Add HttpClient

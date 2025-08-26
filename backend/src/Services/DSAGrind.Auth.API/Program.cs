@@ -59,11 +59,14 @@ builder.Services.AddCommonServices(builder.Configuration);
 builder.Services.Configure<OAuthSettings>(builder.Configuration.GetSection(OAuthSettings.SectionName));
 
 // Add CORS
+// Get allowed origins from environment
+var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>() ?? new[] { "http://localhost:5000" };
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:5000", "https://localhost:5001")
+        policy.WithOrigins(allowedOrigins)
               .AllowAnyMethod()
               .AllowAnyHeader()
               .AllowCredentials();
@@ -183,8 +186,12 @@ lifetime.ApplicationStopping.Register(() =>
 
 try
 {
-    Log.Information("Starting DSAGrind Auth API at 8080");
-    await app.RunAsync("http://localhost:8080");
+    var port = builder.Configuration.GetValue<string>("Auth:Port") ?? "8080";
+    var host = builder.Configuration.GetValue<string>("Auth:Host") ?? "0.0.0.0";
+    var url = $"http://{host}:{port}";
+    
+    Log.Information($"Starting DSAGrind Auth API at {url}");
+    await app.RunAsync(url);
 }
 catch (Exception ex)
 {
