@@ -4,6 +4,9 @@ using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using System.Reflection;
 
+// Load environment variables from .env files before creating builder
+EnvironmentExtensions.LoadEnvFile();
+
 var builder = WebApplication.CreateBuilder(args);
 
 Log.Logger = new LoggerConfiguration()
@@ -24,8 +27,9 @@ builder.Services.AddAuthentication("Bearer")
         {
             // Configure your token validation parameters here
         };
-        options.Authority = "http://localhost:xxxx"; // Your local authority URL
-        options.Audience = "your-audience";
+        var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<DSAGrind.Common.Configuration.JwtSettings>();
+        options.Authority = builder.Configuration.GetValue<string>("Auth:Authority") ?? "http://localhost:8080";
+        options.Audience = jwtSettings?.Audience ?? "DSAGrind-Users";
         options.RequireHttpsMetadata = false; // <-- Add this line for development
     });
 builder.Services.AddCommonServices(builder.Configuration);

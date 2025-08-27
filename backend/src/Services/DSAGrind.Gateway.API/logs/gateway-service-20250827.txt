@@ -346,3 +346,7 @@ System.FormatException: Invalid url: 'http//localhost:5000'
 [2025-08-27 21:11:12.357 +00:00 INF] Starting DSAGrind Gateway API on2025-08-27 21:11:12.357 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
 [2025-08-27 21:11:47.772 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
 [2025-08-27 21:11:47.978 +00:00 INF] Starting DSAGrind Gateway API on2025-08-27 21:11:47.978 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
+[2025-08-27 21:19:17.795 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-27 21:19:17.931 +00:00 INF] Starting DSAGrind Gateway API on2025-08-27 21:19:17.931 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
+[2025-08-27 21:21:21.237 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-27 21:21:21.417 +00:00 INF] Starting DSAGrind Gateway API on2025-08-27 21:21:21.417 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000

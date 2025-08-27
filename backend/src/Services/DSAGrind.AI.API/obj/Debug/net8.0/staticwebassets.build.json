@@ -1,1 +1,11 @@
-{"Version":1,"Hash":"bKXlyEVLV25aGHnieueoCJ0BolkIKAcN5OjK6ZUwWzc=","Source":"DSAGrind.AI.API","BasePath":"_content/DSAGrind.AI.API","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "zXGBghNJhk6Iv503NJ+wvsfuD8CE4yL7+qSlIyR70Sc=",
+  "Source": "DSAGrind.AI.API",
+  "BasePath": "_content/DSAGrind.AI.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

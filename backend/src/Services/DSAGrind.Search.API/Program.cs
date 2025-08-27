@@ -3,6 +3,9 @@ using DSAGrind.Search.API.Services;
 using Serilog;
 using System.Reflection;
 
+// Load environment variables from .env files before creating builder
+EnvironmentExtensions.LoadEnvFile();
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add Serilog

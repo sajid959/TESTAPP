@@ -4,6 +4,9 @@ using System.Text;
 using DSAGrind.Common.Extensions;
 using Serilog;
 
+// Load environment variables from .env files before creating builder
+EnvironmentExtensions.LoadEnvFile();
+
 var builder = WebApplication.CreateBuilder(args);
 
 Log.Logger = new LoggerConfiguration()
