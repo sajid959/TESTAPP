@@ -6,7 +6,6 @@
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Gateway.API.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Gateway.API.pdb
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/HealthChecks.MongoDb.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Confluent.Kafka.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DnsClient.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
@@ -40,31 +39,6 @@
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/System.IO.Hashing.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Yarp.ReverseProxy.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/ZstdSharp.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/linux-arm64/native/librdkafka.so
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/linux-x64/native/alpine-librdkafka.so
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/linux-x64/native/centos6-librdkafka.so
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/linux-x64/native/centos7-librdkafka.so
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/linux-x64/native/librdkafka.so
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/osx-arm64/native/librdkafka.dylib
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/osx-x64/native/librdkafka.dylib
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/libcrypto-3-x64.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/libcurl.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/librdkafka.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/librdkafkacpp.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/libssl-3-x64.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/msvcp140.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/vcruntime140.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/zlib1.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/zstd.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/libcrypto-3.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/libcurl.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/librdkafka.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/librdkafkacpp.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/libssl-3.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/msvcp140.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/vcruntime140.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/zlib1.dll
-/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/zstd.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Common.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Events.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Models.dll
@@ -98,106 +72,107 @@
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Grpc.Net.Client.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Grpc.Net.Common.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Qdrant.Client.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\appsettings.json
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\DSAGrind.Gateway.API.staticwebassets.endpoints.json
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\DSAGrind.Gateway.API.exe
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\DSAGrind.Gateway.API.deps.json
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\DSAGrind.Gateway.API.runtimeconfig.json
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\DSAGrind.Gateway.API.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\DSAGrind.Gateway.API.pdb
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\HealthChecks.MongoDb.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Confluent.Kafka.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\DnsClient.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Google.Protobuf.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Grpc.Core.Api.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Grpc.Net.Client.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Grpc.Net.Common.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Microsoft.OpenApi.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\MongoDB.Bson.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\MongoDB.Driver.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Qdrant.Client.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Serilog.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Serilog.AspNetCore.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Serilog.Sinks.Console.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Serilog.Sinks.File.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\SharpCompress.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Snappier.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\StackExchange.Redis.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\System.IO.Hashing.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\Yarp.ReverseProxy.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\ZstdSharp.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\linux-arm64\native\librdkafka.so
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\linux-x64\native\alpine-librdkafka.so
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\linux-x64\native\centos6-librdkafka.so
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\linux-x64\native\centos7-librdkafka.so
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\linux-x64\native\librdkafka.so
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\osx-arm64\native\librdkafka.dylib
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\osx-x64\native\librdkafka.dylib
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x64\native\libcrypto-3-x64.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x64\native\libcurl.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x64\native\librdkafka.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x64\native\librdkafkacpp.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x64\native\libssl-3-x64.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x64\native\msvcp140.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x64\native\vcruntime140.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x64\native\zlib1.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x64\native\zstd.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x86\native\libcrypto-3.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x86\native\libcurl.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x86\native\librdkafka.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x86\native\librdkafkacpp.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x86\native\libssl-3.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x86\native\msvcp140.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x86\native\vcruntime140.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x86\native\zlib1.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\runtimes\win-x86\native\zstd.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\DSAGrind.Common.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\DSAGrind.Events.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\DSAGrind.Models.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\DSAGrind.Common.pdb
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\DSAGrind.Models.pdb
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\bin\Debug\net8.0\DSAGrind.Events.pdb
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\DSAGrind.Gateway.API.csproj.AssemblyReference.cache
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\DSAGrind.Gateway.API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\DSAGrind.Gateway.API.AssemblyInfoInputs.cache
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\DSAGrind.Gateway.API.AssemblyInfo.cs
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\DSAGrind.Gateway.API.csproj.CoreCompileInputs.cache
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\DSAGrind.Gateway.API.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\DSAGrind.Gateway.API.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\DSAGrind.Gateway.API.sourcelink.json
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\rjimswa.dswa.cache.json
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\scopedcss\bundle\DSAGrind.Gateway.API.styles.css
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\staticwebassets.build.json.cache
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\DSAGrind.23D9CE18.Up2Date
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\DSAGrind.Gateway.API.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\refint\DSAGrind.Gateway.API.dll
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\DSAGrind.Gateway.API.pdb
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\DSAGrind.Gateway.API.genruntimeconfig.cache
-C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Gateway.API\obj\Debug\net8.0\ref\DSAGrind.Gateway.API.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/appsettings.Development.json
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/appsettings.json
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Gateway.API.staticwebassets.endpoints.json
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Gateway.API.exe
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Gateway.API.deps.json
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Gateway.API.runtimeconfig.json
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Gateway.API.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Gateway.API.pdb
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/HealthChecks.MongoDb.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Confluent.Kafka.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DnsClient.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Google.Protobuf.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Grpc.Core.Api.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Grpc.Net.Client.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Grpc.Net.Common.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Microsoft.OpenApi.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/MongoDB.Bson.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/MongoDB.Driver.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Pipelines.Sockets.Unofficial.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Qdrant.Client.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Serilog.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Serilog.AspNetCore.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Serilog.Extensions.Hosting.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Serilog.Formatting.Compact.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Serilog.Settings.Configuration.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Serilog.Sinks.Console.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Serilog.Sinks.Debug.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Serilog.Sinks.File.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/SharpCompress.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Snappier.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/StackExchange.Redis.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/System.IO.Hashing.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Yarp.ReverseProxy.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/ZstdSharp.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/linux-arm64/native/librdkafka.so
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/linux-x64/native/alpine-librdkafka.so
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/linux-x64/native/centos6-librdkafka.so
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/linux-x64/native/centos7-librdkafka.so
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/linux-x64/native/librdkafka.so
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/osx-arm64/native/librdkafka.dylib
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/osx-x64/native/librdkafka.dylib
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/libcrypto-3-x64.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/libcurl.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/librdkafka.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/librdkafkacpp.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/libssl-3-x64.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/msvcp140.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/vcruntime140.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/zlib1.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x64/native/zstd.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/libcrypto-3.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/libcurl.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/librdkafka.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/librdkafkacpp.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/libssl-3.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/msvcp140.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/vcruntime140.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/zlib1.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/runtimes/win-x86/native/zstd.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Common.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Events.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Models.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Common.pdb
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Models.pdb
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DSAGrind.Events.pdb
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/DSAGrind.Gateway.API.csproj.AssemblyReference.cache
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/rpswa.dswa.cache.json
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/DSAGrind.Gateway.API.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/DSAGrind.Gateway.API.AssemblyInfoInputs.cache
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/DSAGrind.Gateway.API.AssemblyInfo.cs
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/DSAGrind.Gateway.API.csproj.CoreCompileInputs.cache
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/DSAGrind.Gateway.API.MvcApplicationPartsAssemblyInfo.cs
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/DSAGrind.Gateway.API.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/DSAGrind.Gateway.API.sourcelink.json
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/rjimswa.dswa.cache.json
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/rjsmrazor.dswa.cache.json
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/rjsmcshtml.dswa.cache.json
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/scopedcss/bundle/DSAGrind.Gateway.API.styles.css
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/staticwebassets.build.json
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/staticwebassets.build.json.cache
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/staticwebassets.development.json
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/staticwebassets.build.endpoints.json
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/staticwebassets.upToDateCheck.txt
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/DSAGrind.23D9CE18.Up2Date
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/DSAGrind.Gateway.API.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/refint/DSAGrind.Gateway.API.dll
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/DSAGrind.Gateway.API.pdb
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/DSAGrind.Gateway.API.genruntimeconfig.cache
+C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/ref/DSAGrind.Gateway.API.dll
+/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/RabbitMQ.Client.dll

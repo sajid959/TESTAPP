@@ -1,3 +1,6 @@
+// KAFKA MIGRATION TO RABBITMQ - COMMENTED OUT KAFKA CONFIGURATION  
+// Original Kafka configuration preserved below for reference
+/*
 namespace DSAGrind.Common.Configuration;
 
 public class KafkaSettings
@@ -26,6 +29,43 @@ public class KafkaSettings
 }
 
 public class KafkaTopics
+{
+    public const string UserEvents = "user-events";
+    public const string ProblemEvents = "problem-events";
+    public const string SubmissionEvents = "submission-events";
+    public const string PaymentEvents = "payment-events";
+    public const string NotificationEvents = "notification-events";
+    public const string AuditEvents = "audit-events";
+}
+*/
+
+// NEW RABBITMQ CONFIGURATION
+namespace DSAGrind.Common.Configuration;
+
+public class RabbitMQSettings
+{
+    public const string SectionName = "RabbitMQSettings";
+
+    public string ConnectionString { get; set; } = string.Empty;
+    public string Username { get; set; } = string.Empty;
+    public string Password { get; set; } = string.Empty;
+    public string VirtualHost { get; set; } = "/";
+    public int Port { get; set; } = 5672;
+    public string HostName { get; set; } = "localhost";
+    public bool UseSSL { get; set; } = true;
+    public int RequestedHeartbeat { get; set; } = 60;
+    public int NetworkRecoveryInterval { get; set; } = 10;
+    public bool AutomaticRecoveryEnabled { get; set; } = true;
+    public int RequestedConnectionTimeout { get; set; } = 30000;
+    public int RequestedChannelMax { get; set; } = 2047;
+    public int RequestedFrameMax { get; set; } = 0;
+    public bool PersistentMessages { get; set; } = true;
+    public bool DurableQueues { get; set; } = true;
+    public bool ExclusiveQueues { get; set; } = false;
+    public bool AutoDeleteQueues { get; set; } = false;
+}
+
+public class RabbitMQTopics
 {
     public const string UserEvents = "user-events";
     public const string ProblemEvents = "problem-events";

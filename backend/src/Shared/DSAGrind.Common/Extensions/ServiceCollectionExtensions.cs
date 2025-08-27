@@ -16,7 +16,9 @@ public static class ServiceCollectionExtensions
         // Configure settings
         services.Configure<MongoDbSettings>(configuration.GetSection(MongoDbSettings.SectionName));
         services.Configure<JwtSettings>(configuration.GetSection(JwtSettings.SectionName));
-        services.Configure<KafkaSettings>(configuration.GetSection(KafkaSettings.SectionName));
+        // KAFKA MIGRATION TO RABBITMQ - Commented out Kafka settings
+        // services.Configure<KafkaSettings>(configuration.GetSection(KafkaSettings.SectionName));
+        services.Configure<RabbitMQSettings>(configuration.GetSection(RabbitMQSettings.SectionName));
         services.Configure<RedisSettings>(configuration.GetSection(RedisSettings.SectionName));
         services.Configure<EmailSettings>(configuration.GetSection(EmailSettings.SectionName));
         services.Configure<AISettings>(configuration.GetSection(AISettings.SectionName));
@@ -73,7 +75,10 @@ public static class ServiceCollectionExtensions
                 "subscriptions"));
         // Add common services
         services.AddSingleton<IJwtService, JwtService>();
-        services.AddSingleton<IKafkaService, KafkaService>();
+        // KAFKA MIGRATION TO RABBITMQ - Commented out Kafka service registration
+        // services.AddSingleton<IKafkaService, KafkaService>();
+        services.AddSingleton<RabbitMQService>();
+        services.AddSingleton<IKafkaService>(sp => sp.GetRequiredService<RabbitMQService>());
         services.AddSingleton<IEventPublisher, EventPublisher>();
         services.AddSingleton<IRedisService, RedisService>();
         services.AddScoped<IEmailService, EmailService>();

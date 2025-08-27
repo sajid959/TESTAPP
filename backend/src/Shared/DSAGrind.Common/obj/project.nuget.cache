@@ -1,17 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "ngpywdDbNkk=",
+  "dgSpecHash": "vZXWEiHBgoM=",
   "success": true,
   "projectFilePath": "/home/runner/workspace/backend/src/Shared/DSAGrind.Common/DSAGrind.Common.csproj",
   "expectedPackageFiles": [
     "/home/runner/.nuget/packages/aspnetcore.healthchecks.mongodb/7.0.0/aspnetcore.healthchecks.mongodb.7.0.0.nupkg.sha512",
-    "/home/runner/.nuget/packages/confluent.kafka/2.3.0/confluent.kafka.2.3.0.nupkg.sha512",
     "/home/runner/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",
     "/home/runner/.nuget/packages/google.protobuf/3.31.0/google.protobuf.3.31.0.nupkg.sha512",
     "/home/runner/.nuget/packages/grpc.core.api/2.71.0/grpc.core.api.2.71.0.nupkg.sha512",
     "/home/runner/.nuget/packages/grpc.net.client/2.71.0/grpc.net.client.2.71.0.nupkg.sha512",
     "/home/runner/.nuget/packages/grpc.net.common/2.71.0/grpc.net.common.2.71.0.nupkg.sha512",
-    "/home/runner/.nuget/packages/librdkafka.redist/2.3.0/librdkafka.redist.2.3.0.nupkg.sha512",
     "/home/runner/.nuget/packages/microsoft.extensions.configuration/8.0.0/microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "/home/runner/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
     "/home/runner/.nuget/packages/microsoft.extensions.configuration.binder/8.0.0/microsoft.extensions.configuration.binder.8.0.0.nupkg.sha512",
@@ -39,6 +37,7 @@
     "/home/runner/.nuget/packages/mongodb.driver/3.0.0/mongodb.driver.3.0.0.nupkg.sha512",
     "/home/runner/.nuget/packages/pipelines.sockets.unofficial/2.2.8/pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
     "/home/runner/.nuget/packages/qdrant.client/1.15.1/qdrant.client.1.15.1.nupkg.sha512",
+    "/home/runner/.nuget/packages/rabbitmq.client/6.8.1/rabbitmq.client.6.8.1.nupkg.sha512",
     "/home/runner/.nuget/packages/sharpcompress/0.30.1/sharpcompress.0.30.1.nupkg.sha512",
     "/home/runner/.nuget/packages/snappier/1.0.0/snappier.1.0.0.nupkg.sha512",
     "/home/runner/.nuget/packages/stackexchange.redis/2.7.10/stackexchange.redis.2.7.10.nupkg.sha512",
@@ -52,6 +51,7 @@
     "/home/runner/.nuget/packages/system.security.accesscontrol/5.0.0/system.security.accesscontrol.5.0.0.nupkg.sha512",
     "/home/runner/.nuget/packages/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg.sha512",
     "/home/runner/.nuget/packages/system.text.json/8.0.5/system.text.json.8.0.5.nupkg.sha512",
+    "/home/runner/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512",
     "/home/runner/.nuget/packages/zstdsharp.port/0.7.3/zstdsharp.port.0.7.3.nupkg.sha512"
   ],
   "logs": []
