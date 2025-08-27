@@ -24,6 +24,10 @@ C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.AP
 C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\Grpc.Core.Api.dll
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\Grpc.Net.Client.dll
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\Grpc.Net.Common.dll
 C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\Humanizer.dll
 C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\JetBrains.Annotations.dll
 C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\Json.More.dll
@@ -53,6 +57,7 @@ C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.AP
 C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\OpenAI_API.dll
 C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\Qdrant.Client.dll
 C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\Serilog.dll
 C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\Serilog.AspNetCore.dll
 C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.AI.API\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll

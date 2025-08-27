@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DSAGrind.Gateway.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bbd195444c55655744a47162217baeb900669bf7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+930074bd218cd14df3469f7ddc65d9f12bae2a3b")]
 [assembly: System.Reflection.AssemblyProductAttribute("DSAGrind.Gateway.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DSAGrind.Gateway.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

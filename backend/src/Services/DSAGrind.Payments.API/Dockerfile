@@ -28,7 +28,7 @@ RUN dotnet publish "DSAGrind.Payments.API.csproj" -c Release -o /app/publish /p:
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
 EXPOSE 5006
-
+ENV DOTNET_ENVIRONMENT=Production
 # Copy the published application
 COPY --from=publish /app/publish .
 

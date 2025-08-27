@@ -86,7 +86,7 @@
             },
             "Qdrant.Client": {
               "target": "Package",
-              "version": "[1.7.0, )"
+              "version": "[1.15.1, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",

@@ -1,12 +1,16 @@
 using DSAGrind.Common.Extensions;
-using DSAGrind.Payments.API.Services;
 using DSAGrind.Models.Settings;
+using DSAGrind.Payments.API.Services;
 using Serilog;
-using System.Reflection;
 using Stripe;
+using System.Reflection;
+using static System.Net.WebRequestMethods;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(5006); // HTTP only
+});
 Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .Enrich.FromLogContext()
@@ -84,10 +88,10 @@ try
 {
     var port = builder.Configuration.GetValue<string>("Payments:Port") ?? "5006";
     var host = builder.Configuration.GetValue<string>("Payments:Host") ?? "0.0.0.0";
-    var useHttps = builder.Configuration.GetValue<bool>("Payments:UseHttps", true);
-    var protocol = useHttps ? "https" : "http";
-    var url = $"{protocol}://{host}:{port}";
-    
+    //var useHttps = builder.Configuration.GetValue<bool>("Payments:UseHttps", true);
+    //var protocol = useHttps ? "https" : "http";
+    //var url = $"{protocol}://{host}:{port}";
+    var url = $"http://{host}:{port}";
     Log.Information($"Starting DSAGrind Payments API on {url}");
     app.Run(url);
 }

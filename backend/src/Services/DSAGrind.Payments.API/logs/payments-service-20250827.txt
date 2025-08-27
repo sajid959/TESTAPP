@@ -152,3 +152,39 @@ System.InvalidOperationException: No authenticationScheme was specified, and the
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
 2025-08-27 03:38:31.724 +05:30 [INF] Request finished HTTP/2 GET https://localhost:5006/api/Payments/history?page=1&pageSize=20 - 500 null text/plain; charset=utf-8 137.8437ms
+2025-08-27 05:04:45.947 +05:30 [INF] Starting DSAGrind Payments API on http://0.0.0.0:5006
+2025-08-27 05:04:46.034 +05:30 [INF] User profile is available. Using 'C:\Users\lucky\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-27 05:04:46.246 +05:30 [INF] Now listening on: http://0.0.0.0:5006
+2025-08-27 05:04:46.290 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-27 05:04:46.292 +05:30 [INF] Hosting environment: Development
+2025-08-27 05:04:46.293 +05:30 [INF] Content root path: C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Payments.API
+2025-08-27 05:05:11.388 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/index.html - null null
+2025-08-27 05:05:11.622 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/index.html - 200 null text/html;charset=utf-8 240.4245ms
+2025-08-27 05:05:11.668 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-27 05:05:11.675 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - 200 16527 application/javascript; charset=utf-8 7.4581ms
+2025-08-27 05:05:11.867 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_vs/browserLink - null null
+2025-08-27 05:05:11.936 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_vs/browserLink - 200 null text/javascript; charset=UTF-8 69.1477ms
+2025-08-27 05:05:12.344 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - null null
+2025-08-27 05:05:12.364 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.421ms
+2025-08-27 05:30:20.395 +05:30 [INF] Starting DSAGrind Payments API on http://localhost:5006
+2025-08-27 05:30:20.485 +05:30 [INF] User profile is available. Using 'C:\Users\lucky\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-27 05:30:20.701 +05:30 [INF] Now listening on: http://localhost:5006
+2025-08-27 05:30:20.736 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-27 05:30:20.737 +05:30 [INF] Hosting environment: Development
+2025-08-27 05:30:20.739 +05:30 [INF] Content root path: C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Services\DSAGrind.Payments.API
+2025-08-27 05:30:21.201 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/index.html - null null
+2025-08-27 05:30:21.400 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/index.html - 200 null text/html;charset=utf-8 211.1813ms
+2025-08-27 05:30:21.453 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-27 05:30:21.465 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - 200 16527 application/javascript; charset=utf-8 11.6195ms
+2025-08-27 05:30:21.706 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_vs/browserLink - null null
+2025-08-27 05:30:21.749 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_vs/browserLink - 200 null text/javascript; charset=UTF-8 42.267ms
+2025-08-27 05:30:22.428 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - null null
+2025-08-27 05:30:22.443 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.3593ms
+2025-08-27 05:31:57.530 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/index.html - null null
+2025-08-27 05:31:57.548 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/index.html - 200 null text/html;charset=utf-8 17.8495ms
+2025-08-27 05:31:57.593 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-27 05:31:57.598 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_framework/aspnetcore-browser-refresh.js - 200 16527 application/javascript; charset=utf-8 4.872ms
+2025-08-27 05:31:57.783 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/_vs/browserLink - null null
+2025-08-27 05:31:57.809 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.9232ms
+2025-08-27 05:31:58.228 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - null null
+2025-08-27 05:31:58.242 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5006/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.0455ms
