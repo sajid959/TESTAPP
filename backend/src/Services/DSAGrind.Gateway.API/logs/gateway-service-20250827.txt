@@ -283,3 +283,11 @@ System.FormatException: Invalid url: 'http//localhost:5000'
 2025-08-27 16:39:59.847 +00:00 [INF] Application started. Press Ctrl+C to shut down.
 2025-08-27 16:39:59.848 +00:00 [INF] Hosting environment: Development
 2025-08-27 16:39:59.848 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-27 17:16:24.905 +00:00 [INF] Application is shutting down...
+2025-08-27 17:16:36.575 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-27 17:16:36.669 +00:00 [INF] Loading proxy data from config.
+2025-08-27 17:16:36.719 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
+2025-08-27 17:16:36.905 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-27 17:16:36.908 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-27 17:16:36.909 +00:00 [INF] Hosting environment: Development
+2025-08-27 17:16:36.910 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
