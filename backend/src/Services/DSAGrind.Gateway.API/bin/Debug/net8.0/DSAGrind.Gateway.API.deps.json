@@ -137,12 +137,12 @@
           "runtimes/win-x64/native/libcrypto-3-x64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "3.0.8.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/libcurl.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "7.86.0.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/librdkafka.dll": {
             "rid": "win-x64",
@@ -157,37 +157,37 @@
           "runtimes/win-x64/native/libssl-3-x64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "3.0.8.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/msvcp140.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "14.29.30040.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/vcruntime140.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "14.29.30040.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/zlib1.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "1.2.13.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/zstd.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "1.5.2.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x86/native/libcrypto-3.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "3.0.8.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x86/native/libcurl.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "7.86.0.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x86/native/librdkafka.dll": {
             "rid": "win-x86",
@@ -202,27 +202,27 @@
           "runtimes/win-x86/native/libssl-3.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "3.0.8.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x86/native/msvcp140.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "14.29.30040.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x86/native/vcruntime140.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "14.29.30040.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x86/native/zlib1.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "1.2.13.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x86/native/zstd.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "1.5.2.0"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -745,7 +745,7 @@
         },
         "runtime": {
           "DSAGrind.Common.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -753,7 +753,7 @@
       "DSAGrind.Events/1.0.0": {
         "runtime": {
           "DSAGrind.Events.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -766,7 +766,7 @@
         },
         "runtime": {
           "DSAGrind.Models.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }

@@ -253,3 +253,17 @@ System.FormatException: Invalid url: 'http//localhost:5000'
 2025-08-27 02:41:33.184 +05:30 [INF] Executed action DSAGrind.Gateway.API.Controllers.ProblemsController.GetProblems (DSAGrind.Gateway.API) in 117.4444ms
 2025-08-27 02:41:33.187 +05:30 [INF] Executed endpoint 'DSAGrind.Gateway.API.Controllers.ProblemsController.GetProblems (DSAGrind.Gateway.API)'
 2025-08-27 02:41:33.189 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/problems? - 200 null application/json; charset=utf-8 133.0544ms
+2025-08-27 16:29:40.563 +00:00 [INF] User profile is available. Using '/home/runner/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-08-27 16:29:40.685 +00:00 [INF] Loading proxy data from config.
+2025-08-27 16:29:40.748 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
+2025-08-27 16:29:40.771 +00:00 [INF] Creating key {bddc433f-c962-45c7-a316-370e6c11531c} with creation date 2025-08-27 16:29:40Z, activation date 2025-08-27 16:29:40Z, and expiration date 2025-11-25 16:29:40Z.
+2025-08-27 16:29:40.795 +00:00 [WRN] No XML encryptor configured. Key {bddc433f-c962-45c7-a316-370e6c11531c} may be persisted to storage in unencrypted form.
+2025-08-27 16:29:40.800 +00:00 [INF] Writing data to file '/home/runner/.aspnet/DataProtection-Keys/key-bddc433f-c962-45c7-a316-370e6c11531c.xml'.
+2025-08-27 16:29:40.954 +00:00 [INF] Now listening on: http://0.0.0.0:5000
+2025-08-27 16:29:40.956 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-27 16:29:40.957 +00:00 [INF] Hosting environment: Development
+2025-08-27 16:29:40.957 +00:00 [INF] Content root path: /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API
+2025-08-27 16:29:42.440 +00:00 [INF] Request starting HTTP/1.1 GET http://d511cc4f-0728-4317-98a8-18de8abdb067-00-1niy412ssufr3.picard.replit.dev/ - null null
+2025-08-27 16:29:42.483 +00:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-27 16:29:42.489 +00:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-27 16:29:42.490 +00:00 [INF] Request finished HTTP/1.1 GET http://d511cc4f-0728-4317-98a8-18de8abdb067-00-1niy412ssufr3.picard.replit.dev/ - 200 null text/plain; charset=utf-8 52.1883ms
