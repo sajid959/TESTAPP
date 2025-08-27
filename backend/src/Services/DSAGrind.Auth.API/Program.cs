@@ -11,6 +11,9 @@ using Serilog;
 using HealthChecks.Redis;
 using System.Text;
 
+// Load environment variables from .env files before creating builder
+EnvironmentExtensions.LoadEnvFile();
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure Serilog

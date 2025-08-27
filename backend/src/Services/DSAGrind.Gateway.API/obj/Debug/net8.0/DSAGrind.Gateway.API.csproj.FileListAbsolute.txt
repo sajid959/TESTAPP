@@ -176,3 +176,5 @@ C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gatew
 C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/DSAGrind.Gateway.API.genruntimeconfig.cache
 C:/Users/lucky/Downloads/TESTAPP (1)/TESTAPP/backend/src/Services/DSAGrind.Gateway.API/obj/Debug/net8.0/ref/DSAGrind.Gateway.API.dll
 /home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/RabbitMQ.Client.dll
+/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/DotNetEnv.dll
+/home/runner/workspace/backend/src/Services/DSAGrind.Gateway.API/bin/Debug/net8.0/Sprache.dll

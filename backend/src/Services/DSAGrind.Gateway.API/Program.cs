@@ -1,4 +1,8 @@
+using DSAGrind.Common.Extensions;
 using Serilog;
+
+// Load environment variables from .env files before creating builder
+DSAGrind.Common.Extensions.EnvironmentExtensions.LoadEnvFile();
 
 var builder = WebApplication.CreateBuilder(args);
 
