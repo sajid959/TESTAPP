@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DSAGrind.Auth.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c05e1f93abc341acaf3829a3ddddad65544adb43")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c20077c3fb02ebf73ea80fd65b00181cd977a9db")]
 [assembly: System.Reflection.AssemblyProductAttribute("DSAGrind.Auth.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DSAGrind.Auth.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

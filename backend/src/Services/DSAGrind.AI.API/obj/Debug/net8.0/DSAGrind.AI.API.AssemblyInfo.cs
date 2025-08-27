@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DSAGrind.AI.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c20077c3fb02ebf73ea80fd65b00181cd977a9db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88af1a615b7ca441ac2c40e883c8f5e71ffbf754")]
 [assembly: System.Reflection.AssemblyProductAttribute("DSAGrind.AI.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DSAGrind.AI.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
