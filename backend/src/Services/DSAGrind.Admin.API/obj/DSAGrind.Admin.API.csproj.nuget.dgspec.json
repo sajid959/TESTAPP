@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Services\\DSAGrind.Admin.API\\DSAGrind.Admin.API.csproj": {}
+    "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Services\\DSAGrind.Admin.API\\DSAGrind.Admin.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Services\\DSAGrind.Admin.API\\DSAGrind.Admin.API.csproj": {
+    "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Services\\DSAGrind.Admin.API\\DSAGrind.Admin.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Services\\DSAGrind.Admin.API\\DSAGrind.Admin.API.csproj",
+        "projectUniqueName": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Services\\DSAGrind.Admin.API\\DSAGrind.Admin.API.csproj",
         "projectName": "DSAGrind.Admin.API",
-        "projectPath": "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Services\\DSAGrind.Admin.API\\DSAGrind.Admin.API.csproj",
+        "projectPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Services\\DSAGrind.Admin.API\\DSAGrind.Admin.API.csproj",
         "packagesPath": "C:\\Users\\lucky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Services\\DSAGrind.Admin.API\\obj\\",
+        "outputPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Services\\DSAGrind.Admin.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,14 +32,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\DSAGrind.Common.csproj": {
-                "projectPath": "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\DSAGrind.Common.csproj"
+              "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\DSAGrind.Common.csproj": {
+                "projectPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\DSAGrind.Common.csproj"
               },
-              "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\DSAGrind.Events.csproj": {
-                "projectPath": "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\DSAGrind.Events.csproj"
+              "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\DSAGrind.Events.csproj": {
+                "projectPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\DSAGrind.Events.csproj"
               },
-              "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj": {
-                "projectPath": "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj"
+              "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj": {
+                "projectPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj"
               }
             }
           }
@@ -132,14 +132,14 @@
         }
       }
     },
-    "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\DSAGrind.Common.csproj": {
+    "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\DSAGrind.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\DSAGrind.Common.csproj",
+        "projectUniqueName": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\DSAGrind.Common.csproj",
         "projectName": "DSAGrind.Common",
-        "projectPath": "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\DSAGrind.Common.csproj",
+        "projectPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\DSAGrind.Common.csproj",
         "packagesPath": "C:\\Users\\lucky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\obj\\",
+        "outputPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -160,8 +160,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj": {
-                "projectPath": "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj"
+              "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj": {
+                "projectPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj"
               }
             }
           }
@@ -185,10 +185,6 @@
             "AspNetCore.HealthChecks.MongoDb": {
               "target": "Package",
               "version": "[7.0.0, )"
-            },
-            "Confluent.Kafka": {
-              "target": "Package",
-              "version": "[2.3.0, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
@@ -238,6 +234,10 @@
               "target": "Package",
               "version": "[1.15.1, )"
             },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.8.1, )"
+            },
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.7.10, )"
@@ -271,14 +271,14 @@
         }
       }
     },
-    "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\DSAGrind.Events.csproj": {
+    "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\DSAGrind.Events.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\DSAGrind.Events.csproj",
+        "projectUniqueName": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\DSAGrind.Events.csproj",
         "projectName": "DSAGrind.Events",
-        "projectPath": "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\DSAGrind.Events.csproj",
+        "projectPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\DSAGrind.Events.csproj",
         "packagesPath": "C:\\Users\\lucky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\obj\\",
+        "outputPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -336,14 +336,14 @@
         }
       }
     },
-    "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj": {
+    "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj",
+        "projectUniqueName": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj",
         "projectName": "DSAGrind.Models",
-        "projectPath": "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj",
+        "projectPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj",
         "packagesPath": "C:\\Users\\lucky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucky\\Downloads\\TESTAPP (1)\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\obj\\",
+        "outputPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

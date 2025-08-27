@@ -24,3 +24,16 @@ C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Shared\DSAGrind.Models\
 C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Shared\DSAGrind.Models\obj\Debug\net8.0\refint\DSAGrind.Models.dll
 C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Shared\DSAGrind.Models\obj\Debug\net8.0\DSAGrind.Models.pdb
 C:\Users\lucky\Downloads\TESTAPP (1)\TESTAPP\backend\src\Shared\DSAGrind.Models\obj\Debug\net8.0\ref\DSAGrind.Models.dll
+C:\Users\lucky\Downloads\GrindDSA\TESTAPP\backend\src\Shared\DSAGrind.Models\bin\Debug\net8.0\DSAGrind.Models.deps.json
+C:\Users\lucky\Downloads\GrindDSA\TESTAPP\backend\src\Shared\DSAGrind.Models\bin\Debug\net8.0\DSAGrind.Models.dll
+C:\Users\lucky\Downloads\GrindDSA\TESTAPP\backend\src\Shared\DSAGrind.Models\bin\Debug\net8.0\DSAGrind.Models.pdb
+C:\Users\lucky\Downloads\GrindDSA\TESTAPP\backend\src\Shared\DSAGrind.Models\obj\Debug\net8.0\DSAGrind.Models.csproj.AssemblyReference.cache
+C:\Users\lucky\Downloads\GrindDSA\TESTAPP\backend\src\Shared\DSAGrind.Models\obj\Debug\net8.0\DSAGrind.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucky\Downloads\GrindDSA\TESTAPP\backend\src\Shared\DSAGrind.Models\obj\Debug\net8.0\DSAGrind.Models.AssemblyInfoInputs.cache
+C:\Users\lucky\Downloads\GrindDSA\TESTAPP\backend\src\Shared\DSAGrind.Models\obj\Debug\net8.0\DSAGrind.Models.AssemblyInfo.cs
+C:\Users\lucky\Downloads\GrindDSA\TESTAPP\backend\src\Shared\DSAGrind.Models\obj\Debug\net8.0\DSAGrind.Models.csproj.CoreCompileInputs.cache
+C:\Users\lucky\Downloads\GrindDSA\TESTAPP\backend\src\Shared\DSAGrind.Models\obj\Debug\net8.0\DSAGrind.Models.sourcelink.json
+C:\Users\lucky\Downloads\GrindDSA\TESTAPP\backend\src\Shared\DSAGrind.Models\obj\Debug\net8.0\DSAGrind.Models.dll
+C:\Users\lucky\Downloads\GrindDSA\TESTAPP\backend\src\Shared\DSAGrind.Models\obj\Debug\net8.0\refint\DSAGrind.Models.dll
+C:\Users\lucky\Downloads\GrindDSA\TESTAPP\backend\src\Shared\DSAGrind.Models\obj\Debug\net8.0\DSAGrind.Models.pdb
+C:\Users\lucky\Downloads\GrindDSA\TESTAPP\backend\src\Shared\DSAGrind.Models\obj\Debug\net8.0\ref\DSAGrind.Models.dll
