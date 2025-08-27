@@ -8,8 +8,7 @@ packages = ["dotnet-sdk_8", "jq"]
 
 [deployment]
 deploymentTarget = "autoscale"
-run = ["npm", "run", "start"]
-build = ["npm", "run", "build"]
+run = ["sh", "-c", "dotnet run"]
 
 [[ports]]
 localPort = 3000
