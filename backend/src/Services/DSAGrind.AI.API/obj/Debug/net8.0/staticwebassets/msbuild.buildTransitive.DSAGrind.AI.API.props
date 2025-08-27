@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/DSAGrind.AI.API.props" />
+</Project>

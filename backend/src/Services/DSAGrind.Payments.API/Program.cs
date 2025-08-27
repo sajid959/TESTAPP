@@ -6,7 +6,11 @@ using Stripe;
 using System.Reflection;
 using static System.Net.WebRequestMethods;
 
+// Load environment variables from .env files before creating builder
+DSAGrind.Common.Extensions.EnvironmentExtensions.LoadEnvFile();
+
 var builder = WebApplication.CreateBuilder(args);
+
 builder.WebHost.ConfigureKestrel(options =>
 {
     options.ListenAnyIP(5006); // HTTP only
