@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using DotNetEnv;
 
 namespace DSAGrind.Common.Extensions;
@@ -64,8 +65,9 @@ public static class EnvironmentExtensions
     /// <param name="configuration">The configuration</param>
     /// <param name="key">The configuration key</param>
     /// <param name="defaultValue">Default value if not found</param>
+    /// <param name="logger">Optional logger for fallback notifications</param>
     /// <returns>The configuration value</returns>
-    public static string GetConfigurationValue(this IConfiguration configuration, string key, string? defaultValue = null)
+    public static string GetConfigurationValue(this IConfiguration configuration, string key, string? defaultValue = null, ILogger? logger = null)
     {
         // First check environment variables
         var envValue = Environment.GetEnvironmentVariable(key);
@@ -78,11 +80,21 @@ public static class EnvironmentExtensions
         var configValue = configuration[key];
         if (!string.IsNullOrEmpty(configValue))
         {
+            // Log that we're using local configuration instead of environment variable
+            logger?.LogInformation("⚠️  Using local configuration value for {Key} from appsettings.json (consider setting environment variable)", key);
             return configValue;
         }
 
-        // Return default value or throw exception
-        return defaultValue ?? throw new InvalidOperationException($"Configuration key '{key}' not found in environment variables or appsettings");
+        // Return default value with logging
+        if (defaultValue != null)
+        {
+            logger?.LogWarning("⚠️  Using local fallback value for {Key}: {DefaultValue}", key, defaultValue);
+            return defaultValue;
+        }
+
+        // Log error and throw exception
+        logger?.LogError("❌ Configuration key '{Key}' not found in environment variables or appsettings", key);
+        throw new InvalidOperationException($"Configuration key '{key}' not found in environment variables or appsettings");
     }
 
     /// <summary>
