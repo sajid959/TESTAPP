@@ -1302,7 +1302,7 @@
         },
         "runtime": {
           "DSAGrind.Common.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -1310,7 +1310,7 @@
       "DSAGrind.Events/1.0.0": {
         "runtime": {
           "DSAGrind.Events.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -1323,7 +1323,7 @@
         },
         "runtime": {
           "DSAGrind.Models.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
         }
