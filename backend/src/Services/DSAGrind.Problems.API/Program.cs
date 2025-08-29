@@ -95,7 +95,7 @@ app.MapGet("/health", () => new { status = "healthy", service = "DSAGrind.Proble
 try
 {
     var port = builder.Configuration.GetValue<string>("Problems:Port") ?? "5001";
-    var host = builder.Configuration.GetValue<string>("Problems:Host") ?? "0.0.0.0";
+    var host = builder.Configuration.GetValue<string>("Problems:Host") ?? "localhost";
     var url = $"http://{host}:{port}";
     
     Log.Information($"Starting DSAGrind Problems API on {url}");

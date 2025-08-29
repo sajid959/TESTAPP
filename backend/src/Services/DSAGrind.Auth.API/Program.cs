@@ -190,7 +190,7 @@ lifetime.ApplicationStopping.Register(() =>
 try
 {
     var port = builder.Configuration.GetValue<string>("Auth:Port") ?? "8080";
-    var host = builder.Configuration.GetValue<string>("Auth:Host") ?? "0.0.0.0";
+    var host = builder.Configuration.GetValue<string>("Auth:Host") ?? "localhost";
     var url = $"http://{host}:{port}";
     
     Log.Information($"Starting DSAGrind Auth API at {url}");

@@ -78,6 +78,8 @@ export interface Category {
   description?: string;
   icon?: string;
   problemCount: number;
+  totalProblems: number;
+  freeProblemLimit: number;
   isActive: boolean;
 }
 

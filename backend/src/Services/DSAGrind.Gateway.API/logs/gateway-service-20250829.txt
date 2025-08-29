@@ -7,3 +7,7 @@ tedToStorageInUnencryptedForm"},"SourceContext":"Microsoft.AspNetCore.DataProtec
 [2025-08-29 22:26:37.997 +00:00 INF] Starting DSAGrind Gateway API on2025-08-29 22:26:37.997 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
 [2025-08-29 22:30:18.362 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
 [2025-08-29 22:30:18.612 +00:00 INF] Starting DSAGrind Gateway API on2025-08-29 22:30:18.612 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
+[2025-08-29 22:34:21.169 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-29 22:34:21.353 +00:00 INF] Starting DSAGrind Gateway API on2025-08-29 22:34:21.353 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
+[2025-08-29 22:36:02.145 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-29 22:36:02.339 +00:00 INF] Starting DSAGrind Gateway API on2025-08-29 22:36:02.339 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000

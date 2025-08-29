@@ -80,7 +80,7 @@ app.MapGet("/", () => "DSAGrind API Gateway - Routing traffic to microservices")
 try
 {
     var port = builder.Configuration.GetValue<string>("Gateway:Port") ?? "5000";
-    var host = builder.Configuration.GetValue<string>("Gateway:Host") ?? "0.0.0.0";
+    var host = builder.Configuration.GetValue<string>("Gateway:Host") ?? "localhost";
     var url = $"http://{host}:{port}";
     
     Log.Information($"Starting DSAGrind Gateway API on {url}");

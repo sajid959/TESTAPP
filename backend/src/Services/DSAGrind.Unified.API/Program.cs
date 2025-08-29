@@ -104,7 +104,7 @@ app.MapGet("/", () => "DSAGrind Unified API - All microservices combined for dev
 try
 {
     Log.Information("Starting DSAGrind Unified API on port 5010");
-    app.Run("http://0.0.0.0:5010");
+    app.Run("http://localhost:5010");
 }
 catch (Exception ex)
 {

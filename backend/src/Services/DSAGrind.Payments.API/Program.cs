@@ -91,7 +91,7 @@ app.MapGet("/health", () => new { status = "healthy", service = "DSAGrind.Paymen
 try
 {
     var port = builder.Configuration.GetValue<string>("Payments:Port") ?? "5006";
-    var host = builder.Configuration.GetValue<string>("Payments:Host") ?? "0.0.0.0";
+    var host = builder.Configuration.GetValue<string>("Payments:Host") ?? "localhost";
     //var useHttps = builder.Configuration.GetValue<bool>("Payments:UseHttps", true);
     //var protocol = useHttps ? "https" : "http";
     //var url = $"{protocol}://{host}:{port}";
