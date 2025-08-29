@@ -1,7 +1,8 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { AuthModal } from "@/components/auth/AuthModal";
 import { Shield, Lock } from "lucide-react";
 
 interface ProtectedRouteProps {
@@ -11,6 +12,7 @@ interface ProtectedRouteProps {
 
 export function ProtectedRoute({ children, requireAdmin = false }: ProtectedRouteProps) {
   const { isAuthenticated, isAdmin, loading } = useAuth();
+  const [authModalOpen, setAuthModalOpen] = useState(false);
 
   if (loading) {
     return (
@@ -34,7 +36,7 @@ export function ProtectedRoute({ children, requireAdmin = false }: ProtectedRout
             </CardDescription>
           </CardHeader>
           <CardContent className="text-center">
-            <Button onClick={() => window.location.reload()}>
+            <Button onClick={() => setAuthModalOpen(true)}>
               Sign In
             </Button>
           </CardContent>
@@ -66,5 +68,13 @@ export function ProtectedRoute({ children, requireAdmin = false }: ProtectedRout
     );
   }
 
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+      <AuthModal 
+        open={authModalOpen} 
+        onOpenChange={setAuthModalOpen} 
+      />
+    </>
+  );
 }

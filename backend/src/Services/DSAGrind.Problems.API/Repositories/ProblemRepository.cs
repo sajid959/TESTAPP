@@ -10,7 +10,7 @@ namespace DSAGrind.Problems.API.Repositories;
 
 public class ProblemRepository : MongoRepository<Problem>, IProblemRepository
 {
-    public ProblemRepository(IOptions<MongoDbSettings> settings) : base(settings, "problems")
+    public ProblemRepository(IMongoDatabase database) : base(database, "problems")
     {
     }
 

@@ -45,33 +45,33 @@ public static class ServiceCollectionExtensions
         //services.AddScoped<IMongoRepository<DSAGrind.Models.Entities.Category>, MongoRepository<DSAGrind.Models.Entities.Category>>();
         //services.AddScoped<IMongoRepository<DSAGrind.Models.Entities.Subscription>, MongoRepository<DSAGrind.Models.Entities.Subscription>>();
         services.AddScoped<IMongoRepository<DSAGrind.Models.Entities.User>>(sp =>
-    new MongoRepository<DSAGrind.Models.Entities.User>(
-        sp.GetRequiredService<IOptions<MongoDbSettings>>(),
-        "users"));
+            new MongoRepository<DSAGrind.Models.Entities.User>(
+                sp.GetRequiredService<IMongoDatabase>(),
+                "users"));
 
         services.AddScoped<IMongoRepository<DSAGrind.Models.Entities.Problem>>(sp =>
             new MongoRepository<DSAGrind.Models.Entities.Problem>(
-                sp.GetRequiredService<IOptions<MongoDbSettings>>(),
+                sp.GetRequiredService<IMongoDatabase>(),
                 "problems"));
 
         services.AddScoped<IMongoRepository<DSAGrind.Models.Entities.Submission>>(sp =>
             new MongoRepository<DSAGrind.Models.Entities.Submission>(
-                sp.GetRequiredService<IOptions<MongoDbSettings>>(),
+                sp.GetRequiredService<IMongoDatabase>(),
                 "submissions"));
 
         services.AddScoped<IMongoRepository<DSAGrind.Models.Entities.Category>>(sp =>
             new MongoRepository<DSAGrind.Models.Entities.Category>(
-                sp.GetRequiredService<IOptions<MongoDbSettings>>(),
+                sp.GetRequiredService<IMongoDatabase>(),
                 "categories"));
 
         services.AddScoped<IMongoRepository<DSAGrind.Models.Entities.Payment>>(sp =>
-    new MongoRepository<DSAGrind.Models.Entities.Payment>(
-        sp.GetRequiredService<IOptions<MongoDbSettings>>(),
-        "payments"));
+            new MongoRepository<DSAGrind.Models.Entities.Payment>(
+                sp.GetRequiredService<IMongoDatabase>(),
+                "payments"));
         
         services.AddScoped<IMongoRepository<DSAGrind.Models.Entities.Subscription>>(sp =>
             new MongoRepository<DSAGrind.Models.Entities.Subscription>(
-                sp.GetRequiredService<IOptions<MongoDbSettings>>(),
+                sp.GetRequiredService<IMongoDatabase>(),
                 "subscriptions"));
         // Add common services
         services.AddSingleton<IJwtService, JwtService>();

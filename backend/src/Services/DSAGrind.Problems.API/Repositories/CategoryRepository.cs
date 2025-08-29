@@ -8,7 +8,7 @@ namespace DSAGrind.Problems.API.Repositories;
 
 public class CategoryRepository : MongoRepository<Category>, ICategoryRepository
 {
-    public CategoryRepository(IOptions<MongoDbSettings> settings) : base(settings, "categories")
+    public CategoryRepository(IMongoDatabase database) : base(database, "categories")
     {
     }
 

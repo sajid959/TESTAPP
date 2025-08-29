@@ -8,7 +8,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest } from '@/lib/queryClient';
-import { Category } from '@shared/schema';
+import { Category } from '@/types/api';
 
 export function CategoryConfig() {
   const { toast } = useToast();

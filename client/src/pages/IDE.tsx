@@ -13,7 +13,7 @@ import { useWebSocket } from '@/hooks/useWebSocket';
 import { MonacoEditor } from '@/components/ide/MonacoEditor';
 import { TestCases } from '@/components/ide/TestCases';
 import { apiRequest } from '@/lib/queryClient';
-import { Problem, Submission } from '@shared/schema';
+import { Problem, Submission } from '@/types/api';
 
 export default function IDE() {
   const [match, params] = useRoute('/problem/:id');
@@ -238,7 +238,7 @@ export default function IDE() {
   }
 
   // Check if user can access this problem
-  const canAccess = !problem.isPremium || (user as any)?.isPremium || user?.role === 'admin';
+  const canAccess = !problem.isPaid || (user?.subscriptionPlan === 'premium' && user?.subscriptionStatus === 'active') || user?.role === 'admin';
   if (!canAccess) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -274,7 +274,7 @@ export default function IDE() {
             <Badge className={getDifficultyColor(problem.difficulty)}>
               {problem.difficulty}
             </Badge>
-            {problem.isPremium && (
+            {problem.isPaid && (
               <Badge variant="outline">
                 <i className="fas fa-crown mr-1 text-amber-500"></i>
                 Premium

@@ -11,6 +11,7 @@ interface AuthContextType {
   loading: boolean;
   isAuthenticated: boolean;
   isAdmin: boolean;
+  isPremium: boolean;
 }
 
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -39,8 +40,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       } else {
         localStorage.removeItem("token");
       }
-    } catch (error) {
-      localStorage.removeItem("token");
+    } catch (error: any) {
+      // Only remove token if it's an authentication error (401/403), not network errors
+      if (error.message?.includes('401') || error.message?.includes('403')) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("refreshToken");
+      }
+      // For network errors (500, connection failed), keep the token and retry later
+      console.error('Auth check failed:', error);
     } finally {
       setLoading(false);
     }
@@ -80,7 +87,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     logout,
     loading,
     isAuthenticated: !!user,
-    isAdmin: user?.role === "admin",
+    isAdmin: user?.role?.toLowerCase() === "admin",
+    isPremium: user?.subscriptionPlan === 'premium' && user?.subscriptionStatus === 'active',
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

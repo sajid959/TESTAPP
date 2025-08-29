@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
-import { Problem } from '@shared/schema';
+import { Problem } from '@/types/api';
 import { useAuth } from '@/hooks/useAuth';
 
 interface ProblemTableProps {
@@ -46,7 +46,7 @@ export function ProblemTable({ problems, isLoading = false }: ProblemTableProps)
   };
 
   const canAccessProblem = (problem: Problem) => {
-    return !problem.isPremium || (user as any)?.isPremium;
+    return !problem.isPaid || (user?.subscriptionPlan === 'premium' && user?.subscriptionStatus === 'active');
   };
 
   if (isLoading) {

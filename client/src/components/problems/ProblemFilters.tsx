@@ -5,14 +5,14 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Category } from '@shared/schema';
+import { Category } from '@/types/api';
 
 interface ProblemFiltersProps {
   categories: Category[];
   filters: {
     categoryId?: string;
     difficulty?: string;
-    isPremium?: boolean;
+    isPaid?: boolean;
     search?: string;
   };
   onFiltersChange: (filters: any) => void;

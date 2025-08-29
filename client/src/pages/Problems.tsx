@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Button } from '@/components/ui/button';
 import { ProblemTable } from '@/components/problems/ProblemTable';
 import { ProblemFilters } from '@/components/problems/ProblemFilters';
-import { Problem, Category } from '@shared/schema';
+import { Problem, Category } from '@/types/api';
 import { useAuth } from '@/hooks/useAuth';
 
 export default function Problems() {
@@ -11,7 +11,7 @@ export default function Problems() {
   const [filters, setFilters] = useState<{
     categoryId?: string;
     difficulty?: string;
-    isPremium?: boolean;
+    isPaid?: boolean;
     search?: string;
   }>({});
 
@@ -25,7 +25,7 @@ export default function Problems() {
       const searchParams = new URLSearchParams();
       if (filters.categoryId) searchParams.set('categoryId', filters.categoryId);
       if (filters.difficulty) searchParams.set('difficulty', filters.difficulty);
-      if (filters.isPremium !== undefined) searchParams.set('isPremium', String(filters.isPremium));
+      if (filters.isPaid !== undefined) searchParams.set('isPaid', String(filters.isPaid));
       if (filters.search) searchParams.set('search', filters.search);
       
       return fetch(`/api/problems?${searchParams.toString()}`, {
@@ -129,7 +129,7 @@ export default function Problems() {
         <ProblemTable problems={problems} isLoading={isLoading} />
 
         {/* Premium Upgrade CTA */}
-        {user?.subscriptionStatus !== 'premium' && problems.some(p => p.isPremium) && (
+        {user?.subscriptionPlan !== 'premium' && problems.some(p => p.isPaid) && (
           <div className="mt-8 bg-gradient-to-r from-brand-500 to-brand-600 rounded-xl p-6 text-white">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div>
@@ -138,7 +138,7 @@ export default function Problems() {
                   Unlock Premium Problems
                 </h3>
                 <p className="text-brand-100">
-                  Get access to {problems.filter(p => p.isPremium).length} premium problems with detailed solutions and exclusive content.
+                  Get access to {problems.filter(p => p.isPaid).length} premium problems with detailed solutions and exclusive content.
                 </p>
               </div>
               <Button 

@@ -9,7 +9,9 @@ export interface User {
   isActive: boolean;
   totalSolved: number;
   rank: number;
+  subscriptionPlan: string;
   subscriptionStatus: string;
+  subscriptionExpires?: string;
   createdAt: string;
   lastLoginAt?: string;
 }
@@ -46,7 +48,7 @@ export interface Problem {
   testCases: TestCase[];
   constraints?: string;
   examples: Example[];
-  isPremium: boolean;
+  isPaid: boolean;
   isApproved: boolean;
   likes: number;
   dislikes: number;

@@ -8,7 +8,7 @@ namespace DSAGrind.Auth.API.Repositories;
 
 public class UserRepository : MongoRepository<User>, IUserRepository
 {
-    public UserRepository(IOptions<MongoDbSettings> settings) : base(settings, "users")
+    public UserRepository(IMongoDatabase database) : base(database, "users")
     {
         // Create indexes for better performance
         CreateIndexesAsync().GetAwaiter().GetResult();

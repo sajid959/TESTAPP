@@ -11,11 +11,9 @@ public class MongoRepository<T> : IMongoRepository<T> where T : class
     protected readonly IMongoCollection<T> _collection;
     protected readonly IMongoDatabase _database;
 
-    public MongoRepository(IOptions<MongoDbSettings> settings, string collectionName)
+    public MongoRepository(IMongoDatabase database, string collectionName)
     {
-        var mongoSettings = settings.Value;
-        var client = new MongoClient(mongoSettings.ConnectionString);
-        _database = client.GetDatabase(mongoSettings.DatabaseName);
+        _database = database;
         _collection = _database.GetCollection<T>(collectionName);
     }
 
