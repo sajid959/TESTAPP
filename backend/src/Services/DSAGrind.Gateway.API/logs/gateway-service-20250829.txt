@@ -11,3 +11,67 @@ tedToStorageInUnencryptedForm"},"SourceContext":"Microsoft.AspNetCore.DataProtec
 [2025-08-29 22:34:21.353 +00:00 INF] Starting DSAGrind Gateway API on2025-08-29 22:34:21.353 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
 [2025-08-29 22:36:02.145 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
 [2025-08-29 22:36:02.339 +00:00 INF] Starting DSAGrind Gateway API on2025-08-29 22:36:02.339 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
+[2025-08-29 22:43:10.629 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-29 22:43:10.828 +00:00 INF] Starting DSAGrind Gateway API on2025-08-29 22:43:10.828 [2025-08-29 22:44:01.616 +00:00 INF] Loading proxy data from confi2025-08-29 22:44:01.616 +00:00 [INF] Loading proxy data from config.
+p.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-29 22:44:47.043 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-29 22:44:47.197 +00:00 INF] Starting DSAGrind Gateway API on2025-08-29 22:44:47.197 +00:00 [INF] Starting DSAGrind Gateway API on http://localhost:5000
+[2025-08-29 22:45:16.839 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-29 22:45:17.098 +00:00 INF] Starting DSAGrind Gateway API on2025-08-29 22:45:17.098 +0[2025-08-29 22:45:38.598 +00:00 WRN] "RequestCreation": An error w2025-08-29 22:45:38.598 +00:00 [WRN] "RequestCreation": An error was encountered while creating the request message.
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+refix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+[2025-08-29 22:45:59.553 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-29 22:45:59.704 +00:00 INF] Starting DSAGrind Gateway API on2025-08-29 22:45:59.704 +0[2025-08-29 22:46:19.890 +00:00 WRN] "RequestCreation": An error w2025-08-29 22:46:19.890 +00:00 [WRN] "RequestCreation": An error was encountered while creating the request message.
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+refix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+[2025-08-29 22:47:36.374 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-29 22:47:36.559 +00:00 INF] Starting DSAGrind Gateway API on2025-08-29 22:47:36.559 +0[2025-08-29 22:47:55.570 +00:00 WRN] "RequestCreation": An error w2025-08-29 22:47:55.570 +00:00 [WRN] "RequestCreation": An error was encountered while creating the request message.
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+refix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+[2025-08-29 22:49:25.227 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-29 22:49:25.469 +00:00 INF] Starting DSAGrind Gateway API on2025-08-29 22:49:25.469 +0[2025-08-29 22:50:37.589 +00:00 WRN] "RequestCreation": An error w2025-08-29 22:50:37.589 +00:00 [WRN] "RequestCreation": An error was encountered while creating the request message.
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+refix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+[2025-08-29 22:50:43.001 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-29 22:50:43.208 +00:00 INF] Starting DSAGrind Gateway API on2025-08-29 22:50:43.208 +00:00 [INF] Starting DSAGrind Gateway API on http://localhost:5000
+[2025-08-29 22:51:40.207 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-29 22:51:40.416 +00:00 INF] Starting DSAGrind Gateway API on2025-08-29 22:51:40.416 +0[2025-08-29 22:52:41.523 +00:00 WRN] "RequestCreation": An error w2025-08-29 22:52:41.523 +00:00 [WRN] "RequestCreation": An error was encountered while creating the request message.
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2025-08-29 22:52:43.363 +00:00 [INF] Registration attempt for email: test2025@dsagrind.com
+2025-08-29 22:52:44.357 +00:00 [INF] Login attempt for email: test2025@dsagrind.com
+NF] Registration attempt for email: test2025@dsagrind.com {"SourceContext":"DSAGrind.Gateway.API.Controllers.AuthController","ActionId":"8bb3e811-4e77-4181-b699-44a2733f7ded","ActionName":"DSAGrind.Gateway.API.Controllers.AuthController.Register (DSAGrind.Gateway.API)","RequestId":"0HNF79QFADKKM:00000001","RequestPath":"/api/auth/register","ConnectionId":"0HNF79QFADKKM"}
+[2025-08-29 22:52:44.357 +00:00 INF] Login attempt for email: test2025@dsagrind.com {"SourceContext":"DSAGrind.Gateway.API.Controllers.AuthController","ActionId":"8326c57d-c52d-4fa0-aeff-aee9fb091dc0","ActionName":"DSAGrind.Gateway.API.Controllers.AuthController.Login (DSAGrind.Gateway.API)","RequestId":"0HNF79QFADKKN:00000001","RequestPath":"/api/auth/login","ConnectionId":"0HNF79QFADKKN"}
+[2025-08-29 22:53:05.347 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-29 22:53:05.544 +00:00 INF] Starting DSAGrind Gateway API on2025-08-29 22:53:05.544 +00:00 [INF] Starting DSAGrind Gateway API on http://localhost:5000
+[2025-08-29 22:53:29.674 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-29 22:53:29.822 +00:00 INF] Starting DSAGrind Gateway API on2025-08-29 22:53:29.822 +00:00 [INF] Starting DSAGrind Gateway API on http://localhost:5000

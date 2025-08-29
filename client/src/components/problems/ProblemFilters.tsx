@@ -145,14 +145,14 @@ export function ProblemFilters({ categories, filters, onFiltersChange }: Problem
             </Label>
             <Select 
               value={
-                filters.isPremium === undefined ? 'all' : 
-                filters.isPremium ? 'premium' : 'free'
+                filters.isPaid === undefined ? 'all' : 
+                filters.isPaid ? 'premium' : 'free'
               } 
               onValueChange={(value) => {
                 if (value === 'all') {
-                  handleFilterChange('isPremium', undefined);
+                  handleFilterChange('isPaid', undefined);
                 } else {
-                  handleFilterChange('isPremium', value === 'premium');
+                  handleFilterChange('isPaid', value === 'premium');
                 }
               }}
             >
@@ -184,18 +184,18 @@ export function ProblemFilters({ categories, filters, onFiltersChange }: Problem
               Easy Problems
             </Button>
             <Button
-              variant={filters.isPremium === false ? 'default' : 'outline'}
+              variant={filters.isPaid === false ? 'default' : 'outline'}
               size="sm"
-              onClick={() => handleFilterChange('isPremium', filters.isPremium === false ? undefined : false)}
+              onClick={() => handleFilterChange('isPaid', filters.isPaid === false ? undefined : false)}
               className="h-8"
               data-testid="button-filter-free"
             >
               Free Only
             </Button>
             <Button
-              variant={filters.isPremium === true ? 'default' : 'outline'}
+              variant={filters.isPaid === true ? 'default' : 'outline'}
               size="sm"
-              onClick={() => handleFilterChange('isPremium', filters.isPremium === true ? undefined : true)}
+              onClick={() => handleFilterChange('isPaid', filters.isPaid === true ? undefined : true)}
               className="h-8"
               data-testid="button-filter-premium"
             >

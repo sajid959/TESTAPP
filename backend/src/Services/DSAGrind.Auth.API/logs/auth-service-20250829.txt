@@ -1,0 +1,2 @@
+[2025-08-29 22:52:22.975 +00:00 INF] Starting DSAGrind Auth API at http://localhost:8080 {}
+2025-08-29 22:52:22.975 +00:00 [INF] Starting DSAGrind Auth API at http://localhost:8080
