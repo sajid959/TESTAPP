@@ -1,4 +1,4 @@
-modules = ["dotnet-7.0", "nodejs-20", "bash", "web"]
+modules = ["dotnet-7.0", "nodejs-20", "bash", "web", "postgresql-16"]
 run = "dotnet run"
 hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
 

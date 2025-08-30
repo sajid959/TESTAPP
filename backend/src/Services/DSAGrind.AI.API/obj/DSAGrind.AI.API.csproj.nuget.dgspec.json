@@ -1,45 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Services\\DSAGrind.AI.API\\DSAGrind.AI.API.csproj": {}
+    "/home/runner/workspace/backend/src/Services/DSAGrind.AI.API/DSAGrind.AI.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Services\\DSAGrind.AI.API\\DSAGrind.AI.API.csproj": {
+    "/home/runner/workspace/backend/src/Services/DSAGrind.AI.API/DSAGrind.AI.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Services\\DSAGrind.AI.API\\DSAGrind.AI.API.csproj",
+        "projectUniqueName": "/home/runner/workspace/backend/src/Services/DSAGrind.AI.API/DSAGrind.AI.API.csproj",
         "projectName": "DSAGrind.AI.API",
-        "projectPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Services\\DSAGrind.AI.API\\DSAGrind.AI.API.csproj",
-        "packagesPath": "C:\\Users\\lucky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Services\\DSAGrind.AI.API\\obj\\",
+        "projectPath": "/home/runner/workspace/backend/src/Services/DSAGrind.AI.API/DSAGrind.AI.API.csproj",
+        "packagesPath": "/home/runner/.nuget/packages/",
+        "outputPath": "/home/runner/workspace/backend/src/Services/DSAGrind.AI.API/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lucky\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/runner/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\DSAGrind.Common.csproj": {
-                "projectPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\DSAGrind.Common.csproj"
+              "/home/runner/workspace/backend/src/Shared/DSAGrind.Common/DSAGrind.Common.csproj": {
+                "projectPath": "/home/runner/workspace/backend/src/Shared/DSAGrind.Common/DSAGrind.Common.csproj"
               },
-              "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\DSAGrind.Events.csproj": {
-                "projectPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\DSAGrind.Events.csproj"
+              "/home/runner/workspace/backend/src/Shared/DSAGrind.Events/DSAGrind.Events.csproj": {
+                "projectPath": "/home/runner/workspace/backend/src/Shared/DSAGrind.Events/DSAGrind.Events.csproj"
               },
-              "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj": {
-                "projectPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj"
+              "/home/runner/workspace/backend/src/Shared/DSAGrind.Models/DSAGrind.Models.csproj": {
+                "projectPath": "/home/runner/workspace/backend/src/Shared/DSAGrind.Models/DSAGrind.Models.csproj"
               }
             }
           }
@@ -53,8 +47,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -128,40 +121,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/nix/store/1d8g8d8xrrlxwfgbavgl4snymznfw5r7-dotnet-sdk-8.0.412/share/dotnet/sdk/8.0.412/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\DSAGrind.Common.csproj": {
+    "/home/runner/workspace/backend/src/Shared/DSAGrind.Common/DSAGrind.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\DSAGrind.Common.csproj",
+        "projectUniqueName": "/home/runner/workspace/backend/src/Shared/DSAGrind.Common/DSAGrind.Common.csproj",
         "projectName": "DSAGrind.Common",
-        "projectPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\DSAGrind.Common.csproj",
-        "packagesPath": "C:\\Users\\lucky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Common\\obj\\",
+        "projectPath": "/home/runner/workspace/backend/src/Shared/DSAGrind.Common/DSAGrind.Common.csproj",
+        "packagesPath": "/home/runner/.nuget/packages/",
+        "outputPath": "/home/runner/workspace/backend/src/Shared/DSAGrind.Common/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lucky\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/runner/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj": {
-                "projectPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj"
+              "/home/runner/workspace/backend/src/Shared/DSAGrind.Models/DSAGrind.Models.csproj": {
+                "projectPath": "/home/runner/workspace/backend/src/Shared/DSAGrind.Models/DSAGrind.Models.csproj"
               }
             }
           }
@@ -175,8 +162,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -271,32 +257,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/nix/store/1d8g8d8xrrlxwfgbavgl4snymznfw5r7-dotnet-sdk-8.0.412/share/dotnet/sdk/8.0.412/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\DSAGrind.Events.csproj": {
+    "/home/runner/workspace/backend/src/Shared/DSAGrind.Events/DSAGrind.Events.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\DSAGrind.Events.csproj",
+        "projectUniqueName": "/home/runner/workspace/backend/src/Shared/DSAGrind.Events/DSAGrind.Events.csproj",
         "projectName": "DSAGrind.Events",
-        "projectPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\DSAGrind.Events.csproj",
-        "packagesPath": "C:\\Users\\lucky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Events\\obj\\",
+        "projectPath": "/home/runner/workspace/backend/src/Shared/DSAGrind.Events/DSAGrind.Events.csproj",
+        "packagesPath": "/home/runner/.nuget/packages/",
+        "outputPath": "/home/runner/workspace/backend/src/Shared/DSAGrind.Events/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lucky\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/runner/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -314,8 +294,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -336,32 +315,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/nix/store/1d8g8d8xrrlxwfgbavgl4snymznfw5r7-dotnet-sdk-8.0.412/share/dotnet/sdk/8.0.412/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj": {
+    "/home/runner/workspace/backend/src/Shared/DSAGrind.Models/DSAGrind.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj",
+        "projectUniqueName": "/home/runner/workspace/backend/src/Shared/DSAGrind.Models/DSAGrind.Models.csproj",
         "projectName": "DSAGrind.Models",
-        "projectPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\DSAGrind.Models.csproj",
-        "packagesPath": "C:\\Users\\lucky\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucky\\Downloads\\GrindDSA\\TESTAPP\\backend\\src\\Shared\\DSAGrind.Models\\obj\\",
+        "projectPath": "/home/runner/workspace/backend/src/Shared/DSAGrind.Models/DSAGrind.Models.csproj",
+        "packagesPath": "/home/runner/.nuget/packages/",
+        "outputPath": "/home/runner/workspace/backend/src/Shared/DSAGrind.Models/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lucky\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/runner/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -379,8 +352,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -415,7 +387,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/nix/store/1d8g8d8xrrlxwfgbavgl4snymznfw5r7-dotnet-sdk-8.0.412/share/dotnet/sdk/8.0.412/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
