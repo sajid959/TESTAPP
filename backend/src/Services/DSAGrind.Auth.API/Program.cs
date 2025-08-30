@@ -158,7 +158,11 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-app.UseHttpsRedirection();
+// Disable HTTPS redirection in development/Replit environment
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 app.UseCors("AllowFrontend");
 
 app.UseAuthentication();
@@ -189,9 +193,8 @@ lifetime.ApplicationStopping.Register(() =>
 
 try
 {
-    var port = builder.Configuration.GetValue<string>("Auth:Port") ?? "8080";
-    var host = builder.Configuration.GetValue<string>("Auth:Host") ?? "localhost";
-    var url = $"http://{host}:{port}";
+    // Use proper port configuration for Replit environment
+    var url = "http://0.0.0.0:8080";
     
     Log.Information($"Starting DSAGrind Auth API at {url}");
     await app.RunAsync(url);

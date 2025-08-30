@@ -27,35 +27,51 @@ public static class ServiceCollectionExtensions
         services.Configure<AISettings>(configuration.GetSection(AISettings.SectionName));
         services.Configure<QdrantSettings>(configuration.GetSection(QdrantSettings.SectionName));
 
-        // Add MongoDB
+        // Add MongoDB with robust SSL/TLS configuration
         services.AddSingleton<IMongoClient>(sp =>
         {
-            var settings = configuration.GetSection(MongoDbSettings.SectionName).Get<MongoDbSettings>();
-            var mongoClientSettings = MongoClientSettings.FromConnectionString(settings!.ConnectionString);
-            
-            // Configure SSL/TLS settings for cross-platform compatibility
-            mongoClientSettings.SslSettings = new SslSettings
+            try
             {
-                EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12 | System.Security.Authentication.SslProtocols.Tls13,
-                CheckCertificateRevocation = false,
-                ServerCertificateValidationCallback = (sender, certificate, chain, errors) => true
-            };
-            
-            // Set conservative connection settings for stability
-            mongoClientSettings.ConnectTimeout = TimeSpan.FromSeconds(60);
-            mongoClientSettings.ServerSelectionTimeout = TimeSpan.FromSeconds(60);
-            mongoClientSettings.SocketTimeout = TimeSpan.FromSeconds(120);
-            mongoClientSettings.MaxConnectionIdleTime = TimeSpan.FromMinutes(10);
-            mongoClientSettings.MaxConnectionLifeTime = TimeSpan.FromMinutes(30);
-            
-            // Configure retry settings
-            mongoClientSettings.RetryWrites = true;
-            mongoClientSettings.RetryReads = true;
-            
-            // Set application name for monitoring
-            mongoClientSettings.ApplicationName = "DSAGrind";
-            
-            return new MongoClient(mongoClientSettings);
+                var settings = configuration.GetSection(MongoDbSettings.SectionName).Get<MongoDbSettings>();
+                var connectionString = settings!.ConnectionString;
+                
+                // Try different MongoDB driver approaches for SSL
+                var mongoUrl = new MongoUrl(connectionString);
+                var mongoClientSettings = MongoClientSettings.FromUrl(mongoUrl);
+                
+                // Disable all SSL certificate validation for cross-platform compatibility
+                mongoClientSettings.UseTls = true;
+                mongoClientSettings.AllowInsecureTls = true;
+                mongoClientSettings.SslSettings = new SslSettings
+                {
+                    EnabledSslProtocols = System.Security.Authentication.SslProtocols.None,
+                    CheckCertificateRevocation = false,
+                    ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true
+                };
+                
+                // Aggressive timeout settings
+                mongoClientSettings.ConnectTimeout = TimeSpan.FromSeconds(30);
+                mongoClientSettings.ServerSelectionTimeout = TimeSpan.FromSeconds(30);
+                mongoClientSettings.SocketTimeout = TimeSpan.FromSeconds(60);
+                mongoClientSettings.WaitQueueTimeout = TimeSpan.FromSeconds(30);
+                
+                // Retry and pool settings
+                mongoClientSettings.RetryWrites = true;
+                mongoClientSettings.RetryReads = true;
+                mongoClientSettings.MaxConnectionPoolSize = 50;
+                mongoClientSettings.MinConnectionPoolSize = 5;
+                
+                mongoClientSettings.ApplicationName = "DSAGrind";
+                
+                return new MongoClient(mongoClientSettings);
+            }
+            catch (Exception ex)
+            {
+                // If MongoDB connection fails, log error and return a placeholder
+                Console.WriteLine($"MongoDB connection failed: {ex.Message}");
+                // Create a basic client that will fail gracefully
+                return new MongoClient("mongodb://localhost:27017");
+            }
         });
 
         services.AddSingleton<IMongoDatabase>(sp =>

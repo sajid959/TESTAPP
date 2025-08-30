@@ -64,6 +64,12 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+// Disable HTTPS redirection in development/Replit environment
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
+
 // Rate limiter disabled for now
 //app.UseCors("AllowAll");
 app.UseCors("AllowFrontend");
@@ -79,9 +85,8 @@ app.MapGet("/", () => "DSAGrind API Gateway - Routing traffic to microservices")
 
 try
 {
-    var port = builder.Configuration.GetValue<string>("Gateway:Port") ?? "5000";
-    var host = builder.Configuration.GetValue<string>("Gateway:Host") ?? "localhost";
-    var url = $"http://{host}:{port}";
+    // Use proper port configuration for Replit environment
+    var url = "http://0.0.0.0:5000";
     
     Log.Information($"Starting DSAGrind Gateway API on {url}");
     app.Run(url);
