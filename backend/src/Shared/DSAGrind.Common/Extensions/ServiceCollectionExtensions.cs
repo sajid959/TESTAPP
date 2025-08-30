@@ -31,7 +31,31 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IMongoClient>(sp =>
         {
             var settings = configuration.GetSection(MongoDbSettings.SectionName).Get<MongoDbSettings>();
-            return new MongoClient(settings!.ConnectionString);
+            var mongoClientSettings = MongoClientSettings.FromConnectionString(settings!.ConnectionString);
+            
+            // Configure SSL/TLS settings for cross-platform compatibility
+            mongoClientSettings.SslSettings = new SslSettings
+            {
+                EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12 | System.Security.Authentication.SslProtocols.Tls13,
+                CheckCertificateRevocation = false,
+                ServerCertificateValidationCallback = (sender, certificate, chain, errors) => true
+            };
+            
+            // Set conservative connection settings for stability
+            mongoClientSettings.ConnectTimeout = TimeSpan.FromSeconds(60);
+            mongoClientSettings.ServerSelectionTimeout = TimeSpan.FromSeconds(60);
+            mongoClientSettings.SocketTimeout = TimeSpan.FromSeconds(120);
+            mongoClientSettings.MaxConnectionIdleTime = TimeSpan.FromMinutes(10);
+            mongoClientSettings.MaxConnectionLifeTime = TimeSpan.FromMinutes(30);
+            
+            // Configure retry settings
+            mongoClientSettings.RetryWrites = true;
+            mongoClientSettings.RetryReads = true;
+            
+            // Set application name for monitoring
+            mongoClientSettings.ApplicationName = "DSAGrind";
+            
+            return new MongoClient(mongoClientSettings);
         });
 
         services.AddSingleton<IMongoDatabase>(sp =>
