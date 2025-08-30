@@ -149,3 +149,60 @@ System.Net.Http.HttpRequestException: Cannot assign requested address (localhost
 [2025-08-30 12:45:47.123 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
 [2025-08-30 12:45:47.227 +00:00 INF] Starting DSAGrind Gateway API on2025-08-30 12:45:47.227 [2025-08-30 12:46:17.602 +00:00 INF] Get problems: search=null, di2025-08-30 12:46:17.602 +00:00 [INF] Get problems: search=null, difficulty=null, page=1
 ler","ActionId":"bc78910a-0177-423c-927d-d00d11cf1df8","ActionName":"DSAGrind.Gateway.API.Controllers.ProblemsController.GetProblems (DSAGrind.Gateway.API)","RequestId":"0HNF7OCR7IV0P:00000001","RequestPath":"/api/problems","ConnectionId":"0HNF7OCR7IV0P"}
+[2025-08-30 12:48:15.952 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-30 12:48:16.086 +00:00 INF] Starting DSAGrind Gateway API on2025-08-30 12:48:16.086 [2025-08-30 12:49:32.381 +00:00 INF] Registration attempt for emai2025-08-30 12:49:32.381 +00:00 [INF] Registration attempt for email: testuser@dsagrind.com
+2025-08-30 12:49:34.051 +00:00 [INF] Proxying to http://localhost:8080/api/auth/users HTTP/2 RequestVersionOrLower 
+2025-08-30 12:49:34.090 +00:00 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: Cannot assign requested address (localhost:8080)
+ ---> System.Net.Sockets.SocketException (99): Cannot assign requested address
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2025-08-30 12:49:57.923 +00:00 [INF] Get problems: search=null, difficulty=null, page=1
+lationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+[2025-08-30 12:49:57.923 +00:00 INF] Get problems: search=null, difficulty=null, page=1 {"SourceContext":"DSAGrind.Gateway.API.Controllers.ProblemsController","ActionId":"dbd7ff7e-b659-4f65-a2ef-af2a30fd86a8","ActionName":"DSAGrind.Gateway.API.Controllers.ProblemsController.GetProblems (DSAGrind.Gateway.API)","RequestId":"0HNF7OEL93JMV:00000001","RequestPath":"/api/problems","ConnectionId":"0HNF7OEL93JMV"}
+[2025-08-30 12:50:25.581 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-30 12:50:25.726 +00:00 INF] Starting DSAGrind Gateway API on2025-08-30 12:50:25.726 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
+[2025-08-30 12:51:12.973 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-30 12:51:13.129 +00:00 INF] Starting DSAGrind Gateway API on2025-08-30 12:51:13.129 [2025-08-30 12:52:40.957 +00:00 INF] Proxying to http://localhost:2025-08-30 12:52:40.957 +00:00 [INF] Proxying to http://localhost:8080/api/auth/register HTTP/2 RequestVersionOrLower 
+2025-08-30 12:52:40.989 +00:00 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: Cannot assign requested address (localhost:8080)
+ ---> System.Net.Sockets.SocketException (99): Cannot assign requested address
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+osticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+[2025-08-30 12:53:14.882 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-30 12:53:15.004 +00:00 INF] Starting DSAGrind Gateway API on2025-08-30 12:53:15.004 [2025-08-30 12:53:43.372 +00:00 WRN] "RequestCreation": An error w2025-08-30 12:53:43.372 +00:00 [WRN] "RequestCreation": An error was encountered while creating the request message.
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+ing destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
