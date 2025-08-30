@@ -44,19 +44,67 @@ public static class EnvironmentExtensions
     /// </summary>
     public static void LoadEnvFile()
     {
-        // Load .env file if it exists (development)
-        var envFile = Path.Combine(Directory.GetCurrentDirectory(), ".env");
-        if (File.Exists(envFile))
+        // Get the root directory (traverse up from service directory to find backend folder)
+        var currentDir = Directory.GetCurrentDirectory();
+        var backendDir = FindBackendDirectory(currentDir);
+        
+        if (backendDir != null)
         {
-            Env.Load(envFile);
-        }
+            // Load .env file from backend directory
+            var envFile = Path.Combine(backendDir, ".env");
+            if (File.Exists(envFile))
+            {
+                Env.Load(envFile);
+                Console.WriteLine($"Loaded environment variables from: {envFile}");
+            }
+            else
+            {
+                Console.WriteLine($"Environment file not found: {envFile}");
+            }
 
-        // Load .env.development file if it exists
-        var devEnvFile = Path.Combine(Directory.GetCurrentDirectory(), ".env.development");
-        if (File.Exists(devEnvFile))
-        {
-            Env.Load(devEnvFile);
+            // Load .env.development file if it exists
+            var devEnvFile = Path.Combine(backendDir, ".env.development");
+            if (File.Exists(devEnvFile))
+            {
+                Env.Load(devEnvFile);
+                Console.WriteLine($"Loaded development environment variables from: {devEnvFile}");
+            }
         }
+        else
+        {
+            // Fallback to current directory (for compatibility)
+            var envFile = Path.Combine(Directory.GetCurrentDirectory(), ".env");
+            if (File.Exists(envFile))
+            {
+                Env.Load(envFile);
+                Console.WriteLine($"Loaded environment variables from current directory: {envFile}");
+            }
+        }
+    }
+
+    private static string? FindBackendDirectory(string startPath)
+    {
+        var current = new DirectoryInfo(startPath);
+        
+        while (current != null)
+        {
+            // Check if current directory is backend or contains backend folder
+            if (current.Name.Equals("backend", StringComparison.OrdinalIgnoreCase))
+            {
+                return current.FullName;
+            }
+            
+            // Check if current directory contains a backend folder
+            var backendSubDir = Path.Combine(current.FullName, "backend");
+            if (Directory.Exists(backendSubDir))
+            {
+                return backendSubDir;
+            }
+            
+            current = current.Parent;
+        }
+        
+        return null;
     }
 
     /// <summary>
