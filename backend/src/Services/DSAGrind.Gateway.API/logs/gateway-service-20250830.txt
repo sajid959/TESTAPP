@@ -246,3 +246,6 @@ Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
    at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
    at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
    at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+[2025-08-30 15:56:22.341 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-30 15:56:22.494 +00:00 INF] Starting DSAGrind Gateway API on2025-08-30 15:56:22.494 [2025-08-30 15:56:22.559 +00:00 WRN] No XML encryptor configured. 2025-08-30 15:56:22.559 +00:00 [WRN] No XML encryptor configured. Key {58be6207-7e3f-43c9-b488-bcd669641ad5} may be persisted to storage in unencrypted form.
+tedToStorageInUnencryptedForm"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager"}
