@@ -51,3 +51,12 @@
     - ✅ Environment variables loading system working correctly
     - ✅ Serilog logging configured across all services
     - ✅ End-to-end application functionality verified
+[x] 10. Centralized environment variable substitution system
+    - ✅ Created robust variable substitution system supporting ${VAR_NAME} and ${VAR_NAME:default} syntax
+    - ✅ Centralized environment variable handling in AddCommonServices method
+    - ✅ Removed duplicate substitution code from individual services
+    - ✅ All services now automatically get environment variable substitution
+    - ✅ Fixed MongoDB connection string variable name mismatch (MONGO_DATABASE_NAME)
+    - ✅ Fixed JWT secret variable name mismatch (JWT_SECRET_KEY)
+    - ✅ Verified .env file is being loaded correctly across all services
+    - ✅ Environment variables are properly substituted in appsettings.json placeholders

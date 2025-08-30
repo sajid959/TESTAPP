@@ -13,6 +13,9 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddCommonServices(this IServiceCollection services, IConfiguration configuration)
     {
+        // Substitute environment variables in configuration automatically
+        configuration.SubstituteEnvironmentVariables();
+        
         // Configure settings
         services.Configure<MongoDbSettings>(configuration.GetSection(MongoDbSettings.SectionName));
         services.Configure<JwtSettings>(configuration.GetSection(JwtSettings.SectionName));

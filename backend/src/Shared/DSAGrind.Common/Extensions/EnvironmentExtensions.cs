@@ -2,6 +2,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using DotNetEnv;
+using DSAGrind.Common.Configuration;
 
 namespace DSAGrind.Common.Extensions;
 
@@ -170,5 +171,78 @@ public static class EnvironmentExtensions
                 $"Required configuration keys are missing: {string.Join(", ", missingKeys)}. " +
                 "Please set these as environment variables or in appsettings.json");
         }
+    }
+
+    /// <summary>
+    /// Substitutes environment variables in configuration after it's loaded
+    /// This replaces ${VAR_NAME} and ${VAR_NAME:default} syntax with actual values
+    /// </summary>
+    /// <param name="configuration">The configuration to process</param>
+    /// <param name="logger">Optional logger for debugging</param>
+    public static void SubstituteEnvironmentVariables(this IConfiguration configuration, ILogger? logger = null)
+    {
+        var configurationRoot = configuration as IConfigurationRoot;
+        if (configurationRoot == null) return;
+
+        var substitutedValues = new Dictionary<string, string>();
+
+        foreach (var provider in configurationRoot.Providers)
+        {
+            var data = GetProviderData(provider);
+            if (data == null) continue;
+
+            foreach (var kvp in data.ToList())
+            {
+                if (kvp.Value != null && kvp.Value.Contains("${"))
+                {
+                    var substitutedValue = SubstituteVariables(kvp.Value, logger);
+                    if (substitutedValue != kvp.Value)
+                    {
+                        substitutedValues[kvp.Key] = substitutedValue;
+                        logger?.LogDebug("Substituted {Key}: {Original} -> {Substituted}", kvp.Key, kvp.Value, substitutedValue);
+                    }
+                }
+            }
+        }
+
+        // Apply substituted values
+        foreach (var kvp in substitutedValues)
+        {
+            configuration[kvp.Key] = kvp.Value;
+        }
+    }
+
+    private static IDictionary<string, string?>? GetProviderData(IConfigurationProvider provider)
+    {
+        var field = provider.GetType().GetField("Data", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        return field?.GetValue(provider) as IDictionary<string, string?>;
+    }
+
+    private static string SubstituteVariables(string value, ILogger? logger = null)
+    {
+        if (string.IsNullOrEmpty(value)) return value;
+
+        var pattern = @"\$\{([^}:]+)(?::([^}]*))?\}";
+        return System.Text.RegularExpressions.Regex.Replace(value, pattern, match =>
+        {
+            var variableName = match.Groups[1].Value;
+            var defaultValue = match.Groups[2].Success ? match.Groups[2].Value : null;
+            
+            var envValue = Environment.GetEnvironmentVariable(variableName);
+            if (!string.IsNullOrEmpty(envValue))
+            {
+                logger?.LogDebug("Found environment variable {Variable} = {Value}", variableName, envValue);
+                return envValue;
+            }
+            
+            if (defaultValue != null)
+            {
+                logger?.LogWarning("Environment variable {Variable} not found, using default: {Default}", variableName, defaultValue);
+                return defaultValue;
+            }
+            
+            logger?.LogError("Environment variable {Variable} not found and no default provided", variableName);
+            return match.Value; // Return original if no substitution possible
+        });
     }
 }

@@ -249,3 +249,9 @@ Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
 [2025-08-30 15:56:22.341 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
 [2025-08-30 15:56:22.494 +00:00 INF] Starting DSAGrind Gateway API on2025-08-30 15:56:22.494 [2025-08-30 15:56:22.559 +00:00 WRN] No XML encryptor configured. 2025-08-30 15:56:22.559 +00:00 [WRN] No XML encryptor configured. Key {58be6207-7e3f-43c9-b488-bcd669641ad5} may be persisted to storage in unencrypted form.
 tedToStorageInUnencryptedForm"},"SourceContext":"Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager"}
+[2025-08-30 16:03:11.866 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-30 16:03:11.960 +00:00 INF] Starting DSAGrind Gateway API on2025-08-30 16:03:11.960 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
+[2025-08-30 16:05:20.187 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-30 16:05:20.340 +00:00 INF] Starting DSAGrind Gateway API on2025-08-30 16:05:20.340 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
+[2025-08-30 16:07:07.788 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-30 16:07:07.931 +00:00 INF] Starting DSAGrind Gateway API on2025-08-30 16:07:07.931 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
