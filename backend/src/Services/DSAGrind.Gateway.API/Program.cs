@@ -18,6 +18,9 @@ builder.Host.UseSerilog();
 // Add controllers
 builder.Services.AddControllers();
 
+// Add HttpClient for health checks
+builder.Services.AddHttpClient();
+
 // Add API documentation  
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>

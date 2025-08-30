@@ -406,3 +406,48 @@ System.Net.Http.HttpRequestException: Cannot assign requested address (localhost
    at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
 [2025-08-30 20:36:46.574 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
 [2025-08-30 20:36:46.719 +00:00 INF] Starting DSAGrind Gateway API on2025-08-30 20:36:46.719 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
+[2025-08-30 20:54:07.110 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-30 20:54:07.241 +00:00 INF] Starting DSAGrind Gateway API on2025-08-30 20:54:07.241 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
+[2025-08-30 20:56:06.168 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-30 20:56:06.266 +00:00 INF] Starting DSAGrind Gateway API on2025-08-30 20:56:06.266 [2025-08-30 20:56:06.718 +00:00 ERR] An unhandled exception has oc2025-08-30 20:56:06.718 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'System.Net.Http.HttpClient' while attempting to activate 'DSAGrind.Gateway.API.Controllers.HealthController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method14(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ation.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2025-08-30 20:56:37.972 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-30 20:56:38.116 +00:00 INF] Starting DSAGrind Gateway API on2025-08-30 20:56:38.116 [2025-08-30 20:56:47.483 +00:00 INF] Proxying to http://localhost:2025-08-30 20:56:47.483 +00:00 [INF] Proxying to http://localhost:8080/api/auth/test-email HTTP/2 RequestVersionOrLower 
+2025-08-30 20:56:47.493 +00:00 [WRN] "Request": An error was encountered before receiving a response.
+System.Net.Http.HttpRequestException: Cannot assign requested address (localhost:8080)
+ ---> System.Net.Sockets.SocketException (99): Cannot assign requested address
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+iagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+[2025-08-30 20:58:59.107 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-30 20:58:59.442 +00:00 INF] Starting DSAGrind Gateway API on2025-08-30 20:58:59.442 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000
+[2025-08-30 21:02:18.903 +00:00 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-08-30 21:02:19.115 +00:00 INF] Starting DSAGrind Gateway API on2025-08-30 21:02:19.115 +00:00 [INF] Starting DSAGrind Gateway API on http://0.0.0.0:5000

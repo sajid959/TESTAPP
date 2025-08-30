@@ -227,6 +227,14 @@ public class RabbitMQService : IKafkaService, IDisposable
     {
         try
         {
+            // Skip RabbitMQ initialization if connection string is not properly configured
+            if (string.IsNullOrWhiteSpace(_rabbitMQSettings.ConnectionString) || 
+                _rabbitMQSettings.ConnectionString == "amqp://guest:guest@localhost:5672/")
+            {
+                _logger.LogWarning("RabbitMQ connection string not configured for production. Running in development mode without message queue.");
+                return;
+            }
+
             var factory = new ConnectionFactory()
             {
                 Uri = new Uri(_rabbitMQSettings.ConnectionString),
@@ -241,8 +249,8 @@ public class RabbitMQService : IKafkaService, IDisposable
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Failed to establish RabbitMQ connection");
-            throw;
+            _logger.LogWarning(ex, "Failed to establish RabbitMQ connection. Running without message queue functionality.");
+            // Don't throw - let the service run without RabbitMQ for development
         }
     }
 
@@ -258,6 +266,11 @@ public class RabbitMQService : IKafkaService, IDisposable
         }
     }
 
+    private bool IsRabbitMQAvailable()
+    {
+        return _connection != null && _connection.IsOpen && _channel != null && _channel.IsOpen;
+    }
+
     public async Task PublishAsync<T>(string topic, T message, string? key = null, CancellationToken cancellationToken = default)
     {
         await PublishAsync(topic, message, null, key, cancellationToken);
@@ -267,6 +280,12 @@ public class RabbitMQService : IKafkaService, IDisposable
     {
         try
         {
+            if (!IsRabbitMQAvailable())
+            {
+                _logger.LogDebug("RabbitMQ not available, skipping message publication for topic: {Topic}", topic);
+                return;
+            }
+
             EnsureConnection();
 
             var messageJson = JsonSerializer.Serialize(message, new JsonSerializerOptions
@@ -317,6 +336,12 @@ public class RabbitMQService : IKafkaService, IDisposable
     {
         try
         {
+            if (!IsRabbitMQAvailable())
+            {
+                _logger.LogDebug("RabbitMQ not available, skipping consumer start for topic: {Topic}", topic);
+                return Task.CompletedTask;
+            }
+
             EnsureConnection();
 
             var queueName = $"{topic}-{consumerGroup}";

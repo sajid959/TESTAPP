@@ -13,15 +13,18 @@ public class AuthController : ControllerBase
 {
     private readonly IAuthService _authService;
     private readonly IRedisService _redisService;
+    private readonly IEmailService _emailService;
     private readonly ILogger<AuthController> _logger;
 
     public AuthController(
         IAuthService authService,
         IRedisService redisService,
+        IEmailService emailService,
         ILogger<AuthController> logger)
     {
         _authService = authService;
         _redisService = redisService;
+        _emailService = emailService;
         _logger = logger;
     }
 
@@ -369,6 +372,29 @@ public class AuthController : ControllerBase
         {
             _logger.LogError(ex, "Error validating token");
             return StatusCode(500, new { message = "An error occurred during token validation" });
+        }
+    }
+
+    /// <summary>
+    /// Test email service connectivity (Mailtrap)
+    /// </summary>
+    [HttpPost("test-email")]
+    public async Task<IActionResult> TestEmail([FromBody] TestEmailRequestDto request)
+    {
+        try
+        {
+            await _emailService.SendEmailAsync(
+                request.Email, 
+                "DSAGrind Email Service Test", 
+                "<h2>✅ Email Service Working!</h2><p>Your Mailtrap email service is configured correctly and working in production.</p>",
+                "Email Service Working! Your Mailtrap email service is configured correctly and working in production.");
+            
+            return Ok(new { message = "Test email sent successfully", provider = "Mailtrap", timestamp = DateTime.UtcNow });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to send test email to {Email}", request.Email);
+            return StatusCode(500, new { message = "Email service test failed", error = ex.Message });
         }
     }
 

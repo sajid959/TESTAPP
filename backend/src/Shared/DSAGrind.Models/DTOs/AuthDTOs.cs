@@ -177,3 +177,10 @@ public class AnalyticsDataPointDto
     public decimal Value { get; set; }
     public DateTime Date { get; set; }
 }
+
+public class TestEmailRequestDto
+{
+    [Required]
+    [EmailAddress]
+    public string Email { get; set; } = string.Empty;
+}

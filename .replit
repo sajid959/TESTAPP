@@ -4,7 +4,7 @@ hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
 
 [nix]
 channel = "stable-25_05"
-packages = ["dotnet-sdk_8", "jq"]
+packages = ["dotnet-sdk_8", "jq", "rabbitmq-server"]
 
 [deployment]
 deploymentTarget = "autoscale"

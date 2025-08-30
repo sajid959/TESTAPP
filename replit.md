@@ -4,6 +4,16 @@
 
 DSAGrind is a comprehensive competitive programming platform designed to help developers practice coding problems with AI-powered assistance. The platform features a microservices architecture built with .NET 8 backend and React TypeScript frontend, providing multi-language IDE support, real-time code execution, AI-powered hints, admin management capabilities, OAuth authentication, and premium subscription features.
 
+## Recent Changes
+
+### August 30, 2025
+- ✅ **Email Service Migration**: Successfully migrated from SendGrid to Mailtrap SMTP for production-ready email functionality
+- ✅ **RabbitMQ Configuration**: Fixed URI format exceptions and made RabbitMQ connection resilient for development environments
+- ✅ **Email Testing Endpoint**: Added `/api/auth/test-email` endpoint for validating email service connectivity
+- ✅ **Environment Configuration**: Updated `.env` and `.env.example` files with proper Mailtrap SMTP settings
+- ✅ **Cross-platform Compatibility**: Enhanced MongoDB Atlas SSL/TLS configuration for Replit environment
+- ✅ **Gateway API**: Successfully running with proper CORS and proxy configuration
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
@@ -34,7 +44,7 @@ Preferred communication style: Simple, everyday language.
 ### Data Layer
 - **Primary Database**: MongoDB Atlas for document storage with flexible schema
 - **Caching**: Redis for session management, query caching, and real-time data
-- **Message Queue**: Apache Kafka for event-driven communication between services
+- **Message Queue**: RabbitMQ (migrated from Kafka) for event-driven communication between services
 - **Vector Database**: Qdrant for semantic search and problem recommendations
 
 ### Authentication & Authorization
@@ -57,11 +67,11 @@ Preferred communication style: Simple, everyday language.
 - **Stripe**: Payment processing for premium subscriptions
 - **OpenAI API**: AI-powered hints, explanations, and code analysis
 - **Qdrant**: Vector database for semantic search capabilities
-- **SendGrid**: Email service for user verification and notifications
+- **Mailtrap**: Production-ready SMTP email service for user verification and notifications
 
 ### Development & Infrastructure
 - **Docker**: Containerization for consistent deployment environments
-- **Apache Kafka**: Message broker for microservices communication
+- **RabbitMQ**: Message broker for microservices communication (migrated from Kafka)
 - **YARP**: .NET reverse proxy for API Gateway functionality
 - **Monaco Editor**: Web-based code editor with syntax highlighting
 - **Font Awesome**: Icon library for UI components
