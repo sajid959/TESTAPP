@@ -6,3 +6,10 @@ vite.config.ts.*
 *.tar.gz
 .env.example
 /backend/.vs
+.local
+.vs
+*.log
+*.dll
+**/bin/
+**/obj/
+.env
