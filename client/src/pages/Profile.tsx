@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import * as React from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -39,13 +40,15 @@ export default function Profile() {
     queryFn: async () => {
       const response = await apiRequest('GET', '/api/auth/me');
       return response.json();
-    },
-    onSuccess: (data) => {
-      if (data.user?.profile) {
-        setProfileData(data.user.profile);
-      }
     }
   });
+
+  // Update profile data when query data changes
+  React.useEffect(() => {
+    if (profile?.user?.profile) {
+      setProfileData(profile.user.profile);
+    }
+  }, [profile]);
 
   // Update profile mutation
   const updateProfileMutation = useMutation({
@@ -140,11 +143,11 @@ export default function Profile() {
             <CardContent className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  {user?.username?.slice(0, 2).toUpperCase()}
+                  {((user as any)?.username || user?.email?.split('@')[0] || 'U').slice(0, 2).toUpperCase()}
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                    {user?.username}
+                    {(user as any)?.username || user?.email?.split('@')[0]}
                   </h3>
                   <div className="flex items-center space-x-2">
                     {user?.subscriptionStatus === 'premium' && (
@@ -183,7 +186,7 @@ export default function Profile() {
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-green-600 dark:text-green-400">
-                      {user?.acceptanceRate || 0}%
+                      {(user as any)?.acceptanceRate || 0}%
                     </div>
                     <div className="text-xs text-slate-600 dark:text-slate-400">Acceptance</div>
                   </div>

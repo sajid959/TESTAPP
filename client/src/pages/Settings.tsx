@@ -11,7 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import { useAuth } from '@/hooks/useAuth';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest } from '@/lib/queryClient';
-import { Settings, Shield, Bell, Globe, Palette, Key, Trash2, Plus, X } from 'lucide-react';
+import { Shield, Bell, Globe, Palette, Key, Trash2, Plus, X } from 'lucide-react';
 
 interface UserPreferences {
   theme: string;
@@ -29,7 +29,7 @@ interface UserProfile {
 }
 
 export default function SettingsPage() {
-  const { user, logout } = useAuth();
+  const { logout } = useAuth();
   const { toast } = useToast();
   const queryClient = useQueryClient();
   
@@ -56,19 +56,18 @@ export default function SettingsPage() {
   });
 
   // Fetch user settings
-  const { data: settings, isLoading } = useQuery({
+  const { isLoading } = useQuery({
     queryKey: ['/api/auth/me'],
     queryFn: async () => {
       const response = await apiRequest('GET', '/api/auth/me');
-      return response.json();
-    },
-    onSuccess: (data) => {
+      const data = await response.json();
       if (data.user?.preferences) {
         setPreferences(data.user.preferences);
       }
       if (data.user?.profile) {
         setProfile(data.user.profile);
       }
+      return data;
     }
   });
 
