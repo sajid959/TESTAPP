@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Play, Clock, Memory, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
+import { Play, Clock, MemoryStick, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import { AITestCaseGenerator, TestCase, TestCaseResult } from '@/services/aiTestCaseGenerator';
 
 interface TestCaseRunnerProps {
@@ -114,7 +114,7 @@ export function TestCaseRunner({ code, language, problemId, onRunTests }: TestCa
   const visibleTestCases = testCases.filter(tc => !tc.isHidden);
   const hiddenTestCases = testCases.filter(tc => tc.isHidden);
   const visibleResults = results.filter((_, index) => !testCases[index]?.isHidden);
-  const hiddenResults = results.filter((_, index) => testCases[index]?.isHidden);
+  // const hiddenResults = results.filter((_, index) => testCases[index]?.isHidden);
 
   const passedCount = results.filter(r => r.passed).length;
   const totalCount = results.length;
@@ -206,7 +206,7 @@ export function TestCaseRunner({ code, language, problemId, onRunTests }: TestCa
 
           <TabsContent value="hidden" className="space-y-3">
             {hiddenTestCases.length > 0 ? (
-              hiddenTestCases.map((testCase, visibleIndex) => {
+              hiddenTestCases.map((testCase) => {
                 const actualIndex = testCases.findIndex(tc => tc.id === testCase.id);
                 return (
                   <TestCaseCard 
@@ -263,7 +263,7 @@ function TestCaseCard({ testCase, result, showDetails }: TestCaseCardProps) {
       case 'PASSED': return <CheckCircle className="w-4 h-4 text-green-600" />;
       case 'FAILED': return <XCircle className="w-4 h-4 text-red-600" />;
       case 'TIME_LIMIT_EXCEEDED': return <Clock className="w-4 h-4 text-orange-600" />;
-      case 'MEMORY_LIMIT_EXCEEDED': return <Memory className="w-4 h-4 text-purple-600" />;
+      case 'MEMORY_LIMIT_EXCEEDED': return <MemoryStick className="w-4 h-4 text-purple-600" />;
       case 'RUNTIME_ERROR': return <AlertCircle className="w-4 h-4 text-red-600" />;
       default: return null;
     }
@@ -287,7 +287,7 @@ function TestCaseCard({ testCase, result, showDetails }: TestCaseCardProps) {
                 {result.executionTime.toFixed(0)}ms
               </div>
               <div className="flex items-center gap-1">
-                <Memory className="w-3 h-3" />
+                <MemoryStick className="w-3 h-3" />
                 {result.memoryUsed.toFixed(1)}MB
               </div>
             </div>

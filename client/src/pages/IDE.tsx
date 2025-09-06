@@ -11,6 +11,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { useWebSocket } from '@/hooks/useWebSocket';
 import { MonacoEditor } from '@/components/ide/MonacoEditor';
 import { TestCaseRunner } from '@/components/ide/TestCaseRunner';
+import { AIAssistant } from '@/components/ide/AIAssistant';
 import { apiRequest } from '@/lib/queryClient';
 import { Problem, Submission } from '@/types/api';
 
@@ -29,6 +30,7 @@ export default function IDE() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [testResults, setTestResults] = useState<any[]>([]);
   const [activeTab, setActiveTab] = useState('description');
+  const [lastError, setLastError] = useState<string>('');
 
   // Fetch problem data
   const { data: problem, isLoading: problemLoading } = useQuery<Problem>({
@@ -555,8 +557,8 @@ export default function IDE() {
             />
           </div>
           
-          {/* Test Cases */}
-          <div className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700">
+          {/* Test Cases and AI Assistant */}
+          <div className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 space-y-4 p-4">
             <TestCaseRunner
               code={code}
               language={language}
@@ -565,6 +567,16 @@ export default function IDE() {
                 setIsRunning(true);
                 handleRun();
               }}
+            />
+            
+            <AIAssistant
+              code={code}
+              language={language}
+              problemId={problemId || '1'}
+              problemDescription={problem?.description || ''}
+              difficulty={problem?.difficulty || 'Medium'}
+              testResults={testResults}
+              lastError={lastError}
             />
           </div>
         </div>
