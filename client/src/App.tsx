@@ -9,6 +9,10 @@ import Problems from "@/pages/Problems";
 import IDE from "@/pages/IDE";
 import Admin from "@/pages/Admin";
 import Subscribe from "@/pages/Subscribe";
+import Profile from "@/pages/Profile";
+import Settings from "@/pages/Settings";
+import ForgotPassword from "@/pages/ForgotPassword";
+import ResetPassword from "@/pages/ResetPassword";
 import NotFound from "@/pages/not-found";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 
@@ -48,6 +52,18 @@ function App() {
                     <Subscribe />
                   </ProtectedRoute>
                 </Route>
+                <Route path="/profile">
+                  <ProtectedRoute>
+                    <Profile />
+                  </ProtectedRoute>
+                </Route>
+                <Route path="/settings">
+                  <ProtectedRoute>
+                    <Settings />
+                  </ProtectedRoute>
+                </Route>
+                <Route path="/forgot-password" component={ForgotPassword} />
+                <Route path="/reset-password" component={ResetPassword} />
                 <Route component={NotFound} />
               </Switch>
             </main>

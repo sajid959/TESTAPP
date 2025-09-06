@@ -45,7 +45,7 @@ export default function IDE() {
       const params = new URLSearchParams({ problemId: problemId! });
       return fetch(`/api/submissions?${params.toString()}`, {
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
       }).then(res => res.json());
     },

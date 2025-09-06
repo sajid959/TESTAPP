@@ -211,26 +211,49 @@ export function MonacoEditor({
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).require) {
-      (window as any).require(['vs/editor/editor.main'], () => {
+    let mounted = true;
+
+    // Import Monaco Editor dynamically
+    import('monaco-editor').then((monaco) => {
+      if (!mounted) return;
+      
+      // Set up Monaco environment
+      (window as any).monaco = monaco;
+      
+      // Initialize editor after Monaco is loaded
+      initializeEditor();
+    }).catch((error) => {
+      console.error('Failed to load Monaco Editor:', error);
+      // Fallback to CDN if import fails
+      loadMonacoFromCDN();
+    });
+
+    const loadMonacoFromCDN = () => {
+      if ((window as any).monaco) {
         initializeEditor();
-      });
-    } else {
-      // Load Monaco dynamically
+        return;
+      }
+
       const script = document.createElement('script');
-      script.src = 'https://unpkg.com/monaco-editor@0.44.0/min/vs/loader.js';
+      script.src = 'https://unpkg.com/monaco-editor@0.45.0/min/vs/loader.js';
       script.onload = () => {
         (window as any).require.config({
-          paths: { vs: 'https://unpkg.com/monaco-editor@0.44.0/min/vs' }
+          paths: { vs: 'https://unpkg.com/monaco-editor@0.45.0/min/vs' }
         });
         (window as any).require(['vs/editor/editor.main'], () => {
-          initializeEditor();
+          if (mounted) {
+            initializeEditor();
+          }
         });
       };
+      script.onerror = () => {
+        console.error('Failed to load Monaco Editor from CDN');
+      };
       document.head.appendChild(script);
-    }
+    };
 
     return () => {
+      mounted = false;
       if (monacoInstance.current) {
         monacoInstance.current.dispose();
       }
