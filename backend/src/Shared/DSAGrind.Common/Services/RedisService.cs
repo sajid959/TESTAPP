@@ -20,16 +20,18 @@ public class RedisService : IRedisService, IDisposable
         
         _connectionMultiplexer = new Lazy<ConnectionMultiplexer>(() =>
         {
-            var configuration = ConfigurationOptions.Parse(_redisSettings.ConnectionString);
-            configuration.Password = _redisSettings.Password;
-            configuration.ConnectTimeout = _redisSettings.ConnectTimeoutSeconds * 1000;
-            configuration.SyncTimeout = _redisSettings.SyncTimeoutSeconds * 1000;
-            configuration.CommandMap = CommandMap.Create(new HashSet<string>(), available: false);
-            configuration.CommandMap = CommandMap.Default;
-            configuration.AbortOnConnectFail = _redisSettings.AbortOnConnectFail;
-            configuration.AllowAdmin = _redisSettings.AllowAdmin;
-            configuration.ConnectRetry = _redisSettings.ConnectRetryCount;
-            configuration.KeepAlive = _redisSettings.KeepAliveSeconds;
+            var configuration = new ConfigurationOptions
+            {
+                EndPoints = { { _redisSettings.Host, _redisSettings.Port } },
+                User = _redisSettings.Username,
+                Password = _redisSettings.Password,
+                ConnectTimeout = _redisSettings.ConnectTimeoutSeconds * 1000,
+                SyncTimeout = _redisSettings.SyncTimeoutSeconds * 1000,
+                AbortOnConnectFail = _redisSettings.AbortOnConnectFail,
+                AllowAdmin = _redisSettings.AllowAdmin,
+                ConnectRetry = _redisSettings.ConnectRetryCount,
+                KeepAlive = _redisSettings.KeepAliveSeconds,
+            };
 
             return ConnectionMultiplexer.Connect(configuration);
         });

@@ -4,7 +4,9 @@ public class RedisSettings
 {
     public const string SectionName = "RedisSettings";
 
-    public string ConnectionString { get; set; } = string.Empty;
+    public string Host { get; set; } = "localhost";
+    public int Port { get; set; } = 6379;
+    public string Username { get; set; } = string.Empty;
     public string Password { get; set; } = string.Empty;
     public int Database { get; set; } = 0;
     public int ConnectTimeoutSeconds { get; set; } = 30;
