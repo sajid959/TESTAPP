@@ -13,3 +13,8 @@ vite.config.ts.*
 **/bin/
 **/obj/
 .env
+# Ignore configuration files
+appsettings.json
+appsettings.Development.json
+appsettings.Production.json
+
