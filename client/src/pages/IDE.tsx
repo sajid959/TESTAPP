@@ -10,7 +10,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/hooks/useAuth';
 import { useWebSocket } from '@/hooks/useWebSocket';
 import { MonacoEditor } from '@/components/ide/MonacoEditor';
-import { TestCases } from '@/components/ide/TestCases';
+import { TestCaseRunner } from '@/components/ide/TestCaseRunner';
 import { apiRequest } from '@/lib/queryClient';
 import { Problem, Submission } from '@/types/api';
 
@@ -556,11 +556,17 @@ export default function IDE() {
           </div>
           
           {/* Test Cases */}
-          <TestCases
-            testCases={testResults}
-            isRunning={isRunning}
-            onRunTests={handleRun}
-          />
+          <div className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700">
+            <TestCaseRunner
+              code={code}
+              language={language}
+              problemId={problemId || '1'}
+              onRunTests={() => {
+                setIsRunning(true);
+                handleRun();
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>
