@@ -35,18 +35,12 @@ export async function apiRequest(
       credentials: "include",
     });
 
-    // If backend is not available, simulate successful responses for development
-    if (!res.ok && (res.status === 0 || res.status >= 500)) {
-      console.warn(`Backend not available, using mock response for ${url}`);
-      return createMockResponse(url, method, data);
-    }
-
     await throwIfResNotOk(res);
     return res;
   } catch (error) {
-    // Network error - backend not available
-    console.warn(`Network error for ${url}, using mock response:`, error);
-    return createMockResponse(url, method, data);
+    // Network error - backend not available, throw real error
+    console.error(`API request failed for ${url}:`, error);
+    throw error;
   }
 }
 
