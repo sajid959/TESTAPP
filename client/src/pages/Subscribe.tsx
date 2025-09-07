@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { useStripe, useElements, PaymentElement, Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
+// TODO: Re-enable Stripe once dependencies are installed
+// import { useStripe, useElements, PaymentElement, Elements } from '@stripe/react-stripe-js';
+// import { loadStripe } from '@stripe/stripe-js';
 import { Link } from 'wouter';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -9,44 +10,35 @@ import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/hooks/useAuth';
 import { apiRequest } from '@/lib/queryClient';
 
-// Load Stripe
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY || 'pk_test_default');
+// TODO: Re-enable Stripe
+// const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY || 'pk_test_default');
 
 function SubscribeForm() {
-  const stripe = useStripe();
-  const elements = useElements();
+  // TODO: Re-enable Stripe
+  // const stripe = useStripe();
+  // const elements = useElements();
   const { toast } = useToast();
   const [isProcessing, setIsProcessing] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!stripe || !elements) {
-      return;
-    }
+    // TODO: Re-enable Stripe validation
+    // if (!stripe || !elements) {
+    //   return;
+    // }
 
     setIsProcessing(true);
 
     try {
-      const { error } = await stripe.confirmPayment({
-        elements,
-        confirmParams: {
-          return_url: `${window.location.origin}/problems`,
-        },
+      // TODO: Implement Stripe payment processing
+      // Mock payment for now
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      toast({
+        title: 'Demo Mode',
+        description: 'Payment processing is in demo mode. Premium features will be available soon!',
       });
-
-      if (error) {
-        toast({
-          title: 'Payment Failed',
-          description: error.message,
-          variant: 'destructive',
-        });
-      } else {
-        toast({
-          title: 'Payment Successful',
-          description: 'Welcome to DSAGrind Premium!',
-        });
-      }
     } catch (error: any) {
       toast({
         title: 'Payment Error',
@@ -60,10 +52,15 @@ function SubscribeForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <PaymentElement />
+      {/* TODO: Re-enable PaymentElement */}
+      <div className="p-4 border rounded-lg bg-gray-50 dark:bg-gray-800">
+        <p className="text-center text-gray-600 dark:text-gray-400">
+          Payment processing is temporarily disabled. This is a demo version.
+        </p>
+      </div>
       <Button
         type="submit"
-        disabled={!stripe || isProcessing}
+        disabled={isProcessing}
         className="w-full bg-brand-600 hover:bg-brand-700 text-lg py-3"
         data-testid="button-subscribe-submit"
       >
@@ -141,9 +138,10 @@ function SubscribeContent() {
 
     setIsLoading(true);
     try {
-      const response = await apiRequest('POST', '/api/get-or-create-subscription');
-      const data = await response.json();
-      setClientSecret(data.clientSecret);
+      // TODO: Implement real subscription creation
+      // Mock the subscription setup for demo
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setClientSecret('demo-client-secret');
     } catch (error: any) {
       toast({
         title: 'Error',
@@ -336,9 +334,8 @@ function SubscribeContent() {
                     </p>
                   </div>
                 ) : clientSecret ? (
-                  <Elements stripe={stripePromise} options={{ clientSecret }}>
-                    <SubscribeForm />
-                  </Elements>
+                  // TODO: Re-enable Elements wrapper
+                  <SubscribeForm />
                 ) : (
                   <div className="text-center py-8">
                     <Button

@@ -89,7 +89,7 @@ app.MapGet("/", () => "DSAGrind API Gateway - Routing traffic to microservices")
 try
 {
     // Use proper port configuration for Replit environment
-    var url = "http://0.0.0.0:5000";
+    var url = "http://0.0.0.0:8000";
     
     Log.Information($"Starting DSAGrind Gateway API on {url}");
     app.Run(url);
