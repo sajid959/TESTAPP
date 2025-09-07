@@ -1,0 +1,12 @@
+2025-09-08 03:51:57.835 +05:30 [INF] Starting DSAGrind Auth API at http://0.0.0.0:8080
+2025-09-08 03:52:57.037 +05:30 [INF] RabbitMQ connection established successfully
+2025-09-08 03:53:02.725 +05:30 [INF] Email sent successfully to saj@gmail.com with subject: Verify your email address - DSAGrind
+2025-09-08 03:53:02.778 +05:30 [INF] User registered successfully: saj@gmail.com
+2025-09-08 03:53:02.852 +05:30 [ERR] Error during registration for email: saj@gmail.com
+System.ArgumentNullException: Value cannot be null. (Parameter 'stringToEscape')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.ArgumentNullException.ThrowIfNull(Object argument, String paramName)
+   at System.UriHelper.EscapeString(String stringToEscape, Boolean checkExistingEscaped, SearchValues`1 noEscape)
+   at Microsoft.AspNetCore.Http.ResponseCookies.Append(String key, String value, CookieOptions options)
+   at DSAGrind.Auth.API.Controllers.AuthController.SetRefreshTokenCookie(String refreshToken) in C:\Users\lucky\Downloads\TESTAPP_AI\TESTAPP\backend\src\Services\DSAGrind.Auth.API\Controllers\AuthController.cs:line 448
+   at DSAGrind.Auth.API.Controllers.AuthController.Register(RegisterRequestDto request) in C:\Users\lucky\Downloads\TESTAPP_AI\TESTAPP\backend\src\Services\DSAGrind.Auth.API\Controllers\AuthController.cs:line 68

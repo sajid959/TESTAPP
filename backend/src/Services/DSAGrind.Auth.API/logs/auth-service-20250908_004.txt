@@ -1,7 +1,5 @@
-2025-09-08 03:23:31.166 +05:30 [INF] Starting DSAGrind Auth API at http://0.0.0.0:8080
-2025-09-08 03:25:48.082 +05:30 [INF] RabbitMQ connection established successfully
-[2025-09-08 03:42:08.835 +05:30 INF] Starting DSAGrind Auth API at http://0.0.0.0:8080 {}
-[2025-09-08 03:44:23.756 +05:30 ERR] An unhandled exception has occurred while executing the request. {"EventId":{"Id":1,"Name":"UnhandledException"},"SourceContext":"Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware","ActionId":"eaba5c5e-02a9-4480-ab36-df75d60dc4ae","ActionName":"DSAGrind.Auth.API.Controllers.AuthController.Register (DSAGrind.Auth.API)","RequestId":"0HNFEBEB9RFOF:00000005","RequestPath":"/api/Auth/register","ConnectionId":"0HNFEBEB9RFOF"}
+2025-09-08 03:42:08.835 +05:30 [INF] Starting DSAGrind Auth API at http://0.0.0.0:8080
+2025-09-08 03:44:23.756 +05:30 [ERR] An unhandled exception has occurred while executing the request.
 MongoDB.Driver.MongoAuthenticationException: Unable to authenticate using sasl protocol mechanism SCRAM-SHA-1.
  ---> MongoDB.Driver.MongoCommandException: Command saslContinue failed: bad auth : authentication failed.
    at MongoDB.Driver.Core.WireProtocol.CommandUsingQueryMessageWireProtocol`1.ProcessReply(ConnectionId connectionId, ReplyMessage`1 reply)
@@ -53,3 +51,15 @@ MongoDB.Driver.MongoAuthenticationException: Unable to authenticate using sasl p
    at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
    at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+[2025-09-08 03:51:57.835 +05:30 INF] Starting DSAGrind Auth API at http://0.0.0.0:8080 {}
+[2025-09-08 03:52:57.037 +05:30 INF] RabbitMQ connection established successfully {"SourceContext":"DSAGrind.Common.Services.RabbitMQService","ActionId":"4e250417-8092-4c58-bafe-32ca92840d81","ActionName":"DSAGrind.Auth.API.Controllers.AuthController.Register (DSAGrind.Auth.API)","RequestId":"0HNFEBJQQUN1F:00000001","RequestPath":"/api/auth/register","ConnectionId":"0HNFEBJQQUN1F"}
+[2025-09-08 03:53:02.725 +05:30 INF] Email sent successfully to saj@gmail.com with subject: Verify your email address - DSAGrind {"SourceContext":"DSAGrind.Common.Services.EmailService","ActionId":"4e250417-8092-4c58-bafe-32ca92840d81","ActionName":"DSAGrind.Auth.API.Controllers.AuthController.Register (DSAGrind.Auth.API)","RequestId":"0HNFEBJQQUN1F:00000001","RequestPath":"/api/auth/register","ConnectionId":"0HNFEBJQQUN1F"}
+[2025-09-08 03:53:02.778 +05:30 INF] User registered successfully: saj@gmail.com {"SourceContext":"DSAGrind.Auth.API.Services.AuthService","ActionId":"4e250417-8092-4c58-bafe-32ca92840d81","ActionName":"DSAGrind.Auth.API.Controllers.AuthController.Register (DSAGrind.Auth.API)","RequestId":"0HNFEBJQQUN1F:00000001","RequestPath":"/api/auth/register","ConnectionId":"0HNFEBJQQUN1F"}
+[2025-09-08 03:53:02.852 +05:30 ERR] Error during registration for email: saj@gmail.com {"SourceContext":"DSAGrind.Auth.API.Controllers.AuthController","ActionId":"4e250417-8092-4c58-bafe-32ca92840d81","ActionName":"DSAGrind.Auth.API.Controllers.AuthController.Register (DSAGrind.Auth.API)","RequestId":"0HNFEBJQQUN1F:00000001","RequestPath":"/api/auth/register","ConnectionId":"0HNFEBJQQUN1F"}
+System.ArgumentNullException: Value cannot be null. (Parameter 'stringToEscape')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.ArgumentNullException.ThrowIfNull(Object argument, String paramName)
+   at System.UriHelper.EscapeString(String stringToEscape, Boolean checkExistingEscaped, SearchValues`1 noEscape)
+   at Microsoft.AspNetCore.Http.ResponseCookies.Append(String key, String value, CookieOptions options)
+   at DSAGrind.Auth.API.Controllers.AuthController.SetRefreshTokenCookie(String refreshToken) in C:\Users\lucky\Downloads\TESTAPP_AI\TESTAPP\backend\src\Services\DSAGrind.Auth.API\Controllers\AuthController.cs:line 448
+   at DSAGrind.Auth.API.Controllers.AuthController.Register(RegisterRequestDto request) in C:\Users\lucky\Downloads\TESTAPP_AI\TESTAPP\backend\src\Services\DSAGrind.Auth.API\Controllers\AuthController.cs:line 68
