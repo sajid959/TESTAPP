@@ -1,5 +1,8 @@
-modules = ["dotnet-sdk-8.0", "dotnet-8"]
+modules = ["dotnet-sdk-8.0", "dotnet-8", "nodejs-20"]
 
 [nix]
 channel = "stable-25_05"
 packages = ["dotnet-sdk_8"]
+
+[agent]
+integrations = ["javascript_openai==1.0.0"]
