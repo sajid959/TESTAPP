@@ -1,0 +1,4 @@
+2025-09-07 17:15:03.163 +05:30 [INF] Starting DSAGrind Auth API at http://0.0.0.0:8080
+2025-09-07 17:15:26.483 +05:30 [INF] RabbitMQ connection established successfully
+[2025-09-07 17:43:51.247 +05:30 INF] Starting DSAGrind Auth API at http://0.0.0.0:8080 {}
+[2025-09-07 17:46:36.748 +05:30 INF] RabbitMQ connection established successfully {"SourceContext":"DSAGrind.Common.Services.RabbitMQService","ActionId":"65a6f3fa-cad7-4a53-8d62-fced9945664e","ActionName":"DSAGrind.Auth.API.Controllers.AuthController.Login (DSAGrind.Auth.API)","RequestId":"0HNFE100UQD14:00000001","RequestPath":"/api/auth/login","ConnectionId":"0HNFE100UQD14"}

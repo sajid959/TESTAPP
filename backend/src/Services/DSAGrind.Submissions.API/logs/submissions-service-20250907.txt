@@ -1,0 +1,15 @@
+2025-09-07 16:32:33.367 +05:30 [INF] Starting DSAGrind Submissions API on http://0.0.0.0:5002
+2025-09-07 16:32:33.627 +05:30 [INF] User profile is available. Using 'C:\Users\lucky\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-07 16:32:34.946 +05:30 [INF] Now listening on: http://0.0.0.0:5002
+2025-09-07 16:32:35.157 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-07 16:32:35.163 +05:30 [INF] Hosting environment: Development
+2025-09-07 16:32:35.166 +05:30 [INF] Content root path: C:\Users\lucky\Downloads\TESTAPP_AI\TESTAPP\backend\src\Services\DSAGrind.Submissions.API
+2025-09-07 16:35:34.421 +05:30 [INF] Starting DSAGrind Submissions API on http://0.0.0.0:5002
+2025-09-07 16:35:34.831 +05:30 [INF] User profile is available. Using 'C:\Users\lucky\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-07 16:35:35.361 +05:30 [INF] Now listening on: http://0.0.0.0:5002
+2025-09-07 16:35:35.472 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-07 16:35:35.478 +05:30 [INF] Hosting environment: Development
+2025-09-07 16:35:35.481 +05:30 [INF] Content root path: C:\Users\lucky\Downloads\TESTAPP_AI\TESTAPP\backend\src\Services\DSAGrind.Submissions.API
+2025-09-07 17:15:04.659 +05:30 [INF] Starting DSAGrind Submissions API on http://0.0.0.0:5002
+2025-09-07 17:43:50.809 +05:30 [INF] Starting DSAGrind Submissions API on http://0.0.0.0:5002
+2025-09-07 23:27:05.754 +05:30 [INF] Starting DSAGrind Submissions API on http://0.0.0.0:5002

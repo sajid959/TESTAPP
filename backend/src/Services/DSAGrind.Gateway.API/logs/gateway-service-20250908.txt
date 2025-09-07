@@ -1,0 +1,4 @@
+[2025-09-08 00:10:35.187 +05:30 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-09-08 00:10:35.510 +05:30 INF] Starting DSAGrind Gateway API on http://localhost:5000 {}
+[2025-09-08 00:10:56.443 +05:30 INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower  {"EventId":{"Id":9,"Name":"Forwarding"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE7O4H8FC0:00000001","RequestPath":"/api/auth/login","ConnectionId":"0HNFE7O4H8FC0"}
+[2025-09-08 00:11:05.344 +05:30 INF] Received HTTP/1.1 response 401. {"EventId":{"Id":56,"Name":"ResponseReceived"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE7O4H8FC0:00000001","RequestPath":"/api/auth/login","ConnectionId":"0HNFE7O4H8FC0"}

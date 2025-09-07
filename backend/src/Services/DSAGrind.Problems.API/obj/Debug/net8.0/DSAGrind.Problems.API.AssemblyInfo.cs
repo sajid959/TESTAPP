@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DSAGrind.Problems.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82067ca550683d541e227badc00e886b23c4550b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+755a143bdc1d90379bf1d3329d6a17183a8e1f24")]
 [assembly: System.Reflection.AssemblyProductAttribute("DSAGrind.Problems.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DSAGrind.Problems.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,238 @@
+2025-09-07 17:43:49.955 +05:30 [INF] Loading proxy data from config.
+2025-09-07 17:43:50.148 +05:30 [INF] Starting DSAGrind Gateway API on http://localhost:5000
+2025-09-07 17:46:32.696 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 17:46:38.115 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 17:46:52.216 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 17:46:52.289 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 17:46:53.308 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 17:46:53.337 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 17:46:55.369 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 17:46:55.401 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 17:46:59.416 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 17:46:59.451 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 17:47:12.557 +05:30 [INF] Proxying to http://localhost:8080/api/auth/change-password HTTP/2 RequestVersionOrLower 
+2025-09-07 17:47:12.590 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 17:48:35.698 +05:30 [INF] Proxying to http://localhost:8080/api/auth/change-password HTTP/2 RequestVersionOrLower 
+2025-09-07 17:48:37.807 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 18:04:21.515 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 18:07:11.541 +05:30 [WRN] "RequestTimedOut": The request timed out before receiving a response.
+System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: The I/O operation has been aborted because of either a thread exit or an application request..
+ ---> System.Net.Sockets.SocketException (995): The I/O operation has been aborted because of either a thread exit or an application request.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageInvoker.<SendAsync>g__SendAsyncWithTelemetry|6_0(HttpMessageHandler handler, HttpRequestMessage request, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2025-09-07 18:07:46.474 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 18:07:58.846 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 18:07:58.896 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 18:07:58.915 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 18:07:59.933 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 18:07:59.957 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 18:08:01.972 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 18:08:02.001 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 18:08:06.018 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 18:08:06.052 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 18:13:14.888 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 18:13:16.966 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 19:05:03.175 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 19:05:05.272 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 19:06:43.369 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 19:09:24.793 +05:30 [WRN] "RequestTimedOut": The request timed out before receiving a response.
+System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: The I/O operation has been aborted because of either a thread exit or an application request..
+ ---> System.Net.Sockets.SocketException (995): The I/O operation has been aborted because of either a thread exit or an application request.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageInvoker.<SendAsync>g__SendAsyncWithTelemetry|6_0(HttpMessageHandler handler, HttpRequestMessage request, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2025-09-07 19:09:29.880 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 19:09:36.105 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 19:09:47.386 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 19:11:04.328 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 19:20:47.503 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 19:24:05.989 +05:30 [WRN] "RequestTimedOut": The request timed out before receiving a response.
+System.Threading.Tasks.TaskCanceledException: The operation was canceled.
+ ---> System.IO.IOException: Unable to read data from the transport connection: The I/O operation has been aborted because of either a thread exit or an application request..
+ ---> System.Net.Sockets.SocketException (995): The I/O operation has been aborted because of either a thread exit or an application request.
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource<System.Int32>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsyncCore(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpMessageInvoker.<SendAsync>g__SendAsyncWithTelemetry|6_0(HttpMessageHandler handler, HttpRequestMessage request, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2025-09-07 19:34:18.647 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 19:34:20.750 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 19:35:59.097 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 19:36:05.203 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 19:36:18.487 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 19:36:22.861 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 19:38:31.735 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 19:38:37.483 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 19:42:38.863 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 19:42:44.137 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 19:42:44.194 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 19:42:44.208 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 19:42:45.233 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 19:42:45.241 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 19:42:47.258 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 19:42:47.268 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 19:42:51.282 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 19:42:51.295 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 19:45:56.587 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 19:45:58.654 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 19:45:58.664 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 19:45:58.678 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 19:46:50.226 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 19:46:50.240 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 19:46:52.257 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 19:46:52.270 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 19:46:55.417 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 19:46:55.431 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 19:47:22.340 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 19:47:25.809 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 19:50:13.591 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 19:50:15.630 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 19:51:33.056 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 19:51:35.113 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 19:51:44.153 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 19:51:47.365 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 21:22:39.342 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 21:22:41.547 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 21:22:42.565 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 21:22:42.617 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 21:22:44.640 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 21:22:44.688 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 21:22:48.710 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 21:22:48.754 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 21:23:10.403 +05:30 [INF] Proxying to http://localhost:8080/api/auth/change-password HTTP/2 RequestVersionOrLower 
+2025-09-07 21:23:10.454 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 21:27:06.086 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 21:27:08.317 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 21:27:08.337 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 21:27:08.438 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 21:27:09.471 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 21:27:09.514 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 21:27:11.553 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 21:27:11.586 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 21:27:15.637 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 21:27:15.658 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 21:27:36.239 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 21:27:59.581 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 21:27:59.629 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 21:28:01.169 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 21:28:28.903 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 21:28:31.697 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 21:28:51.398 +05:30 [INF] Proxying to http://localhost:8080/api/auth/change-password HTTP/2 RequestVersionOrLower 
+2025-09-07 21:29:10.660 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 21:29:24.110 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 21:29:28.124 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 21:29:35.378 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 21:29:38.490 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 21:30:14.815 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 21:30:17.296 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 21:30:17.309 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 21:30:18.980 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 21:45:49.374 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 21:45:51.460 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 21:45:52.494 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 21:45:52.537 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 21:45:54.576 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 21:45:54.607 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 21:45:58.656 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 21:45:58.688 +05:30 [INF] Received HTTP/1.1 response 401.
+[2025-09-07 23:27:01.649 +05:30 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-09-07 23:27:01.919 +05:30 INF] Starting DSAGrind Gateway API on http://localhost:5000 {}
+[2025-09-07 23:27:41.219 +05:30 INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower  {"EventId":{"Id":9,"Name":"Forwarding"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37B:00000001","RequestPath":"/api/auth/login","ConnectionId":"0HNFE6VPMV37B"}
+[2025-09-07 23:27:51.749 +05:30 INF] Received HTTP/1.1 response 200. {"EventId":{"Id":56,"Name":"ResponseReceived"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37B:00000001","RequestPath":"/api/auth/login","ConnectionId":"0HNFE6VPMV37B"}
+[2025-09-07 23:27:56.787 +05:30 INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower  {"EventId":{"Id":9,"Name":"Forwarding"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37B:00000002","RequestPath":"/api/auth/me","ConnectionId":"0HNFE6VPMV37B"}
+[2025-09-07 23:27:59.103 +05:30 INF] Received HTTP/1.1 response 200. {"EventId":{"Id":56,"Name":"ResponseReceived"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37B:00000002","RequestPath":"/api/auth/me","ConnectionId":"0HNFE6VPMV37B"}
+[2025-09-07 23:28:14.483 +05:30 INF] Proxying to http://localhost:8080/api/auth/delete HTTP/2 RequestVersionOrLower  {"EventId":{"Id":9,"Name":"Forwarding"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37B:00000003","RequestPath":"/api/auth/delete","ConnectionId":"0HNFE6VPMV37B"}
+[2025-09-07 23:28:14.498 +05:30 INF] Received HTTP/1.1 response 404. {"EventId":{"Id":56,"Name":"ResponseReceived"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37B:00000003","RequestPath":"/api/auth/delete","ConnectionId":"0HNFE6VPMV37B"}
+[2025-09-07 23:29:44.124 +05:30 INF] Proxying to http://localhost:8080/api/auth/deleteAccount HTTP/2 RequestVersionOrLower  {"EventId":{"Id":9,"Name":"Forwarding"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37B:00000004","RequestPath":"/api/auth/deleteAccount","ConnectionId":"0HNFE6VPMV37B"}
+[2025-09-07 23:30:04.278 +05:30 INF] Received HTTP/1.1 response 200. {"EventId":{"Id":56,"Name":"ResponseReceived"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37B:00000004","RequestPath":"/api/auth/deleteAccount","ConnectionId":"0HNFE6VPMV37B"}
+[2025-09-07 23:40:50.879 +05:30 INF] Proxying to http://localhost:8080/api/auth/register HTTP/2 RequestVersionOrLower  {"EventId":{"Id":9,"Name":"Forwarding"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:00000001","RequestPath":"/api/auth/register","ConnectionId":"0HNFE6VPMV37D"}
+[2025-09-07 23:41:06.138 +05:30 INF] Received HTTP/1.1 response 200. {"EventId":{"Id":56,"Name":"ResponseReceived"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:00000001","RequestPath":"/api/auth/register","ConnectionId":"0HNFE6VPMV37D"}
+[2025-09-07 23:41:06.190 +05:30 INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower  {"EventId":{"Id":9,"Name":"Forwarding"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:00000002","RequestPath":"/api/auth/me","ConnectionId":"0HNFE6VPMV37D"}
+[2025-09-07 23:41:06.275 +05:30 INF] Received HTTP/1.1 response 200. {"EventId":{"Id":56,"Name":"ResponseReceived"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:00000002","RequestPath":"/api/auth/me","ConnectionId":"0HNFE6VPMV37D"}
+[2025-09-07 23:41:20.749 +05:30 INF] Get problems: search=null, difficulty=null, page=1 {"SourceContext":"DSAGrind.Gateway.API.Controllers.ProblemsController","ActionId":"f01b5413-6c7b-4842-aef7-6f024ebfb43b","ActionName":"DSAGrind.Gateway.API.Controllers.ProblemsController.GetProblems (DSAGrind.Gateway.API)","RequestId":"0HNFE6VPMV37E:00000001","RequestPath":"/api/problems","ConnectionId":"0HNFE6VPMV37E"}
+[2025-09-07 23:42:04.773 +05:30 INF] Proxying to http://localhost:8080/api/auth/profile HTTP/2 RequestVersionOrLower  {"EventId":{"Id":9,"Name":"Forwarding"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:00000003","RequestPath":"/api/auth/profile","ConnectionId":"0HNFE6VPMV37D"}
+[2025-09-07 23:42:04.915 +05:30 INF] Received HTTP/1.1 response 200. {"EventId":{"Id":56,"Name":"ResponseReceived"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:00000003","RequestPath":"/api/auth/profile","ConnectionId":"0HNFE6VPMV37D"}
+[2025-09-07 23:42:04.943 +05:30 INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower  {"EventId":{"Id":9,"Name":"Forwarding"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:00000004","RequestPath":"/api/auth/me","ConnectionId":"0HNFE6VPMV37D"}
+[2025-09-07 23:42:05.007 +05:30 INF] Received HTTP/1.1 response 200. {"EventId":{"Id":56,"Name":"ResponseReceived"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:00000004","RequestPath":"/api/auth/me","ConnectionId":"0HNFE6VPMV37D"}
+[2025-09-07 23:42:38.557 +05:30 INF] Proxying to http://localhost:8080/api/auth/preferences HTTP/2 RequestVersionOrLower  {"EventId":{"Id":9,"Name":"Forwarding"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:00000005","RequestPath":"/api/auth/preferences","ConnectionId":"0HNFE6VPMV37D"}
+[2025-09-07 23:42:38.590 +05:30 INF] Received HTTP/1.1 response 404. {"EventId":{"Id":56,"Name":"ResponseReceived"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:00000005","RequestPath":"/api/auth/preferences","ConnectionId":"0HNFE6VPMV37D"}
+[2025-09-07 23:42:42.087 +05:30 INF] Proxying to http://localhost:8080/api/auth/preferences HTTP/2 RequestVersionOrLower  {"EventId":{"Id":9,"Name":"Forwarding"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:00000006","RequestPath":"/api/auth/preferences","ConnectionId":"0HNFE6VPMV37D"}
+[2025-09-07 23:42:42.128 +05:30 INF] Received HTTP/1.1 response 404. {"EventId":{"Id":56,"Name":"ResponseReceived"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:00000006","RequestPath":"/api/auth/preferences","ConnectionId":"0HNFE6VPMV37D"}
+[2025-09-07 23:42:48.779 +05:30 WRN] "RequestCreation": An error was encountered while creating the request message. {"EventId":{"Id":48,"Name":"ForwardingError"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:00000007","RequestPath":"/api/payments/create-subscription","ConnectionId":"0HNFE6VPMV37D"}
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+[2025-09-07 23:42:58.930 +05:30 WRN] "RequestCreation": An error was encountered while creating the request message. {"EventId":{"Id":48,"Name":"ForwardingError"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:00000008","RequestPath":"/api/payments/create-subscription","ConnectionId":"0HNFE6VPMV37D"}
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+[2025-09-07 23:43:19.959 +05:30 WRN] "RequestCreation": An error was encountered while creating the request message. {"EventId":{"Id":48,"Name":"ForwardingError"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37G:00000001","RequestPath":"/api/submissions","ConnectionId":"0HNFE6VPMV37G"}
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+[2025-09-07 23:43:20.040 +05:30 INF] Get problem: prob-1 {"SourceContext":"DSAGrind.Gateway.API.Controllers.ProblemsController","ActionId":"9d31d0ca-cf2e-4e2b-8b27-6f1d71dd7f0b","ActionName":"DSAGrind.Gateway.API.Controllers.ProblemsController.GetProblem (DSAGrind.Gateway.API)","RequestId":"0HNFE6VPMV37F:00000001","RequestPath":"/api/problems/prob-1","ConnectionId":"0HNFE6VPMV37F"}
+[2025-09-07 23:43:23.984 +05:30 WRN] "RequestCreation": An error was encountered while creating the request message. {"EventId":{"Id":48,"Name":"ForwardingError"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37J:00000001","RequestPath":"/api/submissions","ConnectionId":"0HNFE6VPMV37J"}
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+[2025-09-07 23:43:26.807 +05:30 WRN] "RequestCreation": An error was encountered while creating the request message. {"EventId":{"Id":48,"Name":"ForwardingError"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37L:00000001","RequestPath":"/api/submissions","ConnectionId":"0HNFE6VPMV37L"}
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+[2025-09-07 23:43:31.202 +05:30 WRN] "RequestCreation": An error was encountered while creating the request message. {"EventId":{"Id":48,"Name":"ForwardingError"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37N:00000001","RequestPath":"/api/submissions","ConnectionId":"0HNFE6VPMV37N"}
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+[2025-09-07 23:46:04.189 +05:30 INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower  {"EventId":{"Id":9,"Name":"Forwarding"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:00000009","RequestPath":"/api/auth/login","ConnectionId":"0HNFE6VPMV37D"}
+[2025-09-07 23:46:11.341 +05:30 INF] Received HTTP/1.1 response 401. {"EventId":{"Id":56,"Name":"ResponseReceived"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:00000009","RequestPath":"/api/auth/login","ConnectionId":"0HNFE6VPMV37D"}
+[2025-09-07 23:46:19.348 +05:30 INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower  {"EventId":{"Id":9,"Name":"Forwarding"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:0000000A","RequestPath":"/api/auth/login","ConnectionId":"0HNFE6VPMV37D"}
+[2025-09-07 23:46:21.506 +05:30 INF] Received HTTP/1.1 response 401. {"EventId":{"Id":56,"Name":"ResponseReceived"},"SourceContext":"Yarp.ReverseProxy.Forwarder.HttpForwarder","RequestId":"0HNFE6VPMV37D:0000000A","RequestPath":"/api/auth/login","ConnectionId":"0HNFE6VPMV37D"}

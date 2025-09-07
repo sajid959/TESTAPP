@@ -1,0 +1,8 @@
+2025-09-08 00:12:31.867 +05:30 [INF] Starting DSAGrind Auth API at http://0.0.0.0:8080
+2025-09-08 01:19:53.037 +05:30 [INF] RabbitMQ connection established successfully
+2025-09-08 01:19:58.460 +05:30 [INF] Email sent successfully to saj@gmail.com with subject: Welcome to DSAGrind - Start Your Coding Journey!
+2025-09-08 01:24:52.329 +05:30 [INF] Email sent successfully to saj@gmail.com with subject: Welcome to DSAGrind - Start Your Coding Journey!
+2025-09-08 01:27:48.568 +05:30 [INF] Email sent successfully to saj@gmail.com with subject: Welcome to DSAGrind - Start Your Coding Journey!
+2025-09-08 01:30:26.709 +05:30 [INF] Email sent successfully to saj@gmail.com with subject: Welcome to DSAGrind - Start Your Coding Journey!
+2025-09-08 01:33:20.750 +05:30 [INF] Email sent successfully to user@dsagrind.com with subject: Welcome to DSAGrind - Start Your Coding Journey!
+2025-09-08 01:38:48.346 +05:30 [INF] Email sent successfully to user@dsagrind.com with subject: Welcome to DSAGrind - Start Your Coding Journey!

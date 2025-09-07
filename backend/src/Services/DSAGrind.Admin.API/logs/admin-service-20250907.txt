@@ -1,0 +1,38 @@
+2025-09-07 16:32:40.589 +05:30 [INF] Starting DSAGrind Admin API on port 5005
+2025-09-07 16:32:41.311 +05:30 [INF] User profile is available. Using 'C:\Users\lucky\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-07 16:32:42.679 +05:30 [INF] Now listening on: http://localhost:5005
+2025-09-07 16:32:42.811 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-07 16:32:42.813 +05:30 [INF] Hosting environment: Development
+2025-09-07 16:32:42.817 +05:30 [INF] Content root path: C:\Users\lucky\Downloads\TESTAPP_AI\TESTAPP\backend\src\Services\DSAGrind.Admin.API
+2025-09-07 16:32:44.376 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger - null null
+2025-09-07 16:32:44.535 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger - 301 0 null 161.1666ms
+2025-09-07 16:32:44.558 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/index.html - null null
+2025-09-07 16:32:44.689 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/index.html - 200 null text/html;charset=utf-8 130.9324ms
+2025-09-07 16:32:44.724 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/swagger-ui.css - null null
+2025-09-07 16:32:44.733 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/swagger-ui-bundle.js - null null
+2025-09-07 16:32:44.750 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/swagger-ui-standalone-preset.js - null null
+2025-09-07 16:32:44.750 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-07 16:32:44.802 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 52.762ms
+2025-09-07 16:32:44.879 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-09-07 16:32:44.879 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-09-07 16:32:44.886 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-09-07 16:32:44.889 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/swagger-ui-standalone-preset.js - 200 312163 text/javascript 139.4976ms
+2025-09-07 16:32:44.891 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/swagger-ui.css - 200 144929 text/css 166.9625ms
+2025-09-07 16:32:44.915 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 181.662ms
+2025-09-07 16:32:45.096 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - null null
+2025-09-07 16:32:45.169 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 72.9165ms
+2025-09-07 16:35:37.251 +05:30 [INF] Starting DSAGrind Admin API on port 5005
+2025-09-07 16:35:37.377 +05:30 [INF] User profile is available. Using 'C:\Users\lucky\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-09-07 16:35:37.608 +05:30 [INF] Now listening on: http://localhost:5005
+2025-09-07 16:35:37.669 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-07 16:35:37.672 +05:30 [INF] Hosting environment: Development
+2025-09-07 16:35:37.676 +05:30 [INF] Content root path: C:\Users\lucky\Downloads\TESTAPP_AI\TESTAPP\backend\src\Services\DSAGrind.Admin.API
+2025-09-07 16:35:38.121 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/index.html - null null
+2025-09-07 16:35:38.252 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/index.html - 200 null text/html;charset=utf-8 131.613ms
+2025-09-07 16:35:38.293 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - null null
+2025-09-07 16:35:38.308 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 14.3613ms
+2025-09-07 16:35:38.700 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - null null
+2025-09-07 16:35:38.724 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5005/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.6219ms
+2025-09-07 17:15:05.752 +05:30 [INF] Starting DSAGrind Admin API on port 5005
+2025-09-07 17:43:52.906 +05:30 [INF] Starting DSAGrind Admin API on port 5005
+2025-09-07 23:27:06.560 +05:30 [INF] Starting DSAGrind Admin API on port 5005

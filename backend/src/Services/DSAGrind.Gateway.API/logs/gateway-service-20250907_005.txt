@@ -1,0 +1,76 @@
+2025-09-07 23:27:01.649 +05:30 [INF] Loading proxy data from config.
+2025-09-07 23:27:01.919 +05:30 [INF] Starting DSAGrind Gateway API on http://localhost:5000
+2025-09-07 23:27:41.219 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 23:27:51.749 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 23:27:56.787 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 23:27:59.103 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 23:28:14.483 +05:30 [INF] Proxying to http://localhost:8080/api/auth/delete HTTP/2 RequestVersionOrLower 
+2025-09-07 23:28:14.498 +05:30 [INF] Received HTTP/1.1 response 404.
+2025-09-07 23:29:44.124 +05:30 [INF] Proxying to http://localhost:8080/api/auth/deleteAccount HTTP/2 RequestVersionOrLower 
+2025-09-07 23:30:04.278 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 23:40:50.879 +05:30 [INF] Proxying to http://localhost:8080/api/auth/register HTTP/2 RequestVersionOrLower 
+2025-09-07 23:41:06.138 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 23:41:06.190 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 23:41:06.275 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 23:41:20.749 +05:30 [INF] Get problems: search=null, difficulty=null, page=1
+2025-09-07 23:42:04.773 +05:30 [INF] Proxying to http://localhost:8080/api/auth/profile HTTP/2 RequestVersionOrLower 
+2025-09-07 23:42:04.915 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 23:42:04.943 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-07 23:42:05.007 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-07 23:42:38.557 +05:30 [INF] Proxying to http://localhost:8080/api/auth/preferences HTTP/2 RequestVersionOrLower 
+2025-09-07 23:42:38.590 +05:30 [INF] Received HTTP/1.1 response 404.
+2025-09-07 23:42:42.087 +05:30 [INF] Proxying to http://localhost:8080/api/auth/preferences HTTP/2 RequestVersionOrLower 
+2025-09-07 23:42:42.128 +05:30 [INF] Received HTTP/1.1 response 404.
+2025-09-07 23:42:48.779 +05:30 [WRN] "RequestCreation": An error was encountered while creating the request message.
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2025-09-07 23:42:58.930 +05:30 [WRN] "RequestCreation": An error was encountered while creating the request message.
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2025-09-07 23:43:19.959 +05:30 [WRN] "RequestCreation": An error was encountered while creating the request message.
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2025-09-07 23:43:20.040 +05:30 [INF] Get problem: prob-1
+2025-09-07 23:43:23.984 +05:30 [WRN] "RequestCreation": An error was encountered while creating the request message.
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2025-09-07 23:43:26.807 +05:30 [WRN] "RequestCreation": An error was encountered while creating the request message.
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2025-09-07 23:43:31.202 +05:30 [WRN] "RequestCreation": An error was encountered while creating the request message.
+System.UriFormatException: Invalid URI: The URI scheme is not valid.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind, UriCreationOptions& creationOptions)
+   at System.Uri..ctor(String uriString, UriKind uriKind)
+   at Yarp.ReverseProxy.Forwarder.RequestUtilities.MakeDestinationAddress(String destinationPrefix, PathString path, QueryString query)
+   at Yarp.ReverseProxy.Transforms.Builder.StructuredTransformer.TransformRequestAsync(HttpContext httpContext, HttpRequestMessage proxyRequest, String destinationPrefix, CancellationToken cancellationToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.CreateRequestMessageAsync(HttpContext context, String destinationPrefix, HttpTransformer transformer, ForwarderRequestConfig requestConfig, Boolean isStreamingRequest, ActivityCancellationTokenSource activityToken)
+   at Yarp.ReverseProxy.Forwarder.HttpForwarder.SendAsync(HttpContext context, String destinationPrefix, HttpMessageInvoker httpClient, ForwarderRequestConfig requestConfig, HttpTransformer transformer, CancellationToken cancellationToken)
+2025-09-07 23:46:04.189 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 23:46:11.341 +05:30 [INF] Received HTTP/1.1 response 401.
+2025-09-07 23:46:19.348 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-07 23:46:21.506 +05:30 [INF] Received HTTP/1.1 response 401.

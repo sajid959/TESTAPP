@@ -1,0 +1,6 @@
+[2025-09-07 17:15:05.919 +05:30 INF] Starting DSAGrind Payments API on http://0.0.0.0:5006 {}
+[2025-09-07 17:15:06.246 +05:30 WRN] Overriding address(es) 'http://0.0.0.0:5006'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. {"SourceContext":"Microsoft.AspNetCore.Server.Kestrel"}
+[2025-09-07 17:43:53.577 +05:30 INF] Starting DSAGrind Payments API on http://0.0.0.0:5006 {}
+[2025-09-07 17:43:53.784 +05:30 WRN] Overriding address(es) 'http://0.0.0.0:5006'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. {"SourceContext":"Microsoft.AspNetCore.Server.Kestrel"}
+[2025-09-07 23:27:06.955 +05:30 INF] Starting DSAGrind Payments API on http://0.0.0.0:5006 {}
+[2025-09-07 23:27:07.270 +05:30 WRN] Overriding address(es) 'http://0.0.0.0:5006'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead. {"SourceContext":"Microsoft.AspNetCore.Server.Kestrel"}

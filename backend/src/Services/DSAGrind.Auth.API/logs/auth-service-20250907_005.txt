@@ -1,0 +1,4 @@
+2025-09-07 23:27:02.813 +05:30 [INF] Starting DSAGrind Auth API at http://0.0.0.0:8080
+2025-09-07 23:27:45.417 +05:30 [INF] RabbitMQ connection established successfully
+2025-09-07 23:41:06.048 +05:30 [INF] Email sent successfully to saj@gmail.com with subject: Verify your email address - DSAGrind
+2025-09-07 23:41:06.100 +05:30 [INF] User registered successfully: saj@gmail.com
