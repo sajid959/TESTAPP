@@ -66,7 +66,7 @@ const server = http.createServer((req, res) => {
   }));
 });
 
-const PORT = 8000;
+const PORT = 8001;
 server.listen(PORT, '0.0.0.0', () => {
   console.log(`Demo backend running on http://0.0.0.0:${PORT}`);
   console.log('This will be replaced by .NET Gateway when build completes');
