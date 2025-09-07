@@ -60,11 +60,6 @@ function App() {
                 )} />
                 {/* ✅ Public route for email verification */}
                 <Route path="/verify-email" component={VerifyEmail} />
-                <Route path="/settings" component={() => (
-                  <ProtectedRoute>
-                    <Settings />
-                  </ProtectedRoute>
-                )} />
                 <Route path="/forgot-password" component={ForgotPassword} />
                 <Route path="/reset-password" component={ResetPassword} />
                 <Route component={NotFound} />

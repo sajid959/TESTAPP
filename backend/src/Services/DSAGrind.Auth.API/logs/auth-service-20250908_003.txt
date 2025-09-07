@@ -1,0 +1,2 @@
+2025-09-08 03:23:31.166 +05:30 [INF] Starting DSAGrind Auth API at http://0.0.0.0:8080
+2025-09-08 03:25:48.082 +05:30 [INF] RabbitMQ connection established successfully

@@ -1,0 +1,20 @@
+2025-09-08 03:23:30.549 +05:30 [INF] Loading proxy data from config.
+2025-09-08 03:23:30.755 +05:30 [INF] Starting DSAGrind Gateway API on http://localhost:5000
+2025-09-08 03:25:44.713 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-08 03:25:49.064 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-08 03:27:24.788 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-08 03:27:27.042 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-08 03:28:11.271 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-08 03:28:11.626 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-08 03:28:19.681 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-08 03:28:19.799 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-08 03:28:50.386 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-08 03:28:50.617 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-08 03:28:55.316 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-08 03:28:55.363 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-08 03:29:44.439 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
+2025-09-08 03:29:44.492 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-08 03:30:00.557 +05:30 [INF] Proxying to http://localhost:8080/api/auth/deleteAccount HTTP/2 RequestVersionOrLower 
+2025-09-08 03:30:00.622 +05:30 [INF] Received HTTP/1.1 response 200.
+2025-09-08 03:30:05.845 +05:30 [INF] Proxying to http://localhost:8080/api/auth/login HTTP/2 RequestVersionOrLower 
+2025-09-08 03:30:05.986 +05:30 [INF] Received HTTP/1.1 response 401.

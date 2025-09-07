@@ -47,3 +47,5 @@ System.Threading.Tasks.TaskCanceledException: The operation was canceled.
 2025-09-08 01:38:41.821 +05:30 [INF] Proxying to http://localhost:8080/api/auth/me HTTP/2 RequestVersionOrLower 
 2025-09-08 01:38:44.128 +05:30 [INF] Received HTTP/1.1 response 200.
 2025-09-08 01:38:48.364 +05:30 [INF] Received HTTP/1.1 response 200.
+[2025-09-08 03:23:30.549 +05:30 INF] Loading proxy data from config. {"EventId":{"Id":1,"Name":"ApplyProxyConfig"},"SourceContext":"Yarp.ReverseProxy.Configuration.ConfigProvider.ConfigurationConfigProvider"}
+[2025-09-08 03:23:30.755 +05:30 INF] Starting DSAGrind Gateway API on http://localhost:5000 {}
