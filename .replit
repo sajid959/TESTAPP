@@ -1,1 +1,1 @@
-modules = ["dotnet-sdk-8.0"]
+modules = ["dotnet-sdk-8.0", "dotnet-8"]

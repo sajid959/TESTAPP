@@ -1,7 +1,7 @@
 // API Configuration for DSAGrind .NET Microservices
 export const API_CONFIG = {
   // Gateway API (main entry point for all microservices)
-  GATEWAY_URL: import.meta.env.VITE_GATEWAY_URL || 'http://localhost:5000',
+  GATEWAY_URL: import.meta.env.VITE_GATEWAY_URL || 'http://localhost:8000',
   
   // Individual service URLs (for direct access if needed)
   SERVICES: {
