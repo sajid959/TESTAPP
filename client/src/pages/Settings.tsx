@@ -140,6 +140,30 @@ export default function SettingsPage() {
     }
   });
 
+  // Delete account mutation
+const deleteAccountMutation = useMutation({
+  mutationFn: async () => {
+    const response = await apiRequest('DELETE', '/api/auth/deleteAccount');
+    return response.json();
+  },
+  onSuccess: () => {
+    toast({
+      title: 'Account Deleted',
+      description: 'Your account has been permanently deleted.',
+      variant: 'destructive',
+    });
+    logout(); // Clear local state and redirect user
+  },
+  onError: (error: any) => {
+    toast({
+      title: 'Error',
+      description: error.message || 'Failed to delete account.',
+      variant: 'destructive',
+    });
+  }
+});
+
+
   const handleAddSkill = () => {
     if (newSkill.trim() && !profile.skills.includes(newSkill.trim())) {
       const updatedProfile = {
@@ -505,20 +529,18 @@ export default function SettingsPage() {
               <p className="text-sm text-slate-600 dark:text-slate-400">
                 Permanently delete your account and all associated data. This action cannot be undone.
               </p>
-              <Button 
+                <Button 
                 variant="destructive" 
                 onClick={() => {
-                  toast({
-                    title: 'Feature Not Available',
-                    description: 'Account deletion is not yet implemented. Please contact support.',
-                    variant: 'destructive',
-                  });
+                  if (confirm('Are you sure you want to permanently delete your account? This cannot be undone.')) {
+                    deleteAccountMutation.mutate();
+                  }
                 }}
-                data-testid="button-delete-account"
-              >
+                data-testid="button-delete-account">
                 <Trash2 className="w-4 h-4 mr-2" />
                 Delete Account
-              </Button>
+                </Button>
+
             </div>
           </CardContent>
         </Card>

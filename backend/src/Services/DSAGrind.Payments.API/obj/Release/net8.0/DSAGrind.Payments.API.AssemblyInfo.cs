@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DSAGrind.Payments.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c05e1f93abc341acaf3829a3ddddad65544adb43")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+755a143bdc1d90379bf1d3329d6a17183a8e1f24")]
 [assembly: System.Reflection.AssemblyProductAttribute("DSAGrind.Payments.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DSAGrind.Payments.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

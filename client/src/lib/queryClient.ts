@@ -8,24 +8,31 @@ async function throwIfResNotOk(res: Response) {
   }
 }
 
-export async function apiRequest(
-  method: string,
-  url: string,
-  data?: unknown | undefined,
-): Promise<Response> {
+function getAuthHeaders(): Record<string, string> {
   const token = localStorage.getItem("token");
   const headers: Record<string, string> = {};
-  
-  if (data) {
-    headers["Content-Type"] = "application/json";
-  }
-  
-  if (token) {
+
+  if (token && token !== "undefined" && token !== "null") {
     headers["Authorization"] = `Bearer ${token}`;
   }
 
-  // Build full API URL using the Gateway
-  const fullUrl = url.startsWith('http') ? url : buildApiUrl(url);
+  return headers;
+}
+
+export async function apiRequest(
+  method: string,
+  url: string,
+  data?: unknown
+): Promise<Response> {
+  const headers: Record<string, string> = {
+    ...getAuthHeaders(),
+  };
+
+  if (data) {
+    headers["Content-Type"] = "application/json";
+  }
+
+  const fullUrl = url.startsWith("http") ? url : buildApiUrl(url);
 
   try {
     const res = await fetch(fullUrl, {
@@ -38,31 +45,26 @@ export async function apiRequest(
     await throwIfResNotOk(res);
     return res;
   } catch (error) {
-    // Network error - backend not available, throw real error
     console.error(`API request failed for ${url}:`, error);
     throw error;
   }
 }
 
-// No mock responses - all requests must go to real backend
-
+// QueryFn helper for react-query
 type UnauthorizedBehavior = "returnNull" | "throw";
+
 export const getQueryFn: <T>(options: {
   on401: UnauthorizedBehavior;
 }) => QueryFunction<T> =
   ({ on401: unauthorizedBehavior }) =>
   async ({ queryKey }) => {
-    const token = localStorage.getItem("token");
-    const headers: Record<string, string> = {};
-    
-    if (token) {
-      headers["Authorization"] = `Bearer ${token}`;
-    }
+    const headers: Record<string, string> = {
+      ...getAuthHeaders(),
+    };
 
-    // Build full API URL using the Gateway
     const url = queryKey.join("/") as string;
-    const fullUrl = url.startsWith('http') ? url : buildApiUrl(url);
-    
+    const fullUrl = url.startsWith("http") ? url : buildApiUrl(url);
+
     const res = await fetch(fullUrl, {
       headers,
       credentials: "include",

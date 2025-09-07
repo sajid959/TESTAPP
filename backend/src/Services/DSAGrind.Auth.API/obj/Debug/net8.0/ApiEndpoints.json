@@ -17,6 +17,16 @@
   },
   {
     "ContainingType": "DSAGrind.Auth.API.Controllers.AuthController",
+    "Method": "DeleteAccount",
+    "RelativePath": "api/Auth/deleteAccount",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DSAGrind.Auth.API.Controllers.AuthController",
     "Method": "ForgotPassword",
     "RelativePath": "api/Auth/forgot-password",
     "HttpMethod": "POST",
@@ -211,6 +221,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "DSAGrind.Auth.API.Controllers.AuthController",
+    "Method": "TestEmail",
+    "RelativePath": "api/Auth/test-email",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "DSAGrind.Models.DTOs.TestEmailRequestDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

@@ -8,6 +8,7 @@ interface AuthContextType {
   login: (email: string, password: string) => Promise<void>;
   register: (userData: RegisterRequest) => Promise<void>;
   logout: () => void;
+  verifyEmail: (token: string) => Promise<boolean>;
   loading: boolean;
   isAuthenticated: boolean;
   isAdmin: boolean;
@@ -34,20 +35,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       const response = await apiRequest("GET", API_CONFIG.ENDPOINTS.AUTH.ME);
       const data = await response.json();
-      
+
       if (data.user) {
         setUser(data.user);
       } else {
         localStorage.removeItem("token");
+        localStorage.removeItem("refreshToken");
       }
     } catch (error: any) {
-      // Only remove token if it's an authentication error (401/403), not network errors
-      if (error.message?.includes('401') || error.message?.includes('403')) {
+      if (error.message?.includes("401") || error.message?.includes("403")) {
         localStorage.removeItem("token");
         localStorage.removeItem("refreshToken");
       }
-      // For network errors (500, connection failed), keep the token and retry later
-      console.error('Auth check failed:', error);
+      console.error("Auth check failed:", error);
     } finally {
       setLoading(false);
     }
@@ -60,18 +60,28 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     });
 
     const data: AuthResponse = await response.json();
-    localStorage.setItem("token", data.token);
+    localStorage.setItem("token", data.accessToken);
     localStorage.setItem("refreshToken", data.refreshToken);
     setUser(data.user);
   };
 
   const register = async (userData: RegisterRequest) => {
-    const response = await apiRequest("POST", API_CONFIG.ENDPOINTS.AUTH.REGISTER, userData);
+    await apiRequest("POST", API_CONFIG.ENDPOINTS.AUTH.REGISTER, userData);
+    // ✅ No tokens returned. Show message like:
+    // "Check your email to verify your account."
+  };
 
-    const data: AuthResponse = await response.json();
-    localStorage.setItem("token", data.token);
-    localStorage.setItem("refreshToken", data.refreshToken);
-    setUser(data.user);
+  const verifyEmail = async (token: string): Promise<boolean> => {
+    try {
+      const response = await apiRequest(
+        "POST",
+        API_CONFIG.ENDPOINTS.AUTH.VERIFY_EMAIL,
+        { token }
+      );
+      return response.ok;
+    } catch {
+      return false;
+    }
   };
 
   const logout = () => {
@@ -85,12 +95,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     login,
     register,
     logout,
+    verifyEmail,
     loading,
     isAuthenticated: !!user,
     isAdmin: user?.role?.toLowerCase() === "admin",
-    isPremium: user?.subscriptionPlan === 'premium' && user?.subscriptionStatus === 'active',
+    isPremium:
+      user?.subscriptionPlan === "premium" &&
+      user?.subscriptionStatus === "active",
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
-

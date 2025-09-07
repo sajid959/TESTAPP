@@ -15,6 +15,7 @@ import ForgotPassword from "@/pages/ForgotPassword";
 import ResetPassword from "@/pages/ResetPassword";
 import NotFound from "@/pages/not-found";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
+import VerifyEmail from "@/pages/VerifyEmail";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -37,31 +38,28 @@ function App() {
                 <Route path="/" component={Home} />
                 <Route path="/problems" component={Problems} />
                 <Route path="/problems/:categorySlug" component={Problems} />
-                <Route path="/problem/:slug">
+                <Route path="/problem/:slug" component={() => (
                   <ProtectedRoute>
                     <IDE />
                   </ProtectedRoute>
-                </Route>
-                <Route path="/admin">
+                )} />
+                <Route path="/admin" component={() => (
                   <ProtectedRoute requireAdmin>
                     <Admin />
                   </ProtectedRoute>
-                </Route>
-                <Route path="/subscribe">
+                )} />
+                <Route path="/subscribe" component={() => (
                   <ProtectedRoute>
                     <Subscribe />
                   </ProtectedRoute>
-                </Route>
-                <Route path="/profile">
+                )} />
+                <Route path="/profile" component={() => (
                   <ProtectedRoute>
                     <Profile />
                   </ProtectedRoute>
-                </Route>
-                <Route path="/settings">
-                  <ProtectedRoute>
-                    <Settings />
-                  </ProtectedRoute>
-                </Route>
+                )} />
+                {/* ✅ Public route for email verification */}
+                <Route path="/verify-email" component={VerifyEmail} />
                 <Route path="/forgot-password" component={ForgotPassword} />
                 <Route path="/reset-password" component={ResetPassword} />
                 <Route component={NotFound} />

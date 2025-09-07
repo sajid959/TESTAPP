@@ -1,5 +1,5 @@
-using System.Security.Cryptography;
 using AutoMapper;
+using BCrypt.Net;
 using DSAGrind.Auth.API.Repositories;
 using DSAGrind.Auth.API.Services;
 using DSAGrind.Common.Services;
@@ -7,7 +7,8 @@ using DSAGrind.Events;
 using DSAGrind.Models.DTOs;
 using DSAGrind.Models.Entities;
 using Microsoft.Extensions.Logging;
-using BCrypt.Net;
+using System.Security.Cryptography;
+using System.Threading;
 
 namespace DSAGrind.Auth.API.Services;
 
@@ -164,24 +165,24 @@ public class AuthService : IAuthService
         _logger.LogInformation("User registered successfully: {Email}", user.Email);
 
         // Generate tokens for immediate login (but mark as unverified)
-        var accessToken = _jwtService.GenerateAccessToken(user);
-        var refreshToken = GenerateRefreshToken();
+        //var accessToken = _jwtService.GenerateAccessToken(user);
+        //var refreshToken = GenerateRefreshToken();
 
-        var newRefreshToken = new RefreshToken
-        {
-            Token = refreshToken,
-            Expires = DateTime.UtcNow.AddDays(7),
-            Created = DateTime.UtcNow,
-            CreatedByIp = ipAddress
-        };
+        //var newRefreshToken = new RefreshToken
+        //{
+        //    Token = refreshToken,
+        //    Expires = DateTime.UtcNow.AddDays(7),
+        //    Created = DateTime.UtcNow,
+        //    CreatedByIp = ipAddress
+        //};
 
-        user.RefreshTokens.Add(newRefreshToken);
-        await _userRepository.UpdateRefreshTokensAsync(user.Id, user.RefreshTokens, cancellationToken);
+        //user.RefreshTokens.Add(newRefreshToken);
+        //await _userRepository.UpdateRefreshTokensAsync(user.Id, user.RefreshTokens, cancellationToken);
 
         return new AuthResponseDto
         {
-            AccessToken = accessToken,
-            RefreshToken = refreshToken,
+            AccessToken = null,
+            RefreshToken = null,
             User = _mapper.Map<UserDto>(user),
             ExpiresAt = DateTime.UtcNow.AddMinutes(15)
         };
@@ -437,6 +438,19 @@ public class AuthService : IAuthService
         await _redisService.DeleteAsync($"user:{userId}", cancellationToken);
 
         return await GetUserAsync(userId, cancellationToken);
+    }
+
+   public async Task<bool> DeleteUserAsync(string userId, CancellationToken cancellationToken = default)
+    {
+        var success = await _userRepository.DeleteAsync(userId, cancellationToken);
+        if (!success)
+        {
+            await _redisService.DeleteAsync($"user:{userId}", cancellationToken);
+        }
+
+        // Clear cache to force refresh
+        
+        return success;
     }
 
     public async Task<AuthResponseDto> OAuthLoginAsync(string provider, string code, string state, string ipAddress, CancellationToken cancellationToken = default)

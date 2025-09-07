@@ -35,6 +35,13 @@ interface AIAssistantProps {
   }>;
   lastError?: string;
 }
+interface AIHintResponse {
+  level?: 'basic' | 'intermediate' | 'advanced';
+  hint: string;
+  codeExample?: string;
+  nextSteps?: string[];
+}
+
 
 export function AIAssistant({ 
   code, 
@@ -197,9 +204,15 @@ export function AIAssistant({
                 {currentHint ? (
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <Badge className={getHintLevelColor(currentHint.level)}>
-                        {currentHint.level.toUpperCase()} HINT
-                      </Badge>
+                      {currentHint?.level ? (
+  <Badge className={getHintLevelColor(currentHint.level)}>
+    {currentHint.level.toUpperCase()} HINT
+  </Badge>
+) : (
+  <Badge className="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+    HINT
+  </Badge>
+)}
                       <div className="text-sm text-gray-600">
                         Contextual hint based on your current code
                       </div>

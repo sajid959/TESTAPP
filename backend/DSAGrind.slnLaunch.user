@@ -4,11 +4,13 @@
     "Projects": [
       {
         "Path": "src\\Services\\DSAGrind.Gateway.API\\DSAGrind.Gateway.API.csproj",
-        "Action": "Start"
+        "Action": "Start",
+        "DebugTarget": "http"
       },
       {
         "Path": "src\\Services\\DSAGrind.Auth.API\\DSAGrind.Auth.API.csproj",
-        "Action": "Start"
+        "Action": "Start",
+        "DebugTarget": "http"
       }
     ]
   }

@@ -6,6 +6,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { Problem } from '@/types/api';
 import { useAuth } from '@/hooks/useAuth';
+import { TooltipProvider } from '@radix-ui/react-tooltip';
 
 interface ProblemTableProps {
   problems: Problem[];
@@ -109,6 +110,7 @@ export function ProblemTable({ problems, isLoading = false }: ProblemTableProps)
               data-testid={`row-problem-${index}`}
             >
               <TableCell>
+                <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger>
                     {getStatusIcon(problem.id)}
@@ -117,6 +119,7 @@ export function ProblemTable({ problems, isLoading = false }: ProblemTableProps)
                     <p>Problem status</p>
                   </TooltipContent>
                 </Tooltip>
+                </TooltipProvider>
               </TableCell>
               
               <TableCell>

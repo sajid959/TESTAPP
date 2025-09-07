@@ -398,6 +398,42 @@ public class AuthController : ControllerBase
         }
     }
 
+    // Delete UserAccount
+    /// <summary>
+/// Delete the authenticated user account
+/// </summary>
+[Authorize]
+[HttpDelete("deleteAccount")]
+public async Task<IActionResult> DeleteAccount()
+{
+    try
+    {
+        var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (string.IsNullOrEmpty(userId))
+        {
+            return Unauthorized();
+        }
+
+        // Call service to delete the account
+        var success = await _authService.DeleteUserAsync(userId);
+        if (!success)
+        {
+            return NotFound(new { message = "User not found or could not be deleted" });
+        }
+
+        // Clear refresh token cookie
+        Response.Cookies.Delete("refreshToken");
+
+        return Ok(new { message = "Account deleted successfully" });
+    }
+    catch (Exception ex)
+    {
+        _logger.LogError(ex, "Error deleting account for user {UserId}", User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+        return StatusCode(500, new { message = "An error occurred while deleting the account" });
+    }
+}
+
+
     private void SetRefreshTokenCookie(string refreshToken)
     {
         var cookieOptions = new CookieOptions
